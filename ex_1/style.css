@@ -1,0 +1,23 @@
+.red{
+    color: red;
+}
+.black 
+{
+    color: black;
+}
+.card
+{
+    background-color: lightgrey;
+    display: inline-block;
+    text-align: center;
+    font-size: 30px;
+    width: 60px;
+    height: 40px;
+    margin-right: 10px;
+    border: 1px solid darkgreen;
+}
+.player
+{
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
