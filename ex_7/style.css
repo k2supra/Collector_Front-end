@@ -1,0 +1,51 @@
+body {
+    background-image: url(https://4kwallpapers.com/images/wallpapers/dark-background-abstract-background-network-3d-background-3840x2160-8324.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+div {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 35%;
+    right: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.block1 {
+    background-color: brown;
+    animation: moveIn 5s ease forwards,  moveOut 2s 4s ease forwards;
+}
+
+.block2 {
+    background-color: bisque;
+    animation: moveIn 5s ease forwards, expand 2s 2s ease forwards;
+}
+
+@keyframes moveIn {
+    0% {
+        right: 100%;
+    }
+    100% {
+        right: 50%;
+    }
+}
+
+@keyframes expand {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+}
+
+@keyframes moveOut {
+    0% {
+        right: 50%;
+    }
+    100% {
+        right: 0%;
+    }
+}
