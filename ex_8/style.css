@@ -150,7 +150,7 @@ hr
     }
     52%
     {
-        background-color: brown;
+        background-color: aqua;
         rotate: 450deg;
         width: 50px;
         height: 25px;
@@ -159,7 +159,7 @@ hr
     }
     54%
     {
-        background-color: brown;
+        background-color: aqua;
         rotate: 452deg;
         width: 50px;
         height: 50px;
@@ -168,7 +168,7 @@ hr
     }
     60%
     {
-        background-color: brown;
+        background-color: aqua;
         rotate: 540deg;
         width: 50px;
         height: 50px;
@@ -177,16 +177,7 @@ hr
     }
     62%
     {
-        background-color: brown;
-        rotate: 542deg;
-        width: 25px;
-        height: 50px;
-        top: 0px;
-        left: 570px;
-    }
-    62%
-    {
-        background-color: brown;
+        background-color: pink;
         rotate: 544deg;
         width: 50px;
         height: 25px;
@@ -195,7 +186,7 @@ hr
     }
     70%
     {
-        background-color: brown;
+        background-color: pink;
         rotate: 630deg;
         width: 50px;
         height: 50px;
@@ -204,7 +195,7 @@ hr
     }
     72%
     {
-        background-color: brown;
+        background-color: blue;
         rotate: 632deg;
         width: 25px;
         height: 50px;
@@ -213,7 +204,7 @@ hr
     }
     74%
     {
-        background-color: brown;
+        background-color: blue;
         rotate: 634deg;
         width: 50px;
         height: 50px;
@@ -222,7 +213,7 @@ hr
     }
     80%
     {
-        background-color: brown;
+        background-color: blue;
         rotate: 634deg;
         width: 50px;
         height: 50px;
@@ -231,7 +222,7 @@ hr
     }
     82%
     {
-        background-color: brown;
+        background-color: darkgoldenrod;
         rotate: 634deg;
         width: 50px;
         height: 25px;
@@ -240,7 +231,7 @@ hr
     }
     84%
     {
-        background-color: brown;
+        background-color: darkgoldenrod;
         rotate: 634deg;
         width: 50px;
         height: 50px;
@@ -249,7 +240,7 @@ hr
     }
     90%
     {
-        background-color: brown;
+        background-color: darkgoldenrod;
         rotate: 630deg;
         width: 50px;
         height: 50px;
@@ -258,7 +249,7 @@ hr
     }
     92%
     {
-        background-color: brown;
+        background-color: silver;
         rotate: 632deg;
         width: 25px;
         height: 50px;
@@ -267,11 +258,19 @@ hr
     }
     94%
     {
-        background-color: brown;
+        background-color: silver;
         rotate: 634deg;
         width: 50px;
         height: 50px;
         top: 250px;
         left: 150px;
+    }
+    100%
+    {
+        rotate: 0deg;
+        width: 50px;
+        height: 50px;
+        top: 100px;
+        left: 30px;
     }
 }
