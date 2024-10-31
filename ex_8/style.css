@@ -24,6 +24,7 @@ hr
 {
     0%
     {
+        background-color: wheat;
         rotate: 0deg;
         width: 50px;
         height: 50px;
@@ -32,6 +33,7 @@ hr
     }
     20%
     {
+        background-color: wheat;
         rotate: 88deg;
         width: 50px;
         height: 50px;
@@ -40,6 +42,7 @@ hr
     }
     22%
     {
+        background-color: red;
         rotate: 90deg;
         width: 25px;
         height: 50px;
@@ -48,6 +51,7 @@ hr
     }
     24%
     {
+        background-color: red;
         rotate: 92deg;
         width: 50px;
         height: 50px;
@@ -56,6 +60,7 @@ hr
     }
     40%
     {
+        background-color: red;
         rotate: 178deg;
         width: 50px;
         height: 50px;
@@ -64,6 +69,7 @@ hr
     }
     42%
     {
+        background-color: red;
         rotate: 180deg;
         width: 50px;
         height: 25px;
@@ -72,6 +78,7 @@ hr
     }
     44%
     {
+        background-color: yellow;
         rotate: 182deg;
         width: 50px;
         height: 50px;
@@ -80,6 +87,7 @@ hr
     }
     60%
     {
+        background-color: yellow;
         rotate: 268deg;
         width: 50px;
         height: 50px;
@@ -88,6 +96,7 @@ hr
     }
     62%
     {
+        background-color: yellow;
         rotate: 270deg;
         width: 25px;
         height: 50px;
@@ -96,6 +105,7 @@ hr
     }
     64%
     {
+        background-color: green;
         rotate: 272deg;
         width: 50px;
         height: 50px;
@@ -104,6 +114,7 @@ hr
     }
     80%
     {
+        background-color: green;
         rotate: 358deg;
         width: 50px;
         height: 50px;
@@ -112,6 +123,7 @@ hr
     }
     82%
     {
+        background-color: brown;
         rotate: 360deg;
         width: 50px;
         height: 25px;
@@ -120,6 +132,7 @@ hr
     }
     84%
     {
+        background-color: brown;
         rotate: 362deg;
         width: 50px;
         height: 50px;
@@ -128,6 +141,7 @@ hr
     }
     100%
     {
+        background-color: brown;
         rotate: 450deg;
         width: 50px;
         height: 50px;
