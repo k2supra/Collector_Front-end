@@ -18,7 +18,7 @@ hr
     align-content: center;
     text-align: center;
     border-radius: 100%;
-    animation: bounce 5s ease-in forwards;
+    animation: bounce 5s ease-in infinite;
 }
 @keyframes bounce
 {
@@ -31,7 +31,7 @@ hr
         top: 100px;
         left: 30px;
     }
-    20%
+    10%
     {
         background-color: wheat;
         rotate: 88deg;
@@ -40,7 +40,7 @@ hr
         top: 0px;
         left: 140px;
     }
-    22%
+    12%
     {
         background-color: red;
         rotate: 90deg;
@@ -49,7 +49,7 @@ hr
         top: 0px;
         left: 145px;
     }
-    24%
+    14%
     {
         background-color: red;
         rotate: 92deg;
@@ -58,7 +58,7 @@ hr
         top: 0px;
         left: 150px;
     }
-    40%
+    20%
     {
         background-color: red;
         rotate: 178deg;
@@ -67,7 +67,7 @@ hr
         top: 250px;
         left: 280px;
     }
-    42%
+    22%
     {
         background-color: red;
         rotate: 180deg;
@@ -76,7 +76,7 @@ hr
         top: 275px;
         left: 285px;
     }
-    44%
+    24%
     {
         background-color: yellow;
         rotate: 182deg;
@@ -85,7 +85,7 @@ hr
         top: 250px;
         left: 290px;
     }
-    60%
+    30%
     {
         background-color: yellow;
         rotate: 268deg;
@@ -94,7 +94,7 @@ hr
         top: 0px;
         left: 420px;
     }
-    62%
+    32%
     {
         background-color: yellow;
         rotate: 270deg;
@@ -103,7 +103,7 @@ hr
         top: 0px;
         left: 425px;
     }
-    64%
+    34%
     {
         background-color: green;
         rotate: 272deg;
@@ -112,7 +112,7 @@ hr
         top: 0px;
         left: 430px;
     }
-    80%
+    40%
     {
         background-color: green;
         rotate: 358deg;
@@ -121,7 +121,7 @@ hr
         top: 250px;
         left: 560px;
     }
-    82%
+    42%
     {
         background-color: brown;
         rotate: 360deg;
@@ -130,7 +130,7 @@ hr
         top: 275px;
         left: 565px;
     }
-    84%
+    44%
     {
         background-color: brown;
         rotate: 362deg;
@@ -139,13 +139,139 @@ hr
         top: 250px;
         left: 570px;
     }
-    100%
+    50%
+    {
+        background-color: brown;
+        rotate: 448deg;
+        width: 50px;
+        height: 50px;
+        top: 100px;
+        left: 755px;
+    }
+    52%
     {
         background-color: brown;
         rotate: 450deg;
         width: 50px;
+        height: 25px;
+        top: 100px;
+        left: 762px;
+    }
+    54%
+    {
+        background-color: brown;
+        rotate: 452deg;
+        width: 50px;
         height: 50px;
         top: 100px;
-        left: 730px;
+        left: 758px;
+    }
+    60%
+    {
+        background-color: brown;
+        rotate: 540deg;
+        width: 50px;
+        height: 50px;
+        top: 0px;
+        left: 575px;
+    }
+    62%
+    {
+        background-color: brown;
+        rotate: 542deg;
+        width: 25px;
+        height: 50px;
+        top: 0px;
+        left: 570px;
+    }
+    62%
+    {
+        background-color: brown;
+        rotate: 544deg;
+        width: 50px;
+        height: 25px;
+        top: 0px;
+        left: 565px;
+    }
+    70%
+    {
+        background-color: brown;
+        rotate: 630deg;
+        width: 50px;
+        height: 50px;
+        top: 250px;
+        left: 430px;
+    }
+    72%
+    {
+        background-color: brown;
+        rotate: 632deg;
+        width: 25px;
+        height: 50px;
+        top: 275px;
+        left: 425px;
+    }
+    74%
+    {
+        background-color: brown;
+        rotate: 634deg;
+        width: 50px;
+        height: 50px;
+        top: 250px;
+        left: 420px;
+    }
+    80%
+    {
+        background-color: brown;
+        rotate: 634deg;
+        width: 50px;
+        height: 50px;
+        top: 0px;
+        left: 290px;
+    }
+    82%
+    {
+        background-color: brown;
+        rotate: 634deg;
+        width: 50px;
+        height: 25px;
+        top: 0px;
+        left: 285px;
+    }
+    84%
+    {
+        background-color: brown;
+        rotate: 634deg;
+        width: 50px;
+        height: 50px;
+        top: 0px;
+        left: 280px;
+    }
+    90%
+    {
+        background-color: brown;
+        rotate: 630deg;
+        width: 50px;
+        height: 50px;
+        top: 250px;
+        left: 140px;
+    }
+    92%
+    {
+        background-color: brown;
+        rotate: 632deg;
+        width: 25px;
+        height: 50px;
+        top: 275px;
+        left: 145px;
+    }
+    94%
+    {
+        background-color: brown;
+        rotate: 634deg;
+        width: 50px;
+        height: 50px;
+        top: 250px;
+        left: 150px;
     }
 }
