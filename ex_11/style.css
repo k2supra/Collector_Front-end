@@ -24,8 +24,9 @@
         height: fit-content !important;
         margin: 0px !important;
     }
-    .text-photos .photos p
+    .text-photos .photos .info
     {
+        width: auto !important;
         height: fit-content !important;
         margin: 0px !important;
     }
@@ -72,9 +73,9 @@
         height: fit-content !important;
         margin: 0px !important;
     }
-    .text-photos .photos p
+    .text-photos .photos .photo .info
     {
-        width: 100% !important;
+        width: auto !important;
         height: fit-content !important;
         margin: 0px !important;
     }
@@ -146,6 +147,9 @@
 }
 .text-photos .photos .photo p
 {
+    display: block;
+    width: auto;
+    text-align: end;  
     height: auto;
     margin-top: 0px;
     padding: 10px;
