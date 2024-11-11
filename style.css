@@ -1,0 +1,33 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+div
+{
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}
+.flex
+{
+    display: flex;
+}
+.inline-flex
+{
+    display: inline-flex;
+}
+.flex div, .inline-flex div
+{
+    margin: 5px 0;
+    padding: 10px;
+}
+.flex-row
+{
+    flex-direction: row;
+}
+.flex-column
+{
+    flex-direction: column;
+}
