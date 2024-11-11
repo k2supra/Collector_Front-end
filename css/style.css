@@ -5,6 +5,7 @@
 }
 
 div {
+    margin: 10px 0;
     border: 1px solid black;
 }
 
@@ -20,4 +21,13 @@ div {
 .inline-flex div {
     margin: 5px 0;
     padding: 10px;
+}
+
+/* ============================= */
+.row {
+    flex-direction: row;
+}
+
+.column {
+    flex-direction: column;
 }
