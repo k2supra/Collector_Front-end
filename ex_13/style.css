@@ -1,0 +1,33 @@
+*
+{
+    font-size: 1rem;
+}
+.pop-up
+{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pop-up-content
+{
+    position: relative;
+    width: 400px;
+    height: fit-content;
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+}
+a
+{
+    color: inherit;
+    text-decoration: none;
+    font-size: inherit;
+    font-weight: inherit;
+}
