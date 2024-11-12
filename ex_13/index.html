@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <a href="javascript:ShowPopup()">
+            <h4>What is lorem?</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore similique enim vero sequi totam? Laudantium voluptates numquam sint totam, ab, ipsum facere doloribus voluptatem qui, reprehenderit impedit fuga aspernatur. Mollitia.</p>
+            <h4>Where does it come from?</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam ducimus dolores, quibusdam impedit ut deserunt quisquam libero dolorem similique, blanditiis molestias eum aliquid sed voluptatum cumque expedita minima inventore eos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore similique enim vero sequi totam? Laudantium voluptates numquam sint totam, ab, ipsum facere doloribus voluptatem qui, reprehenderit impedit fuga aspernatur. Mollitia.</p>    
+        </a>
+    </div>
+    <div class="pop-up" id="pop-up">
+        <a href="javascript:HidePopup()">
+            <div class="pop-up-content">
+                Modal window
+                <hr>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos dignissimos omnis at laboriosam accusantium cum quia adipisci rem, quaerat sit maxime doloremque sunt eaque dolorum esse quam perspiciatis repellendus autem.
+            </div>
+        </a>
+        
+    </div>
+    <script>
+        $(document).ready(function()
+        {
+            HidePopup();
+        })
+        function HidePopup()
+        {
+            $("#pop-up").hide();
+        }
+        function ShowPopup()
+        {
+            $("#pop-up").show();
+        }
+    </script>
+</body>
+</html>
