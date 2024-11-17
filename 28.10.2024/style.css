@@ -1,0 +1,129 @@
+body {
+    background-color: #121212;
+    background-size: cover;
+    background-repeat: repeat;
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+main
+{
+    margin-bottom: 50%;
+}
+.block1, .block2 {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 25%;
+    right: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.block1 {
+    background-color: brown;
+    animation: moveIn 5s ease forwards,  moveOut 2s 4s ease forwards;
+}
+
+.block2 {
+    background-color: bisque;
+    animation: moveIn 5s ease forwards, expand 3s 2s ease forwards;
+}
+
+@keyframes moveIn {
+    0% {
+        right: 100%;
+    }
+    100% {
+        right: 50%;
+    }
+}
+
+@keyframes expand {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+}
+
+@keyframes moveOut {
+    0% {
+        right: 50%;
+    }
+    100% {
+        right: 0%;
+    }
+}
+.cards
+{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+.shadow
+{
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    box-shadow: 5px 5px 15px rgb(30, 55, 55);
+    transition: all 0.5s;
+}
+.card-item
+{
+    position: relative;
+}
+.card-main
+{
+    background-color: darkslategray;
+    color: lightgray;
+    width: 150px;
+    height: 100px;
+    text-align: center;
+    align-content: center;
+    /* box-shadow: 5px 5px 15px rgb(30, 55, 55); */
+    transition: all 0.5s;
+}
+.card-info
+{
+    width: 125px;
+    height: 0px;
+    font-size: 15px;
+    color: #121212;
+    background-color: aliceblue;
+    overflow: hidden;
+    transition: all 0.5s;
+    padding-inline: 12.5px;
+}
+.card-item:hover .card-main
+{
+    background-color: darkred;
+    transform: translateY(-20px);
+    /* box-shadow: 5px 5px 50px rgb(182, 18, 18); */
+}
+.card-item:hover .card-info
+{
+    height: 95px;
+    transform: translateY(-20px);
+}
+.card-item:hover .shadow
+{
+    box-shadow: 5px 5px 30px rgb(182, 18, 18);
+    transform: translateY(-20px);
+    height: 195px;
+}
+.button
+{
+    margin-top: 8px;
+}
+img
+{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    display: block;
+    margin-left: 60px;
+}
