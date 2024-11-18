@@ -1,3 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div {
+    margin: 10px 0;
+    border: 1px solid black;
+}
+
+.flex {
+    display: flex;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+.flex div,
+.inline-flex div {
+    margin: 5px 0;
+    padding: 10px;
+}
+
+/* ============================= */
+.row {
+    flex-direction: row;
+}
+
+.column {
+    flex-direction: column;
+}
+
+/* ============================= */
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+/* ============================= */
+.align-items-start {
+    height: 200px;
+    align-items: flex-start;
+}
+
+.align-items-end {
+    height: 200px;
+    align-items: flex-end;
+}
+
+.align-items-center {
+    height: 200px;
+    align-items: center;
+}
+
+.align-items-stretch {
+    height: 200px;
+    align-items: stretch;
+}
+
+/* ============================= */
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+/* ============================= */
+.align-content-start
+{
+    align-content: start;
+}
+.align-content-end
+{
+    align-content: end;
+}
+.align-content-center
+{
+    align-content: center;
+}
+.align-content-stretch
+{
+    align-content: stretch;
+}
+.align-content-space-between
+{
+    align-content: space-between;
+}
+.align-content-space-around
+{
+    align-content: space-around;
+}
+.flex-wrapper, .flex-wrap
+{
+    min-height: 300px;
+}
+/* ============================= */
+.orders .order:nth-child(1)
+{
+    order: 2;
+    border: 2px solid red;
+}
+.orders .order:nth-child(2)
+{
+    border: 4px solid red;
+}
+/* ============================= */
+.flex-flow
+{
+    flex-flow: column wrap;
+}
+.flex-basis div
+{
+    flex-basis: 100px;
+}
 .flex-container-1, .flex-container-2, .flex-container-3
 {
     margin-top: 15px;
