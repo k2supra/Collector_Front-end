@@ -5,6 +5,14 @@ body
 .flex-wrapper
 {
     width: 100%;
-    height: 500px;
+    height: 1000px;
     background-color: red;
+    display: flex;
+}
+.block
+{
+    width: 100px;
+    height: 200px;
+    background-color: yellow;
+    margin: 3px;
 }
