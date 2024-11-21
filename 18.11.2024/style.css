@@ -1,18 +1,21 @@
 body
 {
     margin: 0;
+    width: 100%;
+    height: 1000px;
+    background-color: rgb(127, 186, 167);
 }
 .flex-wrapper
 {
-    width: 100%;
-    height: 1000px;
-    background-color: red;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
 }
 .block
 {
-    width: 100px;
+    width: calc((100% / 3) - 20px);
     height: 200px;
-    background-color: yellow;
+    background-color: rgb(244, 244, 158);
     margin: 3px;
 }
