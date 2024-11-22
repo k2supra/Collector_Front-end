@@ -2,7 +2,7 @@ body
 {
     margin: 0;
     width: 100%;
-    height: 1000px;
+    height: 2000px;
     background-color: rgb(127, 186, 167);
 }
 .flex-wrapper
@@ -13,12 +13,12 @@ body
     width: 98%;
     margin: auto;
 }
-.column
+.flex-wrapper .column
 {
     width: calc((100% / 3) - 40px);
     margin: 0;
 }
-.block
+.flex-wrapper .block
 {
     width: 100%;
     height: fit-content;
@@ -26,7 +26,7 @@ body
     margin: 15px 0px;
     border: 2px black solid
 }
-.photo
+.flex-wrapper .photo
 {
     width: auto;
     height: 100px;
@@ -34,47 +34,91 @@ body
     text-align: center;
     align-content: center;
 }
-.column:nth-child(1) .block:nth-child(1) .photo
+.flex-wrapper .column:nth-child(1) .block:nth-child(1) .photo
 {
     height: 100px;
 }
-.column:nth-child(2) .block:nth-child(1) .photo
+.flex-wrapper .column:nth-child(2) .block:nth-child(1) .photo
 {
     height: 200px;
 }
-.column:nth-child(3) .block:nth-child(1) .photo
+.flex-wrapper .column:nth-child(3) .block:nth-child(1) .photo
 {
     height: 150px;
 }
-.column:nth-child(1) .block:nth-child(2) .photo
+.flex-wrapper .column:nth-child(1) .block:nth-child(2) .photo
 {
     height: 150px;
 }
-.column:nth-child(2) .block:nth-child(2) .photo
+.flex-wrapper .column:nth-child(2) .block:nth-child(2) .photo
 {
     height: 100px;
 }
-.column:nth-child(3) .block:nth-child(2) .photo
+.flex-wrapper .column:nth-child(3) .block:nth-child(2) .photo
 {
     height: 250px;
 }
-.column:nth-child(1) .block:nth-child(3) .photo
+.flex-wrapper .column:nth-child(1) .block:nth-child(3) .photo
 {
     height: 150px;
 }
-.column:nth-child(2) .block:nth-child(3) .photo
+.flex-wrapper .column:nth-child(2) .block:nth-child(3) .photo
 {
     height: 250px;
 }
-.column:nth-child(3) .block:nth-child(3) .photo
+.flex-wrapper .column:nth-child(3) .block:nth-child(3) .photo
 {
     height: 150px;
 }
-h4
+.flex-wrapper h4
 {
     margin: 5px;
 }
-.text
+.flex-wrapper .text
 {
     padding: 10px;
+}
+
+.to-do
+{
+    width: 100%;
+    height: 800px;
+    background-color: rgb(179, 230, 213);
+}
+.to-do header
+{
+    height: 50px;
+    align-content: center;
+    background-color: rgb(128, 220, 190);
+}
+.to-do header h3
+{
+    margin: 0 0 0 15px;
+    color: white;
+}
+.to-do main
+{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto;
+    width: 95%;
+}
+.to-do main .column
+{
+    min-width: 300px;
+    max-width: 400px;
+    height: 500px;
+    background-color: rgb(247, 236, 236);
+}
+.to-do main .column h4
+{
+    margin: 10px;
+}
+.to-do main .column .card
+{
+    width: 90%;
+    height: 100px;
+    background-color: white;
+    margin: 10px auto;
+    border-radius: 10px;
 }
