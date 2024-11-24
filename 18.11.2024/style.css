@@ -1,7 +1,7 @@
 body
 {
     margin: 0;
-    width: 100%;
+    width: auto;
     height: 1000px;
     background-color: rgb(127, 186, 167);
 }
@@ -88,6 +88,7 @@ body
 .to-do header
 {
     height: 50px;
+    width: auto;
     align-content: center;
     background-color: rgb(128, 220, 190);
 }
@@ -99,10 +100,13 @@ body
 .to-do main
 {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
+    gap: 10px;
     margin: 10px auto;
     width: 95%;
     height: 90%;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 .to-do main .column
 {
@@ -112,7 +116,7 @@ body
     background-color: rgb(247, 236, 236);
     margin: 5px;
     border-radius: 5px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 .to-do main .column h4
 {
@@ -145,7 +149,6 @@ body
 {
     width: 40%;
     height: 30px;
-    /* background-color: coral; */
     align-content: center;
     display: flex;
     justify-content: space-between;
@@ -156,13 +159,13 @@ body
 {
     width: 30%;
     height: 30px;
-    /* background-color: coral; */
     text-align: end;
     align-items: center;
 }
 .to-do img
 {
-    height: 25px;
+    max-height: 25px;
+    min-height: 20px;
     width: auto;
 }
 .to-do .tools div
