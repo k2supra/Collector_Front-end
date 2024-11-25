@@ -1,9 +1,6 @@
 body
 {
     margin: 0;
-}
-.message-wrapper
-{
     display: flex;
     justify-content: center;
 }
@@ -11,12 +8,17 @@ body
 {
     display: flex;
     align-items: center;
+    margin: 20px 0;
+}
+.left
+{
+    position: relative;
+    left: -105px;
 }
 .user
 {
     width: 200px;
-    height: 150px;
-    /* background-color: aquamarine; */
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,4 +46,22 @@ body
 {
     display: inline-block;
     width: 500px;
+    background-color: lightblue;
+    border-radius: 10px 10px 10px 0px;
+}
+.bubble span
+{
+    display: block;
+    margin: 10px;
+}
+.right
+{
+    flex-direction: row-reverse;
+    position: relative;
+    left: 105px;
+}
+.right .bubble
+{
+    background-color: lightpink;
+    border-radius: 10px 10px 0px 10px;
 }
