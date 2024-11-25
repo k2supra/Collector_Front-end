@@ -14,18 +14,31 @@ body
 }
 .user
 {
-    width: 175px;
+    width: 200px;
     height: 150px;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-right: 10px;
 }
-img
+.user .user-info
+{
+    padding: 5px;
+}
+.user img
 {
     width: 80px;
     height: 80px;
+}
+.user h4
+{
+    margin: 0;
+    padding: 5px 0;
+}
+.user span
+{
+    color: rgb(187, 187, 187);
 }
 .bubble
 {
