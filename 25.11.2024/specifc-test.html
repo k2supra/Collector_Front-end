@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Специфічність css</title>
+    <style>
+      body {
+        font-size: 18px;
+        font-weight: 600;
+      }
+      .rules {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+      }
+      hr {
+        height: 3px;
+        background-color: black;
+        margin: 10px 0;
+      }
+      div,
+      ul,
+      #para {
+        border: 1px solid black;
+      }
+    </style>
+    <link rel="stylesheet" href="specific-test.css" />
+  </head>
+  <body>
+    <div class="rules">
+      <ol>
+        <h4>CSS-специфічність визначається чотирма категоріями:</h4>
+        <li>Inline-стилі (style=“color: red;”) (A): Рівень 1:0:0:0.</li>
+        <li>Ідентифікатори (#id) (B): Рівень 0:1:0:0.</li>
+        <li>
+          Класи, атрибути, псевдокласи ( .class, [attr=value], :hover ) (C):
+          Рівень 0:0:1:0.
+        </li>
+        <li>
+          Типи елементів, псевдоелементи ( h1, ::before ) (D): Рівень 0:0:0:1
+        </li>
+        <li style="list-style: none">
+          Коли при оголошенні стилю використовується модифікатор,<br />
+          !important це оголошення отримує найвищий пріоритет серед усіх інших
+          оголошень !important
+        </li>
+      </ol>
+      <h2>Тест</h2>
+    </div>
+
+    <hr />
+
+    <!-- 1 -->
+    <style>
+      #important-example p.highlight {
+        color: red !important;
+      }
+    </style>
+    <div id="important-example">
+      <p class="highlight">Lorem ipsum dolor sit 1</p>
+    </div>
+
+    <hr />
+
+    <!-- 2 -->
+    <style>
+      #test span#test-2 {
+        color: red;
+      }
+    </style>
+    <div id="test">
+      <span id="test-2">Lorem ipsum dolor sit 2</span>
+    </div>
+
+    <hr />
+
+    <!-- 3 -->
+    <style>
+      #main.box p {
+        color: red;
+      }
+    </style>
+    <div id="main" class="box">
+      <p>Lorem ipsum dolor sit 3</p>
+    </div>
+
+    <hr />
+
+    <!-- 4 -->
+    <style>
+      .container span.text {
+        color: red;
+      }
+    </style>
+    <div class="container">
+      <span class="text">Lorem ipsum dolor sit 4</span>
+    </div>
+
+    <hr />
+
+    <!-- 5 -->
+    <style>
+      #list .item {
+        color: red;
+      }
+      #list .item.special {
+        font-size: 18px;
+      }
+    </style>
+    <ul id="list">
+      <li class="item">Lorem ipsum dolor sit 5</li>
+      <li class="item special">Lorem ipsum dolor sit 5</li>
+    </ul>
+
+    <hr />
+
+    <!-- 6 -->
+    <style>
+      #inline
+      {
+        color: red !important;
+      }
+    </style>
+    <p id="inline" class="inline" style="color: blue">
+      Lorem ipsum dolor sit 6
+    </p>
+  </body>
+</html>
