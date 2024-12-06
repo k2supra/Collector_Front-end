@@ -1,0 +1,46 @@
+.section
+{
+    height: 200px;
+    width: 100%;
+    display: flex;
+}
+.reverse
+{
+    flex-direction: row-reverse;
+}
+.text
+{
+    width: 50%;
+    align-content: center;
+    text-align: center;
+    background-color: rgb(219, 218, 218);
+}
+.image
+{
+    width: 50%;
+    background-image: url(GTR.jpg);
+    background-size: 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    transition: 1s all ease;
+    overflow: hidden;
+}
+.dark
+{
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0);
+    transition: 0.3s all ease;
+}
+.section:hover
+{
+    .dark
+    {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .image
+    {
+        background-size: 120%;
+    }
+}
