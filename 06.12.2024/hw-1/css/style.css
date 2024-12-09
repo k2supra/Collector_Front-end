@@ -143,9 +143,6 @@ header .burger {
         padding-left: 40px;
     }
 
-    form [type^="button"] {}
-
-
     .banner .wrapper {
         flex-direction: row;
         padding: 0;
