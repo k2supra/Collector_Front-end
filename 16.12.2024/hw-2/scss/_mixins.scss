@@ -1,0 +1,8 @@
+@mixin box-shadow($color, $blur, $offset-x, $offset-y)
+{
+    box-shadow: $offset-x + px $offset-y + px $blur + px $color;
+}
+@mixin center-block
+{
+    margin: 0 auto;
+}
