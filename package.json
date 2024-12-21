@@ -1,9 +1,0 @@
-{
-  "scripts": {
-    "build-css": "sass work/scss:work/css",
-    "watch-css": "sass --watch work/scss:work/css"
-  },
-  "dependencies": {
-    "sass": "^1.83.0"
-  }
-}
