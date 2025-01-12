@@ -1,0 +1,276 @@
+@import "variables";
+@import "mixins";
+
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header
+{
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .control
+    {
+        height: 50%;
+        align-content: center;
+        color: $pr-blue
+    }
+}
+.invisible
+{
+    visibility: hidden;
+}
+
+main
+{
+    background-color: $bg-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .cards
+    {
+        width: 91vw;
+        margin-top: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        
+        .card
+        {
+            flex: 1 1 calc(50% - 8px);
+            height: 25vw;
+            padding: 16px;
+            color: white;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            
+            .content
+            {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 14px;
+                .icon
+                {
+                    height: 32px;
+                    width: 40px;
+                    padding: 4px 8px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 4px 8px;
+                    border: 1px solid transparent;
+                    border-radius: 80px;
+                    content: url(../../images/arrow_rise.svg);
+                }
+                &:first-child
+                {
+                    font-size: 14px;
+                }
+                &:last-child .text:first-child
+                {
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    .blue-gradient
+        {
+            background-image: $blue-gradient;
+            @include blue-gradient-icon;
+
+        }
+        .black-gradient
+        {
+            background-image: $black-gradient;
+            @include black-gradient-icon;
+            
+        }
+
+    .graphic
+    {
+        width: 91vw;
+        height: 61vw;
+        border-radius: 16px;
+        margin-top: 16px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: white;
+
+        .group
+        {
+            width: 91%;
+            font-size: 16px;
+            margin-top: 16px;
+            ul
+            {
+                list-style-type: none;
+                display: flex;
+                gap: 16px;
+
+                li:nth-child(1)
+                {
+                    color: $secondary-purple;
+                }
+            }
+        }
+        .frame
+        {
+            position: relative;
+            height: 75%;
+            width: 91%;
+            margin-top: 16px;
+            .graph
+            {
+                height: 90%;
+            }
+            img
+            {
+                position: relative;
+                width: 100%;
+            }
+            .gr_line
+            {
+                top: -150px;
+            }
+            .gr_dots
+            {
+                top: -248px;
+                right: -17px;
+                height: auto;
+                width: auto;
+            }
+            .bottom_text
+            {
+                width: 100%;
+                font-size: 12px;
+                ul
+                {
+                    list-style-type: none;
+                    display: flex;
+                    li
+                    {
+                        text-align: center;
+                        width: calc(100% / 6);
+                    }
+                }
+            }
+        }
+    }
+    .graphic-2
+    {
+        width: 91vw;
+        height: 61vw;
+        background-color: white;
+        margin-top: 16px;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .text
+        {
+            width: 91%;
+            margin-top: 16px;
+            font-size: 16px;
+            color: $pr-blue;
+        }
+        .graph
+        {
+            height: 75%;
+            width: 91%;
+            margin-top: 16px;
+            .vertical_bars
+            {
+                height: 80%;
+                // background-color: $temporary-1;
+                display: flex;
+                justify-content: space-around;
+
+                .vertical_bar
+                {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column-reverse;
+                    justify-content: flex-start;
+                    align-items: center;
+                    .progress
+                    {
+                        display: flex;
+                        width: 75%;
+                        background-color: $graph-grey;
+                        border-radius: 12px;
+                        margin-top: 8px;
+                    }
+                    .h10
+                    {
+                        height: 10%;
+                    }
+                    .h20
+                    {
+                        height: 20%;
+                    }
+                    .h30
+                    {
+                        height: 30%;
+                    }
+                    .h40
+                    {
+                        height: 40%;
+                    }
+                    .h50
+                    {
+                        height: 50%;
+                    }
+                    .h60
+                    {
+                        height: 60%;
+                    }
+                    .h70
+                    {
+                        height: 70%;
+                    }
+                    .h80
+                    {
+                        height: 80%;
+                    }
+                    .h90
+                    {
+                        height: 90%;
+                    }
+                    .title
+                    {
+                        width: 95%;
+                        color: white;
+                        padding: 4px 8px;
+                        border-radius: 16px;
+                    }
+                }
+            }
+            .bottom_text
+            {
+                margin-top: 14px;
+                ul
+                {
+                    list-style-type: none;
+                    display: flex;
+                    li
+                    {
+                        font-size: 12px;
+                        text-align: center;
+                        flex: 1 1;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,229 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .control {
+  height: 50%;
+  align-content: center;
+  color: #007AFF;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+main {
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .cards {
+  width: 91vw;
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+main .cards .card {
+  flex: 1 1 calc(50% - 8px);
+  height: 25vw;
+  padding: 16px;
+  color: white;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main .cards .card .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+main .cards .card .content .icon {
+  height: 32px;
+  width: 40px;
+  padding: 4px 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  border-radius: 80px;
+  content: url(../../images/arrow_rise.svg);
+}
+main .cards .card .content:first-child {
+  font-size: 14px;
+}
+main .cards .card .content:last-child .text:first-child {
+  font-size: 18px;
+  font-weight: 600;
+}
+main .blue-gradient {
+  background-image: linear-gradient(#288df6, #4ca4fb);
+}
+main .blue-gradient .icon {
+  background: linear-gradient(#3897ff, #3897ff) padding-box, linear-gradient(330deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 60%, rgb(255, 255, 255) 100%) border-box;
+}
+main .black-gradient {
+  background-image: linear-gradient(#090909, #3b3b3b);
+}
+main .black-gradient .icon {
+  background: linear-gradient(#1e1e1e, #1e1e1e) padding-box, linear-gradient(330deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 60%, rgb(255, 255, 255) 100%) border-box;
+}
+main .black-gradient:nth-child(2) .icon {
+  rotate: 180deg;
+}
+main .graphic {
+  width: 91vw;
+  height: 61vw;
+  border-radius: 16px;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+}
+main .graphic .group {
+  width: 91%;
+  font-size: 16px;
+  margin-top: 16px;
+}
+main .graphic .group ul {
+  list-style-type: none;
+  display: flex;
+  gap: 16px;
+}
+main .graphic .group ul li:nth-child(1) {
+  color: #AF52DE;
+}
+main .graphic .frame {
+  position: relative;
+  height: 75%;
+  width: 91%;
+  margin-top: 16px;
+}
+main .graphic .frame .graph {
+  height: 90%;
+}
+main .graphic .frame img {
+  position: relative;
+  width: 100%;
+}
+main .graphic .frame .gr_line {
+  top: -150px;
+}
+main .graphic .frame .gr_dots {
+  top: -248px;
+  right: -17px;
+  height: auto;
+  width: auto;
+}
+main .graphic .frame .bottom_text {
+  width: 100%;
+  font-size: 12px;
+}
+main .graphic .frame .bottom_text ul {
+  list-style-type: none;
+  display: flex;
+}
+main .graphic .frame .bottom_text ul li {
+  text-align: center;
+  width: 16.6666666667%;
+}
+main .graphic-2 {
+  width: 91vw;
+  height: 61vw;
+  background-color: white;
+  margin-top: 16px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .graphic-2 .text {
+  width: 91%;
+  margin-top: 16px;
+  font-size: 16px;
+  color: #007AFF;
+}
+main .graphic-2 .graph {
+  height: 75%;
+  width: 91%;
+  margin-top: 16px;
+}
+main .graphic-2 .graph .vertical_bars {
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+}
+main .graphic-2 .graph .vertical_bars .vertical_bar {
+  flex: 1;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  align-items: center;
+}
+main .graphic-2 .graph .vertical_bars .vertical_bar .progress {
+  display: flex;
+  width: 75%;
+  background-color: #e6e6e6;
+  border-radius: 12px;
+  margin-top: 8px;
+}
+main .graphic-2 .graph .vertical_bars .vertical_bar .h10 {
+  height: 10%;
+}
+main .graphic-2 .graph .vertical_bars .vertical_bar .h20 {
+  height: 20%;
+}
+main .graphic-2 .graph .vertical_bars .vertical_bar .h30 {
+  height: 30%;
+}
+main .graphic-2 .graph .vertical_bars .vertical_bar .h40 {
+  height: 40%;
+}
+main .graphic-2 .graph .vertical_bars .vertical_bar .h50 {
+  height: 50%;
+}
+main .graphic-2 .graph .vertical_bars .vertical_bar .h60 {
+  height: 60%;
+}
+main .graphic-2 .graph .vertical_bars .vertical_bar .h70 {
+  height: 70%;
+}
+main .graphic-2 .graph .vertical_bars .vertical_bar .h80 {
+  height: 80%;
+}
+main .graphic-2 .graph .vertical_bars .vertical_bar .h90 {
+  height: 90%;
+}
+main .graphic-2 .graph .vertical_bars .vertical_bar .title {
+  width: 95%;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 16px;
+}
+main .graphic-2 .graph .bottom_text {
+  margin-top: 14px;
+}
+main .graphic-2 .graph .bottom_text ul {
+  list-style-type: none;
+  display: flex;
+}
+main .graphic-2 .graph .bottom_text ul li {
+  font-size: 12px;
+  text-align: center;
+  flex: 1 1;
+}
+
+/*# sourceMappingURL=main.css.map */
