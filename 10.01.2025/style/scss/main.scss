@@ -192,7 +192,6 @@ main
             .vertical_bars
             {
                 height: 80%;
-                // background-color: $temporary-1;
                 display: flex;
                 justify-content: space-around;
 
@@ -210,42 +209,6 @@ main
                         background-color: $graph-grey;
                         border-radius: 12px;
                         margin-top: 8px;
-                    }
-                    .h10
-                    {
-                        height: 10%;
-                    }
-                    .h20
-                    {
-                        height: 20%;
-                    }
-                    .h30
-                    {
-                        height: 30%;
-                    }
-                    .h40
-                    {
-                        height: 40%;
-                    }
-                    .h50
-                    {
-                        height: 50%;
-                    }
-                    .h60
-                    {
-                        height: 60%;
-                    }
-                    .h70
-                    {
-                        height: 70%;
-                    }
-                    .h80
-                    {
-                        height: 80%;
-                    }
-                    .h90
-                    {
-                        height: 90%;
                     }
                     .title
                     {
@@ -272,5 +235,104 @@ main
                 }
             }
         }
+    }
+    .graphic-3
+    {
+        width: 91vw;
+        height: 61vw;
+        background-color: white;
+        margin-top: 16px;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .text
+        {
+            width: 91%;
+            margin-top: 16px;
+            font-size: 16px;
+            color: $secondary-green;
+        }
+        .graph
+        {
+            height: 75%;
+            width: 91%;
+            margin-top: 16px;
+            .vertical_bars
+            {
+                height: 80%;
+                display: flex;
+                justify-content: space-around;
+
+                .vertical_bar
+                {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column-reverse;
+                    justify-content: flex-start;
+                    align-items: center;
+                    .progress
+                    {
+                        display: flex;
+                        width: 75%;
+                        background-color: $graph-grey;
+                        border-radius: 12px;
+                        margin-top: 8px;
+                    }
+                }
+            }
+            .bottom_text
+            {
+                margin-top: 14px;
+                ul
+                {
+                    list-style-type: none;
+                    display: flex;
+                    li
+                    {
+                        font-size: 12px;
+                        text-align: center;
+                        flex: 1 1;
+                    }
+                }
+            }
+        }
+    }
+
+    .h10
+    {
+        height: 10%;
+    }
+    .h20
+    {
+        height: 20%;
+    }
+    .h30
+    {
+        height: 30%;
+    }
+    .h40
+    {
+        height: 40%;
+    }
+    .h50
+    {
+        height: 50%;
+    }
+    .h60
+    {
+        height: 60%;
+    }
+    .h70
+    {
+        height: 70%;
+    }
+    .h80
+    {
+        height: 80%;
+    }
+    .h90
+    {
+        height: 90%;
     }
 }

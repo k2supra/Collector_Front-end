@@ -180,33 +180,6 @@ main .graphic-2 .graph .vertical_bars .vertical_bar .progress {
   border-radius: 12px;
   margin-top: 8px;
 }
-main .graphic-2 .graph .vertical_bars .vertical_bar .h10 {
-  height: 10%;
-}
-main .graphic-2 .graph .vertical_bars .vertical_bar .h20 {
-  height: 20%;
-}
-main .graphic-2 .graph .vertical_bars .vertical_bar .h30 {
-  height: 30%;
-}
-main .graphic-2 .graph .vertical_bars .vertical_bar .h40 {
-  height: 40%;
-}
-main .graphic-2 .graph .vertical_bars .vertical_bar .h50 {
-  height: 50%;
-}
-main .graphic-2 .graph .vertical_bars .vertical_bar .h60 {
-  height: 60%;
-}
-main .graphic-2 .graph .vertical_bars .vertical_bar .h70 {
-  height: 70%;
-}
-main .graphic-2 .graph .vertical_bars .vertical_bar .h80 {
-  height: 80%;
-}
-main .graphic-2 .graph .vertical_bars .vertical_bar .h90 {
-  height: 90%;
-}
 main .graphic-2 .graph .vertical_bars .vertical_bar .title {
   width: 95%;
   color: white;
@@ -224,6 +197,85 @@ main .graphic-2 .graph .bottom_text ul li {
   font-size: 12px;
   text-align: center;
   flex: 1 1;
+}
+main .graphic-3 {
+  width: 91vw;
+  height: 61vw;
+  background-color: white;
+  margin-top: 16px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .graphic-3 .text {
+  width: 91%;
+  margin-top: 16px;
+  font-size: 16px;
+  color: #34C759;
+}
+main .graphic-3 .graph {
+  height: 75%;
+  width: 91%;
+  margin-top: 16px;
+}
+main .graphic-3 .graph .vertical_bars {
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+}
+main .graphic-3 .graph .vertical_bars .vertical_bar {
+  flex: 1;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  align-items: center;
+}
+main .graphic-3 .graph .vertical_bars .vertical_bar .progress {
+  display: flex;
+  width: 75%;
+  background-color: #e6e6e6;
+  border-radius: 12px;
+  margin-top: 8px;
+}
+main .graphic-3 .graph .bottom_text {
+  margin-top: 14px;
+}
+main .graphic-3 .graph .bottom_text ul {
+  list-style-type: none;
+  display: flex;
+}
+main .graphic-3 .graph .bottom_text ul li {
+  font-size: 12px;
+  text-align: center;
+  flex: 1 1;
+}
+main .h10 {
+  height: 10%;
+}
+main .h20 {
+  height: 20%;
+}
+main .h30 {
+  height: 30%;
+}
+main .h40 {
+  height: 40%;
+}
+main .h50 {
+  height: 50%;
+}
+main .h60 {
+  height: 60%;
+}
+main .h70 {
+  height: 70%;
+}
+main .h80 {
+  height: 80%;
+}
+main .h90 {
+  height: 90%;
 }
 
 /*# sourceMappingURL=main.css.map */
