@@ -250,6 +250,98 @@ main .graphic-3 .graph .bottom_text ul li {
   text-align: center;
   flex: 1 1;
 }
+main .graphic-4 {
+  width: 91vw;
+  height: 61vw;
+  background-color: white;
+  margin-top: 16px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .graphic-4 .text {
+  width: 91%;
+  margin-top: 16px;
+  font-size: 16px;
+  color: #FF3B30;
+}
+main .graphic-4 .group {
+  width: 91%;
+  margin-top: 16px;
+  font-size: 12px;
+}
+main .graphic-4 .group ul {
+  display: flex;
+  gap: 16px;
+  list-style-type: none;
+}
+main .graphic-4 .group ul li {
+  display: flex;
+  align-items: center;
+}
+main .graphic-4 .group ul li:nth-child(1) .circle {
+  background-color: black;
+}
+main .graphic-4 .group ul li:nth-child(2) .circle {
+  background-color: rgba(0, 0, 0, 0.5019607843);
+}
+main .graphic-4 .group ul li:nth-child(3) .circle {
+  background-color: #FF3B30;
+}
+main .graphic-4 .group ul li .circle {
+  width: 4px;
+  height: 4px;
+  border-radius: 100%;
+  margin-right: 5px;
+}
+main .graphic-4 .graph {
+  height: 50%;
+  width: 91%;
+  margin-top: 16px;
+}
+main .graphic-4 .graph .vertical_bars {
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 8px;
+}
+main .graphic-4 .graph .vertical_bars .vertical_bar {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+main .graphic-4 .graph .vertical_bars .vertical_bar .progress {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column-reverse;
+  width: 10%;
+  border-radius: 12px;
+  margin-top: 3px;
+}
+main .graphic-4 .graph .vertical_bars .vertical_bar .bg-red {
+  background-color: #FF3B30;
+}
+main .graphic-4 .graph .vertical_bars .vertical_bar .bg-grey {
+  background-color: rgba(0, 0, 0, 0.5019607843);
+}
+main .graphic-4 .graph .vertical_bars .vertical_bar .bg-black {
+  background-color: black;
+}
+main .graphic-4 .graph .bottom_text {
+  margin-top: 14px;
+}
+main .graphic-4 .graph .bottom_text ul {
+  list-style-type: none;
+  display: flex;
+}
+main .graphic-4 .graph .bottom_text ul li {
+  font-size: 12px;
+  text-align: center;
+  flex: 1 1;
+}
 main .h10 {
   height: 10%;
 }
@@ -276,6 +368,9 @@ main .h80 {
 }
 main .h90 {
   height: 90%;
+}
+main .h100 {
+  height: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */

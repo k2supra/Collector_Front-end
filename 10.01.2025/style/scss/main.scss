@@ -298,6 +298,118 @@ main
             }
         }
     }
+    .graphic-4
+    {
+        width: 91vw;
+        height: 61vw;
+        background-color: white;
+        margin-top: 16px;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .text
+        {
+            width: 91%;
+            margin-top: 16px;
+            font-size: 16px;
+            color: $secondary-red;
+        }
+        .group
+        {
+            width: 91%;
+            margin-top: 16px;
+            font-size: 12px;
+            ul
+            {
+                display: flex;
+                gap: 16px;
+                list-style-type: none;
+                li
+                {
+                    display: flex;
+                    align-items: center;
+                    &:nth-child(1) .circle
+                    {
+                        background-color: black;
+                    }
+                    &:nth-child(2) .circle
+                    {
+                        background-color: $grey-40;
+                    }
+                    &:nth-child(3) .circle
+                    {
+                        background-color: $secondary-red;
+                    }
+                    .circle
+                    {
+                        width: 4px;
+                        height: 4px;
+                        border-radius: 100%;
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+        .graph
+        {
+            height: 50%;
+            width: 91%;
+            margin-top: 16px;
+            .vertical_bars
+            {
+                height: 80%;
+                display: flex;
+                justify-content: space-around;
+                margin-top: 8px;
+
+                .vertical_bar
+                {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-items: flex-end;
+                    .progress
+                    {
+                        display: flex;
+                        flex-wrap: nowrap;
+                        flex-direction: column-reverse;
+                        width: 10%;
+                        border-radius: 12px;
+                        margin-top: 3px;
+                    }
+                    .bg-red
+                    {
+                    background-color: $secondary-red; 
+                    }
+                    .bg-grey
+                    {
+                    background-color: $grey-40; 
+                    }
+                    .bg-black
+                    {
+                    background-color: black; 
+                    }
+                }
+            }
+            .bottom_text
+            {
+                margin-top: 14px;
+                ul
+                {
+                    list-style-type: none;
+                    display: flex;
+                    li
+                    {
+                        font-size: 12px;
+                        text-align: center;
+                        flex: 1 1;
+                    }
+                }
+            }
+        }
+    }
 
     .h10
     {
@@ -334,5 +446,9 @@ main
     .h90
     {
         height: 90%;
+    }
+    .h100
+    {
+        height: 100%;
     }
 }
