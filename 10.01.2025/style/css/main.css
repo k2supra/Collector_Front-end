@@ -115,19 +115,6 @@ main .graphic .frame {
 main .graphic .frame .graph {
   height: 90%;
 }
-main .graphic .frame img {
-  position: relative;
-  width: 100%;
-}
-main .graphic .frame .gr_line {
-  top: -150px;
-}
-main .graphic .frame .gr_dots {
-  top: -248px;
-  right: -17px;
-  height: auto;
-  width: auto;
-}
 main .graphic .frame .bottom_text {
   width: 100%;
   font-size: 12px;
@@ -371,6 +358,34 @@ main .h90 {
 }
 main .h100 {
   height: 100%;
+}
+main .list {
+  width: 91vw;
+  height: 77vw;
+  background-color: antiquewhite;
+  margin-top: 16px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .list .text {
+  width: 91%;
+  margin-top: 16px;
+  font-size: 16px;
+}
+main .list .table {
+  width: 91%;
+  margin-top: 16px;
+}
+main .list .table ul {
+  list-style-type: none;
+}
+main .list .table ul li {
+  background-color: aquamarine;
+}
+main .list .table ul li::before {
+  content: "555";
 }
 
 /*# sourceMappingURL=main.css.map */
