@@ -456,7 +456,7 @@ main
     {
         width: 91vw;
         height: 77vw;
-        background-color: $temporary-1;
+        background-color: white;
         margin-top: 16px;
         border-radius: 16px;
         display: flex;
@@ -472,19 +472,71 @@ main
         {
             width: 91%;
             margin-top: 16px;
+            display: flex;
+            align-items: stretch;
+            height: 78%;
 
             ul
             {
                 list-style-type: none;
+                display: flex;
+                flex-direction: column;
+                margin-top: 4px;
+                width: 100%;
+                gap: 4px;
                 li
                 {
-                    background-color: $temporary-2;
+                    flex: 1 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    background-color: $bg-grey-list;
+                    padding-left: 44px;
+                    position: relative;
+                    font-size: 14px;
+                    border-radius: 16px;
                     &::before
                     {
-                        content: "555";
+                        content: url(../../images/list_icon.png);
+                        position: absolute;
+                        left: 2%;
+                        height: 22px;
+                        width: 22px;
+                        top: 8px;
+                    }
+                    .status
+                    {
+                        padding: 4px 12px;
+                        margin-right: 8px;
+                        border-radius: 12px;
                     }
                 }
             }
         }
+    }
+    .in-progress
+    {
+        color: $secondary-purple;
+        background-color: $bg-purple;
+    }
+    .complete
+    {
+        color: $secondary-green;
+        background-color: $bg-green;
+    }
+    .pending
+    {
+        color: $secondary-blue;
+        background-color: $bg-blue;
+    }
+    .approved
+    {
+        color: $secondary-yellow;
+        background-color: $bg-yellow;
+    }
+    .rejected
+    {
+        color: $grey-40;
+        background-color: $bg-grey;
     }
 }

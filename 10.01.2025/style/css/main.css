@@ -362,7 +362,7 @@ main .h100 {
 main .list {
   width: 91vw;
   height: 77vw;
-  background-color: antiquewhite;
+  background-color: white;
   margin-top: 16px;
   border-radius: 16px;
   display: flex;
@@ -377,15 +377,61 @@ main .list .text {
 main .list .table {
   width: 91%;
   margin-top: 16px;
+  display: flex;
+  align-items: stretch;
+  height: 78%;
 }
 main .list .table ul {
   list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  margin-top: 4px;
+  width: 100%;
+  gap: 4px;
 }
 main .list .table ul li {
-  background-color: aquamarine;
+  flex: 1 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f7f7f7;
+  padding-left: 44px;
+  position: relative;
+  font-size: 14px;
+  border-radius: 16px;
 }
 main .list .table ul li::before {
-  content: "555";
+  content: url(../../images/list_icon.png);
+  position: absolute;
+  left: 2%;
+  height: 22px;
+  width: 22px;
+  top: 8px;
+}
+main .list .table ul li .status {
+  padding: 4px 12px;
+  margin-right: 8px;
+  border-radius: 12px;
+}
+main .in-progress {
+  color: #AF52DE;
+  background-color: #efdcf8;
+}
+main .complete {
+  color: #34C759;
+  background-color: #d7f4de;
+}
+main .pending {
+  color: #007AFF;
+  background-color: #cce4ff;
+}
+main .approved {
+  color: #FFCC00;
+  background-color: #fef5cc;
+}
+main .rejected {
+  color: rgba(0, 0, 0, 0.5019607843);
+  background-color: #eaeaea;
 }
 
 /*# sourceMappingURL=main.css.map */
