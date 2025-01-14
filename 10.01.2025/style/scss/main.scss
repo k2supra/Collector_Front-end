@@ -51,33 +51,34 @@ main
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            gap: 15%;
             
             .content
             {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                font-size: 14px;
+                flex: 1;
+                font-size: 4vw;
                 .icon
                 {
-                    height: 32px;
-                    width: 40px;
-                    padding: 4px 8px;
+                    height: 8vw;
+                    width: 10vw;
+                    padding: 1.2vw 2.4vw;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    padding: 4px 8px;
                     border: 1px solid transparent;
                     border-radius: 80px;
                     content: url(../../images/arrow_rise.svg);
                 }
                 &:first-child
                 {
-                    font-size: 14px;
+                    font-size: 4vw;
                 }
                 &:last-child .text:first-child
                 {
-                    font-size: 18px;
+                    font-size: 5vw;
                     font-weight: 600;
                 }
             }
@@ -110,7 +111,7 @@ main
         .group
         {
             width: 91%;
-            font-size: 16px;
+            font-size: 4.5vw;
             margin-top: 16px;
             ul
             {
@@ -133,27 +134,15 @@ main
             .graph
             {
                 height: 90%;
+                img
+                {
+                    width: 100%;
+                }
             }
-            // img
-            // {
-            //     position: relative;
-            //     width: 100%;
-            // }
-            // .gr_line
-            // {
-            //     top: -150px;
-            // }
-            // .gr_dots
-            // {
-            //     top: -248px;
-            //     right: -17px;
-            //     height: auto;
-            //     width: 90%;
-            // }
             .bottom_text
             {
                 width: 100%;
-                font-size: 12px;
+                font-size: 3.2vw;
                 ul
                 {
                     list-style-type: none;
@@ -181,7 +170,7 @@ main
         {
             width: 91%;
             margin-top: 16px;
-            font-size: 16px;
+            font-size: 4.5vw;
             color: $pr-blue;
         }
         .graph
@@ -228,7 +217,7 @@ main
                     display: flex;
                     li
                     {
-                        font-size: 12px;
+                        font-size: 3.2vw;
                         text-align: center;
                         flex: 1 1;
                     }
@@ -250,7 +239,7 @@ main
         {
             width: 91%;
             margin-top: 16px;
-            font-size: 16px;
+            font-size: 4.5vw;
             color: $secondary-green;
         }
         .graph
@@ -290,7 +279,7 @@ main
                     display: flex;
                     li
                     {
-                        font-size: 12px;
+                        font-size: 3.2vw;
                         text-align: center;
                         flex: 1 1;
                     }
@@ -312,14 +301,14 @@ main
         {
             width: 91%;
             margin-top: 16px;
-            font-size: 16px;
+            font-size: 4.5vw;
             color: $secondary-red;
         }
         .group
         {
             width: 91%;
             margin-top: 16px;
-            font-size: 12px;
+            font-size: 3.2vw;
             ul
             {
                 display: flex;
@@ -402,7 +391,7 @@ main
                     display: flex;
                     li
                     {
-                        font-size: 12px;
+                        font-size: 3.2vw;
                         text-align: center;
                         flex: 1 1;
                     }
@@ -466,7 +455,8 @@ main
         {
             width: 91%;
             margin-top: 16px;
-            font-size: 16px;
+            font-size: 4vw;
+            color: $secondary-mint;
         }
         .table
         {
@@ -493,7 +483,7 @@ main
                     background-color: $bg-grey-list;
                     padding-left: 44px;
                     position: relative;
-                    font-size: 14px;
+                    font-size: 3.5vw;
                     border-radius: 16px;
                     &::before
                     {
@@ -538,5 +528,33 @@ main
     {
         color: $grey-40;
         background-color: $bg-grey;
+    }
+}
+footer
+{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: $bg-color;
+    border-radius: 0 0 32px 32px;
+    .group
+    {
+        width: 91vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        ul
+        {
+            list-style-type: none;
+            width: 85vw;
+            display: flex;
+            li
+            {
+                flex: 1;
+                text-align: center;
+                font-size: 5.5vw;
+            }
+        }
     }
 }
