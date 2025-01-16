@@ -4,49 +4,134 @@
   box-sizing: border-box;
 }
 
-header .header-mobile {
+header {
   height: 44px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-header .header-mobile .control {
+header .control {
   height: 50%;
   align-content: center;
   color: #007AFF;
-}
-@media (min-width: 768px) {
-  header .header-mobile {
-    display: none;
-  }
 }
 
 .invisible {
   visibility: hidden;
 }
 
-main .aside-tabs {
+aside {
   display: none;
+  width: 17vw;
+  height: 100vh;
+  background-color: antiquewhite;
 }
-main .aside-main {
+
+main {
   background-color: #f5f5f5;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-main .aside-main nav .header-laptop {
+main nav {
   display: none;
+  justify-content: space-between;
+  background-color: antiquewhite;
+  width: 95%;
+  height: 5vh;
+  margin-top: 35px;
 }
-main .aside-main .cards {
-  width: 91vw;
+main nav .left-part {
+  display: flex;
+  align-items: center;
+}
+main nav .left-part .icons {
+  display: flex;
+}
+main nav .left-part .icons i {
+  width: 3vw;
+  margin-right: 1.5vw;
+}
+main nav .left-part .icons i::before {
+  width: 100%;
+  aspect-ratio: 1;
+  text-align: center;
+  align-content: center;
+  font-size: 1.3rem;
+}
+main nav .left-part .breadcrumb {
+  margin: 0 0 0 0.4vw;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+}
+main nav .left-part .breadcrumb li:nth-child(1) a {
+  color: rgba(0, 0, 0, 0.5019607843);
+  text-decoration: none;
+}
+main nav .left-part .breadcrumb li:nth-child(2) a {
+  color: black;
+}
+main nav .right-part {
+  display: flex;
+  align-items: center;
+}
+main nav .right-part .search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 16px;
+  padding: 8px 12px;
+  width: 11vw;
+  height: 70%;
+  margin-right: 0.5vw;
+}
+main nav .right-part .search-bar .bi-search {
+  font-size: 16px;
+  margin-right: 5%;
+  color: #aaa;
+}
+main nav .right-part .search-bar .search-input {
+  width: 70%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #555;
+}
+main nav .right-part .search-bar .search-input::placeholder {
+  color: #aaa;
+}
+main nav .right-part .search-bar .bi-command {
+  font-size: 12px;
+  color: #aaa;
+  margin-left: 8px;
+}
+main nav .right-part .icons {
+  display: flex;
+  margin-right: 0.5vw;
+}
+main nav .right-part .icons i {
+  width: 3vw;
+  margin-left: 1.2vw;
+}
+main nav .right-part .icons i::before {
+  width: 100%;
+  aspect-ratio: 1;
+  text-align: center;
+  align-content: center;
+  font-size: 1.3rem;
+}
+main .cards {
+  width: 91%;
   margin-top: 16px;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
-main .aside-main .cards .card {
+main .cards .card {
   flex: 1 1 calc(50% - 8px);
-  height: 25vw;
+  height: 16.5vh;
   padding: 16px;
   color: white;
   border-radius: 24px;
@@ -55,15 +140,15 @@ main .aside-main .cards .card {
   justify-content: space-between;
   gap: 15%;
 }
-main .aside-main .cards .card .content {
+main .cards .card .content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex: 1;
   font-size: 1.1rem;
 }
-main .aside-main .cards .card .content .icon {
-  height: 8vw;
+main .cards .card .content .icon {
+  height: 5vh;
   width: 10vw;
   padding: 1.2vw 2.4vw;
   display: flex;
@@ -73,118 +158,122 @@ main .aside-main .cards .card .content .icon {
   border-radius: 80px;
   content: url(../../images/arrow_rise.svg);
 }
-main .aside-main .cards .card .content:first-child {
+main .cards .card .content:first-child {
   font-size: 1.1rem;
 }
-main .aside-main .cards .card .content:last-child .text:first-child {
+main .cards .card .content:last-child .text:first-child {
   font-size: 1.2rem;
   font-weight: 600;
 }
-main .aside-main .blue-gradient {
+main .blue-gradient {
   background-image: linear-gradient(#288df6, #4ca4fb);
 }
-main .aside-main .blue-gradient .icon {
+main .blue-gradient .icon {
   background: linear-gradient(#3897ff, #3897ff) padding-box, linear-gradient(330deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 60%, rgb(255, 255, 255) 100%) border-box;
 }
-main .aside-main .black-gradient {
+main .black-gradient {
   background-image: linear-gradient(#090909, #3b3b3b);
 }
-main .aside-main .black-gradient .icon {
+main .black-gradient .icon {
   background: linear-gradient(#1e1e1e, #1e1e1e) padding-box, linear-gradient(330deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 60%, rgb(255, 255, 255) 100%) border-box;
 }
-main .aside-main .black-gradient:nth-child(2) .icon {
+main .black-gradient:nth-child(2) .icon {
   rotate: 180deg;
 }
-main .aside-main .graphic {
-  width: 91vw;
-  height: 61vw;
+main .graphic {
+  width: 91%;
+  height: 38vh;
   border-radius: 16px;
   margin-top: 16px;
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: space-around;
   background-color: white;
 }
-main .aside-main .graphic .group {
+main .graphic .group {
   width: 91%;
   font-size: 1.1rem;
   margin-top: 16px;
 }
-main .aside-main .graphic .group ul {
+main .graphic .group ul {
   list-style-type: none;
   display: flex;
   gap: 16px;
   padding: 0;
 }
-main .aside-main .graphic .group ul li:nth-child(1) {
+main .graphic .group ul li:nth-child(1) {
   color: #AF52DE;
 }
-main .aside-main .graphic .frame {
+main .graphic .frame {
   position: relative;
   height: 75%;
   width: 91%;
+  margin-top: 16px;
 }
-main .aside-main .graphic .frame .graph {
+main .graphic .frame .graph {
   height: 80%;
 }
-main .aside-main .graphic .frame .graph img {
+main .graphic .frame .graph img {
   width: 100%;
 }
-main .aside-main .graphic .frame .bottom_text {
+main .graphic .frame .bottom_text {
   width: 100%;
   font-size: 0.9rem;
+  margin-top: 3vw;
 }
-main .aside-main .graphic .frame .bottom_text ul {
+main .graphic .frame .bottom_text ul {
   list-style-type: none;
   display: flex;
   padding: 0;
   margin: 0;
 }
-main .aside-main .graphic .frame .bottom_text ul li {
+main .graphic .frame .bottom_text ul li {
   text-align: center;
   width: 16.6666666667%;
 }
-main .aside-main .graphic-2 {
-  width: 91vw;
-  height: 61vw;
+main .graphic-2 {
+  width: 91%;
+  height: 40vh;
   background-color: white;
   margin-top: 16px;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
 }
-main .aside-main .graphic-2 .text {
+main .graphic-2 .text {
   width: 91%;
   margin-top: 16px;
   font-size: 1.1rem;
   color: #007AFF;
 }
-main .aside-main .graphic-2 .graph {
+main .graphic-2 .graph {
   height: 75%;
   width: 91%;
   margin-top: 8px;
 }
-main .aside-main .graphic-2 .graph .vertical_bars {
+main .graphic-2 .graph .vertical_bars {
   height: 80%;
   display: flex;
   justify-content: space-around;
 }
-main .aside-main .graphic-2 .graph .vertical_bars .vertical_bar {
+main .graphic-2 .graph .vertical_bars .vertical_bar {
   flex: 1;
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-start;
   align-items: center;
 }
-main .aside-main .graphic-2 .graph .vertical_bars .vertical_bar .progress {
+main .graphic-2 .graph .vertical_bars .vertical_bar .progress {
   display: flex;
   width: 75%;
   background-color: #e6e6e6;
   border-radius: 12px;
   margin-top: 8px;
 }
-main .aside-main .graphic-2 .graph .vertical_bars .vertical_bar .title {
+main .graphic-2 .graph .vertical_bars .vertical_bar .title {
   width: 95%;
   color: white;
   padding: 4px 8px;
@@ -192,75 +281,77 @@ main .aside-main .graphic-2 .graph .vertical_bars .vertical_bar .title {
   font-size: 0.8rem;
   text-align: center;
 }
-main .aside-main .graphic-2 .graph .bottom_text {
+main .graphic-2 .graph .bottom_text {
   margin-top: 14px;
 }
-main .aside-main .graphic-2 .graph .bottom_text ul {
+main .graphic-2 .graph .bottom_text ul {
   list-style-type: none;
   display: flex;
   padding: 0;
 }
-main .aside-main .graphic-2 .graph .bottom_text ul li {
+main .graphic-2 .graph .bottom_text ul li {
   font-size: 0.9rem;
   text-align: center;
   flex: 1 1;
 }
-main .aside-main .graphic-3 {
-  width: 91vw;
-  height: 61vw;
+main .graphic-3 {
+  width: 91%;
+  height: 40vh;
   background-color: white;
   margin-top: 16px;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
 }
-main .aside-main .graphic-3 .text {
+main .graphic-3 .text {
   width: 91%;
   margin-top: 16px;
   font-size: 1.1rem;
   color: #34C759;
 }
-main .aside-main .graphic-3 .graph {
+main .graphic-3 .graph {
   height: 75%;
   width: 91%;
   margin-top: 8px;
 }
-main .aside-main .graphic-3 .graph .vertical_bars {
+main .graphic-3 .graph .vertical_bars {
   height: 80%;
   display: flex;
   justify-content: space-around;
 }
-main .aside-main .graphic-3 .graph .vertical_bars .vertical_bar {
+main .graphic-3 .graph .vertical_bars .vertical_bar {
   flex: 1;
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-start;
   align-items: center;
 }
-main .aside-main .graphic-3 .graph .vertical_bars .vertical_bar .progress {
+main .graphic-3 .graph .vertical_bars .vertical_bar .progress {
   display: flex;
   width: 75%;
   background-color: #e6e6e6;
   border-radius: 12px;
   margin-top: 8px;
 }
-main .aside-main .graphic-3 .graph .bottom_text {
+main .graphic-3 .graph .bottom_text {
   margin-top: 14px;
 }
-main .aside-main .graphic-3 .graph .bottom_text ul {
+main .graphic-3 .graph .bottom_text ul {
   list-style-type: none;
   display: flex;
   padding: 0;
 }
-main .aside-main .graphic-3 .graph .bottom_text ul li {
+main .graphic-3 .graph .bottom_text ul li {
   font-size: 0.9rem;
   text-align: center;
   flex: 1 1;
 }
-main .aside-main .graphic-4 {
-  width: 91vw;
-  height: 61vw;
+main .graphic-4 {
+  width: 91%;
+  height: 39vh;
+  padding-bottom: 2vw;
   background-color: white;
   margin-top: 16px;
   border-radius: 16px;
@@ -268,61 +359,64 @@ main .aside-main .graphic-4 {
   flex-direction: column;
   align-items: center;
 }
-main .aside-main .graphic-4 .text {
+main .graphic-4 .text {
   width: 91%;
   margin-top: 16px;
   font-size: 1.1rem;
   color: #FF3B30;
 }
-main .aside-main .graphic-4 .group {
+main .graphic-4 .group {
   width: 91%;
   margin-top: 16px;
   font-size: 0.9rem;
 }
-main .aside-main .graphic-4 .group ul {
+main .graphic-4 .group ul {
   display: flex;
   gap: 16px;
   list-style-type: none;
   padding: 0;
 }
-main .aside-main .graphic-4 .group ul li {
+main .graphic-4 .group ul li {
   display: flex;
   align-items: center;
 }
-main .aside-main .graphic-4 .group ul li:nth-child(1) .circle {
+main .graphic-4 .group ul li:nth-child(1) .circle {
   background-color: black;
 }
-main .aside-main .graphic-4 .group ul li:nth-child(2) .circle {
+main .graphic-4 .group ul li:nth-child(2) .circle {
   background-color: rgba(0, 0, 0, 0.5019607843);
 }
-main .aside-main .graphic-4 .group ul li:nth-child(3) .circle {
+main .graphic-4 .group ul li:nth-child(3) .circle {
   background-color: #FF3B30;
 }
-main .aside-main .graphic-4 .group ul li .circle {
+main .graphic-4 .group ul li .circle {
   width: 4px;
   height: 4px;
   border-radius: 100%;
   margin-right: 5px;
 }
-main .aside-main .graphic-4 .graph {
-  height: 50%;
+main .graphic-4 .graph {
+  height: 70%;
   width: 91%;
-  margin-top: 0px;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
-main .aside-main .graphic-4 .graph .vertical_bars {
+main .graphic-4 .graph .vertical_bars {
   height: 80%;
   display: flex;
   justify-content: space-around;
   margin-top: 8px;
 }
-main .aside-main .graphic-4 .graph .vertical_bars .vertical_bar {
+main .graphic-4 .graph .vertical_bars .vertical_bar {
   flex: 1;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: flex-end;
 }
-main .aside-main .graphic-4 .graph .vertical_bars .vertical_bar .progress {
+main .graphic-4 .graph .vertical_bars .vertical_bar .progress {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column-reverse;
@@ -331,62 +425,62 @@ main .aside-main .graphic-4 .graph .vertical_bars .vertical_bar .progress {
   border-radius: 12px;
   margin-top: 3px;
 }
-main .aside-main .graphic-4 .graph .vertical_bars .vertical_bar .bg-red {
+main .graphic-4 .graph .vertical_bars .vertical_bar .bg-red {
   background-color: #FF3B30;
 }
-main .aside-main .graphic-4 .graph .vertical_bars .vertical_bar .bg-grey {
+main .graphic-4 .graph .vertical_bars .vertical_bar .bg-grey {
   background-color: rgba(0, 0, 0, 0.5019607843);
 }
-main .aside-main .graphic-4 .graph .vertical_bars .vertical_bar .bg-black {
+main .graphic-4 .graph .vertical_bars .vertical_bar .bg-black {
   background-color: black;
 }
-main .aside-main .graphic-4 .graph .bottom_text {
+main .graphic-4 .graph .bottom_text {
   margin-top: 8px;
 }
-main .aside-main .graphic-4 .graph .bottom_text ul {
+main .graphic-4 .graph .bottom_text ul {
   list-style-type: none;
   display: flex;
   margin: 0;
   padding: 0;
 }
-main .aside-main .graphic-4 .graph .bottom_text ul li {
+main .graphic-4 .graph .bottom_text ul li {
   font-size: 0.9rem;
   text-align: center;
   flex: 1 1;
 }
-main .aside-main .h10 {
+main .h10 {
   height: 10%;
 }
-main .aside-main .h20 {
+main .h20 {
   height: 20%;
 }
-main .aside-main .h30 {
+main .h30 {
   height: 30%;
 }
-main .aside-main .h40 {
+main .h40 {
   height: 40%;
 }
-main .aside-main .h50 {
+main .h50 {
   height: 50%;
 }
-main .aside-main .h60 {
+main .h60 {
   height: 60%;
 }
-main .aside-main .h70 {
+main .h70 {
   height: 70%;
 }
-main .aside-main .h80 {
+main .h80 {
   height: 80%;
 }
-main .aside-main .h90 {
+main .h90 {
   height: 90%;
 }
-main .aside-main .h100 {
+main .h100 {
   height: 100%;
 }
-main .aside-main .list {
-  width: 91vw;
-  height: 77vw;
+main .list {
+  width: 91%;
+  height: 52vh;
   background-color: white;
   margin-top: 16px;
   border-radius: 16px;
@@ -394,20 +488,20 @@ main .aside-main .list {
   flex-direction: column;
   align-items: center;
 }
-main .aside-main .list .text {
+main .list .text {
   width: 91%;
   margin-top: 16px;
   font-size: 1.1rem;
   color: #00C7BE;
 }
-main .aside-main .list .table {
+main .list .table {
   width: 91%;
   margin-top: 16px;
   display: flex;
   align-items: stretch;
-  height: 78%;
+  height: 85%;
 }
-main .aside-main .list .table ul {
+main .list .table ul {
   list-style-type: none;
   display: flex;
   flex-direction: column;
@@ -416,7 +510,7 @@ main .aside-main .list .table ul {
   width: 100%;
   gap: 4px;
 }
-main .aside-main .list .table ul li {
+main .list .table ul li {
   flex: 1 1;
   display: flex;
   align-items: center;
@@ -427,7 +521,7 @@ main .aside-main .list .table ul li {
   font-size: 3.5vw;
   border-radius: 16px;
 }
-main .aside-main .list .table ul li::before {
+main .list .table ul li::before {
   background-image: url(../../images/list_icon.png);
   background-repeat: no-repeat;
   background-position: left;
@@ -438,65 +532,30 @@ main .aside-main .list .table ul li::before {
   position: absolute;
   left: 2%;
 }
-main .aside-main .list .table ul li .status {
+main .list .table ul li .status {
   padding: 4px 12px;
   margin-right: 8px;
   border-radius: 12px;
 }
-main .aside-main .in-progress {
+main .in-progress {
   color: #AF52DE;
   background-color: #efdcf8;
 }
-main .aside-main .complete {
+main .complete {
   color: #34C759;
   background-color: #d7f4de;
 }
-main .aside-main .pending {
+main .pending {
   color: #007AFF;
   background-color: #cce4ff;
 }
-main .aside-main .approved {
+main .approved {
   color: #FFCC00;
   background-color: #fef5cc;
 }
-main .aside-main .rejected {
+main .rejected {
   color: rgba(0, 0, 0, 0.5019607843);
   background-color: #eaeaea;
-}
-@media (min-width: 768px) {
-  main {
-    display: flex;
-    flex-direction: row;
-  }
-  main .aside-tabs {
-    display: block;
-    width: 17vw;
-    height: 100vw;
-    background-color: antiquewhite;
-  }
-  main .aside-main {
-    flex: 1;
-    background-color: aquamarine;
-    width: 83vw;
-    display: flex;
-    justify-content: flex-end;
-  }
-  main .aside-main nav {
-    display: flex;
-    width: 91%;
-    margin-top: 32px;
-  }
-  main .aside-main nav .header-laptop {
-    display: flex;
-    width: 100%;
-  }
-  main .aside-main nav .header-laptop .left-part {
-    display: flex;
-  }
-  main .aside-main nav .header-laptop .left-part .icons {
-    display: flex;
-    gap: 8px;
-  }
 }
 
 footer {
@@ -527,7 +586,28 @@ footer .group ul li {
 }
 
 @media (min-width: 768px) {
-  header .header-mobile, footer {
+  body {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  body aside {
+    display: flex;
+  }
+  body main {
+    display: flex;
+    width: 83vw;
+  }
+  body main nav {
+    display: flex;
+  }
+  body main .cards {
+    width: 95% !important;
+    display: none;
+  }
+  body main .graphic, body main .graphic-2, body main .graphic-3, body main .graphic-4, body main .list {
+    display: none;
+  }
+  body header, body footer {
     display: none;
   }
 }

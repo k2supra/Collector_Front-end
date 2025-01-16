@@ -9,558 +9,664 @@
 }
 header
 {
-    .header-mobile
-    {
-        height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-        .control
-        {
-            height: 50%;
-            align-content: center;
-            color: $pr-blue
-        }
+    .control
+    {
+        height: 50%;
+        align-content: center;
+        color: $pr-blue
     }
 }
 .invisible
 {
     visibility: hidden;
 }
-
+aside
+{
+    display: none;
+    width: 17vw;
+    height: 100vh;
+    background-color: $temporary-1;
+}
 main
 {
 
-        background-color: $bg-color;
+    background-color: $bg-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    nav
+    {
+        display: none;
+        justify-content: space-between;
+        background-color: $temporary-1;
+        width: 95%;
+        height: 5vh;
+        margin-top: 35px;
+        .left-part 
+        {
+            display: flex;
+            align-items: center;
+            .icons
+            {
+                display: flex;
+                i
+                {
+                    width: 3vw;
+                    margin-right: 1.5vw;
+                    &::before
+                    {
+                        width: 100%;
+                        aspect-ratio: 1;
+                        text-align: center;
+                        align-content: center;
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+            .breadcrumb
+            {
+                margin: 0 0 0 0.4vw;
+                display: flex;
+                align-items: center;
+                font-size: 1.2rem;
+                li:nth-child(1) a
+                {
+                    color: $grey-40;
+                    text-decoration: none;
+                }
+                li:nth-child(2) a
+                {
+                    color: black;
+                }
+            }
+        }
+        .right-part
+        {
+            display: flex;
+            align-items: center;
+            .search-bar
+            {
+                display: flex;
+                align-items: center;
+                background-color: $bg-color;
+                border-radius: 16px;
+                padding: 8px 12px;
+                width: 11vw;
+                height: 70%;
+                margin-right: 0.5vw;
+                .bi-search
+                {
+                    font-size: 16px;
+                    margin-right: 5%;
+                    color: #aaa;
+                }
+                .search-input 
+                {
+                    width: 70%;
+                    border: none;
+                    outline: none;
+                    background: transparent;
+                    font-size: 14px;
+                    color: #555;
+                    &::placeholder
+                    {
+                        color: #aaa;
+                    }
+                }
+                .bi-command {
+                    font-size: 12px;
+                    color: #aaa;
+                    margin-left: 8px;
+                  }
+            }
+            .icons
+            {
+                display: flex;
+                margin-right: 0.5vw;
+                i
+                {
+                    width: 3vw;
+                    margin-left: 1.2vw;
+                    &::before
+                    {
+                        width: 100%;
+                        aspect-ratio: 1;
+                        text-align: center;
+                        align-content: center;
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+        }
+    }
+    .cards
+    {
+        width: 91%;
+        margin-top: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        
+        .card
+        {
+            flex: 1 1 calc(50% - 8px);
+            // height: 25vw;
+            height: 16.5vh;
+            padding: 16px;
+            color: white;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 15%;
+            
+            .content
+            {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex: 1;
+                font-size: 1.1rem;
+                .icon
+                {
+                    // height: 8vw;
+                    height: 5vh;
+                    width: 10vw;
+                    padding: 1.2vw 2.4vw;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid transparent;
+                    border-radius: 80px;
+                    content: url(../../images/arrow_rise.svg);
+                }
+                &:first-child
+                {
+                    font-size: 1.1rem;
+                }
+                &:last-child .text:first-child
+                {
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    .blue-gradient
+    {
+        background-image: $blue-gradient;
+        @include blue-gradient-icon;
+
+    }
+    .black-gradient
+    {
+        background-image: $black-gradient;
+        @include black-gradient-icon;
+        
+    }
+
+    .graphic
+    {
+        width: 91%;
+        // height: 61vw;
+        height: 38vh;
+        border-radius: 16px;
+        margin-top: 16px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
+        background-color: white;
+
+        .group
+        {
+            width: 91%;
+            font-size: 1.1rem;
+            margin-top: 16px;
+            ul
+            {
+                list-style-type: none;
+                display: flex;
+                gap: 16px;
+                padding: 0;
+                li:nth-child(1)
+                {
+                    color: $secondary-purple;
+                }
+            }
+        }
+        .frame
+        {
+            position: relative;
+            height: 75%;
+            width: 91%;
+            // height: 20vw;
+            // width: 84vw;
+            margin-top: 16px;
+            .graph
+            {
+                height: 80%;
+                img
+                {
+                    width: 100%;
+                }
+            }
+            .bottom_text
+            {
+                width: 100%;
+                font-size: 0.9rem;
+                margin-top: 3vw;
+                ul
+                {
+                    list-style-type: none;
+                    display: flex;
+                    padding: 0;
+                    margin: 0;
+                    li
+                    {
+                        text-align: center;
+                        width: calc(100% / 6);
+                    }
+                }
+            }
+        }
+    }
+    .graphic-2
+    {
+        width: 91%;
+        height: 40vh;
+        background-color: white;
+        margin-top: 16px;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        .text
+        {
+            width: 91%;
+            margin-top: 16px;
+            font-size: 1.1rem;
+            color: $pr-blue;
+        }
+        .graph
+        {
+            height: 75%;
+            width: 91%;
+            margin-top: 8px;
+            .vertical_bars
+            {
+                height: 80%;
+                display: flex;
+                justify-content: space-around;
+
+                .vertical_bar
+                {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column-reverse;
+                    justify-content: flex-start;
+                    align-items: center;
+                    .progress
+                    {
+                        display: flex;
+                        width: 75%;
+                        background-color: $graph-grey;
+                        border-radius: 12px;
+                        margin-top: 8px;
+                    }
+                    .title
+                    {
+                        width: 95%;
+                        color: white;
+                        padding: 4px 8px;
+                        border-radius: 16px;
+                        font-size: 0.8rem;
+                        text-align: center;
+                    }
+                }
+            }
+            .bottom_text
+            {
+                margin-top: 14px;
+                ul
+                {
+                    list-style-type: none;
+                    display: flex;
+                    padding: 0;
+                    li
+                    {
+                        font-size: 0.9rem;
+                        text-align: center;
+                        flex: 1 1;
+                    }
+                }
+            }
+        }
+    }
+    .graphic-3
+    {
+        width: 91%;
+        height: 40vh;
+        background-color: white;
+        margin-top: 16px;
+        border-radius: 16px;
         display: flex;
         flex-direction: column;
         align-items: center;
-
-        nav
+        justify-content: space-around;
+        .text
         {
-            .header-laptop
-            {
-                display: none;
-            }
-        }
-        .cards
-        {
-            width: 91vw;
+            width: 91%;
             margin-top: 16px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            
-            .card
+            font-size: 1.1rem;
+            color: $secondary-green;
+        }
+        .graph
+        {
+            height: 75%;
+            width: 91%;
+            margin-top: 8px;
+            .vertical_bars
             {
-                flex: 1 1 calc(50% - 8px);
-                height: 25vw;
-                padding: 16px;
-                color: white;
-                border-radius: 24px;
+                height: 80%;
                 display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                gap: 15%;
-                
-                .content
+                justify-content: space-around;
+
+                .vertical_bar
                 {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
                     flex: 1;
-                    font-size: 1.1rem;
-                    .icon
+                    display: flex;
+                    flex-direction: column-reverse;
+                    justify-content: flex-start;
+                    align-items: center;
+                    .progress
                     {
-                        height: 8vw;
-                        width: 10vw;
-                        padding: 1.2vw 2.4vw;
                         display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        border: 1px solid transparent;
-                        border-radius: 80px;
-                        content: url(../../images/arrow_rise.svg);
-                    }
-                    &:first-child
-                    {
-                        font-size: 1.1rem;
-                    }
-                    &:last-child .text:first-child
-                    {
-                        font-size: 1.2rem;
-                        font-weight: 600;
+                        width: 75%;
+                        background-color: $graph-grey;
+                        border-radius: 12px;
+                        margin-top: 8px;
                     }
                 }
             }
-        }
-        .blue-gradient
-        {
-            background-image: $blue-gradient;
-            @include blue-gradient-icon;
-
-        }
-        .black-gradient
-        {
-            background-image: $black-gradient;
-            @include black-gradient-icon;
-            
-        }
-
-        .graphic
-        {
-            width: 91vw;
-            height: 61vw;
-            border-radius: 16px;
-            margin-top: 16px;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            background-color: white;
-
-            .group
+            .bottom_text
             {
-                width: 91%;
-                font-size: 1.1rem;
-                margin-top: 16px;
+                margin-top: 14px;
                 ul
                 {
                     list-style-type: none;
                     display: flex;
-                    gap: 16px;
-                    padding: 0;
-                    li:nth-child(1)
-                    {
-                        color: $secondary-purple;
-                    }
-                }
-            }
-            .frame
-            {
-                position: relative;
-                height: 75%;
-                width: 91%;
-                .graph
-                {
-                    height: 80%;
-                    img
-                    {
-                        width: 100%;
-                    }
-                }
-                .bottom_text
-                {
-                    width: 100%;
-                    font-size: 0.9rem;
-                    ul
-                    {
-                        list-style-type: none;
-                        display: flex;
-                        padding: 0;
-                        margin: 0;
-                        li
-                        {
-                            text-align: center;
-                            width: calc(100% / 6);
-                        }
-                    }
-                }
-            }
-        }
-        .graphic-2
-        {
-            width: 91vw;
-            height: 61vw;
-            background-color: white;
-            margin-top: 16px;
-            border-radius: 16px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            .text
-            {
-                width: 91%;
-                margin-top: 16px;
-                font-size: 1.1rem;
-                color: $pr-blue;
-            }
-            .graph
-            {
-                height: 75%;
-                width: 91%;
-                margin-top: 8px;
-                .vertical_bars
-                {
-                    height: 80%;
-                    display: flex;
-                    justify-content: space-around;
-
-                    .vertical_bar
-                    {
-                        flex: 1;
-                        display: flex;
-                        flex-direction: column-reverse;
-                        justify-content: flex-start;
-                        align-items: center;
-                        .progress
-                        {
-                            display: flex;
-                            width: 75%;
-                            background-color: $graph-grey;
-                            border-radius: 12px;
-                            margin-top: 8px;
-                        }
-                        .title
-                        {
-                            width: 95%;
-                            color: white;
-                            padding: 4px 8px;
-                            border-radius: 16px;
-                            font-size: 0.8rem;
-                            text-align: center;
-                        }
-                    }
-                }
-                .bottom_text
-                {
-                    margin-top: 14px;
-                    ul
-                    {
-                        list-style-type: none;
-                        display: flex;
-                        padding: 0;
-                        li
-                        {
-                            font-size: 0.9rem;
-                            text-align: center;
-                            flex: 1 1;
-                        }
-                    }
-                }
-            }
-        }
-        .graphic-3
-        {
-            width: 91vw;
-            height: 61vw;
-            background-color: white;
-            margin-top: 16px;
-            border-radius: 16px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            .text
-            {
-                width: 91%;
-                margin-top: 16px;
-                font-size: 1.1rem;
-                color: $secondary-green;
-            }
-            .graph
-            {
-                height: 75%;
-                width: 91%;
-                margin-top: 8px;
-                .vertical_bars
-                {
-                    height: 80%;
-                    display: flex;
-                    justify-content: space-around;
-
-                    .vertical_bar
-                    {
-                        flex: 1;
-                        display: flex;
-                        flex-direction: column-reverse;
-                        justify-content: flex-start;
-                        align-items: center;
-                        .progress
-                        {
-                            display: flex;
-                            width: 75%;
-                            background-color: $graph-grey;
-                            border-radius: 12px;
-                            margin-top: 8px;
-                        }
-                    }
-                }
-                .bottom_text
-                {
-                    margin-top: 14px;
-                    ul
-                    {
-                        list-style-type: none;
-                        display: flex;
-                        padding: 0;
-                        li
-                        {
-                            font-size: 0.9rem;
-                            text-align: center;
-                            flex: 1 1;
-                        }
-                    }
-                }
-            }
-        }
-        .graphic-4
-        {
-            width: 91vw;
-            height: 61vw;
-            background-color: white;
-            margin-top: 16px;
-            border-radius: 16px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            .text
-            {
-                width: 91%;
-                margin-top: 16px;
-                font-size: 1.1rem;
-                color: $secondary-red;
-            }
-            .group
-            {
-                width: 91%;
-                margin-top: 16px;
-                font-size: 0.9rem;
-                ul
-                {
-                    display: flex;
-                    gap: 16px;
-                    list-style-type: none;
                     padding: 0;
                     li
                     {
-                        display: flex;
-                        align-items: center;
-                        &:nth-child(1) .circle
-                        {
-                            background-color: black;
-                        }
-                        &:nth-child(2) .circle
-                        {
-                            background-color: $grey-40;
-                        }
-                        &:nth-child(3) .circle
-                        {
-                            background-color: $secondary-red;
-                        }
-                        .circle
-                        {
-                            width: 4px;
-                            height: 4px;
-                            border-radius: 100%;
-                            margin-right: 5px;
-                        }
+                        font-size: 0.9rem;
+                        text-align: center;
+                        flex: 1 1;
                     }
                 }
             }
-            .graph
+        }
+    }
+    .graphic-4
+    {
+        width: 91%;
+        height: 39vh;
+        padding-bottom: 2vw;
+        background-color: white;
+        margin-top: 16px;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .text
+        {
+            width: 91%;
+            margin-top: 16px;
+            font-size: 1.1rem;
+            color: $secondary-red;
+        }
+        .group
+        {
+            width: 91%;
+            margin-top: 16px;
+            font-size: 0.9rem;
+            ul
             {
-                height: 50%;
-                width: 91%;
-                margin-top: 0px;
-                .vertical_bars
+                display: flex;
+                gap: 16px;
+                list-style-type: none;
+                padding: 0;
+                li
                 {
-                    height: 80%;
                     display: flex;
-                    justify-content: space-around;
-                    margin-top: 8px;
-
-                    .vertical_bar
+                    align-items: center;
+                    &:nth-child(1) .circle
                     {
-                        flex: 1;
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-around;
-                        align-items: flex-end;
-                        .progress
-                        {
-                            display: flex;
-                            flex-wrap: nowrap;
-                            flex-direction: column-reverse;
-                            background-color: transparent;
-                            width: 10%;
-                            border-radius: 12px;
-                            margin-top: 3px;
-                        }
-                        .bg-red
-                        {
-                        background-color: $secondary-red; 
-                        }
-                        .bg-grey
-                        {
-                        background-color: $grey-40; 
-                        }
-                        .bg-black
-                        {
-                        background-color: black; 
-                        }
+                        background-color: black;
                     }
-                }
-                .bottom_text
-                {
-                    margin-top: 8px;
-                    ul
+                    &:nth-child(2) .circle
                     {
-                        list-style-type: none;
-                        display: flex;
-                        margin: 0;
-                        padding: 0;
-                        li
-                        {
-                            font-size: 0.9rem;
-                            text-align: center;
-                            flex: 1 1;
-                        }
+                        background-color: $grey-40;
+                    }
+                    &:nth-child(3) .circle
+                    {
+                        background-color: $secondary-red;
+                    }
+                    .circle
+                    {
+                        width: 4px;
+                        height: 4px;
+                        border-radius: 100%;
+                        margin-right: 5px;
                     }
                 }
             }
         }
-
-        .h10
-        {
-            height: 10%;
-        }
-        .h20
-        {
-            height: 20%;
-        }
-        .h30
-        {
-            height: 30%;
-        }
-        .h40
-        {
-            height: 40%;
-        }
-        .h50
-        {
-            height: 50%;
-        }
-        .h60
-        {
-            height: 60%;
-        }
-        .h70
+        .graph
         {
             height: 70%;
-        }
-        .h80
-        {
-            height: 80%;
-        }
-        .h90
-        {
-            height: 90%;
-        }
-        .h100
-        {
-            height: 100%;
-        }
-
-        .list
-        {
-            width: 91vw;
-            height: 77vw;
-            background-color: white;
+            width: 91%;
             margin-top: 16px;
-            border-radius: 16px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            .text
+            justify-content: space-around;
+            .vertical_bars
             {
-                width: 91%;
-                margin-top: 16px;
-                font-size: 1.1rem;
-                color: $secondary-mint;
-            }
-            .table
-            {
-                width: 91%;
-                margin-top: 16px;
+                height: 80%;
                 display: flex;
-                align-items: stretch;
-                height: 78%;
+                justify-content: space-around;
+                margin-top: 8px;
 
+                .vertical_bar
+                {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-items: flex-end;
+                    .progress
+                    {
+                        display: flex;
+                        flex-wrap: nowrap;
+                        flex-direction: column-reverse;
+                        background-color: transparent;
+                        width: 10%;
+                        border-radius: 12px;
+                        margin-top: 3px;
+                    }
+                    .bg-red
+                    {
+                    background-color: $secondary-red; 
+                    }
+                    .bg-grey
+                    {
+                    background-color: $grey-40; 
+                    }
+                    .bg-black
+                    {
+                    background-color: black; 
+                    }
+                }
+            }
+            .bottom_text
+            {
+                margin-top: 8px;
                 ul
                 {
                     list-style-type: none;
                     display: flex;
-                    flex-direction: column;
-                    margin: 4px 0 0 0;
+                    margin: 0;
                     padding: 0;
-                    width: 100%;
-                    gap: 4px;
                     li
                     {
+                        font-size: 0.9rem;
+                        text-align: center;
                         flex: 1 1;
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                        background-color: $bg-grey-list;
-                        padding-left: 44px;
-                        position: relative;
-                        font-size: 3.5vw;
-                        border-radius: 16px;
-                        &::before
-                        {
-                            background-image: url(../../images/list_icon.png);
-                            background-repeat: no-repeat;
-                            background-position: left;
-                            background-size: 100% 100%;
-                            // content: url(../../images/list_icon.png);
-                            content: "";
-                            width: 25px;
-                            height: 25px;
-                            position: absolute;
-                            // background-color: red;
-                            left: 2%;
-                            // left: 2%;
-                            // height: 22px;
-                            // width: 22px;
-                            // top: 8px;
-                            // top: calc(height /2);
-                        }
-                        .status
-                        {
-                            padding: 4px 12px;
-                            margin-right: 8px;
-                            border-radius: 12px;
-                        }
                     }
                 }
             }
         }
-        .in-progress
+    }
+
+    .h10
+    {
+        height: 10%;
+    }
+    .h20
+    {
+        height: 20%;
+    }
+    .h30
+    {
+        height: 30%;
+    }
+    .h40
+    {
+        height: 40%;
+    }
+    .h50
+    {
+        height: 50%;
+    }
+    .h60
+    {
+        height: 60%;
+    }
+    .h70
+    {
+        height: 70%;
+    }
+    .h80
+    {
+        height: 80%;
+    }
+    .h90
+    {
+        height: 90%;
+    }
+    .h100
+    {
+        height: 100%;
+    }
+
+    .list
+    {
+        width: 91%;
+        height: 52vh;
+        background-color: white;
+        margin-top: 16px;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .text
         {
-            color: $secondary-purple;
-            background-color: $bg-purple;
+            width: 91%;
+            margin-top: 16px;
+            font-size: 1.1rem;
+            color: $secondary-mint;
         }
-        .complete
+        .table
         {
-            color: $secondary-green;
-            background-color: $bg-green;
+            width: 91%;
+            margin-top: 16px;
+            display: flex;
+            align-items: stretch;
+            height: 85%;
+
+            ul
+            {
+                list-style-type: none;
+                display: flex;
+                flex-direction: column;
+                margin: 4px 0 0 0;
+                padding: 0;
+                width: 100%;
+                gap: 4px;
+                li
+                {
+                    flex: 1 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    background-color: $bg-grey-list;
+                    padding-left: 44px;
+                    position: relative;
+                    font-size: 3.5vw;
+                    border-radius: 16px;
+                    &::before
+                    {
+                        background-image: url(../../images/list_icon.png);
+                        background-repeat: no-repeat;
+                        background-position: left;
+                        background-size: 100% 100%;
+                        content: "";
+                        width: 25px;
+                        height: 25px;
+                        position: absolute;
+                        left: 2%;
+                    }
+                    .status
+                    {
+                        padding: 4px 12px;
+                        margin-right: 8px;
+                        border-radius: 12px;
+                    }
+                }
+            }
         }
-        .pending
-        {
-            color: $secondary-blue;
-            background-color: $bg-blue;
-        }
-        .approved
-        {
-            color: $secondary-yellow;
-            background-color: $bg-yellow;
-        }
-        .rejected
-        {
-            color: $grey-40;
-            background-color: $bg-grey;
-        }
-    
+    }
+    .in-progress
+    {
+        color: $secondary-purple;
+        background-color: $bg-purple;
+    }
+    .complete
+    {
+        color: $secondary-green;
+        background-color: $bg-green;
+    }
+    .pending
+    {
+        color: $secondary-blue;
+        background-color: $bg-blue;
+    }
+    .approved
+    {
+        color: $secondary-yellow;
+        background-color: $bg-yellow;
+    }
+    .rejected
+    {
+        color: $grey-40;
+        background-color: $bg-grey;
+    }
 }
 footer
 {
@@ -589,6 +695,41 @@ footer
                 text-align: center;
                 font-size: 1.2rem;
             }
+        }
+    }
+}
+@media (min-width: 768px)
+{
+    body
+    {
+        display: flex;
+        flex-wrap: nowrap;
+
+        aside
+        {
+            display: flex;
+        }
+        main
+        {
+            display: flex;
+            width: 83vw;
+            nav
+            {
+                display: flex;
+            }
+            .cards 
+            {
+                width: 95% !important;
+                display: none;
+            }
+            .graphic, .graphic-2, .graphic-3, .graphic-4, .list
+            {
+                display: none;
+            }
+        }
+        header, footer
+        {
+            display: none;
         }
     }
 }
