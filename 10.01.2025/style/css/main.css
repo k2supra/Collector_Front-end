@@ -46,6 +46,7 @@ aside .part-top .logo {
 aside .part-top ul {
   list-style-type: none;
   width: 100%;
+  padding: 0;
 }
 aside .part-top ul li {
   font-size: 16px;
@@ -53,6 +54,7 @@ aside .part-top ul li {
   align-items: center;
   padding: 12px;
   border-radius: 20px;
+  margin: 0.7vh;
 }
 aside .part-top ul li i {
   margin-right: 25px;
@@ -76,6 +78,7 @@ aside .part-bottom {
 aside .part-bottom ul {
   list-style-type: none;
   width: 100%;
+  padding: 0;
 }
 aside .part-bottom ul li {
   font-size: 16px;
@@ -467,6 +470,22 @@ main .graphic-4 .group ul li .circle {
   border-radius: 100%;
   margin-right: 5px;
 }
+main .graphic-4 .group ul li i {
+  padding: 8px;
+  background-color: #eaeaea;
+  border-radius: 12px;
+  color: black;
+}
+main .graphic-4 .group ul li i::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+}
+main .graphic-4 .group ul .laptop-version {
+  display: none;
+}
 main .graphic-4 .graph {
   height: 70%;
   width: 91%;
@@ -571,18 +590,55 @@ main .list {
 }
 main .list .text {
   width: 91%;
-  margin-top: 16px;
+  margin-top: 24px;
   font-size: 1.1rem;
   color: #00C7BE;
+  display: flex;
+  justify-content: space-between;
+}
+main .list .text .more {
+  display: none;
+}
+main .list .text .more i {
+  padding: 8px;
+  background-color: #eaeaea;
+  border-radius: 12px;
+  color: black;
+}
+main .list .text .more i::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
 }
 main .list .table {
   width: 91%;
-  margin-top: 16px;
+  margin-top: 24px;
   display: flex;
+  flex-direction: column;
   align-items: stretch;
   height: 85%;
 }
-main .list .table ul {
+main .list .table .top-text {
+  display: none;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+main .list .table .top-text .info {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+  justify-content: space-between;
+  width: 95%;
+  color: rgba(0, 0, 0, 0.5019607843);
+  margin: 0;
+}
+main .list .table .top-text .info li {
+  padding: 12px 16px;
+}
+main .list .table .data {
   list-style-type: none;
   display: flex;
   flex-direction: column;
@@ -591,7 +647,7 @@ main .list .table ul {
   width: 100%;
   gap: 4px;
 }
-main .list .table ul li {
+main .list .table .data li {
   flex: 1 1;
   display: flex;
   align-items: center;
@@ -602,7 +658,7 @@ main .list .table ul li {
   font-size: 3.5vw;
   border-radius: 16px;
 }
-main .list .table ul li::before {
+main .list .table .data li::before {
   background-image: url(../../images/list_icon.png);
   background-repeat: no-repeat;
   background-position: left;
@@ -613,28 +669,39 @@ main .list .table ul li::before {
   position: absolute;
   left: 2%;
 }
-main .list .table ul li .status {
+main .list .table .data li .laptop-version {
+  display: none;
+  background-color: transparent;
+  position: absolute;
+}
+main .list .table .data li .date {
+  left: 30%;
+}
+main .list .table .data li .amount {
+  right: 30%;
+}
+main .list .table .data li .status {
   padding: 4px 12px;
   margin-right: 8px;
   border-radius: 12px;
 }
-main .list .table ul li .in-progress {
+main .list .table .data li .in-progress {
   color: #AF52DE;
   background-color: #efdcf8;
 }
-main .list .table ul li .complete {
+main .list .table .data li .complete {
   color: #34C759;
   background-color: #d7f4de;
 }
-main .list .table ul li .pending {
+main .list .table .data li .pending {
   color: #007AFF;
   background-color: #cce4ff;
 }
-main .list .table ul li .approved {
+main .list .table .data li .approved {
   color: #FFCC00;
   background-color: #fef5cc;
 }
-main .list .table ul li .rejected {
+main .list .table .data li .rejected {
   color: rgba(0, 0, 0, 0.5019607843);
   background-color: #eaeaea;
 }
@@ -760,6 +827,22 @@ footer .group ul li {
   }
   body main .graphic-4 {
     width: 95%;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+  }
+  body main .graphic-4 .text {
+    display: flex;
+    width: 45%;
+  }
+  body main .graphic-4 .group {
+    width: 45%;
+  }
+  body main .graphic-4 .group ul {
+    justify-content: end;
+  }
+  body main .graphic-4 .group ul .laptop-version {
+    display: inherit;
   }
   body main .graphic-4 .graph .vertical_bars .vertical_bar .long-version {
     display: inherit;
@@ -775,14 +858,30 @@ footer .group ul li {
   }
   body main .list {
     width: 95%;
+    justify-content: space-between;
   }
-  body main .list .table ul li {
+  body main .list .text .more {
+    display: inherit;
+  }
+  body main .list .table {
+    height: 80%;
+  }
+  body main .list .table .top-text {
+    display: flex;
+  }
+  body main .list .table .data {
+    height: 100%;
+  }
+  body main .list .table .data li {
     font-size: 1.3rem;
   }
-  body main .list .table ul li::before {
+  body main .list .table .data li::before {
     width: 30px;
     height: 30px;
     left: 1%;
+  }
+  body main .list .table .data li .laptop-version {
+    display: inherit;
   }
   body main .footer-laptop {
     display: flex;

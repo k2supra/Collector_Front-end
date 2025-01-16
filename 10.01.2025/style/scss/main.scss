@@ -54,6 +54,7 @@ aside
         {
             list-style-type: none;
             width: 100%;
+            padding: 0;
             li
             {
                 font-size: 16px;
@@ -61,6 +62,7 @@ aside
                 align-items: center;
                 padding: 12px;
                 border-radius: 20px;
+                margin: 0.7vh;
                 i
                 {
                     margin-right: 25px;
@@ -92,6 +94,7 @@ aside
         {
             list-style-type: none;
             width: 100%;
+            padding: 0;
             li
             {
                 font-size: 16px;
@@ -103,8 +106,6 @@ aside
                 {
                     margin-right: 25px;
                     padding: 8px;
-                    // background-color: white;
-                    // border-radius: 12px;
                     
                     &::before
                     {
@@ -554,6 +555,25 @@ main
                         border-radius: 100%;
                         margin-right: 5px;
                     }
+                    i
+                    {
+                        padding: 8px;
+                        background-color: $bg-grey;
+                        border-radius: 12px;
+                        color: black;
+                        &::before
+                        {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+                }
+                .laptop-version
+                {
+                    display: none;
                 }
             }
         }
@@ -689,19 +709,63 @@ main
         .text
         {
             width: 91%;
-            margin-top: 16px;
+            margin-top: 24px;
             font-size: 1.1rem;
             color: $secondary-mint;
+            display: flex;
+            justify-content: space-between;
+            .more
+            {
+                display: none;
+                i
+                {
+                    padding: 8px;
+                    background-color: $bg-grey;
+                    border-radius: 12px;
+                    color: black;
+                    &::before
+                    {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+                
+            }
         }
         .table
         {
             width: 91%;
-            margin-top: 16px;
+            margin-top: 24px;
             display: flex;
+            flex-direction: column;
             align-items: stretch;
             height: 85%;
+            .top-text
+            {
+                display: none;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+                .info
+                {
+                    list-style-type: none;
+                    display: flex;
+                    padding: 0;
+                    justify-content: space-between;
+                    width: 95%;
+                    color: $grey-40;
+                    margin: 0;
+                    li
+                    {
+                        padding: 12px 16px;
+                    }
+                }
+            }
 
-            ul
+            .data
             {
                 list-style-type: none;
                 display: flex;
@@ -732,6 +796,20 @@ main
                         height: 25px;
                         position: absolute;
                         left: 2%;
+                    }
+                    .laptop-version
+                    {
+                        display: none;
+                        background-color: transparent;
+                        position: absolute;
+                    }
+                    .date
+                    {
+                        left: 30%;
+                    }
+                    .amount
+                    {
+                        right: 30%;
                     }
                     .status
                     {
@@ -920,6 +998,27 @@ footer
             .graphic-4
             {
                 width: 95%;
+                flex-wrap: wrap;
+                justify-content: center;
+                flex-direction: row;
+                .text
+                {
+                    display: flex;
+                    width: 45%;
+                }   
+
+                .group
+                {
+                    width: 45%;
+                    ul
+                    {
+                        justify-content: end;
+                        .laptop-version
+                        {
+                            display: inherit;
+                        }
+                    }
+                }
                 .graph
                 {
                     .vertical_bars
@@ -951,10 +1050,24 @@ footer
             .list
             {
                 width: 95%;
+                justify-content: space-between;
+                .text
+                {
+                    .more
+                    {
+                        display: inherit;
+                    }
+                }
                 .table
                 {
-                    ul
+                    height: 80%;
+                    .top-text
                     {
+                        display: flex;
+                    }
+                    .data
+                    {
+                        height: 100%;
                         li
                         {
                             font-size: 1.3rem;
@@ -963,6 +1076,10 @@ footer
                                 width: 30px;
                                 height: 30px;
                                 left: 1%;
+                            }
+                            .laptop-version
+                            {
+                                display: inherit;
                             }
                         }
                     }
