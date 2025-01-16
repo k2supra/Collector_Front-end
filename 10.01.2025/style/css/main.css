@@ -277,6 +277,33 @@ main .graphic .group ul {
 main .graphic .group ul li:nth-child(1) {
   color: #AF52DE;
 }
+main .graphic .group .dropdowns {
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+main .graphic .group .dropdowns select {
+  font-size: 16px;
+  border: none;
+  padding: 8px 16px;
+  background-color: #eaeaea;
+  border-radius: 12px;
+  width: auto;
+}
+main .graphic .group .dropdowns i {
+  display: inherit;
+  padding: 8px;
+  background-color: #eaeaea;
+  border-radius: 12px;
+  color: black;
+}
+main .graphic .group .dropdowns i::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+}
 main .graphic .frame {
   position: relative;
   height: 75%;
@@ -323,6 +350,9 @@ main .graphic-2 .text {
   margin-top: 16px;
   font-size: 1.1rem;
   color: #007AFF;
+}
+main .graphic-2 .text i {
+  display: none;
 }
 main .graphic-2 .graph {
   height: 75%;
@@ -385,6 +415,9 @@ main .graphic-3 .text {
   margin-top: 16px;
   font-size: 1.1rem;
   color: #34C759;
+}
+main .graphic-3 .text i {
+  display: none;
 }
 main .graphic-3 .graph {
   height: 75%;
@@ -616,7 +649,7 @@ main .list .table {
   width: 91%;
   margin-top: 24px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: stretch;
   height: 85%;
 }
@@ -796,6 +829,13 @@ footer .group ul li {
     padding-bottom: 1vh;
     height: 42vh;
   }
+  body main .graphic .group {
+    display: flex;
+    justify-content: space-between;
+  }
+  body main .graphic .group .dropdowns {
+    display: flex;
+  }
   body main .graphic .frame {
     width: 100%;
     margin: 0 !important;
@@ -821,9 +861,47 @@ footer .group ul li {
     margin-right: 2%;
     height: 31vh;
   }
+  body main .graphic-2 .text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  body main .graphic-2 .text i {
+    display: inherit;
+    padding: 8px;
+    background-color: #eaeaea;
+    border-radius: 12px;
+    color: black;
+  }
+  body main .graphic-2 .text i::before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+  }
   body main .graphic-3 {
     width: 46.5%;
     height: 31vh;
+  }
+  body main .graphic-3 .text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  body main .graphic-3 .text i {
+    display: inherit;
+    padding: 8px;
+    background-color: #eaeaea;
+    border-radius: 12px;
+    color: black;
+  }
+  body main .graphic-3 .text i::before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
   }
   body main .graphic-4 {
     width: 95%;
@@ -865,6 +943,7 @@ footer .group ul li {
   }
   body main .list .table {
     height: 80%;
+    flex-direction: column;
   }
   body main .list .table .top-text {
     display: flex;
