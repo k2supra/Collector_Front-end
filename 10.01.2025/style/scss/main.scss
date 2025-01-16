@@ -37,13 +37,15 @@ main
 
     background-color: $bg-color;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    // flex-direction: column;
+    // align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     nav
     {
         display: none;
         justify-content: space-between;
-        background-color: $temporary-1;
+        background-color: $bg-color;
         width: 95%;
         height: 5vh;
         margin-top: 35px;
@@ -93,7 +95,7 @@ main
             {
                 display: flex;
                 align-items: center;
-                background-color: $bg-color;
+                background-color: $bg-grey;
                 border-radius: 16px;
                 padding: 8px 12px;
                 width: 11vw;
@@ -512,6 +514,14 @@ main
                     {
                     background-color: black; 
                     }
+                    .long-version
+                    {
+                        display: none;
+                    }
+                }
+                .long-version
+                {
+                    display: none;
                 }
             }
             .bottom_text
@@ -528,6 +538,10 @@ main
                         font-size: 0.9rem;
                         text-align: center;
                         flex: 1 1;
+                    }
+                    .long-version
+                    {
+                        display: none;
                     }
                 }
             }
@@ -638,35 +652,36 @@ main
                         margin-right: 8px;
                         border-radius: 12px;
                     }
+                    .in-progress
+                    {
+                        color: $secondary-purple;
+                        background-color: $bg-purple;
+                    }
+                    .complete
+                    {
+                        color: $secondary-green;
+                        background-color: $bg-green;
+                    }
+                    .pending
+                    {
+                        color: $secondary-blue;
+                        background-color: $bg-blue;
+                    }
+                    .approved
+                    {
+                        color: $secondary-yellow;
+                        background-color: $bg-yellow;
+                    }
+                    .rejected
+                    {
+                        color: $grey-40;
+                        background-color: $bg-grey;
+                    }
                 }
             }
         }
     }
-    .in-progress
-    {
-        color: $secondary-purple;
-        background-color: $bg-purple;
-    }
-    .complete
-    {
-        color: $secondary-green;
-        background-color: $bg-green;
-    }
-    .pending
-    {
-        color: $secondary-blue;
-        background-color: $bg-blue;
-    }
-    .approved
-    {
-        color: $secondary-yellow;
-        background-color: $bg-yellow;
-    }
-    .rejected
-    {
-        color: $grey-40;
-        background-color: $bg-grey;
-    }
+    
 }
 footer
 {
@@ -720,9 +735,103 @@ footer
             .cards 
             {
                 width: 95% !important;
-                display: none;
+                margin-top: 20px;
+                flex-wrap: nowrap;
+                gap: 20px;
+                .card
+                {
+                    flex: 1 !important;
+                    // height: 15.3vh;
+                    height: fit-content;
+                    gap: 10px;
+                    padding: 24px;
+                    .content
+                    {
+                        .icon
+                        {
+                            width: 22%;
+                            height: 70%;
+                            padding: 5%;
+                        }
+                        &:first-child
+                        {
+                            font-size: 1.1rem;
+                        }
+                        &:last-child .text:first-child
+                        {
+                            font-size: 32px;
+                            font-weight: 600;
+                        }
+                    }
+                }
             }
-            .graphic, .graphic-2, .graphic-3, .graphic-4, .list
+            .graphic
+            {
+                width: 95%;
+                padding-bottom: 1vh;
+                height: 42vh;
+                .frame 
+                {
+                    width: 100%;
+                    margin: 0 !important;
+                    .graph
+                    {
+                        height: 100%;
+                        img
+                        {
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+                    .bottom_text
+                    {
+                        margin-top: -2vh;
+                    }
+                }
+            }
+            .graphic-2
+            {
+                width: 47%;
+                margin-right: 2%;
+                height: 31vh;
+            }
+            .graphic-3
+            {
+                width: 47%;
+                height: 31vh;
+            }
+            .graphic-4
+            {
+                width: 95%;
+                .graph
+                {
+                    .vertical_bars
+                    {
+                        .vertical_bar
+                        {
+                            .long-version
+                            {
+                                display: inherit;
+                            }
+                        }
+                        .long-version
+                        {
+                            display: inherit;
+                        }
+                    }
+                    .bottom_text
+                    {
+                        .long-version
+                        {
+                            display: inline;
+                            font-size: 0.9rem;
+                            text-align: center;
+                            flex: 1 1;
+                        }
+                    }
+                }
+            }
+            .list
             {
                 display: none;
             }

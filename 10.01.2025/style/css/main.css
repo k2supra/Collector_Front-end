@@ -30,13 +30,13 @@ aside {
 main {
   background-color: #f5f5f5;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 main nav {
   display: none;
   justify-content: space-between;
-  background-color: antiquewhite;
+  background-color: #f5f5f5;
   width: 95%;
   height: 5vh;
   margin-top: 35px;
@@ -79,7 +79,7 @@ main nav .right-part {
 main nav .right-part .search-bar {
   display: flex;
   align-items: center;
-  background-color: #f5f5f5;
+  background-color: #eaeaea;
   border-radius: 16px;
   padding: 8px 12px;
   width: 11vw;
@@ -434,6 +434,12 @@ main .graphic-4 .graph .vertical_bars .vertical_bar .bg-grey {
 main .graphic-4 .graph .vertical_bars .vertical_bar .bg-black {
   background-color: black;
 }
+main .graphic-4 .graph .vertical_bars .vertical_bar .long-version {
+  display: none;
+}
+main .graphic-4 .graph .vertical_bars .long-version {
+  display: none;
+}
 main .graphic-4 .graph .bottom_text {
   margin-top: 8px;
 }
@@ -447,6 +453,9 @@ main .graphic-4 .graph .bottom_text ul li {
   font-size: 0.9rem;
   text-align: center;
   flex: 1 1;
+}
+main .graphic-4 .graph .bottom_text ul .long-version {
+  display: none;
 }
 main .h10 {
   height: 10%;
@@ -537,23 +546,23 @@ main .list .table ul li .status {
   margin-right: 8px;
   border-radius: 12px;
 }
-main .in-progress {
+main .list .table ul li .in-progress {
   color: #AF52DE;
   background-color: #efdcf8;
 }
-main .complete {
+main .list .table ul li .complete {
   color: #34C759;
   background-color: #d7f4de;
 }
-main .pending {
+main .list .table ul li .pending {
   color: #007AFF;
   background-color: #cce4ff;
 }
-main .approved {
+main .list .table ul li .approved {
   color: #FFCC00;
   background-color: #fef5cc;
 }
-main .rejected {
+main .list .table ul li .rejected {
   color: rgba(0, 0, 0, 0.5019607843);
   background-color: #eaeaea;
 }
@@ -602,9 +611,72 @@ footer .group ul li {
   }
   body main .cards {
     width: 95% !important;
-    display: none;
+    margin-top: 20px;
+    flex-wrap: nowrap;
+    gap: 20px;
   }
-  body main .graphic, body main .graphic-2, body main .graphic-3, body main .graphic-4, body main .list {
+  body main .cards .card {
+    flex: 1 !important;
+    height: fit-content;
+    gap: 10px;
+    padding: 24px;
+  }
+  body main .cards .card .content .icon {
+    width: 22%;
+    height: 70%;
+    padding: 5%;
+  }
+  body main .cards .card .content:first-child {
+    font-size: 1.1rem;
+  }
+  body main .cards .card .content:last-child .text:first-child {
+    font-size: 32px;
+    font-weight: 600;
+  }
+  body main .graphic {
+    width: 95%;
+    padding-bottom: 1vh;
+    height: 42vh;
+  }
+  body main .graphic .frame {
+    width: 100%;
+    margin: 0 !important;
+  }
+  body main .graphic .frame .graph {
+    height: 100%;
+  }
+  body main .graphic .frame .graph img {
+    height: 100%;
+    width: 100%;
+  }
+  body main .graphic .frame .bottom_text {
+    margin-top: -2vh;
+  }
+  body main .graphic-2 {
+    width: 47%;
+    margin-right: 2%;
+    height: 31vh;
+  }
+  body main .graphic-3 {
+    width: 47%;
+    height: 31vh;
+  }
+  body main .graphic-4 {
+    width: 95%;
+  }
+  body main .graphic-4 .graph .vertical_bars .vertical_bar .long-version {
+    display: inherit;
+  }
+  body main .graphic-4 .graph .vertical_bars .long-version {
+    display: inherit;
+  }
+  body main .graphic-4 .graph .bottom_text .long-version {
+    display: inline;
+    font-size: 0.9rem;
+    text-align: center;
+    flex: 1 1;
+  }
+  body main .list {
     display: none;
   }
   body header, body footer {
