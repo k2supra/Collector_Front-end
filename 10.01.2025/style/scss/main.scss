@@ -62,7 +62,7 @@ aside
                 align-items: center;
                 padding: 12px;
                 border-radius: 20px;
-                margin: 0.7vh;
+                // margin: 0.7vh;
                 i
                 {
                     margin-right: 25px;
@@ -966,7 +966,6 @@ footer
                 .card
                 {
                     flex: 1 !important;
-                    // height: 15.3vh;
                     height: fit-content;
                     gap: 10px;
                     padding: 24px;
@@ -989,6 +988,16 @@ footer
                         }
                     }
                 }
+            }
+            .laptop-blue-gradient
+            {
+                background-image: $blue-gradient !important;
+                @include blue-gradient-icon;
+            }
+            .laptop-black-gradient
+            {
+                background-image: $black-gradient !important;
+                @include black-gradient-icon;
             }
             .graphic
             {
@@ -1163,6 +1172,10 @@ footer
                         li
                         {
                             font-size: 1.3rem;
+                            .status
+                            {
+                                font-size: 1rem;
+                            }
                             &::before
                             {
                                 width: 30px;

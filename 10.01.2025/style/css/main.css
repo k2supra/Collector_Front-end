@@ -54,7 +54,6 @@ aside .part-top ul li {
   align-items: center;
   padding: 12px;
   border-radius: 20px;
-  margin: 0.7vh;
 }
 aside .part-top ul li i {
   margin-right: 25px;
@@ -824,6 +823,21 @@ footer .group ul li {
     font-size: 32px;
     font-weight: 600;
   }
+  body main .laptop-blue-gradient {
+    background-image: linear-gradient(#288df6, #4ca4fb) !important;
+  }
+  body main .laptop-blue-gradient .icon {
+    background: linear-gradient(#3897ff, #3897ff) padding-box, linear-gradient(330deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 60%, rgb(255, 255, 255) 100%) border-box;
+  }
+  body main .laptop-black-gradient {
+    background-image: linear-gradient(#090909, #3b3b3b) !important;
+  }
+  body main .laptop-black-gradient .icon {
+    background: linear-gradient(#1e1e1e, #1e1e1e) padding-box, linear-gradient(330deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 60%, rgb(255, 255, 255) 100%) border-box;
+  }
+  body main .laptop-black-gradient:nth-child(2) .icon {
+    rotate: 180deg;
+  }
   body main .graphic {
     width: 95%;
     padding-bottom: 1vh;
@@ -953,6 +967,9 @@ footer .group ul li {
   }
   body main .list .table .data li {
     font-size: 1.3rem;
+  }
+  body main .list .table .data li .status {
+    font-size: 1rem;
   }
   body main .list .table .data li::before {
     width: 30px;
