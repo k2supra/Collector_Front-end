@@ -8,6 +8,7 @@
   box-sizing: border-box;
   font-family: "Inter";
   font-style: normal;
+  transition: all 0.3s ease;
 }
 
 header {
@@ -74,8 +75,12 @@ aside .part-top ul li i::before {
   width: 24px;
   height: 24px;
 }
-aside .part-top ul li:first-child {
+aside .part-top ul li:hover {
   background-color: #eaeaea;
+  white-space: nowrap;
+}
+aside .part-top ul li:hover i {
+  margin-right: 35px;
 }
 aside .part-bottom {
   width: 80%;
@@ -102,6 +107,13 @@ aside .part-bottom ul li i::before {
   justify-content: center;
   width: 24px;
   height: 24px;
+}
+aside .part-bottom ul li:hover {
+  background-color: #eaeaea;
+  white-space: nowrap;
+}
+aside .part-bottom ul li:hover i {
+  margin-right: 35px;
 }
 
 main {
@@ -136,6 +148,9 @@ main nav .left-part .icons i::before {
   align-content: center;
   font-size: 1.3rem;
 }
+main nav .left-part .icons i:hover {
+  translate: 0px -5px;
+}
 main nav .left-part .breadcrumb {
   margin: 0 0 0 0.4vw;
   display: flex;
@@ -146,8 +161,21 @@ main nav .left-part .breadcrumb li:nth-child(1) a {
   color: rgba(0, 0, 0, 0.5019607843);
   text-decoration: none;
 }
-main nav .left-part .breadcrumb li:nth-child(2) a {
+main nav .left-part .breadcrumb li:nth-child(1) a:hover {
+  background-color: #eaeaea;
+  white-space: nowrap;
+  padding: 8px;
+  border-radius: 12px;
+}
+main nav .left-part .breadcrumb li:nth-child(2) {
   color: black;
+}
+main nav .left-part .breadcrumb li:nth-child(2):hover {
+  background-color: #eaeaea;
+  white-space: nowrap;
+  margin-left: 5px;
+  padding: 8px;
+  border-radius: 12px;
 }
 main nav .right-part {
   display: flex;
@@ -184,6 +212,9 @@ main nav .right-part .search-bar .bi-command {
   color: #aaa;
   margin-left: 8px;
 }
+main nav .right-part .search-bar:hover {
+  background-color: rgba(128, 128, 128, 0.384);
+}
 main nav .right-part .icons {
   display: flex;
   margin-right: 0.5vw;
@@ -198,6 +229,9 @@ main nav .right-part .icons i::before {
   text-align: center;
   align-content: center;
   font-size: 1.3rem;
+}
+main nav .right-part .icons i:hover {
+  translate: 0px -5px;
 }
 main .cards {
   width: 91%;
@@ -238,9 +272,15 @@ main .cards .card .content .icon {
 main .cards .card .content:first-child {
   font-size: 1.1rem;
 }
+main .cards .card .content:first-child .text:hover {
+  translate: 5px 0;
+}
 main .cards .card .content:last-child .text:first-child {
   font-size: 1.2rem;
   font-weight: 600;
+}
+main .cards .card .content:last-child .text:first-child:hover {
+  translate: 5px 0;
 }
 main .blue-gradient {
   background-image: linear-gradient(#288df6, #4ca4fb);
@@ -279,8 +319,9 @@ main .graphic .group ul {
   gap: 16px;
   padding: 0;
 }
-main .graphic .group ul li:nth-child(1) {
+main .graphic .group ul li:hover {
   color: #AF52DE;
+  margin: 0 5px;
 }
 main .graphic .group .dropdowns {
   display: none;
@@ -521,6 +562,9 @@ main .graphic-4 .group ul li i::before {
   width: 20px;
   height: 20px;
 }
+main .graphic-4 .group ul li i:hover {
+  background-color: #aaa;
+}
 main .graphic-4 .group ul .laptop-version {
   display: none;
 }
@@ -650,6 +694,9 @@ main .list .text .more i::before {
   width: 20px;
   height: 20px;
 }
+main .list .text .more i:hover {
+  background-color: #aaa;
+}
 main .list .table {
   width: 91%;
   margin-top: 24px;
@@ -690,7 +737,6 @@ main .list .table .data li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #f7f7f7;
   padding-left: 44px;
   position: relative;
   font-size: 3.5vw;
@@ -713,10 +759,12 @@ main .list .table .data li .laptop-version {
   position: absolute;
 }
 main .list .table .data li .date {
-  left: 30%;
+  left: 31%;
+  font-size: 1rem;
 }
 main .list .table .data li .amount {
-  right: 30%;
+  right: 31.5%;
+  font-size: 1rem;
 }
 main .list .table .data li .status {
   padding: 4px 12px;
@@ -742,6 +790,12 @@ main .list .table .data li .approved {
 main .list .table .data li .rejected {
   color: rgba(0, 0, 0, 0.5019607843);
   background-color: #eaeaea;
+}
+main .list .table .data .light-grey {
+  background-color: #fcfcfc;
+}
+main .list .table .data .dark-grey {
+  background-color: #f7f7f7;
 }
 main .footer-laptop {
   display: none;
@@ -852,6 +906,7 @@ footer .group ul li {
   body main .graphic .group {
     display: flex;
     justify-content: space-between;
+    width: 95%;
   }
   body main .graphic .group .dropdowns {
     display: flex;
@@ -900,6 +955,9 @@ footer .group ul li {
     width: 20px;
     height: 20px;
   }
+  body main .graphic-2 .text i:hover {
+    background-color: #aaa;
+  }
   body main .graphic-3 {
     width: 46.5%;
     height: 31vh;
@@ -922,6 +980,9 @@ footer .group ul li {
     align-items: center;
     width: 20px;
     height: 20px;
+  }
+  body main .graphic-3 .text i:hover {
+    background-color: #aaa;
   }
   body main .graphic-4 {
     width: 95%;
@@ -972,10 +1033,11 @@ footer .group ul li {
     height: 100%;
   }
   body main .list .table .data li {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
   body main .list .table .data li .status {
     font-size: 1rem;
+    margin-right: 8px;
   }
   body main .list .table .data li::before {
     width: 30px;
