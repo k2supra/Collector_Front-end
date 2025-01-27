@@ -91,12 +91,19 @@ const { reverse } = require("dns");
 
 /* start ex - 5 */
 let palindrome_number = prompt("Enter a number (palindrom)")
-let reversed = palindrome_number.split('').reverse().join('');
-if (palindrome_number == reversed) {
-    alert("${palindrome_number} is palindrome");
+if (+palindrome_number && palindrome_number.length == 5) {
+    let reversed = palindrome_number.split('').reverse().join('');
+    if (palindrome_number == reversed) {
+        alert(`${palindrome_number} is palindrome`);
+    }
+    else
+    {
+        alert(`${palindrome_number} is not palindrome`);
+    }
 }
 else
 {
-    alert("${palindrome_number} is not palindrome");
+    alert("ERROR")
 }
+
 /* end */
