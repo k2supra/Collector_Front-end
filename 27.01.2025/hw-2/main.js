@@ -1,24 +1,22 @@
-// /* start ex-1 */
-// const recipe = ["Take eggs", "Break them into the bowl", "Add salt and pepper", "Beat well", "Heat the pan", "Pour the eggs into the pan", "Cook until done"];
-// for (const item in recipe) {
-//     if (recipe[2] == recipe[item]) {
-//         let choice = confirm("Want to add some salt?");
-//         if (!choice) {
-//             continue;
-//         }
-//     }
-//     if (recipe[4] == recipe[item]) {
-//         let choice = confirm("Are you hungry?");
-//         if (choice) {
-//             console.log("Well, then eat raw eggs 😅");
-//             break;
-//         }
-//     }
-//     console.log(recipe[item]);
-// }
-// /* end */
-
-const { join } = require("path");
+/* start ex-1 */
+const recipe = ["Take eggs", "Break them into the bowl", "Add salt and pepper", "Beat well", "Heat the pan", "Pour the eggs into the pan", "Cook until done"];
+for (const item in recipe) {
+    if (recipe[2] == recipe[item]) {
+        let choice = confirm("Want to add some salt?");
+        if (!choice) {
+            continue;
+        }
+    }
+    if (recipe[4] == recipe[item]) {
+        let choice = confirm("Are you hungry?");
+        if (choice) {
+            console.log("Well, then eat raw eggs 😅");
+            break;
+        }
+    }
+    console.log(recipe[item]);
+}
+/* end */
 
 /* start ex-2 */
 console.log(greetUser("Bob", 10));
