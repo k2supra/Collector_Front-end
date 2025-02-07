@@ -1,0 +1,119 @@
+.settings
+{
+    margin-bottom: 20px;
+}
+.showcase
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 95%;
+    margin: 0 auto;
+}
+.card
+{
+    width: calc(45% - 15px);
+    min-height: 200px;
+    margin-bottom: 10px;
+    padding: 15px;
+    border: 1px solid rgba(150, 150, 150, 0.5);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+.card:hover {
+    transform: scale(1.05);
+  }
+img
+{
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.description
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+h4
+{
+    margin: 0 0 5px 0;
+}
+span
+{
+    display: flex;
+    justify-content: space-between;
+}
+.add-to-cart
+{
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.add-to-cart:hover
+{
+    background-color: rgb(227, 227, 227);
+}
+.cart
+{
+    width: 50px;
+    aspect-ratio: 1;
+    border: 1px solid rgba(133, 133, 133, 0.225);
+    border-radius: 25px;
+    position: fixed;
+    bottom: 50px;
+    left: 87%;
+    background-image: url(images/cart.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.3s all ease-in-out;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.cart:hover
+{
+    background-color: rgb(227, 227, 227);
+}
+
+#cart
+{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.46);
+}
+#cart-content
+{
+    position: relative;
+    width: 70%;
+    height: 50%;
+    background-color: white;
+    border-radius: 25px;
+}
+.cart-close
+{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    aspect-ratio: 1;
+    border: 0;
+    border-radius: 20px;
+}
