@@ -106,6 +106,7 @@ span
     height: 50%;
     background-color: white;
     border-radius: 25px;
+    overflow-y: auto;
 }
 .cart-close
 {
@@ -116,4 +117,56 @@ span
     aspect-ratio: 1;
     border: 0;
     border-radius: 20px;
+}
+ul
+{
+    list-style-type: none;
+    margin: 50px 0 0 0 ;
+    padding: 0 0 0 10px;
+}
+ul li
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid rgb(207, 207, 207);
+    border-radius: 15px;
+    padding: 10px;
+    width: 90%;
+}
+ul li .item
+{
+    display: flex;
+}
+.item img
+{
+    width: 50px;
+    aspect-ratio: 1;
+    margin: 0 5px 0 0;
+}
+.item .description
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90%;
+    margin: auto;
+}
+li button
+{
+    margin: 0 5px 0 0;
+    padding: 0;
+    text-align: center;
+    align-content: center;
+    width: 20px;
+    height: 20px;
+    border: 0;
+    background-color: rgb(233, 233, 233);
+    transition: 0.3s all ease-in-out;
+}
+li button:hover
+{
+    background-color: rgb(198, 198, 198);
 }
