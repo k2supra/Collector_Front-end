@@ -2,6 +2,9 @@ const products = [
     { name: "Hoodie Oversize", price: 1200, img: "hoodie.jpg" },
     { name: "T-Shirt base", price: 600, img: "tshirt.jpg" },
     { name: "Suit Streetwear", price: 2000, img: "suit.jpg" },
+    { name: "Hoodie Oversize", price: 1200, img: "hoodie.jpg" },
+    { name: "T-Shirt base", price: 600, img: "tshirt.jpg" },
+    { name: "Suit Streetwear", price: 2000, img: "suit.jpg" },
 ];
 
 for (const element of products) {
@@ -33,7 +36,6 @@ function createCard(name, price, image) {
     const addToCartButton = document.createElement("button");
     addToCartButton.classList.add("add-to-cart");
     addToCartButton.textContent = "+"
-    // addToCartButton.setAttribute("onclick", "addToCart()");
 
     span.appendChild(addToCartButton);
 
@@ -78,10 +80,10 @@ function getModalWindow() {
     return document.getElementById("cart");
 }
 function hideModalWindow() {
-    getModalWindow().style.visibility="hidden";
+    getModalWindow().style.display="none";
 }
 function showModalWindow() {
-    getModalWindow().style.visibility="visible";
+    getModalWindow().style.display="flex";
 }
 
 
@@ -98,7 +100,6 @@ function getCartList() {
             const getName = event.target.parentNode.parentNode.children[0].textContent;
             const getPrice = truncateString(event.target.parentNode.parentNode.children[1].textContent);
             let getImage = `${event.target.parentNode.parentNode.parentNode.children[0].getAttribute("src")}`.split("/")[1];
-            // console.log("FIND:::::", products.find((item) => item.name == getName && item.price == getPrice && item.img == getImage));
 
             createCartCard(products.find((item) => item.name == getName && item.price == getPrice && item.img == getImage));
         })

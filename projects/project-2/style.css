@@ -89,7 +89,7 @@ span
 
 #cart
 {
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -169,4 +169,17 @@ li button
 li button:hover
 {
     background-color: rgb(198, 198, 198);
+}
+
+@media (min-width: 768px)
+{
+    .showcase
+    {
+        justify-content: flex-start;
+        gap: 70px;
+    }
+    .card
+    {
+        width: calc(20% - 15px);
+    }
 }
