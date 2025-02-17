@@ -187,7 +187,18 @@ function updateList(order) {
 const waiter1 = new Waiter("Carl");
 const chef1 = new Chef("Martin");
 
-const restaurant1 = Object.assign(restaurant);
+const restaurant1 = Object.create(restaurant);
+restaurant1.menu = [];
+restaurant1.staff = [],
+restaurant1.addStaff = function(person)
+{
+    this.staff.push(person);
+};
+restaurant1.makeOrder = function(order, callback)
+{
+    console.log(`Your order is processing...`);
+    callback(order);
+}
 
 restaurant1.addStaff(waiter1);
 restaurant1.addStaff(chef1);
