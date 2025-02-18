@@ -1,20 +1,43 @@
 class CurrencyExchangeAPI
 {
-    constructor()
+    constructor(apiKey)
     {
-        this.apiKey = "f76f5f70a8795554c919c7fe";
+        this.apiKey = apiKey;
         this.url = `https://v6.exchangerate-api.com/v6/${this.apiKey}/latest/`;
+        this.cachedDataStorage = [];
+        this.counter = 0;
     }
+
+    cacheData(sourceKey, sourceData) {
+        this.cachedDataStorage.push({key: sourceKey, data: sourceData});
+    };
 
     async getData(currencyFrom)
     {
-        const data = await fetch(this.url + currencyFrom).then(response =>
-        {
-            if(!response.ok) console.warn("::::::::::SOMETHING WENT WRONG::::::::::");
-            return response.json();
+        if (this.cachedDataStorage.find(item => item.key == currencyFrom)) {
+            console.log("++++++");
+            return this.cachedDataStorage.find(item => item.key == currencyFrom).data;
         }
-        )
-        return data;
+        else 
+        {
+            console.log("----");
+            const data = await fetch(this.url + currencyFrom).then(response =>
+            {
+                if(!response.ok) console.warn("::::::::::SOMETHING WENT WRONG::::::::::");
+                return response.json();
+            }
+            )
+            this.cacheData(currencyFrom, data);
+            console.log("Counter:::::::", this.counter += 1)
+            return this.getData(currencyFrom);
+        }
+        // const data = await fetch(this.url + currencyFrom).then(response =>
+        // {
+        //     if(!response.ok) console.warn("::::::::::SOMETHING WENT WRONG::::::::::");
+        //     return response.json();
+        // }
+        // )
+        // return data;
     }
     async getExchangeRate(currencyFrom, currencyTo)
     {
@@ -45,9 +68,9 @@ function createOption(target, data) {
 }
 
 
-const apiUrl = new CurrencyExchangeAPI();
-apiUrl.setCurrency();
+const apiUrl = new CurrencyExchangeAPI("18ae28784faa4c6af04597a2");
 
+apiUrl.setCurrency();
 
 const selections = document.getElementsByTagName("input");
 for (const item of selections) {
