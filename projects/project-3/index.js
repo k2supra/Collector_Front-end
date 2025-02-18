@@ -9,13 +9,14 @@ class CurrencyExchangeAPI
     }
 
     cacheData(sourceKey, sourceData) {
-        this.cachedDataStorage.push({key: sourceKey, data: sourceData});
+        this.cachedDataStorage.push({key: sourceKey, requestDate: sourceData["time_last_update_utc"], data: sourceData["conversion_rates"]});
     };
 
     async getData(currencyFrom)
     {
         if (this.cachedDataStorage.find(item => item.key == currencyFrom)) {
             console.log("++++++");
+            console.log(this.cachedDataStorage)
             return this.cachedDataStorage.find(item => item.key == currencyFrom).data;
         }
         else 
@@ -42,7 +43,7 @@ class CurrencyExchangeAPI
     async getExchangeRate(currencyFrom, currencyTo)
     {
         const data = await this.getData(currencyFrom);
-        return data["conversion_rates"][currencyTo.toUpperCase()];
+        return data[currencyTo.toUpperCase()];
     }
     async convertCurrency(currencyFrom, currencyTo, amount)
     {
@@ -54,7 +55,7 @@ class CurrencyExchangeAPI
         const data = await this.getData("USD");
         const selectFrom = document.getElementById("currencyFrom");
         const selectTo = document.getElementById("currencyTo");
-        for (const item of Object.keys(data["conversion_rates"])) {
+        for (const item of Object.keys(data)) {
             createOption(selectFrom, item);
             createOption(selectTo, item);
         }
