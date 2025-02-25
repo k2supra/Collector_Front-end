@@ -7,7 +7,7 @@ const door =
         button.textContent = (this.isOpen) ? ("Opened", doorhtml.style.backgroundColor = "green") : ("Closed", doorhtml.style.backgroundColor = "red");
     },
     init: function() {
-        doorhtml.style.backgroundColor = "red";
+        doorhtml.style.backgroundColor = "red"; 
         button.textContent = "Closed";
     }
 }
