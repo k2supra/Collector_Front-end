@@ -11,7 +11,7 @@ try {
     personEmail = "bobthebuilder@gmail.com";
     personAge = 45;/* Error - impossible to change const value*/
 } catch (error) {
-    console.error("ERROR", error.message);
+    console.error("ERROR", error.message); 
 }
 
 
