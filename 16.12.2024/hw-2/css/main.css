@@ -1,0 +1,41 @@
+body {
+  background-color: #462119;
+  color: #f1d3b1;
+}
+
+h1, h2, h3 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+  width: 50vw;
+  box-shadow: 30px 30px 10px rgba(0, 0, 255, 0.226);
+}
+
+.centered {
+  width: 50vw;
+  margin: 0 auto;
+}
+
+.btn-base, .btn-secondary, .btn-primary {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #f1d3b1;
+}
+
+.btn-primary {
+  background-color: #462119;
+}
+
+.btn-secondary {
+  background-color: #a43821;
+}
+
+/*# sourceMappingURL=main.css.map */

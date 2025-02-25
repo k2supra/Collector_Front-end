@@ -1,0 +1,162 @@
+:root {
+    --main-color: #333;
+    --menu-color: #222;
+    --link-color: #fff;
+    --tips-color: #c5f077;
+}
+
+body {
+    background-color: var(--main-color);
+    margin: 0;
+}
+
+.animated-menu {
+    background-color: var(--menu-color);
+    margin: 0;
+    display: none;
+}
+
+.animated-menu ul {
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: auto;
+}
+
+.animated-menu ul li {
+    width: 25%;
+    background-color: var(--menu-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+.animated-menu ul li a {
+    font-size: 2vw;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 80%;
+    position: relative;
+}
+
+.animated-menu ul li a:hover {
+    background-color: #616161;
+}
+
+.animated-menu ul li a::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -30%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.animated-menu ul li a:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.product-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 95%;
+    margin: auto;
+}
+
+.card {
+    width: 30vw;
+    height: fit-content;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    border: 2px grey solid;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    margin-top: 50px;
+    font-size: 2vw;
+    text-align: center;
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+.card img {
+    margin-top: 5%;
+    width: 85%;
+    transition: all 0.5s ease;
+}
+
+.img-tooltip
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.product-cards .card .img-tooltip::after 
+{
+    content: attr(title);
+    position: absolute;
+    bottom: 30%;
+    font-size: 20px;
+    background-color: rgba(94, 94, 94, 0.8);
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.product-cards .card .img-tooltip:hover::after
+{
+    opacity: 1;
+}
+
+.card:hover {
+    transform: translateY(-50px);
+}
+
+.card img:hover {
+    width: 95%;
+}
+
+.card img:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.image
+{
+    width: 100vw;
+    height: auto;
+    object-fit: cover;
+}
+
+@media (min-width: 600px)
+{
+    .animated-menu
+    {
+        display: initial;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+}

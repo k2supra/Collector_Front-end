@@ -1,0 +1,14 @@
+.masks-collection
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+.mask
+{
+    width: 200px;
+    height: 100px;
+    background-color: antiquewhite;
+    text-align: center;
+    align-content: center;
+    margin: 10px;
+}

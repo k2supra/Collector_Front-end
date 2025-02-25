@@ -1,0 +1,49 @@
+@import "_global.scss";
+@import "_mixins.scss";
+@import "_variables.scss";
+
+body
+{
+    background-color: $bg-color;
+    color: $text-color;
+
+    .container
+    {
+        padding: $padding-size;
+    }
+
+    .card
+    {
+        padding: $padding-size;
+        margin: $margin-10;
+        border: $border-small $border-color;
+        width: 30vw;
+        transition: all 0.3s;
+
+        &:hover
+        {
+            border-color: $border-color-hover;
+        }
+
+        h1
+        {
+            margin: $margin-0;
+        }
+        p
+        {
+            padding: $padding-size;
+        }
+    }
+
+    a
+        {
+            text-decoration: none;
+            color: $text-color;
+            display: inline-block;
+            transition: all 0.3s;
+            &:hover
+            {
+                @include link-hover;
+            }
+        }
+}

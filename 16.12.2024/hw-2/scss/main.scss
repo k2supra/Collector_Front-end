@@ -1,0 +1,45 @@
+@import "_variables.scss";
+@import "_mixins.scss";
+
+body
+{
+    background-color: $primary-color;
+    color: $text-color
+}
+h1, h2, h3
+{
+    font-family: $font-header;
+}
+p
+{
+    font-family: $font-text;
+}
+img
+{
+    width: 50vw;
+    @include box-shadow(rgba(0, 0, 255, 0.226), 10, 30, 30);
+}
+.centered
+{
+    width: 50vw;
+    @include center-block;
+}
+.btn-base
+{
+    padding: 10px 20px; 
+    border-radius: 5px;
+    font-size: 16px; 
+    text-transform: uppercase; 
+    cursor: pointer;
+    color: $text-color
+}
+.btn-primary
+{
+    @extend .btn-base;
+    background-color: $primary-color;
+}
+.btn-secondary
+{
+    @extend .btn-base;
+    background-color: $secondary-color;
+}

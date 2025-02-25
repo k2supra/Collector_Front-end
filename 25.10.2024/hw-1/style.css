@@ -1,0 +1,128 @@
+.content
+{
+    background-image: linear-gradient(to top right, #eed8ae, black);
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-bottom: auto;
+    text-align: center;
+    color: red;
+    border-radius: 0 0 100px 100px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.photos
+{
+    align-items: flex-start;
+    display: flex;
+    padding-left: 0px;
+    margin-bottom: 0px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.photo1
+{
+    content: url(https://play-lh.googleusercontent.com/kaGrEO-c5xXvZlk45lYcU8oQ8ODFcqPXumYLnYAHxJJr96qTVyLHFb41QZbEz-_GLg);
+    width: 150px;
+}
+.photo2
+{
+    content: url(https://www.shutterstock.com/image-vector/darth-vader-helmet-logo-universe-600nw-2338275425.jpg);
+    width: 150px;
+}
+.photo3
+{
+    content: url(https://play-lh.googleusercontent.com/mD_B8KzUVh3ENwq79T_EilMzyK-Zg6srO4tBbX3ilzTE3XglLnj5NGJkYg5RmF0TbS3G);
+    width: 150px;
+}
+footer
+{
+    background-color: #2b4f6f;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    display: block;
+    unicode-bidi: isolate;
+}
+.container
+{
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+.container-components-wrapper
+{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+.container-component
+{
+    flex: 0 28%;
+    flex-direction: column;
+    display: flex;
+}
+div
+{
+    color: white;
+}
+ul
+{
+    align-items: flex-start;
+    list-style: none;
+    margin-top: 0px;
+}
+li
+{
+    padding-top: 10px;
+}
+li:hover
+{
+    text-decoration: underline;
+}
+a
+{
+    text-decoration: none;
+}
+.youtube
+{
+    content: url(https://cdn1.iconfinder.com/data/icons/social-links/60/_26-256.png);
+    width: 35px;
+}
+.youtube:hover
+{
+    content: url(https://cdn1.iconfinder.com/data/icons/social-links/461/youtube-256.png);
+}
+.instagram
+{
+    content: url(https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-256.png);
+    width: 35px;
+}
+.instagram:hover
+{
+    content: url(https://cdn2.iconfinder.com/data/icons/social-icons-33/128/Instagram-256.png);
+}
+.facebook
+{
+    content: url(https://cdn3.iconfinder.com/data/icons/social-media-2253/17/Vector-2-256.png);
+    width: 35px;
+}
+.facebook:hover
+{
+    content: url(https://cdn2.iconfinder.com/data/icons/social-media-applications/64/social_media_applications_1-facebook-256.png);
+}
+.logos
+{
+    flex-direction: row;
+}
+hr
+{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.copyright
+{
+    font-weight: 100;
+    text-align: center;
+    color: lightgrey;
+}

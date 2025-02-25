@@ -1,0 +1,20 @@
+@mixin blue-gradient-icon
+{
+    .icon
+    {
+        background: linear-gradient(#3897ff, #3897ff) padding-box,
+            linear-gradient(330deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,1) 100%) border-box;
+    }
+}
+@mixin black-gradient-icon
+{
+    .icon
+    {
+        background: linear-gradient(#1e1e1e, #1e1e1e) padding-box,
+            linear-gradient(330deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,1) 100%) border-box;
+    }
+    &:nth-child(2) .icon
+    {
+        rotate: 180deg;
+    }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="settings">
+        <input type="text" name="filter" placeholder="Filter">
+    </div>
+    <div class="showcase">
+    </div>
+    <button type="button" class="cart" onclick="showModalWindow()"></button>
+    <div id="cart" style="display: none;">
+        <div id="cart-content">
+            <button type="button" class="cart-close" onclick="hideModalWindow()">⨉</button>
+            <div class="list">
+                <ul></ul>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

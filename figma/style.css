@@ -1,0 +1,13 @@
+.banner
+{
+    min-height: 769px;
+    background: linear-gradient(45deg, #EF2779 0%, #7834BE 100%);
+    padding-top: 100px;
+}
+header
+{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+}
