@@ -17,7 +17,7 @@ body
 }
 .user
 {
-    width: 200px;
+    width: 200px; 
     height: auto;
     display: flex;
     justify-content: center;

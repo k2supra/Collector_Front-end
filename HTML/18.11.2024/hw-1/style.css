@@ -16,7 +16,7 @@ body
 .flex-wrapper .column
 {
     width: calc((100% / 3) - 40px);
-    margin: 0;
+    margin: 0; 
 }
 .flex-wrapper .block
 {
