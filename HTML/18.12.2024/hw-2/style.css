@@ -15,7 +15,7 @@ body
     text-align: center;
     align-content: center;
     border-radius: 15px;
-}
+} 
 .b1
 {
     grid-column: 1 / span 2;
