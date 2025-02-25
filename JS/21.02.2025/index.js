@@ -15,7 +15,7 @@ const character2 =
 }
 const character3 = 
 {
-    name: "Alice",
+    name: "Alice", 
     age: 18,
     profession: "developer",
     mysterySolved: false,
