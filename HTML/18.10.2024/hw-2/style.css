@@ -14,7 +14,7 @@ li
 }
 
 span
-{
+{ 
     text-decoration: line-through;
 }
 .blue::before
