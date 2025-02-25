@@ -16,7 +16,7 @@ switch (true) {
         break;
     default:
         console.warn("Incorrect");
-        break;
+        break; 
 }
 /* end */
 
