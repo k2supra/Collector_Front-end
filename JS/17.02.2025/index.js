@@ -13,7 +13,7 @@ const programmersMeeting =
             {
                 person.performTask(callback)
             }
-        }
+        } 
     }
 }
 
