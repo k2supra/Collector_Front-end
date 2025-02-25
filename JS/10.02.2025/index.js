@@ -8,7 +8,7 @@ const pizzaShop =
     takeOrder(pizzaName, callback)
     {
         console.log(`Pizzayolo ${this.chef}, took order of pizza ${pizzaName}`);
-        callback.call(this, pizzaName);
+        callback.call(this, pizzaName); 
     }
 }
 function orderReady(pizzaName) {
