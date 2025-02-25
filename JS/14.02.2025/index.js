@@ -9,7 +9,7 @@ const animal =
         console.log(callback(this));
     }
 }
-
+ 
 function eat(animal) {
     animal.energy += 10;
     return `${animal.name} ate. Energy: ${animal.energy}`;
