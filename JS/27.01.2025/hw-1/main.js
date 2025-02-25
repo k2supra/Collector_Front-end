@@ -14,7 +14,7 @@ console.log("All products in the basket! Now I can go to the checkout.")
 
 /* start ex-2 */
 multiplyNumbers(17)
-
+ 
 function multiplyNumbers(num) {
     if (num < 1 || num > 100) {
         console.log("Enter a normal number");
