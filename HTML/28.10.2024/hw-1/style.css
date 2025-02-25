@@ -12,7 +12,7 @@ main
 {
     margin-bottom: 50%;
 }
-.block1, .block2 {
+.block1, .block2 { 
     width: 150px;
     height: 150px;
     position: absolute;
