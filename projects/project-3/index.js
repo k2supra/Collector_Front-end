@@ -7,21 +7,42 @@ class CurrencyExchangeAPI
         this.cachedDataStorage = [];
         this.counter = 0;
     }
-
+    /* cacheData() - adds object of fetched data into 'cachedDataStorage' array */
     cacheData(sourceKey, sourceData) {
-        this.cachedDataStorage.push({key: sourceKey, requestDate: sourceData["time_last_update_utc"], data: sourceData["conversion_rates"]});
+        this.cachedDataStorage.push({key: sourceKey, requestDate: this.trimDate(sourceData["time_last_update_utc"]), data: sourceData["conversion_rates"]});
     };
 
+    /* trimDate() - truncates to the desired date format, example: 'Fri Feb 28 2025'*/
+    trimDate(date)
+    {
+        const trimmedDate = new Date(date.toString())
+        return trimmedDate.toDateString();
+    }
+
+    /* isExpired() - checks if the requested data from cache is not expired */
+    isExpired(requestedDate)
+    {
+        const todayDate = new Date().toDateString();
+        return requestedDate != todayDate;
+    }
+
+    /* getData() - checks for data in the cache, if cache contains - checks the expire date and return the data.
+     In case cache storage does not contain needed data, it fetches it from API and calls itself */
     async getData(currencyFrom)
     {
-        if (this.cachedDataStorage.find(item => item.key == currencyFrom)) {
-            console.log("++++++");
-            console.log(this.cachedDataStorage)
-            return this.cachedDataStorage.find(item => item.key == currencyFrom).data;
+        const isItem = this.cachedDataStorage.find(item => item.key == currencyFrom);
+        if (isItem) {
+            if (!this.isExpired(isItem.requestDate)) {
+                return isItem.data;
+            }
+            else
+            {
+                this.cachedDataStorage.splice(this.cachedDataStorage.findIndex(element => element.currencyFrom == isItem), 1)
+                return this.getData(currencyFrom);
+            }
         }
         else 
         {
-            console.log("----");
             const data = await fetch(this.url + currencyFrom).then(response =>
             {
                 if(!response.ok) console.warn("::::::::::SOMETHING WENT WRONG::::::::::");
@@ -29,7 +50,6 @@ class CurrencyExchangeAPI
             }
             )
             this.cacheData(currencyFrom, data);
-            console.log("Counter:::::::", this.counter += 1)
             return this.getData(currencyFrom);
         }
         // const data = await fetch(this.url + currencyFrom).then(response =>
@@ -40,16 +60,22 @@ class CurrencyExchangeAPI
         // )
         // return data;
     }
+
+    /* getExchangeRate() - returns conversion rate of currencies */
     async getExchangeRate(currencyFrom, currencyTo)
     {
         const data = await this.getData(currencyFrom);
         return data[currencyTo.toUpperCase()];
     }
+
+    /* convertCurrency() - returns final value of conversion */
     async convertCurrency(currencyFrom, currencyTo, amount)
     {
         const rate = await this.getExchangeRate(currencyFrom, currencyTo);
         return (rate * amount).toFixed(2);
     }
+
+    /* setCurrency() - sets all currencies from fetched data as a list into droplist */
     async setCurrency()
     {
         const data = await this.getData("USD");
@@ -62,6 +88,7 @@ class CurrencyExchangeAPI
     }
 }
 
+/* createOption() - adds data into a droplist */
 function createOption(target, data) {
     const option = document.createElement("option");
     option.textContent = data;
@@ -73,6 +100,8 @@ const apiUrl = new CurrencyExchangeAPI("18ae28784faa4c6af04597a2");
 
 apiUrl.setCurrency();
 
+
+/* adds events for input fields for automatic data(output value of converted currencies) refresh */
 const selections = document.getElementsByTagName("input");
 for (const item of selections) {
     item.addEventListener("input", async function(event)
