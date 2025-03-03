@@ -4,13 +4,24 @@ class CurrencyExchangeAPI
     {
         this.apiKey = apiKey;
         this.url = `https://v6.exchangerate-api.com/v6/${this.apiKey}/latest/`;
-        this.cachedDataStorage = [];
-        this.counter = 0;
+        this.cachedDataStorage = this.getLocalStorageCache() || [];
     }
-    /* cacheData() - adds object of fetched data into 'cachedDataStorage' array */
-    cacheData(sourceKey, sourceData) {
+    /* setCacheData() - adds object of fetched data into 'cachedDataStorage' array */
+    setCacheData(sourceKey, sourceData) {
         this.cachedDataStorage.push({key: sourceKey, requestDate: this.trimDate(sourceData["time_last_update_utc"]), data: sourceData["conversion_rates"]});
     };
+
+    /* setLocalStorageCache() - sets cached data into the local storage */
+    setLocalStorageCache()
+    {
+        localStorage.setItem("convertionData", JSON.stringify(this.cachedDataStorage));
+    }
+
+    /* getLocalStorageCache() - returns data from local storage */
+    getLocalStorageCache()
+    {
+        return JSON.parse(localStorage.getItem("convertionData"));
+    }
 
     /* trimDate() - truncates to the desired date format, example: 'Fri Feb 28 2025'*/
     trimDate(date)
@@ -49,16 +60,10 @@ class CurrencyExchangeAPI
                 return response.json();
             }
             )
-            this.cacheData(currencyFrom, data);
+            this.setCacheData(currencyFrom, data);
+            this.setLocalStorageCache();
             return this.getData(currencyFrom);
         }
-        // const data = await fetch(this.url + currencyFrom).then(response =>
-        // {
-        //     if(!response.ok) console.warn("::::::::::SOMETHING WENT WRONG::::::::::");
-        //     return response.json();
-        // }
-        // )
-        // return data;
     }
 
     /* getExchangeRate() - returns conversion rate of currencies */
@@ -96,10 +101,9 @@ function createOption(target, data) {
 }
 
 
-const apiUrl = new CurrencyExchangeAPI("18ae28784faa4c6af04597a2");
+const currencyConverter = new CurrencyExchangeAPI("18ae28784faa4c6af04597a2");
 
-apiUrl.setCurrency();
-
+currencyConverter.setCurrency();
 
 /* adds events for input fields for automatic data(output value of converted currencies) refresh */
 const selections = document.getElementsByTagName("input");
@@ -111,13 +115,12 @@ for (const item of selections) {
         const amount = event.target.value;
 
         if (event.target.id === "valueFrom") {
-            const result = await apiUrl.convertCurrency(currencyFrom, currencyTo, amount);
+            const result = await currencyConverter.convertCurrency(currencyFrom, currencyTo, amount);
             document.getElementById("valueTo").value = result;
         } 
         else if (event.target.id === "valueTo") {
-            const result = await apiUrl.convertCurrency(currencyTo, currencyFrom, amount);
+            const result = await currencyConverter.convertCurrency(currencyTo, currencyFrom, amount);
             document.getElementById("valueFrom").value = result;
         }
     })
 }
-
