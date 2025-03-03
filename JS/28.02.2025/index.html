@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" class="songName" placeholder="Song Name">
+        <label for="duration"></label>
+        <input type="number" class="songDuration" name="duration">
+        <button type="submit" onclick="addSong()">Add Song</button>
+    </form>
+    <ul></ul>
+    <button onclick="sortByName()">Sort By Name</button>
+    <button onclick="sortByDuration()">Sort By Duration</button>
+    <button onclick="calculateTotalDuration()">Count The Total Duration</button>
+    <h3 id="totalTime"></h3>
+    <input type="text" id="filter" placeholder="Song Name Filter">
+    <button onclick="resetUl()">Delete All</button>
+</body>
+</html>
