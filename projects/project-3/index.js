@@ -4,7 +4,8 @@ class CurrencyExchangeAPI
     {
         this.apiKey = apiKey;
         this.url = `https://v6.exchangerate-api.com/v6/${this.apiKey}/latest/`;
-        this.cachedDataStorage = this.getLocalStorageCache() || [];
+        this.cachedDataStorage = this.getLocalStorageCache("convertionData", true) || [];
+        this.cachedLastCurrencies = this.getLocalStorageCache("lastCurrency", true) || ["USD", "USD"];
     }
     /* setCacheData() - adds object of fetched data into 'cachedDataStorage' array */
     setCacheData(sourceKey, sourceData) {
@@ -12,15 +13,27 @@ class CurrencyExchangeAPI
     };
 
     /* setLocalStorageCache() - sets cached data into the local storage */
-    setLocalStorageCache()
+    setLocalStorageCache(title, data, flag)
     {
-        localStorage.setItem("convertionData", JSON.stringify(this.cachedDataStorage));
+        if (flag) {
+            localStorage.setItem(title, JSON.stringify(data));
+        }
+        else
+        {
+            localStorage.setItem(title, data);
+        }
     }
 
     /* getLocalStorageCache() - returns data from local storage */
-    getLocalStorageCache()
+    getLocalStorageCache(title, flag)
     {
-        return JSON.parse(localStorage.getItem("convertionData"));
+        if (flag) {
+            return JSON.parse(localStorage.getItem(title));
+        }
+        else
+        {
+            return localStorage.getItem(title);
+        }
     }
 
     /* trimDate() - truncates to the desired date format, example: 'Fri Feb 28 2025'*/
@@ -61,7 +74,7 @@ class CurrencyExchangeAPI
             }
             )
             this.setCacheData(currencyFrom, data);
-            this.setLocalStorageCache();
+            this.setLocalStorageCache("convertionData", this.cachedDataStorage, true);
             return this.getData(currencyFrom);
         }
     }
@@ -83,11 +96,17 @@ class CurrencyExchangeAPI
     /* setCurrency() - sets all currencies from fetched data as a list into droplist */
     async setCurrency()
     {
-        const data = await this.getData("USD");
+
+        const dataFrom = await this.getData(this.cachedLastCurrencies[0]);
+        const dataTo = await this.getData(this.cachedLastCurrencies[1]);
+
         const selectFrom = document.getElementById("currencyFrom");
         const selectTo = document.getElementById("currencyTo");
-        for (const item of Object.keys(data)) {
+
+        for (const item of Object.keys(dataFrom)) {
             createOption(selectFrom, item);
+        }
+        for (const item of Object.keys(dataTo)) {
             createOption(selectTo, item);
         }
     }
@@ -106,8 +125,8 @@ const currencyConverter = new CurrencyExchangeAPI("18ae28784faa4c6af04597a2");
 currencyConverter.setCurrency();
 
 /* adds events for input fields for automatic data(output value of converted currencies) refresh */
-const selections = document.getElementsByTagName("input");
-for (const item of selections) {
+const inputs = document.getElementsByTagName("input");
+for (const item of inputs) {
     item.addEventListener("input", async function(event)
     {
         const currencyFrom = document.querySelector("#currencyFrom").value;
@@ -124,3 +143,17 @@ for (const item of selections) {
         }
     })
 }
+
+const currencyFrom = document.getElementById("currencyFrom");
+currencyFrom.addEventListener("click", () => 
+{    
+    currencyConverter.cachedLastCurrencies[0] = currencyFrom.value;
+    currencyConverter.setLocalStorageCache("lastCurrency", currencyConverter.cachedLastCurrencies, true);
+})
+
+const currencyTo = document.getElementById("currencyTo");
+currencyTo.addEventListener("click", () => 
+{
+    currencyConverter.cachedLastCurrencies[1] = currencyTo.value;
+    currencyConverter.setLocalStorageCache("lastCurrency", currencyConverter.cachedLastCurrencies, true);
+})
