@@ -1,3 +1,9 @@
+window.addEventListener("load", () =>
+{
+        const animation = document.querySelector(".loading-player");
+        animation.style.display="none";
+})
+
 class CurrencyExchangeAPI
 {
     constructor(apiKey)
@@ -157,3 +163,4 @@ currencyTo.addEventListener("click", () =>
     currencyConverter.cachedLastCurrencies[1] = currencyTo.value;
     currencyConverter.setLocalStorageCache("lastCurrency", currencyConverter.cachedLastCurrencies, true);
 })
+
