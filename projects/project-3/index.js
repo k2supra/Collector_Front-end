@@ -151,14 +151,14 @@ for (const item of inputs) {
 }
 
 const currencyFrom = document.getElementById("currencyFrom");
-currencyFrom.addEventListener("click", () => 
+currencyFrom.addEventListener("change", () => 
 {    
     currencyConverter.cachedLastCurrencies[0] = currencyFrom.value;
     currencyConverter.setLocalStorageCache("lastCurrency", currencyConverter.cachedLastCurrencies, true);
 })
 
 const currencyTo = document.getElementById("currencyTo");
-currencyTo.addEventListener("click", () => 
+currencyTo.addEventListener("change", () => 
 {
     currencyConverter.cachedLastCurrencies[1] = currencyTo.value;
     currencyConverter.setLocalStorageCache("lastCurrency", currencyConverter.cachedLastCurrencies, true);
