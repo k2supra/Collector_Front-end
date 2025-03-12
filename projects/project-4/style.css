@@ -26,8 +26,11 @@ nav, nav .container, nav .container .left, .right
 nav
 {
     height: 60px;
+    width: 100vw;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    top: 0;
 }
 nav .container
 {
