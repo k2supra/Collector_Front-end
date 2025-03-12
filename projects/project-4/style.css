@@ -1,0 +1,89 @@
+@font-face {
+    font-family: 'Inter';
+    src: url(assets/inter_font.ttf);
+}
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter;
+    color: white;
+}
+body
+{
+    background-color: black;
+}
+button
+{
+    border: 0;
+    background-color: transparent;
+}
+nav, nav .container, nav .container .left, .right
+{
+    display: flex;
+}
+nav
+{
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+}
+nav .container
+{
+    width: 768px;
+    justify-content: space-between;
+}
+nav .container .left
+{
+    gap: 20px;
+}
+nav .container .left .logo
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px; 
+    padding: 4px;
+}
+nav .container .left img
+{
+    width: 24px;
+    aspect-ratio: 1;
+}
+nav .container .left span
+{
+    font-weight: bold;
+    font-size: 18px;
+}
+nav .container .left .menu
+{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+nav .container .left .menu button
+{
+    padding: 6px 16px;
+}
+nav .container .right
+{
+    gap: 10px;
+}
+nav .container .right button
+{
+    padding: 6px 16px;
+}
+nav .container .right button:last-of-type
+{
+    border-radius: 8px;
+    border: 1px solid transparent;
+
+    background: linear-gradient(rgb(0, 0, 0) 0%, rgb(0, 0, 0) 100%) padding-box,
+    linear-gradient(45deg, rgba(255,255,255, 0) 0%, rgba(255,255,255, 1) 100%) border-box;
+    box-shadow: inset 0px 0px 20px 0px rgba(198, 204, 255, 0.2), /* inside */
+    inset 0px 1px 3px 0px rgb(199, 220, 255, 0.35), /* top */
+    0px 1px 22px 0px rgba(255, 255, 255, 0.1), /* drop shadow */
+    0px 4px 4px 0px rgb(0, 0, 0, 5%), /* drop shadow */
+    0px 10px 10px 0px rgb(0, 0, 0, 10%); /* drop shadow */
+}
