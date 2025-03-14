@@ -1,0 +1,15 @@
+.fade-in {
+    width: 100vh;
+    white-space: nowrap;
+    animation: fadeInScale 3s ease;
+    overflow: hidden;
+}
+
+@keyframes fadeInScale {
+    from {
+        width: 0px;
+    }
+    to {
+        width: 100vh;
+    }
+}
