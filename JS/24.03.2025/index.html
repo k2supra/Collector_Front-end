@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div class="form-item">
+            <label for="nickname">Nickname</label>
+            <input type="text" name="nickname" id="nickname" placeholder="Nickname_Example">
+            <small class="nickname">At least 3 letters, only latin letters and 0-9 numbers</small>
+        </div>
+        <div class="form-item">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="example@email.com">
+            <small class="email">Incorrect email</small>
+        </div>
+        <div class="form-item">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="password_Example">
+            <span onclick="changeType()">Show/Hide</span>
+            <small class="password">At least: 8 symbols, 1 uppercase, 1 lowercase, 1 digit</small>
+        </div>
+        <div class="form-item">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text" name="phoneNumber" id="phoneNumber" placeholder="+380 xxx xxx xxx">
+            <small class="phoneNumber">Incorrect format</small>
+        </div>
+        <div class="form-item">
+            <label for="age">Age</label>
+            <input type="text" name="age" id="age" placeholder="18+">
+            <small class="age">At least 18 y.o.</small>
+        </div>
+        <div class="form-item">
+            <label for="websiteUrl">Website Url</label>
+            <input type="text" name="websiteUrl" id="websiteUrl" placeholder="website-url.com">
+            <small class="websiteUrl">Incorrect url</small>
+        </div>
+        <button>Register</button>
+    </form>
+</body>
+</html>
