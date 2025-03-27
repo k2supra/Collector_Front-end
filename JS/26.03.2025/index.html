@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="main.js" defer></script>
+    <title>Document</title>
+    <style>
+        ul
+        {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+        li
+        {
+            border: 1px solid black;
+            border-radius: 16px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 16px;
+            height: 300px;
+            width: 200px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            top: 0;
+        }
+        li:hover
+        {
+            top: -10px;
+        }
+        img
+        {
+            height: 250px;
+            width: auto;
+            max-width: 200px;
+        }
+        .modal-window
+        {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content
+        {
+            width: 60vw;
+            height: 60vh;
+            background-color: white;
+            border-radius: 16px;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .modal-content img
+        {
+            height: 200px;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <input type="text">
+    <ul class="data"></ul>
+    <div class="modal-window">
+        <div class="modal-content"></div>
+    </div>
+</body>
+</html>
