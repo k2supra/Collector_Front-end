@@ -14,6 +14,13 @@ body
 {
     background-color: black;
 }
+hr
+{
+    background-color: rgb(255, 255, 255, 0.1);
+    height: 1px;
+    border: none;
+    margin-bottom: 15px;
+}
 nav, nav .container, nav .container .left, .right
 {
     display: flex;
@@ -102,6 +109,7 @@ nav .container .right button:last-of-type::before
     border-radius: 8px;
     background: linear-gradient(45deg, rgba(255,255,255, 0) 0%, rgba(255,255,255, 1) 100%), 
     rgb(255, 242, 242, 0.07);
+    mask: unset;
     -webkit-mask: 
         linear-gradient(white 0 0) content-box, 
         linear-gradient(white 0 0);
@@ -119,6 +127,7 @@ nav .container .right button:last-of-type::before
 .hero .text-block
 {
     margin-top: 140px;
+    margin-bottom: 40px;
     width: 510px;
     display: flex;
     flex-direction: column;
@@ -151,6 +160,7 @@ nav .container .right button:last-of-type::before
     border-radius: 8px;
     background: linear-gradient(45deg, rgba(255,255,255, 0) 0%, rgba(255,255,255, 0.2) 100%), 
     rgb(255, 242, 242, 0.07);
+    mask: unset;
     -webkit-mask: 
         linear-gradient(white 0 0) content-box, 
         linear-gradient(white 0 0);
@@ -204,6 +214,7 @@ nav .container .right button:last-of-type::before
     border-radius: 8px;
     background: linear-gradient(rgba(39, 56, 207, 0) 0%, #BDFCFE 100%),
     rgba(255, 255, 255, 0.2);
+    mask: unset;
     -webkit-mask: 
         linear-gradient(white 0 0) content-box, 
         linear-gradient(white 0 0);
@@ -216,4 +227,236 @@ nav .container .right button:last-of-type::before
 {
     content: ">";
     margin-left:12px;
+}
+
+.app-proto
+{
+    width: 975px;
+    height: 627px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.app-proto .sidebar
+{
+    width: 203px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+}
+.app-proto .sidebar .top .logo
+{
+
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.app-proto .sidebar .top .logo span
+{
+    font-weight: bold;
+    font-size: 13.5px;
+}
+.app-proto .sidebar .top .logo .logo-img
+{
+    width: 33px;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.app-proto .sidebar .top ul
+{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+.app-proto .sidebar ul li
+{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    font-weight: 500;
+    font-size: 10.5px;
+    line-height: 15px;
+
+    padding: 7.5px 15px;
+}
+.app-proto .sidebar ul li::before
+{
+    display: flex;
+    width: 12px;
+    height: 12px;
+    align-items: flex-start;
+    margin-right: 9px;
+}
+.app-proto .sidebar ul .all-components-logo::before
+{
+    content: url(images/all-components-logo.png);
+}
+.app-proto .sidebar ul .buttons-logo::before
+{
+    content: url(images/buttons-logo.png);
+}
+.app-proto .sidebar ul .menus-logo::before
+{
+    content: url(images/menus-logo.png);
+}
+.app-proto .sidebar ul .cards-logo::before
+{
+    content: url(images/cards-logo.png);
+}
+.app-proto .sidebar ul .icons-logo::before
+{
+    content: url(images/icons-logo.png);
+}
+.app-proto .sidebar ul .patterns-logo::before
+{
+    content: url(images/patterns-logo.png);
+}
+.app-proto .sidebar ul .backgrounds-logo::before
+{
+    content: url(images/backgrounds-logo.png);
+}
+.app-proto .sidebar ul .keyboard-shortcuts-logo::before
+{
+    content: url(images/keyboard-shortcuts-logo.png);
+}
+.app-proto .sidebar ul .settings-logo::before
+{
+    content: url(images/settings-logo.png);
+}
+.app-proto .sidebar ul .help-center-logo::before
+{
+    content: url(images/help-center-logo.png);
+}
+
+.app-proto .content
+{
+    width: 100%;
+    padding: 15px;
+}
+.app-proto .content header
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin-bottom: 15px;
+}
+.app-proto .content header .input-wrapper
+{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 9px;
+    width: 301px;
+    padding: 7.5px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 75px;
+    background-color: rgb(0, 0, 0, 0.6);
+}
+.app-proto .content header input
+{
+    border: none;
+    background-color: transparent;
+}
+.app-proto .content header .input-wrapper::after
+{
+    content: url(images/search-logo.png);
+    width: 18px;
+    height: 18px;
+}
+.app-proto .content header input::placeholder
+{
+    color: white;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.app-proto .content header .user
+{
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.app-proto .content header .user::after
+{
+    content: "";
+    position: absolute;
+
+    border: 2px solid rgb(51, 149, 255);
+    border-radius: 50%;
+    clip-path: polygon(50% 0%, 100% 0%, 100% 50%, 50% 50%);
+    width: inherit;
+    height: inherit;
+}
+.app-proto .content header .user img
+{
+    width: 28px;
+    height: 28px;
+    border-radius: 80px;
+}
+.app-proto .content .filters .toggler
+{
+    padding: 3px;
+    gap: 6px;
+
+    width: 210px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    border: 1px solid rgb(255, 255, 255, 0.1);
+    border-radius: 75px;
+
+    position: relative;
+}
+.app-proto .content .filters .toggler input
+{
+    display: none;
+}
+.app-proto .content .filters .toggler label
+{
+    text-align: center;
+    font-size: 10px;
+    line-height: 15px;
+    padding: 3px 9px;
+    width: 100%;
+    z-index: 2;
+}
+.app-proto .content .filters .toggler span
+{
+    height: 21px;
+    width: 63.5px;
+    z-index: 1;
+
+    background-color: rgb(0, 0, 0, 0.6);
+
+    border-radius: 75px;
+    border: 1px solid rgb(255, 255, 255, 0.1);
+
+    position: absolute;
+
+    transition: all 0.3s ease;
+}
+.app-proto .content .filters .toggler input[value="glass"]:checked ~ span
+{
+    left: 3px;
+}
+.app-proto .content .filters .toggler input[value="outline"]:checked ~ span
+{
+    left: 72px;
+}
+.app-proto .content .filters .toggler input[value="flat"]:checked ~ span
+{
+    left: 142px;
 }
