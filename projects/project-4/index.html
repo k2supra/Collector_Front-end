@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
     <title>Document</title>
 </head>
 <body>
@@ -78,11 +79,6 @@
                     </header>
                     <hr>
                     <div class="filters">
-                        <!-- <ul>
-                            <li>Glass</li>
-                            <li>Outline</li>
-                            <li>Flat</li>
-                        </ul> -->
                         <div class="toggler">
                             <input type="radio" name="style" id="glass" value="glass" checked>
                             <label for="glass">Glass</label>
@@ -93,12 +89,22 @@
                             <span></span>
                         </div>
                         <div class="sorts">
-                            <select name="corner-radius" id="">
-                                <option value="10">Corner Radius: 10</option>
-                            </select>
-                            <select name="sort-by" id="">
-                                <option value="type">Sort by Type</option>
-                            </select>
+                            <div class="custom-select">
+                                <div class="selected">Corner Radius: 10</div>
+                                <div class="options">
+                                  <div data-value="10">Corner Radius: 10</div>
+                                  <div data-value="20">Corner Radius: 20</div>
+                                  <div data-value="30">Corner Radius: 30</div>
+                                </div>
+                            </div>
+                            <div class="custom-select">
+                                <div class="selected">Sort by</div>
+                                <div class="options">
+                                  <div data-value="10">Aura</div>
+                                  <div data-value="20">Color</div>
+                                  <div data-value="30">Type</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -405,6 +405,11 @@ nav .container .right button:last-of-type::before
     height: 28px;
     border-radius: 80px;
 }
+.app-proto .content .filters
+{
+    display: flex;
+    justify-content: space-between;
+}
 .app-proto .content .filters .toggler
 {
     padding: 3px;
@@ -460,3 +465,79 @@ nav .container .right button:last-of-type::before
 {
     left: 142px;
 }
+
+.app-proto .content .filters .sorts
+{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+/* .app-proto .content .filters .sorts select
+{
+    position: relative;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 6px 12px;
+    border: 1px solid rgb(255, 255, 255, 0.1);
+    border-radius: 75px;
+    background-color: transparent;
+    font-size: 10.5px;
+    line-height: 15px;
+    
+} */
+.custom-select {
+    position: relative;
+    width: fit-content;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 6px 12px;
+    border: 1px solid rgb(255, 255, 255, 0.1);
+    border-radius: 75px;
+    font-size: 10.5px;
+    line-height: 15px;
+  }
+  
+  .selected {
+    display: flex;
+    align-items: center;
+  }
+  .selected::after
+  {
+    content: url(images/chevron-down.png);
+    display: flex;
+    align-items: center;
+    width: 12px;
+    height: 12px;
+    margin-left: 9px;
+  }
+  
+  .options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: transparent;
+    border: 1px solid rgb(255, 255, 255, 0.1);
+    border-radius: 8px;
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .options div {
+    padding: 10px 12px;
+    transition: background 0.2s;
+  }
+  
+  .options div:hover {
+    background: rgb(238, 238, 238, 0.1);
+  }
+  
+  .custom-select.open .options {
+    display: block;
+  }
