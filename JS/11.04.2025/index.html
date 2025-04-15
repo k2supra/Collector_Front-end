@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js" defer></script>
+    <title>Document</title>
+    <style>
+        body
+        {
+            min-height: 150vh;
+        }
+        .slideshow-container {
+            width: 70vw;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slides-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        a {
+            position: absolute;
+            top: 50%;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 10;
+            user-select: none;
+            transform: translateY(-50%);
+        }
+
+        .previous {
+            left: 5%;
+        }
+        .next {
+            right: 5%;
+        }
+        .arrow-disabled {
+            color: gray;
+            pointer-events: none;
+        }
+        .blocks
+        {
+            width: 80vw;
+            margin: auto;
+        }
+        .block
+        {
+            background-color: rgb(87, 87, 199);
+            border: 2px solid navy;
+            color: white;
+        }
+        .info
+        {
+            display: none;
+            background-color: rgb(159, 159, 230);
+        }
+        .active
+        {
+            display: flex;
+        }
+        .news {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f3f3f3;
+            border-radius: 8px;
+        }
+        .loading {
+            text-align: center;
+            padding: 20px;
+            font-weight: bold;
+            color: gray;
+        }
+        table
+        {
+            border-spacing: 0;
+        }
+        th, td
+        {
+            border: 1px solid black;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            align-content: center;
+        }
+        .calendar
+        {
+            width: 70vw;
+            margin: auto;
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .inputs
+        {
+            display: flex;
+            gap: 20px;
+        }
+        label
+        {
+            margin-left: -15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="slides-wrapper">
+        </div>
+
+        <a class="previous" onclick="prevSlide()">&#10094;</a>
+        <a class="next" onclick="nextSlide()">&#10095;</a>
+    </div>
+    <div class="blocks">
+        <div class="block">Title 1
+            <div class="info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dolore alias dicta, laboriosam quos eos.
+            </div>
+        </div>
+        <div class="block">Title 2
+            <div class="info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dolore alias dicta, laboriosam quos eos.
+            </div>
+        </div>
+        <div class="block">Title 3
+            <div class="info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dolore alias dicta, laboriosam quos eos.
+            </div>
+        </div>
+        <div class="block">Title 4
+            <div class="info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dolore alias dicta, laboriosam quos eos.
+            </div>
+        </div>
+        <div class="block">Title 5
+            <div class="info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dolore alias dicta, laboriosam quos eos.
+            </div>
+        </div>
+    </div>
+    <div id="news-container"></div>
+    <div class="loading" id="loading" style="display: none;">Loading...</div>
+    <div class="calendar">
+        <div class="inputs">
+            <input type="text" name="month" id="month">
+            <label for="month">Month</label>
+            <input type="text" name="year" id="year">
+            <label for="year">Year</label>
+            <button onclick="createCalendar()">Generate</button>
+        </div>
+        <div class="data">
+            <h2>month, year</h2>
+            <div class="calendar-grid">
+                <table></table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
