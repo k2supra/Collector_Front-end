@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js" defer></script>
+    <title>Document</title>
+    <style>
+        .modal-window
+        {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 10;
+        }
+        .modal-window-content
+        {
+            width: 70vw;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: wheat;
+        }
+        .football
+        {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .football-field
+        {
+            position: relative;
+            width: 90vw;
+            height: 90vh;
+            background-color: green;
+            margin: auto;
+        }
+        .ball
+        {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: whitesmoke;
+            position: absolute;
+            transition: all 0.3s ease;
+        }
+        .trafic-light
+        {
+            width: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .lights
+        {
+            width: 200px;
+            height: 60px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            border: 2px solid rgba(123, 123, 123, 0.5);
+            border-radius: 20px;
+        }
+        .light
+        {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(128, 128, 128, 0.5);
+            border-radius: 50%;
+        }
+        .trafic-light button
+        {
+            border: 0;
+            width: 50px;
+            height: 50px;
+            align-content: center;
+            text-align: center;
+        }
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            padding: 50px;
+        }
+        .tooltip-container:first-of-type
+        {
+            padding: 1px;
+        }
+        .tooltip {
+            position: absolute;
+            background-color: black;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.2s;
+            pointer-events: none;
+        }
+        .tooltip.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="input-form">
+        <label for="name">Name</label>
+        <input type="text" name="name">
+    </div>
+    <div class="modal-window-button">
+        <button id="openmw">Open Modal Window</button>
+        <div class="modal-window">
+            <div class="modal-window-content">
+                <h2>Hello</h2>
+                <button id="closemw">Close Modal Window</button>
+            </div>
+        </div>
+    </div>
+    <div class="football">
+        <div class="football-field">
+            <div class="ball"></div>
+        </div>
+    </div>
+    <div class="trafic-light">
+        <div class="lights">
+            <div class="light" id="red"></div>
+            <div class="light" id="yellow"></div>
+            <div class="light" id="green"></div>
+        </div>
+        <button>Next</button>
+    </div>
+    <ul class="books">
+        <li>Book 1</li>
+        <li>Book 2</li>
+        <li>Book 3</li>
+        <li>Book 4</li>
+        <li>Book 5</li>
+    </ul>
+    <div class="tooltip-task">
+        <div class="border">Lorem ipsum dolor sit amet.</div>
+        <div class="tooltips">
+            <div class="tooltip-container">
+                <button>Button 1</button>
+                <div class="tooltip">Hint 1</div>
+            </div>
+            
+            <div class="tooltip-container">
+                <button>Button 2</button>
+                <div class="tooltip">Hint 2</div>
+            </div>
+            
+            <div class="tooltip-container">
+                <button>Button 3</button>
+                <div class="tooltip">Hint 3</div>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>
