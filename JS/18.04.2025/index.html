@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="quiz-over-modal">
+        <div class="content">
+            <h1>Nice</h1>
+            <p>
+                Correct answers 
+                <span id="correct-answers"></span>
+                of
+                <span id="all-questions"></span>
+            </p>
+            <button id="try-again-button">Try Again</button>
+        </div>
+    </div>
+    <div class="quiz-container">
+        <div class="question-number">
+            <h3>
+                Question
+                <span id="number-questions"></span>
+                 of 
+                <span id="all-questions"></span>
+            </h3>
+        </div>
+        <div id="question"></div>
+        <div id="options">
+            <div class="option" id="1"></div>
+            <div class="option" id="2"></div>
+            <div class="option" id="3"></div>
+            <div class="option" id="4"></div>
+        </div>
+        <div class="button"><button id="next-button">Next</button></div>
+        <div id="answer-tracker">
+            <div class="tracker"></div>
+            <div class="tracker"></div>
+            <div class="tracker"></div>
+        </div>
+    </div>
+</body>
+</html>
