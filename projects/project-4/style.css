@@ -19,9 +19,8 @@ hr
     background-color: rgb(255, 255, 255, 0.1);
     height: 1px;
     border: none;
-    margin-bottom: 15px;
 }
-nav, nav .container, nav .container .left, .right
+nav, nav .container, nav .container .left, nav .container .right
 {
     display: flex;
 }
@@ -79,6 +78,8 @@ nav .container .left .menu button
 }
 nav .container .right
 {
+    display: flex;
+    flex-direction: row;
     gap: 10px;
 }
 nav .container .right button
@@ -236,6 +237,7 @@ nav .container .right button:last-of-type::before
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    overflow: hidden;
 }
 .app-proto .sidebar
 {
@@ -409,6 +411,7 @@ nav .container .right button:last-of-type::before
 {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 15px;
 }
 .app-proto .content .filters .toggler
 {
@@ -472,21 +475,7 @@ nav .container .right button:last-of-type::before
     flex-direction: row;
     gap: 15px;
 }
-/* .app-proto .content .filters .sorts select
-{
-    position: relative;
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    padding: 6px 12px;
-    border: 1px solid rgb(255, 255, 255, 0.1);
-    border-radius: 75px;
-    background-color: transparent;
-    font-size: 10.5px;
-    line-height: 15px;
-    
-} */
+
 .custom-select {
     position: relative;
     width: fit-content;
@@ -499,23 +488,23 @@ nav .container .right button:last-of-type::before
     border-radius: 75px;
     font-size: 10.5px;
     line-height: 15px;
-  }
-  
-  .selected {
+}
+
+.selected {
     display: flex;
     align-items: center;
-  }
-  .selected::after
-  {
+}
+.selected::after
+{
     content: url(images/chevron-down.png);
     display: flex;
     align-items: center;
     width: 12px;
     height: 12px;
     margin-left: 9px;
-  }
-  
-  .options {
+}
+
+.options {
     display: none;
     position: absolute;
     top: 100%;
@@ -527,17 +516,584 @@ nav .container .right button:last-of-type::before
     z-index: 10;
     max-height: 200px;
     overflow-y: auto;
-  }
-  
-  .options div {
+}
+
+.options div {
     padding: 10px 12px;
     transition: background 0.2s;
-  }
-  
-  .options div:hover {
+}
+
+.options div:hover {
     background: rgb(238, 238, 238, 0.1);
-  }
-  
-  .custom-select.open .options {
+}
+
+.custom-select.open .options {
     display: block;
-  }
+}
+
+.app-proto .content .hr1
+{
+    margin-bottom: 15px;
+}
+.app-proto .content main
+{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.app-proto .content main div
+{
+    width: 100%;
+}
+
+.app-proto .content main .left-part
+{
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+.app-proto .content main .left-part .block-1
+{
+    display: flex;
+    gap: 7.5px;
+    padding: 7.5px;
+    height: 105px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgb(0, 0, 0, 0.6);
+}
+.app-proto .content main .left-part .block-1 hr
+{
+    min-height: 100%;
+    width: 1px;
+    background-color: transparent;
+    border-left: 1px dashed rgb(255, 255, 255, 0.1);
+}
+.app-proto .content main .left-part .block-1 .left, .block-1 .right
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 7.5px;
+    text-align: start;
+}
+.app-proto .content main .left-part .block-1 .left .text-1, .block-1 .right .text-1
+{
+    font-size: 10.5px;
+    line-height: 15px;
+}
+.app-proto .content main .left-part .block-1 .left .text-2, .block-1 .right .text-2, .block-1 .right .text-3
+{
+    font-size: 10.5px;
+    line-height: 15px;
+    font-weight: 200;
+}
+.app-proto .content main .left-part .block-1 .left .text-3
+{
+    font-size: 9.75px;
+    line-height: 15px;
+    display: flex;
+}
+.app-proto .content main .left-part .block-1 .left .text-3::before
+{
+    content: url(images/canada-logo.png);
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    margin-right: 6px;
+}
+
+.app-proto .content main .left-part .block-2
+{
+    display: flex;
+    flex-direction: row;
+    padding: 7.5px;
+    gap: 7.5px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgb(0, 0, 0, 0.6);
+}
+.app-proto .content main .left-part .block-2 .description
+{
+    display: flex;
+    flex-direction: column;
+    padding: 7.5px;
+    gap: 7.5px;
+    width: 50%;
+}
+.app-proto .content main .left-part .block-2 .description img
+{
+    width: 33px;
+    height: 33px;
+    padding: 5px;
+}
+.app-proto .content main .left-part .block-2 .description .name
+{
+    width: 101px;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+}
+.app-proto .content main .left-part .block-2 .description .info
+{
+    font-size: 9px;
+    font-weight: 200;
+    line-height: 13px;
+    width: 101px;
+}
+.app-proto .content main .left-part .block-2 .description .progress-bar
+{
+    height: 4px;
+    border-radius: 6px;
+}
+.app-proto .content main .left-part .block-2 .description .progress-bar .progress
+{
+    width: 30%;
+    height: 2px;
+    background-color: white;
+}
+.app-proto .content main .left-part .block-2 ul
+{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 7.5px;
+    gap: 7.5px;
+}
+.app-proto .content main .left-part .block-2 ul li
+{
+    display: flex;
+    align-items: center;
+    font-size: 9px;
+    font-weight: 300;
+}
+.app-proto .content main .left-part .block-2 ul li::before
+{
+    content: "1";
+    background-color: rgb(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+
+.app-proto .content main .left-part .block-3
+{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 7.5px;
+    padding: 7.5px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgb(0, 0, 0, 0.6);
+}
+.app-proto .content main .left-part .block-3 .scroller
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    padding: 7.5px;
+    gap: 7.5px;
+}
+.app-proto .content main .left-part .block-3 .scroller .arrows
+{
+    width: fit-content;
+}
+.app-proto .content main .left-part .block-3 .scroller .arrows .up
+{
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 22px 22px 0 0;
+    padding: 3px;
+}
+.app-proto .content main .left-part .block-3 .scroller .arrows .up::before
+{
+    content: url(images/chevron-down.png);
+    rotate: 180deg;
+    width: 12px;
+    height: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.app-proto .content main .left-part .block-3 .scroller .arrows .down
+{
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0 0 22px 22px;
+    padding: 3px;
+}
+.app-proto .content main .left-part .block-3 .scroller .arrows .down::before
+{
+    content: url(images/chevron-down.png);
+    width: 12px;
+    height: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.app-proto .content main .left-part .block-3 .scroller span
+{
+    font-size: 9px;
+    font-weight: 300;
+    line-height: 13.5px;
+    color: rgb(255, 255, 255, 0.7);
+}
+.app-proto .content main .left-part .block-3 .comment
+{
+    display: flex;
+    flex-direction: column;
+    gap: 7.5px;
+    padding: 7.5px;
+}
+.app-proto .content main .left-part .block-3 .comment .title
+{
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+}
+.app-proto .content main .left-part .block-3 .comment .text
+{
+    font-size: 10.5px;
+    line-height: 15px;
+    color: rgb(255, 255, 255, 0.7);
+}
+.app-proto .content main .user
+{
+    display: flex;
+    align-items: center;
+    gap: 7.5px;
+}
+.app-proto .content main .user img
+{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+.app-proto .content main .user .text
+{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.app-proto .content main .user .text .nickname
+{
+    font-size: 10.5px;
+    line-height: 15px;
+}
+.app-proto .content main .user .text .status
+{
+    font-size: 9px;
+    line-height: 16.5px;
+    color: rgb(255, 255, 255, 0.7);
+}
+
+.app-proto .content main .center-part
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.app-proto .content main .center-part .block-1
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgb(0, 0, 0, 0.6);
+}
+.app-proto .content main .center-part .block-1 img:not(.text-content .user img)
+{
+    height: 129px;
+    width: auto;
+    border-radius: 7.5px;
+}
+.app-proto .content main .center-part .block-1 button
+{
+    border: none;
+    border-radius: 7.5px;
+    background-color: #3395FF;
+    padding: 7.5px;
+    font-size: 9px;
+    line-height: 13.5px;
+}
+.app-proto .content main .center-part .block-1 .text-content
+{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.app-proto .content main .center-part .block-1 .text-content .title
+{
+    font-size: 12px;
+    line-height: 18px;
+}
+.app-proto .content main .center-part .block-1 .text-content .description
+{
+    font-size: 10.5px;
+    line-height: 15px;
+    color: rgb(255, 255, 255, 0.7);
+    height: 46px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.app-proto .content main .center-part .block-1 .text-content .progress-bar
+{
+    height: 4px;
+    border-radius: 6px;
+}
+.app-proto .content main .center-part .block-1 .text-content .progress-bar .progress
+{
+    width: 30%;
+    height: 2px;
+    background-color: white;
+}
+
+.app-proto .content main .center-part .block-2
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 284px;
+    padding: 21px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgb(0, 0, 0, 0.6);
+    gap: 21px;
+}
+.app-proto .content main .center-part .block-2 .title
+{
+    font-size: 13.5px;
+    line-height: 20px;
+}
+.app-proto .content main .center-part .block-2 .graphics
+{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+.app-proto .content main .center-part .block-2 .graphics .graphic-item
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 15px;
+    height: 100%;
+    padding: 2px;
+}
+.app-proto .content main .center-part .block-2 .graphics .graphic-item .graphic
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    height: 100%;
+    width: 80%;
+    overflow: hidden;
+}
+.app-proto .content main .center-part .block-2 .graphics .graphic-item .graphic .percent
+{
+    width: 100%;
+    background-color: #7978DE;
+}
+.app-proto .content main .center-part .block-2 .graphics .graphic-item span
+{
+    font-size: 9px;
+    line-height: 13.5px;
+}
+.app-proto .content main .center-part .block-2 .graphics .graphic-item .graphic .percent10
+{
+    height: 10%;
+}
+.app-proto .content main .center-part .block-2 .graphics .graphic-item .graphic .percent20
+{
+    height: 20%;
+}
+.app-proto .content main .center-part .block-2 .graphics .graphic-item .graphic .percent30
+{
+    height: 30%;
+}
+.app-proto .content main .center-part .block-2 .graphics .graphic-item .graphic .percent40
+{
+    height: 40%;
+}
+.app-proto .content main .center-part .block-2 .graphics .graphic-item .graphic .percent50
+{
+    height: 50%;
+}
+.app-proto .content main .center-part .block-2 .graphics .graphic-item .graphic .percent60
+{
+    height: 60%;
+}
+.app-proto .content main .center-part .block-2 .graphics .graphic-item .graphic .percent70
+{
+    height: 70%;
+}
+.app-proto .content main .center-part .block-2 .graphics .graphic-item .graphic .percent80
+{
+    height: 80%;
+}
+.app-proto .content main .center-part .block-2 .graphics .graphic-item .graphic .percent90
+{
+    height: 90%;
+}
+.app-proto .content main .center-part .block-2 .graphics .graphic-item .graphic .percent100
+{
+    height: 100%;
+}
+
+.app-proto .content main .right-part
+{
+    display: flex;
+    flex-direction: column;
+    gap: 22.5px;
+}
+.app-proto .content main .right-part .block-1
+{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 22.5px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgb(0, 0, 0, 0.6);
+}
+.app-proto .content main .right-part .block-1 .toggler
+{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: fit-content;
+    border-radius: 75px;
+    padding: 0.75px;
+    gap: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgb(0, 0, 0, 0.6);
+    position: relative;
+}
+.app-proto .content main .right-part .block-1 .toggler button
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    width: 21px;
+    height: 21px;
+    border-radius: 24px;
+    border: none;
+}
+.app-proto .content main .right-part .block-1 .toggler span
+{
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.app-proto .content main .right-part .block-1 .content
+{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0;
+}
+.app-proto .content main .right-part .block-1 .content .title
+{
+    font-size: 12px;
+    line-height: 18px;
+}
+.app-proto .content main .right-part .block-1 .content .description, 
+.app-proto .content main .right-part .block-1 .content .text
+{
+    font-size: 10.5px;
+    line-height: 15px;
+    color: rgba(255, 255, 255, 0.7);
+}
+.app-proto .content main .right-part .block-1 .content .author
+{
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+}
+.app-proto .content main .right-part .block-1 .content .author img
+{
+    border-radius: 17px;
+    width: 18px;
+    height: 18px;
+}
+.app-proto .content main .right-part .block-1 .content .author .author-info
+{
+    font-size: 10.5px;
+    line-height: 15px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.app-proto .content main .right-part .block-2
+{
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgb(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 15px;
+}
+.app-proto .content main .right-part .block-2 .top 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.app-proto .content main .right-part .block-2 .top span
+{
+    font-size: 10.5px;
+    line-height: 15px;
+    color: rgba(255, 255, 255, 0.7);
+}
+.app-proto .content main .right-part .block-2 .top .buttons
+{
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    width: fit-content;
+}
+.app-proto .content main .right-part .block-2 .top .buttons button
+{
+    background-color: transparent;
+    border: none;
+    width: 21px;
+    height: 21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.app-proto .content main .right-part .block-2 .top .buttons button img
+{
+    width: 12px;
+    height: 12px;
+}
+.app-proto .content main .right-part .block-2 ul
+{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.app-proto .content main .right-part .block-2 ul li
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
