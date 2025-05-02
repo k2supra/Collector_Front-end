@@ -32,23 +32,25 @@ aside {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 17vw;
+  width: 240px !important;
   height: 100vh;
+  padding: 16px;
   position: sticky;
   top: 0;
+  left: 0;
   background-color: #f5f5f5;
 }
 aside .part-top {
-  width: 80%;
-  margin-top: 30px;
+  width: 100%;
 }
 aside .part-top .logo {
-  background-image: url(../../images/logo.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
   width: 100%;
   height: 10%;
-  margin-bottom: 20px;
+  padding: 8px 8px 16px 12px;
+  margin-bottom: 8px;
+}
+aside .part-top .logo img {
+  width: 153px;
 }
 aside .part-top ul {
   list-style-type: none;
@@ -59,11 +61,13 @@ aside .part-top ul li {
   font-size: 16px;
   display: flex;
   align-items: center;
+  width: max-content;
+  gap: 8px;
+  width: 100% !important;
   padding: 12px;
   border-radius: 20px;
 }
 aside .part-top ul li i {
-  margin-right: 25px;
   padding: 8px;
   background-color: white;
   border-radius: 12px;
@@ -78,12 +82,10 @@ aside .part-top ul li i::before {
 aside .part-top ul li:hover {
   background-color: #eaeaea;
   white-space: nowrap;
-}
-aside .part-top ul li:hover i {
-  margin-right: 35px;
+  width: 100%;
 }
 aside .part-bottom {
-  width: 80%;
+  width: 100%;
 }
 aside .part-bottom ul {
   list-style-type: none;
@@ -94,12 +96,15 @@ aside .part-bottom ul li {
   font-size: 16px;
   display: flex;
   align-items: center;
+  width: max-content;
+  gap: 8px;
   padding: 12px;
   border-radius: 20px;
 }
 aside .part-bottom ul li i {
-  margin-right: 25px;
   padding: 8px;
+  background-color: white;
+  border-radius: 12px;
 }
 aside .part-bottom ul li i::before {
   display: flex;
@@ -111,9 +116,7 @@ aside .part-bottom ul li i::before {
 aside .part-bottom ul li:hover {
   background-color: #eaeaea;
   white-space: nowrap;
-}
-aside .part-bottom ul li:hover i {
-  margin-right: 35px;
+  width: 100%;
 }
 
 main {
@@ -121,14 +124,16 @@ main {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  width: 100vw;
+  padding: 16px;
+  gap: 16px;
 }
 main nav {
   display: none;
   justify-content: space-between;
   background-color: #f5f5f5;
-  width: 95%;
-  height: 5vh;
-  margin-top: 35px;
+  width: 100%;
+  height: auto;
 }
 main nav .left-part {
   display: flex;
@@ -136,17 +141,18 @@ main nav .left-part {
 }
 main nav .left-part .icons {
   display: flex;
+  gap: 4px;
 }
 main nav .left-part .icons i {
-  width: 3vw;
-  margin-right: 1.5vw;
+  padding: 16px;
+  display: flex;
 }
 main nav .left-part .icons i::before {
-  width: 100%;
-  aspect-ratio: 1;
+  width: 24px;
+  height: 24px;
   text-align: center;
   align-content: center;
-  font-size: 1.3rem;
+  font-size: 24px;
 }
 main nav .left-part .icons i:hover {
   translate: 0px -5px;
@@ -217,70 +223,68 @@ main nav .right-part .search-bar:hover {
 }
 main nav .right-part .icons {
   display: flex;
-  margin-right: 0.5vw;
+  gap: 8px;
 }
 main nav .right-part .icons i {
-  width: 3vw;
-  margin-left: 1.2vw;
+  padding: 16px;
+  display: flex;
 }
 main nav .right-part .icons i::before {
-  width: 100%;
-  aspect-ratio: 1;
+  width: 24px;
+  height: 24px;
   text-align: center;
   align-content: center;
-  font-size: 1.3rem;
+  font-size: 24px;
 }
 main nav .right-part .icons i:hover {
   translate: 0px -5px;
 }
 main .cards {
-  width: 91%;
-  margin-top: 16px;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 main .cards .card {
   flex: 1 1 calc(50% - 8px);
-  height: 16.5vh;
+  min-width: 160px;
+  border-radius: 24px;
   padding: 16px;
   color: white;
-  border-radius: 24px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 15%;
+  gap: 8px;
 }
 main .cards .card .content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex: 1;
-  font-size: 1.1rem;
 }
-main .cards .card .content .icon {
-  height: 5vh;
-  width: 10vw;
-  padding: 1.2vw 2.4vw;
+main .cards .card .content:first-of-type .text {
+  font-size: 14px;
+  line-height: 20px;
+}
+main .cards .card .content:first-of-type .icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid transparent;
+  padding: 4px 8px;
+  width: fit-content;
   border-radius: 80px;
-  content: url(../../images/arrow_rise.svg);
+  border: 1px solid transparent;
 }
-main .cards .card .content:first-child {
-  font-size: 1.1rem;
+main .cards .card .content:first-of-type .icon img {
+  width: 24px;
+  height: 24px;
+  padding: 2px;
 }
-main .cards .card .content:first-child .text:hover {
-  translate: 5px 0;
-}
-main .cards .card .content:last-child .text:first-child {
-  font-size: 1.2rem;
+main .cards .card .content:last-of-type .text:first-of-type {
+  font-size: 18px;
+  line-height: 28px;
   font-weight: 600;
 }
-main .cards .card .content:last-child .text:first-child:hover {
-  translate: 5px 0;
+main .cards .card .content:last-of-type .text:last-of-type {
+  font-size: 14px;
+  line-height: 20px;
 }
 main .blue-gradient {
   background-image: linear-gradient(#288df6, #4ca4fb);
@@ -298,25 +302,28 @@ main .black-gradient:nth-child(2) .icon {
   rotate: 180deg;
 }
 main .graphic {
-  width: 91%;
-  height: 38vh;
+  height: 240px;
+  width: 100%;
+  padding: 16px;
   border-radius: 16px;
   margin-top: 16px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
+  gap: 16px;
   background-color: white;
 }
 main .graphic .group {
-  width: 91%;
-  font-size: 1.1rem;
-  margin-top: 16px;
+  width: 329px;
+  align-items: center;
 }
 main .graphic .group ul {
   list-style-type: none;
   display: flex;
+  flex-direction: row;
   gap: 16px;
+  margin: 0;
   padding: 0;
 }
 main .graphic .group ul li:hover {
@@ -330,6 +337,7 @@ main .graphic .group .dropdowns {
 }
 main .graphic .group .dropdowns select {
   font-size: 16px;
+  line-height: 24px;
   border: none;
   padding: 8px 16px;
   background-color: #eaeaea;
@@ -352,12 +360,12 @@ main .graphic .group .dropdowns i::before {
 }
 main .graphic .frame {
   position: relative;
-  height: 75%;
-  width: 91%;
-  margin-top: 16px;
+  height: 100%;
+  width: 100%;
 }
 main .graphic .frame .graph {
-  height: 80%;
+  width: 329px;
+  height: 168px;
 }
 main .graphic .frame .graph img {
   width: 100%;
@@ -367,24 +375,28 @@ main .graphic .frame .graph .graphic-laptop {
 }
 main .graphic .frame .bottom_text {
   width: 100%;
-  font-size: 0.9rem;
-  margin-top: 3vw;
+  position: absolute;
+  top: 152px;
 }
 main .graphic .frame .bottom_text ul {
   list-style-type: none;
   display: flex;
   padding: 0;
   margin: 0;
+  font-size: 12px;
+  line-height: 16px;
 }
 main .graphic .frame .bottom_text ul li {
   text-align: center;
   width: 16.6666666667%;
 }
 main .graphic-2 {
-  width: 91%;
-  height: 40vh;
+  width: 100%;
+  height: 240px;
   background-color: white;
   margin-top: 16px;
+  padding: 16px;
+  gap: 16px;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -392,18 +404,19 @@ main .graphic-2 {
   align-items: center;
 }
 main .graphic-2 .text {
-  width: 91%;
-  margin-top: 16px;
-  font-size: 1.1rem;
+  width: 100%;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
   color: #007AFF;
 }
 main .graphic-2 .text i {
   display: none;
 }
 main .graphic-2 .graph {
-  height: 75%;
-  width: 91%;
-  margin-top: 8px;
+  height: 100%;
+  width: 100%;
+  position: relative;
 }
 main .graphic-2 .graph .vertical_bars {
   height: 80%;
@@ -433,7 +446,9 @@ main .graphic-2 .graph .vertical_bars .vertical_bar .title {
   text-align: center;
 }
 main .graphic-2 .graph .bottom_text {
-  margin-top: 14px;
+  position: absolute;
+  top: 152px;
+  width: 100%;
 }
 main .graphic-2 .graph .bottom_text ul {
   list-style-type: none;
@@ -441,34 +456,38 @@ main .graphic-2 .graph .bottom_text ul {
   padding: 0;
 }
 main .graphic-2 .graph .bottom_text ul li {
-  font-size: 0.9rem;
+  font-size: 12px;
+  line-height: 16px;
   text-align: center;
   flex: 1 1;
 }
 main .graphic-3 {
-  width: 91%;
-  height: 40vh;
+  width: 100%;
+  height: 240px;
   background-color: white;
   margin-top: 16px;
+  padding: 16px;
+  gap: 16px;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-around;
+  align-items: center;
 }
 main .graphic-3 .text {
-  width: 91%;
-  margin-top: 16px;
-  font-size: 1.1rem;
+  width: 100%;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
   color: #34C759;
 }
 main .graphic-3 .text i {
   display: none;
 }
 main .graphic-3 .graph {
-  height: 75%;
-  width: 91%;
-  margin-top: 8px;
+  height: 100%;
+  width: 100%;
+  position: relative;
 }
 main .graphic-3 .graph .vertical_bars {
   height: 80%;
@@ -489,8 +508,18 @@ main .graphic-3 .graph .vertical_bars .vertical_bar .progress {
   border-radius: 12px;
   margin-top: 8px;
 }
+main .graphic-3 .graph .vertical_bars .vertical_bar .title {
+  width: 95%;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  text-align: center;
+}
 main .graphic-3 .graph .bottom_text {
-  margin-top: 14px;
+  position: absolute;
+  top: 152px;
+  width: 100%;
 }
 main .graphic-3 .graph .bottom_text ul {
   list-style-type: none;
@@ -498,14 +527,16 @@ main .graphic-3 .graph .bottom_text ul {
   padding: 0;
 }
 main .graphic-3 .graph .bottom_text ul li {
-  font-size: 0.9rem;
+  font-size: 12px;
+  line-height: 16px;
   text-align: center;
   flex: 1 1;
 }
 main .graphic-4 {
-  width: 91%;
-  height: 39vh;
-  padding-bottom: 2vw;
+  width: 100%;
+  height: 240px;
+  padding: 16px;
+  gap: 16px;
   background-color: white;
   margin-top: 16px;
   border-radius: 16px;
@@ -514,21 +545,23 @@ main .graphic-4 {
   align-items: center;
 }
 main .graphic-4 .text {
-  width: 91%;
-  margin-top: 16px;
-  font-size: 1.1rem;
+  width: 100%;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
   color: #FF3B30;
 }
 main .graphic-4 .group {
-  width: 91%;
-  margin-top: 16px;
-  font-size: 0.9rem;
+  width: 100%;
+  font-size: 12px;
+  line-height: 16px;
 }
 main .graphic-4 .group ul {
   display: flex;
   gap: 16px;
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 main .graphic-4 .group ul li {
   display: flex;
@@ -569,9 +602,8 @@ main .graphic-4 .group ul .laptop-version {
   display: none;
 }
 main .graphic-4 .graph {
-  height: 70%;
-  width: 91%;
-  margin-top: 16px;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -623,7 +655,8 @@ main .graphic-4 .graph .bottom_text ul {
   padding: 0;
 }
 main .graphic-4 .graph .bottom_text ul li {
-  font-size: 0.9rem;
+  font-size: 12px;
+  line-height: 16px;
   text-align: center;
   flex: 1 1;
 }
@@ -661,19 +694,21 @@ main .h100 {
   height: 100%;
 }
 main .list {
-  width: 91%;
-  height: 52vh;
+  width: 100%;
+  height: auto;
   background-color: white;
   margin-top: 16px;
+  padding: 16px;
+  gap: 16px;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 main .list .text {
-  width: 91%;
-  margin-top: 24px;
-  font-size: 1.1rem;
+  width: 100%;
+  font-size: 16px;
+  line-height: 24px;
   color: #00C7BE;
   display: flex;
   justify-content: space-between;
@@ -698,12 +733,12 @@ main .list .text .more i:hover {
   background-color: #aaa;
 }
 main .list .table {
-  width: 91%;
-  margin-top: 24px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  height: 85%;
+  height: 100%;
+  margin: 0;
 }
 main .list .table .top-text {
   display: none;
@@ -729,17 +764,20 @@ main .list .table .data {
   flex-direction: column;
   margin: 4px 0 0 0;
   padding: 0;
+  margin: 0;
   width: 100%;
-  gap: 4px;
+  gap: 12px;
 }
 main .list .table .data li {
   flex: 1 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 8px;
   padding-left: 44px;
   position: relative;
-  font-size: 3.5vw;
+  font-size: 14px;
+  line-height: 20px;
   border-radius: 16px;
 }
 main .list .table .data li::before {
@@ -768,7 +806,8 @@ main .list .table .data li .amount {
 }
 main .list .table .data li .status {
   padding: 4px 12px;
-  margin-right: 8px;
+  font-size: 14px;
+  line-height: 20px;
   border-radius: 12px;
 }
 main .list .table .data li .in-progress {
@@ -853,35 +892,39 @@ footer .group ul li {
     display: flex;
   }
   body main {
-    display: flex;
-    width: 83vw;
+    width: calc(100% - 240px);
   }
   body main nav {
     display: flex;
   }
   body main .cards {
-    width: 95% !important;
+    width: 100%;
     margin-top: 20px;
     flex-wrap: nowrap;
     gap: 20px;
   }
   body main .cards .card {
     flex: 1 !important;
-    height: fit-content;
-    gap: 10px;
+    gap: 8px;
     padding: 24px;
   }
-  body main .cards .card .content .icon {
-    width: 22%;
-    height: 70%;
-    padding: 5%;
+  body main .cards .card .content:first-of-type .text {
+    font-size: 16px;
+    line-height: 24px;
   }
-  body main .cards .card .content:first-child {
-    font-size: 1.1rem;
+  body main .cards .card .content:first-of-type .icon img {
+    width: 28px;
+    height: 28px;
+    padding: 2px;
   }
-  body main .cards .card .content:last-child .text:first-child {
+  body main .cards .card .content:last-of-type .text:first-of-type {
     font-size: 32px;
+    line-height: 40px;
     font-weight: 600;
+  }
+  body main .cards .card .content:last-of-type .text:last-of-type {
+    font-size: 18px;
+    line-height: 28px;
   }
   body main .laptop-blue-gradient {
     background-image: linear-gradient(#288df6, #4ca4fb) !important;
@@ -899,14 +942,24 @@ footer .group ul li {
     rotate: 180deg;
   }
   body main .graphic {
-    width: 95%;
-    padding-bottom: 1vh;
-    height: 42vh;
+    width: 100%;
+    height: 392px;
+    padding: 24px;
+    gap: 26px;
   }
   body main .graphic .group {
     display: flex;
     justify-content: space-between;
-    width: 95%;
+    width: 100%;
+  }
+  body main .graphic .group ul {
+    font-size: 18px;
+    line-height: 28px;
+    height: fit-content;
+  }
+  body main .graphic .group ul li {
+    display: flex;
+    align-self: center;
   }
   body main .graphic .group .dropdowns {
     display: flex;
@@ -916,6 +969,7 @@ footer .group ul li {
     margin: 0 !important;
   }
   body main .graphic .frame .graph {
+    width: 100%;
     height: 100%;
   }
   body main .graphic .frame .graph img {
@@ -929,17 +983,23 @@ footer .group ul li {
     display: inherit;
   }
   body main .graphic .frame .bottom_text {
-    margin-top: -2vh;
+    top: 260px;
+  }
+  body main .graphic .frame .bottom_text ul {
+    font-size: 14px;
+    line-height: 20px;
   }
   body main .graphic-2 {
-    width: 46.5%;
-    margin-right: 2%;
-    height: 31vh;
+    width: 48.5%;
+    padding: 24px;
+    height: auto;
   }
   body main .graphic-2 .text {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size: 18px;
+    line-height: 28px;
   }
   body main .graphic-2 .text i {
     display: inherit;
@@ -958,14 +1018,24 @@ footer .group ul li {
   body main .graphic-2 .text i:hover {
     background-color: #aaa;
   }
+  body main .graphic-2 .graph {
+    height: 168px;
+  }
+  body main .graphic-2 .graph .bottom_text ul li {
+    font-size: 14px;
+    line-height: 20px;
+  }
   body main .graphic-3 {
-    width: 46.5%;
-    height: 31vh;
+    width: 48.5%;
+    padding: 24px;
+    height: auto;
   }
   body main .graphic-3 .text {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size: 18px;
+    line-height: 28px;
   }
   body main .graphic-3 .text i {
     display: inherit;
@@ -984,18 +1054,29 @@ footer .group ul li {
   body main .graphic-3 .text i:hover {
     background-color: #aaa;
   }
+  body main .graphic-3 .graph {
+    height: 168px;
+  }
+  body main .graphic-3 .graph .bottom_text ul li {
+    font-size: 14px;
+    line-height: 20px;
+  }
   body main .graphic-4 {
-    width: 95%;
+    height: auto;
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: row;
+    padding: 24px;
+    gap: 24px;
   }
   body main .graphic-4 .text {
     display: flex;
-    width: 45%;
+    width: 48%;
+    font-size: 18px;
+    line-height: 28px;
   }
   body main .graphic-4 .group {
-    width: 45%;
+    width: 48%;
   }
   body main .graphic-4 .group ul {
     justify-content: end;
@@ -1003,27 +1084,40 @@ footer .group ul li {
   body main .graphic-4 .group ul .laptop-version {
     display: inherit;
   }
+  body main .graphic-4 .graph {
+    height: 240px;
+  }
   body main .graphic-4 .graph .vertical_bars .vertical_bar .long-version {
     display: inherit;
   }
   body main .graphic-4 .graph .vertical_bars .long-version {
     display: inherit;
   }
-  body main .graphic-4 .graph .bottom_text .long-version {
+  body main .graphic-4 .graph .bottom_text ul {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  body main .graphic-4 .graph .bottom_text ul .long-version {
     display: inline;
-    font-size: 0.9rem;
     text-align: center;
     flex: 1 1;
   }
   body main .list {
-    width: 95%;
+    width: 100%;
     justify-content: space-between;
+    padding: 24px;
+    gap: 24px;
+  }
+  body main .list .text {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
   }
   body main .list .text .more {
     display: inherit;
   }
   body main .list .table {
-    height: 80%;
+    height: 100%;
     flex-direction: column;
   }
   body main .list .table .top-text {
@@ -1037,7 +1131,6 @@ footer .group ul li {
   }
   body main .list .table .data li .status {
     font-size: 1rem;
-    margin-right: 8px;
   }
   body main .list .table .data li::before {
     width: 30px;

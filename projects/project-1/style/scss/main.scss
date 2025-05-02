@@ -39,24 +39,28 @@ aside
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 17vw;
+    width: 240px !important;
     height: 100vh;
+    padding: 16px;
     position: sticky;
     top: 0;
+    left: 0;
     
     background-color: $bg-color;
     .part-top
     {
-        width: 80%;
-        margin-top: 30px;
+        width: 100%;
+        // margin-top: 30px;
         .logo
         {
-            background-image: url(../../images/logo.png);
-            background-repeat: no-repeat;
-            background-size: 100%;
             width: 100%;
             height: 10%;
-            margin-bottom: 20px;
+            padding: 8px 8px 16px 12px;
+            margin-bottom: 8px;
+            img
+            {
+                width: 153px;
+            }
         }
         ul
         {
@@ -68,11 +72,14 @@ aside
                 font-size: 16px;
                 display: flex;
                 align-items: center;
+                width: max-content;
+                gap: 8px;
+                width: 100% !important;
+
                 padding: 12px;
                 border-radius: 20px;
                 i
                 {
-                    margin-right: 25px;
                     padding: 8px;
                     background-color: white;
                     border-radius: 12px;
@@ -91,17 +98,14 @@ aside
                 {
                     background-color: $bg-grey;
                     white-space: nowrap;
-                    i
-                    {
-                        margin-right: 35px;
-                    }
+                    width: 100%;
                 }
             }
         }
     }
     .part-bottom
     {
-        width: 80%;
+        width: 100%;
         ul
         {
             list-style-type: none;
@@ -112,18 +116,23 @@ aside
                 font-size: 16px;
                 display: flex;
                 align-items: center;
+                width: max-content;
+                gap: 8px;
+
                 padding: 12px;
                 border-radius: 20px;
                 i
                 {
-                    margin-right: 25px;
                     padding: 8px;
+                    background-color: white;
+                    border-radius: 12px;
                     
                     &::before
                     {
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                        
                         width: 24px;
                         height: 24px;
                     }
@@ -132,10 +141,7 @@ aside
                 {
                     background-color: $bg-grey;
                     white-space: nowrap;
-                    i
-                    {
-                        margin-right: 35px;
-                    }
+                    width: 100%;
                 }
             }
         }
@@ -148,14 +154,16 @@ main
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    width: 100vw;
+    padding: 16px;
+    gap: 16px;
     nav
     {
         display: none;
         justify-content: space-between;
         background-color: $bg-color;
-        width: 95%;
-        height: 5vh;
-        margin-top: 35px;
+        width: 100%;
+        height: auto;
         .left-part 
         {
             display: flex;
@@ -163,17 +171,18 @@ main
             .icons
             {
                 display: flex;
+                gap: 4px;
                 i
                 {
-                    width: 3vw;
-                    margin-right: 1.5vw;
+                    padding: 16px;
+                    display: flex;
                     &::before
                     {
-                        width: 100%;
-                        aspect-ratio: 1;
+                        width: 24px;
+                        height: 24px;
                         text-align: center;
                         align-content: center;
-                        font-size: 1.3rem;
+                        font-size: 24px;
                     }
                     &:hover
                     {
@@ -259,18 +268,18 @@ main
             .icons
             {
                 display: flex;
-                margin-right: 0.5vw;
+                gap: 8px;
                 i
                 {
-                    width: 3vw;
-                    margin-left: 1.2vw;
+                    padding: 16px;
+                    display: flex;
                     &::before
                     {
-                        width: 100%;
-                        aspect-ratio: 1;
+                        width: 24px;
+                        height: 24px;
                         text-align: center;
                         align-content: center;
-                        font-size: 1.3rem;
+                        font-size: 24px;
                     }
                     &:hover
                     {
@@ -282,98 +291,160 @@ main
     }
     .cards
     {
-        width: 91%;
-        margin-top: 16px;
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
-        
         .card
         {
             flex: 1 1 calc(50% - 8px);
-            height: 16.5vh;
+            min-width: 160px;
+            border-radius: 24px;
             padding: 16px;
             color: white;
-            border-radius: 24px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            gap: 15%;
-            
+            gap: 8px;
             .content
             {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                flex: 1;
-                font-size: 1.1rem;
-                .icon
+                &:first-of-type
                 {
-                    height: 5vh;
-                    width: 10vw;
-                    padding: 1.2vw 2.4vw;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    border: 1px solid transparent;
-                    border-radius: 80px;
-                    content: url(../../images/arrow_rise.svg);
-                }
-                &:first-child
-                {
-                    font-size: 1.1rem;
-                    .text:hover
+                    .text
                     {
-                        translate: 5px 0;
+                        font-size: 14px;
+                        line-height: 20px;
+                    }
+                    .icon
+                    {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 4px 8px;
+                        width: fit-content;
+                        border-radius: 80px;
+                        border: 1px solid transparent;
+                        img
+                        {
+                            width: 24px;
+                            height: 24px;
+                            padding: 2px;
+                        }
                     }
                 }
-                &:last-child .text:first-child
+                &:last-of-type
                 {
-                    font-size: 1.2rem;
-                    font-weight: 600;
-                    &:hover
+                    .text:first-of-type
                     {
-                        translate: 5px 0;
+                        font-size: 18px;
+                        line-height: 28px;
+                        font-weight: 600;
+                    }
+                    .text:last-of-type
+                    {
+                        font-size: 14px;
+                        line-height: 20px;
                     }
                 }
             }
         }
     }
+    // .cards
+    // {
+    //     width: 91%;
+    //     margin-top: 16px;
+    //     display: flex;
+    //     flex-wrap: wrap;
+    //     gap: 8px;
+        
+    //     .card
+    //     {
+    //         flex: 1 1 calc(50% - 8px);
+    //         height: 16.5vh;
+    //         padding: 16px;
+    //         color: white;
+    //         border-radius: 24px;
+    //         display: flex;
+    //         flex-direction: column;
+    //         justify-content: space-between;
+    //         gap: 15%;
+            
+    //         .content
+    //         {
+    //             display: flex;
+    //             justify-content: space-between;
+    //             align-items: center;
+    //             flex: 1;
+    //             font-size: 1.1rem;
+    //             .icon
+    //             {
+    //                 height: 5vh;
+    //                 width: 10vw;
+    //                 padding: 1.2vw 2.4vw;
+    //                 display: flex;
+    //                 justify-content: center;
+    //                 align-items: center;
+    //                 border: 1px solid transparent;
+    //                 border-radius: 80px;
+    //                 content: url(../../images/arrow_rise.svg);
+    //             }
+    //             &:first-child
+    //             {
+    //                 font-size: 1.1rem;
+    //                 .text:hover
+    //                 {
+    //                     translate: 5px 0;
+    //                 }
+    //             }
+    //             &:last-child .text:first-child
+    //             {
+    //                 font-size: 1.2rem;
+    //                 font-weight: 600;
+    //                 &:hover
+    //                 {
+    //                     translate: 5px 0;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
     .blue-gradient
     {
         background-image: $blue-gradient;
         @include blue-gradient-icon;
-
     }
     .black-gradient
     {
         background-image: $black-gradient;
         @include black-gradient-icon;
-        
     }
 
     .graphic
     {
-        width: 91%;
-        height: 38vh;
+        height: 240px;
+        width: 100%;
+        padding: 16px;
         border-radius: 16px;
         margin-top: 16px;
         display: flex;
         align-items: center;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: space-between;
+        gap: 16px;
         background-color: white;
 
         .group
         {
-            width: 91%;
-            font-size: 1.1rem;
-            margin-top: 16px;
+            width: 329px;
+            align-items: center;
             ul
             {
                 list-style-type: none;
                 display: flex;
+                flex-direction: row;
                 gap: 16px;
+                margin: 0;
                 padding: 0;
                 li
                 {
@@ -393,6 +464,7 @@ main
                 select
                 {
                     font-size: 16px;
+                    line-height: 24px;
                     border: none;
                     padding: 8px 16px;
                     background-color: $bg-grey;
@@ -420,12 +492,12 @@ main
         .frame
         {
             position: relative;
-            height: 75%;
-            width: 91%;
-            margin-top: 16px;
+            height: 100%;
+            width: 100%;
             .graph
             {
-                height: 80%;
+                width: 329px;
+                height: 168px;
                 img
                 {
                     width: 100%;
@@ -438,14 +510,16 @@ main
             .bottom_text
             {
                 width: 100%;
-                font-size: 0.9rem;
-                margin-top: 3vw;
+                position: absolute;
+                top: 152px;
                 ul
                 {
                     list-style-type: none;
                     display: flex;
                     padding: 0;
                     margin: 0;
+                    font-size: 12px;
+                    line-height: 16px;
                     li
                     {
                         text-align: center;
@@ -457,10 +531,12 @@ main
     }
     .graphic-2
     {
-        width: 91%;
-        height: 40vh;
+        width: 100%;
+        height: 240px;
         background-color: white;
         margin-top: 16px;
+        padding: 16px;
+        gap: 16px;
         border-radius: 16px;
         display: flex;
         flex-direction: column;
@@ -468,9 +544,10 @@ main
         align-items: center;
         .text
         {
-            width: 91%;
-            margin-top: 16px;
-            font-size: 1.1rem;
+            width: 100%;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 600;
             color: $pr-blue;
             i
             {
@@ -479,9 +556,9 @@ main
         }
         .graph
         {
-            height: 75%;
-            width: 91%;
-            margin-top: 8px;
+            height: 100%;
+            width: 100%;
+            position: relative;
             .vertical_bars
             {
                 height: 80%;
@@ -516,7 +593,9 @@ main
             }
             .bottom_text
             {
-                margin-top: 14px;
+                position: absolute;
+                top: 152px;
+                width: 100%;
                 ul
                 {
                     list-style-type: none;
@@ -524,7 +603,8 @@ main
                     padding: 0;
                     li
                     {
-                        font-size: 0.9rem;
+                        font-size: 12px;
+                        line-height: 16px;
                         text-align: center;
                         flex: 1 1;
                     }
@@ -534,20 +614,23 @@ main
     }
     .graphic-3
     {
-        width: 91%;
-        height: 40vh;
+        width: 100%;
+        height: 240px;
         background-color: white;
         margin-top: 16px;
+        padding: 16px;
+        gap: 16px;
         border-radius: 16px;
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: space-around;
+        align-items: center;
         .text
         {
-            width: 91%;
-            margin-top: 16px;
-            font-size: 1.1rem;
+            width: 100%;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 600;
             color: $secondary-green;
             i
             {
@@ -556,9 +639,9 @@ main
         }
         .graph
         {
-            height: 75%;
-            width: 91%;
-            margin-top: 8px;
+            height: 100%;
+            width: 100%;
+            position: relative;
             .vertical_bars
             {
                 height: 80%;
@@ -580,11 +663,22 @@ main
                         border-radius: 12px;
                         margin-top: 8px;
                     }
+                    .title
+                    {
+                        width: 95%;
+                        color: white;
+                        padding: 4px 8px;
+                        border-radius: 16px;
+                        font-size: 0.8rem;
+                        text-align: center;
+                    }
                 }
             }
             .bottom_text
             {
-                margin-top: 14px;
+                position: absolute;
+                top: 152px;
+                width: 100%;
                 ul
                 {
                     list-style-type: none;
@@ -592,7 +686,8 @@ main
                     padding: 0;
                     li
                     {
-                        font-size: 0.9rem;
+                        font-size: 12px;
+                        line-height: 16px;
                         text-align: center;
                         flex: 1 1;
                     }
@@ -602,9 +697,10 @@ main
     }
     .graphic-4
     {
-        width: 91%;
-        height: 39vh;
-        padding-bottom: 2vw;
+        width: 100%;
+        height: 240px;
+        padding: 16px;
+        gap: 16px;
         background-color: white;
         margin-top: 16px;
         border-radius: 16px;
@@ -613,22 +709,24 @@ main
         align-items: center;
         .text
         {
-            width: 91%;
-            margin-top: 16px;
-            font-size: 1.1rem;
+            width: 100%;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 600;
             color: $secondary-red;
         }
         .group
         {
-            width: 91%;
-            margin-top: 16px;
-            font-size: 0.9rem;
+            width: 100%;
+            font-size: 12px;
+            line-height: 16px;
             ul
             {
                 display: flex;
                 gap: 16px;
                 list-style-type: none;
                 padding: 0;
+                margin: 0;
                 li
                 {
                     display: flex;
@@ -680,9 +778,8 @@ main
         }
         .graph
         {
-            height: 70%;
-            width: 91%;
-            margin-top: 16px;
+            height: 100%;
+            width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
@@ -743,7 +840,8 @@ main
                     padding: 0;
                     li
                     {
-                        font-size: 0.9rem;
+                        font-size: 12px;
+                        line-height: 16px;
                         text-align: center;
                         flex: 1 1;
                     }
@@ -799,19 +897,21 @@ main
 
     .list
     {
-        width: 91%;
-        height: 52vh;
+        width: 100%;
+        height: auto;
         background-color: white;
         margin-top: 16px;
+        padding: 16px;
+        gap: 16px;
         border-radius: 16px;
         display: flex;
         flex-direction: column;
         align-items: center;
         .text
         {
-            width: 91%;
-            margin-top: 24px;
-            font-size: 1.1rem;
+            width: 100%;
+            font-size: 16px;
+            line-height: 24px;
             color: $secondary-mint;
             display: flex;
             justify-content: space-between;
@@ -842,12 +942,12 @@ main
         }
         .table
         {
-            width: 91%;
-            margin-top: 24px;
+            width: 100%;
             display: flex;
             flex-direction: row;
             align-items: stretch;
-            height: 85%;
+            height: 100%;
+            margin: 0;
             .top-text
             {
                 display: none;
@@ -877,8 +977,9 @@ main
                 flex-direction: column;
                 margin: 4px 0 0 0;
                 padding: 0;
+                margin: 0;
                 width: 100%;
-                gap: 4px;
+                gap: 12px;
                 li
                 {
                     flex: 1 1;
@@ -886,9 +987,11 @@ main
                     align-items: center;
                     justify-content: space-between;
                     // background-color: $bg-grey-list;
+                    padding: 8px;
                     padding-left: 44px;
                     position: relative;
-                    font-size: 3.5vw;
+                    font-size: 14px;
+                    line-height: 20px;
                     border-radius: 16px;
                     &::before
                     {
@@ -921,7 +1024,8 @@ main
                     .status
                     {
                         padding: 4px 12px;
-                        margin-right: 8px;
+                        font-size: 14px;
+                        line-height: 20px;
                         border-radius: 12px;
                     }
                     .in-progress
@@ -1028,40 +1132,54 @@ footer
         }
         main
         {
-            display: flex;
-            width: 83vw;
+            width: calc(100% - 240px);
             nav
             {
                 display: flex;
             }
             .cards 
             {
-                width: 95% !important;
+                width: 100%;
                 margin-top: 20px;
                 flex-wrap: nowrap;
                 gap: 20px;
                 .card
                 {
                     flex: 1 !important;
-                    height: fit-content;
-                    gap: 10px;
+                    gap: 8px;
                     padding: 24px;
                     .content
                     {
-                        .icon
+                        &:first-of-type
                         {
-                            width: 22%;
-                            height: 70%;
-                            padding: 5%;
+                            .text
+                            {
+                                font-size: 16px;
+                                line-height: 24px;
+                            }
+                            .icon
+                            {
+                                img
+                                {
+                                    width: 28px;
+                                    height: 28px;
+                                    padding: 2px;
+                                }
+                            }
                         }
-                        &:first-child
+                        &:last-of-type
                         {
-                            font-size: 1.1rem;
-                        }
-                        &:last-child .text:first-child
-                        {
-                            font-size: 32px;
-                            font-weight: 600;
+                            .text:first-of-type
+                            {
+                                font-size: 32px;
+                                line-height: 40px;
+                                font-weight: 600;
+                            }
+                            .text:last-of-type
+                            {
+                                font-size: 18px;
+                                line-height: 28px;
+                            }
                         }
                     }
                 }
@@ -1078,14 +1196,27 @@ footer
             }
             .graphic
             {
-                width: 95%;
-                padding-bottom: 1vh;
-                height: 42vh;
+                width: 100%;
+                height: 392px;
+                padding: 24px;
+                gap: 26px;
                 .group
                 {
                     display: flex;
                     justify-content: space-between;
-                    width: 95%;
+                    width: 100%;
+                    
+                    ul
+                    {
+                        font-size: 18px;
+                        line-height: 28px;
+                        height: fit-content;
+                        li
+                        {
+                            display: flex;
+                            align-self: center;
+                        }
+                    }
                     .dropdowns
                     {
                         display: flex;
@@ -1097,6 +1228,7 @@ footer
                     margin: 0 !important;
                     .graph
                     {
+                        width: 100%;
                         height: 100%;
                         img
                         {
@@ -1114,20 +1246,27 @@ footer
                     }
                     .bottom_text
                     {
-                        margin-top: -2vh;
+                        top: 260px;
+                        ul
+                        {
+                            font-size: 14px;
+                            line-height: 20px;
+                        }
                     }
                 }
             }
             .graphic-2
             {
-                width: 46.5%;
-                margin-right: 2%;
-                height: 31vh;
+                width: 48.5%;
+                padding: 24px;
+                height: auto;
                 .text
                 {
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
+                    font-size: 18px;
+                    line-height: 28px;
                     i
                     {
                         display: inherit;
@@ -1146,19 +1285,37 @@ footer
                         &:hover
                         {
                             background-color: #aaa;
+                        }
+                    }
+                }
+                .graph
+                {
+                    height: 168px;
+                    .bottom_text
+                    {
+                        ul
+                        {
+                            li
+                            {
+                                font-size: 14px;
+                                line-height: 20px;
+                            }
                         }
                     }
                 }
             }
             .graphic-3
             {
-                width: 46.5%;
-                height: 31vh;
+                width: 48.5%;
+                padding: 24px;
+                height: auto;
                 .text
                 {
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
+                    font-size: 18px;
+                    line-height: 28px;
                     i
                     {
                         display: inherit;
@@ -1180,22 +1337,41 @@ footer
                         }
                     }
                 }
+                .graph
+                {
+                    height: 168px;
+                    .bottom_text
+                    {
+                        ul
+                        {
+                            li
+                            {
+                                font-size: 14px;
+                                line-height: 20px;
+                            }
+                        }
+                    }
+                }
             }
             .graphic-4
             {
-                width: 95%;
+                height: auto;
                 flex-wrap: wrap;
                 justify-content: center;
                 flex-direction: row;
+                padding: 24px;
+                gap: 24px;
                 .text
                 {
                     display: flex;
-                    width: 45%;
+                    width: 48%;
+                    font-size: 18px;
+                    line-height: 28px;
                 }   
 
                 .group
                 {
-                    width: 45%;
+                    width: 48%;
                     ul
                     {
                         justify-content: end;
@@ -1207,6 +1383,7 @@ footer
                 }
                 .graph
                 {
+                    height: 240px;
                     .vertical_bars
                     {
                         .vertical_bar
@@ -1223,22 +1400,31 @@ footer
                     }
                     .bottom_text
                     {
-                        .long-version
+                        ul
                         {
-                            display: inline;
-                            font-size: 0.9rem;
-                            text-align: center;
-                            flex: 1 1;
+                            font-size: 14px;
+                            line-height: 20px;
+                            .long-version
+                            {
+                                display: inline;
+                                text-align: center;
+                                flex: 1 1;
+                            }
                         }
                     }
                 }
             }
             .list
             {
-                width: 95%;
+                width: 100%;
                 justify-content: space-between;
+                padding: 24px;
+                gap: 24px;
                 .text
                 {
+                    font-size: 18px;
+                    font-weight: 600;
+                    line-height: 28px;
                     .more
                     {
                         display: inherit;
@@ -1246,7 +1432,7 @@ footer
                 }
                 .table
                 {
-                    height: 80%;
+                    height: 100%;
                     flex-direction: column;
                     .top-text
                     {
@@ -1261,7 +1447,6 @@ footer
                             .status
                             {
                                 font-size: 1rem;
-                                margin-right: 8px;
                             }
                             &::before
                             {
