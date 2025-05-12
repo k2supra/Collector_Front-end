@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js" defer></script>
+    <title>Document</title>
+    <style>
+        .pagination
+        {
+            margin: 0 auto;
+            width: 70vw;
+            height: auto;
+            padding: 16px;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .pagination ul
+        {
+            width: 80%;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 16px;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+        .pagination ul li
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-basis: calc(48% - 32px);
+            padding: 16px;
+            border-radius: 16px;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+        .pagination .controls
+        {
+            display: flex;
+            gap: 8px;
+        }
+        .pagination .controls button
+        {
+            background-color: rgb(225, 225, 225);
+            border: 0;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .pagination .controls button:hover
+        {
+            background-color: rgb(203, 203, 203);
+        }
+        .pagination .controls .numbers
+        {
+            display: flex;
+            gap: 8px;
+        }
+        .active 
+        {
+            scale: 1.2;
+            background-color: rgb(203, 203, 203) !important;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" name="" id="">Get data by fetching
+    <input type="text" id="search" placeholder="Search" />
+    <div class="pagination">
+        <ul>
+        </ul>
+        <div class="controls">
+            <button>Prev</button>
+            <div class="numbers"></div>
+            <button>Next</button>
+        </div>
+    </div>
+</body>
+</html>
