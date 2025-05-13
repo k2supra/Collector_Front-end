@@ -1096,4 +1096,23 @@ nav .container .right button:last-of-type::before
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: 6px;
+    padding: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    line-height: 15px;
+    font-size: 10px;
+}
+.app-proto .content main .right-part .block-2 ul li .user .avatar
+{
+    width: 24px;
+    height: 24px;
+}
+.app-proto .content main .right-part .block-2 ul li .action, .last-activity
+{
+    color: rgba(255, 255, 255, 0.7);
+}
+.app-proto .content main .right-part .block-2 ul li .last-activity
+{
+    width: 50px !important;
 }
