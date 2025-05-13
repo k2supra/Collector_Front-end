@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js" defer></script>
+    <title>Document</title>
+    <style>
+        .posts, .postsOnLoad
+        {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .post
+        {
+            border: 1px navy solid;
+            padding: 8px;
+            border-radius: 8px;
+            flex: 1 1 250px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .modal-window
+        {
+            position: fixed;
+            align-content: center;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+        .modal-content
+        {
+            background-color: white;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            padding: 16px;
+            width: 70%;
+            height: 70%;
+        }
+        textarea
+        {
+            min-height: fit-content;
+            min-width: 250px;
+        }
+        form
+        {
+            display: flex;
+            gap: 8px;
+            flex-direction: column;
+            margin-bottom: 16px;
+        }
+        button
+        {
+            border: 0;
+            border-radius: 12px;
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+        button:hover
+        {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <form action="" style="margin-bottom: 16px;">
+        <input type="text" placeholder="title">
+        <input type="text" placeholder="description">
+        <button>Create Post</button>
+    </form>
+    <div class="posts"></div>
+    <div class="postsOnLoad">
+        <div id="loader" style="display: none;">Loading...</div>
+    </div>
+    <div class="modal-window">
+        <div class="modal-content">
+            <form action="">
+                <textarea></textarea>
+                <textarea></textarea>
+                <button type="submit">Update</button>
+            </form>
+            <button onclick="closeMW()">Close</button>
+        </div>
+    </div>
+</body>
+</html>
