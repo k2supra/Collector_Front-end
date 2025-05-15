@@ -125,6 +125,13 @@ nav .container .right button:last-of-type::before
     flex-direction: column;
     align-items: center;
 }
+.hero #bg-hero
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
 .hero .text-block
 {
     margin-top: 140px;
@@ -238,6 +245,18 @@ nav .container .right button:last-of-type::before
     flex-direction: row;
     flex-wrap: nowrap;
     overflow: hidden;
+    border-radius: 22.5px;
+    border: 0.75px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+    inset 0px 37.5px 75px 0px rgba(255, 255, 255, 0.15), /* top */
+    0px 3.75px 7.5px 0px rgba(0, 0, 0, 0.05), /* drop shadow */
+    0px 11.25px 22.5px 0px rgb(0, 0, 0, 5%), /* drop shadow */
+    0px 22.5px 45px 0px rgb(0, 0, 0, 10%); /* drop shadow */
+
+    background: 
+    linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+
+    z-index: 10;
 }
 .app-proto .sidebar
 {
@@ -340,6 +359,7 @@ nav .container .right button:last-of-type::before
 {
     width: 100%;
     padding: 15px;
+    
 }
 .app-proto .content header
 {
@@ -361,7 +381,12 @@ nav .container .right button:last-of-type::before
     padding: 7.5px 15px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 75px;
-    background-color: rgb(0, 0, 0, 0.6);
+    /*  */
+
+    box-shadow: 
+    0px 0.75px 0px 0px rgba(0, 0, 0, 0.05), /* drop shadow */
+    0px 3px 3px 0px rgb(0, 0, 0, 5%), /* drop shadow */
+    0px 7.5px 7.5px 0px rgb(0, 0, 0, 10%); /* drop shadow */
 }
 .app-proto .content header input
 {
@@ -446,8 +471,6 @@ nav .container .right button:last-of-type::before
     height: 21px;
     width: 63.5px;
     z-index: 1;
-
-    background-color: rgb(0, 0, 0, 0.6);
 
     border-radius: 75px;
     border: 1px solid rgb(255, 255, 255, 0.1);
@@ -560,7 +583,7 @@ nav .container .right button:last-of-type::before
     height: 105px;
     border-radius: 6px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: rgb(0, 0, 0, 0.6);
+    
 }
 .app-proto .content main .left-part .block-1 hr
 {
@@ -612,7 +635,7 @@ nav .container .right button:last-of-type::before
     gap: 7.5px;
     border-radius: 6px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: rgb(0, 0, 0, 0.6);
+    
 }
 .app-proto .content main .left-part .block-2 .description
 {
@@ -671,7 +694,7 @@ nav .container .right button:last-of-type::before
 .app-proto .content main .left-part .block-2 ul li::before
 {
     content: "1";
-    background-color: rgb(0, 0, 0, 0.6);
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -690,7 +713,7 @@ nav .container .right button:last-of-type::before
     padding: 7.5px;
     border-radius: 6px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: rgb(0, 0, 0, 0.6);
+    
 }
 .app-proto .content main .left-part .block-3 .scroller
 {
@@ -808,7 +831,7 @@ nav .container .right button:last-of-type::before
     padding: 15px;
     border-radius: 6px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: rgb(0, 0, 0, 0.6);
+    
 }
 .app-proto .content main .center-part .block-1 img:not(.text-content .user img)
 {
@@ -866,7 +889,7 @@ nav .container .right button:last-of-type::before
     padding: 21px;
     border-radius: 6px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: rgb(0, 0, 0, 0.6);
+    
     gap: 21px;
 }
 .app-proto .content main .center-part .block-2 .title
@@ -968,7 +991,7 @@ nav .container .right button:last-of-type::before
     padding: 22.5px;
     border-radius: 6px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: rgb(0, 0, 0, 0.6);
+    
 }
 .app-proto .content main .right-part .block-1 .toggler
 {
@@ -980,7 +1003,7 @@ nav .container .right button:last-of-type::before
     padding: 0.75px;
     gap: 6px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: rgb(0, 0, 0, 0.6);
+    
     position: relative;
 }
 .app-proto .content main .right-part .block-1 .toggler button
@@ -1044,7 +1067,7 @@ nav .container .right button:last-of-type::before
 .app-proto .content main .right-part .block-2
 {
     border: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: rgb(0, 0, 0, 0.6);
+    
     display: flex;
     flex-direction: column;
     gap: 6px;
