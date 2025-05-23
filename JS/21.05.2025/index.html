@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js" defer></script>
+    <title>Document</title>
+    <style>
+        body
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        form
+        {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 18px;
+            width: 50%;
+        }
+        #result
+        {
+            border: 1px solid rgba(255, 222, 173, 0.5);
+            border-radius: 16px;
+            padding: 16px;
+        }
+        .errorBlock
+        {
+            border: 2px solid red;
+            border-radius: 16px;
+            padding: 16px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form">
+        <input type="text" id="name" placeholder="name">
+        <input type="month" id="birthYear" min="1900-01" value="2025-05">
+        <select id="eyeColor">
+            <option value="brown">Brown</option>
+            <option value="green">Green</option>
+            <option value="grey">Grey</option>
+            <option value="blue">Blue</option>
+        </select>
+        <select id="hairColor">
+            <option value="black">Black</option>
+            <option value="brown">Brown</option>
+            <option value="white">White</option>
+            <option value="red">Red</option>
+            <option value="other">Other</option>
+        </select>
+        <input type="text" id="height" placeholder="height">
+        <input type="text" id="weight" placeholder="weight">
+        <button type="submit">Submit</button>
+    </form>
+    <div id="result"></div>
+</body>
+</html>
