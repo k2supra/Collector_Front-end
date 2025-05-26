@@ -1,0 +1,3 @@
+###Notification System
+
+Basicly, first 2 persons will get notification because of messages. Every member has a button that can allow notifications(green background) and forbid them(red background). This button is for changing status notification. If bg is green, user is being subscribed for notification that comes after somebody is getting online or offline. User that changes it`s status doesn't recieve notification; 

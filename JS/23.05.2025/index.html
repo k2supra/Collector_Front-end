@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <header>
+            <h3>Chat #1</h3>
+            <span class="activity">
+                <span class="active">3</span> of <span class="all">5</span> 
+                online
+            </span>
+        </header>
+        <div class="chat">
+            <div class="message">
+                <div class="sender">
+                    <div class="avatar"></div>
+                </div>
+                <div class="data">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius nostrum consequatur veniam, error dolor alias!
+                </div>
+            </div>
+        </div>
+        <div class="create-message">
+            <textarea placeholder="your message"></textarea>
+            <span>
+                <button id="notifier-btn">notify</button>
+                <button class="send-btn" onclick="sendMessage()">send</button>
+            </span>
+        </div>
+    </main>
+    <aside>
+        <ul class="users">
+            <li username="Dan" status="online">
+                <div class="user">
+                    <div class="status online"></div>
+                    <div class="avatar"></div>
+                    Dan
+                </div> 
+                <div class="buttons">
+                    <button id="notifier-status-btn" active="false">notify</button>
+                    <button onclick="changeStatus(this)" class="change-status-btn">on/off line</button>
+                </div>
+            </li>
+            <li username="Julia" status="offline">
+                <div class="user">
+                    <div class="status"></div>
+                    <div class="avatar"></div>
+                    Julia
+                </div>
+                <div class="buttons">
+                    <button id="notifier-status-btn" active="false">notify</button>
+                    <button onclick="changeStatus(this)" class="change-status-btn">on/off line</button>
+                </div>
+            </li>
+            <li username="Edsat" status="offline">
+                <div class="user">
+                    <div class="status"></div>
+                    <div class="avatar"></div>
+                    Edsat
+                </div>
+                <div class="buttons">
+                    <button id="notifier-status-btn" active="false">notify</button>
+                    <button onclick="changeStatus(this)" class="change-status-btn">on/off line</button>
+                </div>
+            </li>
+            <li username="Racty" status="offline">
+                <div class="user">
+                    <div class="status"></div>
+                    <div class="avatar"></div>
+                    Racty
+                </div>
+                <div class="buttons">
+                    <button id="notifier-status-btn" active="false">notify</button>
+                    <button onclick="changeStatus(this)" class="change-status-btn">on/off line</button>
+                </div>
+            </li>
+            <li username="Max" status="offline">
+                <div class="user">
+                    <div class="status"></div>
+                    <div class="avatar"></div>
+                    Max
+                </div>
+                <div class="buttons">
+                    <button id="notifier-status-btn" active="false">notify</button>
+                    <button onclick="changeStatus(this)" class="change-status-btn">on/off line</button>
+                </div>
+            </li>
+            <li username="Dexter" status="offline">
+                <div class="user">
+                    <div class="status"></div>
+                    <div class="avatar"></div>
+                    Dexter
+                </div>
+                <div class="buttons">
+                    <button id="notifier-status-btn" active="false">notify</button>
+                    <button onclick="changeStatus(this)" class="change-status-btn">on/off line</button>
+                </div>
+            </li>
+        </ul>
+    </aside>
+</body>
+</html>
