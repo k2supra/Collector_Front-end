@@ -33,6 +33,7 @@ nav
     position: fixed;
     top: 0;
     background-color: rgba(0, 0, 0, 0.1);
+    z-index: 100;
 }
 nav .container
 {
@@ -130,7 +131,7 @@ nav .container .right button:last-of-type::before
     position: absolute;
     top: 0;
     left: 0;
-
+    user-select: none;
 }
 .hero .text-block
 {
@@ -239,12 +240,13 @@ nav .container .right button:last-of-type::before
 
 .app-proto
 {
+    position: relative;
     width: 975px;
     height: 627px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    overflow: hidden;
+    /* overflow: hidden; */
     border-radius: 22.5px;
     border: 0.75px solid rgba(255, 255, 255, 0.1);
     box-shadow: 
@@ -266,6 +268,7 @@ nav .container .right button:last-of-type::before
     flex-direction: column;
     justify-content: space-between;
     padding: 15px;
+    overflow: hidden;
 }
 .app-proto .sidebar .top .logo
 {
@@ -359,7 +362,7 @@ nav .container .right button:last-of-type::before
 {
     width: 100%;
     padding: 15px;
-    
+    overflow: hidden;
 }
 .app-proto .content header
 {
@@ -1138,4 +1141,153 @@ nav .container .right button:last-of-type::before
 .app-proto .content main .right-part .block-2 ul li .last-activity
 {
     width: 50px !important;
+}
+
+.app-proto .progress-ring
+{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: -40px;
+    left: -75px;
+    user-select: none;
+}
+.app-proto .progress-ring .wrapper
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.app-proto .progress-ring .arrow-progress
+{
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+}
+.app-proto .progress-ring .arrow-progress .arrow
+{
+    width: 75px;
+    height: 25px;
+    position: absolute;
+    /* background-color: #3395FF; */
+    z-index: 5;
+    top: calc((67.5px / 2) + 23.5px);
+    left: -7.5px;
+    display: flex;
+    transform-origin: 100% 50%;
+    transform: rotate(90deg);
+}
+.app-proto .progress-ring .arrow-progress .arrow .icon
+{
+    content: url(images/slider-arrow.png);
+    margin: 0;
+    padding: 0;
+    rotate: -30deg;
+}
+.app-proto .progress-ring .arrow-progress svg
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.app-proto .progress-ring .arrow-progress svg circle
+{
+    fill: none;
+}
+.app-proto .progress-ring .arrow-progress svg circle:nth-of-type(1)
+{
+    stroke: rgba(255, 255, 255, 0.07);
+    stroke-width: 5px;
+    stroke-dasharray: 377;
+}
+.app-proto .progress-ring .arrow-progress svg circle:nth-of-type(2)
+{
+    /* stroke: blue; */
+    stroke: url(#gradient2);
+    stroke-width: 5px;
+    transform-origin: center;
+    stroke-linecap: round;
+    stroke-dasharray: 377;
+    stroke-dashoffset: 377;
+    transform: rotate(-90deg);
+    z-index: 15;
+}
+.app-proto .progress-ring .arrow-progress svg circle:nth-of-type(3)
+{
+    /* stroke: yellow; */
+    stroke: url(#sliderGradient);
+    stroke-width: 3px;
+    transform-origin: center;
+    stroke-linecap: round;
+    stroke-dasharray: 377;
+    stroke-dashoffset: 377;
+    transform: rotate(-90deg);
+}
+
+.app-proto .progress-ring .bg-wrapper
+{
+    position: absolute;
+    width: 114px;
+    height: 114px;
+    box-shadow: 
+    inset 0px 30px 60px 0px rgba(255, 255, 255, 0.15), /* top */
+    0px 2px 4px 0px rgba(0, 0, 0, 0.05), /* drop shadow */
+    0px 5px 10px 0px rgb(0, 0, 0, 5%), /* drop shadow */
+    0px 20px 20px 0px rgb(0, 0, 0, 10%); /* drop shadow */
+
+
+    background: linear-gradient(rgba(0, 0, 0, 0.1) 0, rgba(0, 0, 0, 0.07) 69%, rgba(0, 0, 0, 0.4) 100%);
+
+    border-radius: 50%;
+    border: 1px rgba(255, 255, 255, 0.07) solid;
+    backdrop-filter: blur(7px);
+}
+.app-proto .progress-ring .bg-wrapper::before
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 124px;
+    height: 124px;
+    content: "";
+    top: -6px;
+    left: -6px;
+    /* background: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.07) 69%, black 100%); */
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.07);
+    border-radius: 50%;
+}
+.app-proto .progress-ring .bg-wrapper .bg
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.app-proto .progress-ring .bg-wrapper .bg .bg-stroke
+{
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 10px rgba(0, 0, 0, 0.1) solid;
+}
+.app-proto .progress-ring .value
+{
+    font-size: 28px;
+    font-weight: 700;
+    z-index: 10;
+}
+.app-proto .progress-ring .value::after
+{
+    content: "%";
 }
