@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="index.js" defer></script>
+    <title>Document</title>
+    <style>
+        body
+        {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+        }
+        ul
+        {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .bookItem
+        {
+            border: 0;
+            border-radius: 8px;
+            padding: 8px;
+            background-color: darkkhaki;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <label>Author filter</label>
+        <input type="text" id="filter">
+        <button id="clearButton">Clear</button>
+        <input type="text" id="author" placeholder="author">
+        <input type="text" id="title" placeholder="title">
+        <button id="add" type="button">Add</button>
+    </div>
+    <ul></ul>
+    <span id="booksCounter">0</span>
+</body>
+</html>
