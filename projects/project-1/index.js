@@ -36,6 +36,25 @@ const chartDataMonth =
         }
     ]
 }
+const chartDataYear = 
+{
+    labels:['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', ''],
+    datasets:[
+        {
+            label:'Users', 
+            data: [10, 17, 80, 68, 39, 37, 86, 3, 47, 56, 11, 45, 95, 45],
+            backgroundColor: 'white',
+            borderColor: 'purple',
+            pointBorderColor: 'black',
+            pointBackgroundColor: 'white',
+            pointBorderWidth: 3,
+            pointRadius: [0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0],
+            pointHoverRadius: 6,
+            borderWidth: 2,
+            tension: 0.4
+        }
+    ]
+}
 
 let currentGraphic = chartDataWeek;
 
@@ -46,6 +65,9 @@ function changeChartSpread(newType) {
             break;
         case 'month':
             currentGraphic = chartDataMonth;
+            break;
+        case 'year':
+            currentGraphic = chartDataYear;
             break;
         default:
             break;
@@ -206,8 +228,8 @@ function createChart(type, container) {
             border: { display: false }
         };
         config.options.scales.y = {grid: {display: false}, ticks:{display:false}, border: { display: false }};
-        config.options.scales.y.min = Math.min(...chartDataWeek.datasets[0].data) - 10; 
-        config.options.scales.y.max = Math.max(...chartDataWeek.datasets[0].data) + 10;
+        config.options.scales.y.min = Math.min(...currentGraphic.datasets[0].data) - 10; 
+        config.options.scales.y.max = Math.max(...currentGraphic.datasets[0].data) + 10;
     }
     currentChart = new Chart(canvas, config)
 
@@ -286,3 +308,21 @@ document.querySelectorAll('#dataSettingsOpener').forEach(element =>
     })
 }
 )
+
+
+document.querySelector(`i.bi-layout-sidebar`).addEventListener('click', ()=>
+{
+    const aside = document.querySelector(`aside`);
+    const main = document.querySelector('main');
+
+    if (aside.style.display === 'none') {
+        aside.style.display = 'flex'
+        aside.style.width = '240px';
+        main.style.width = 'calc(100% - 240px)';
+        return;
+    }
+    
+    aside.style.width = '0px';
+    main.style.width = '100%';
+    setTimeout(()=>{aside.style.display = 'none'}, 310)
+})
