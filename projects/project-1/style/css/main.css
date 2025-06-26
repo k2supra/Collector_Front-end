@@ -359,14 +359,25 @@ main .graphic .group .dropdowns i::before {
   width: 20px;
   height: 20px;
 }
+main .graphic .group .dropdowns i:hover {
+  background-color: #aaa;
+}
 main .graphic .frame {
   position: relative;
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 main .graphic .frame .graph {
   width: 100%;
   height: 168px;
+  position: relative;
+}
+main .graphic .frame .graph .graphic-mobile {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: none !important;
 }
 main .graphic .frame .graph img {
   width: 100%;
@@ -969,6 +980,7 @@ footer .group ul li {
   body main .graphic .frame {
     width: 100%;
     margin: 0 !important;
+    overflow: hidden;
   }
   body main .graphic .frame .graph {
     width: 100%;
@@ -979,10 +991,9 @@ footer .group ul li {
     width: 100%;
   }
   body main .graphic .frame .graph .graphic-mobile {
-    display: none;
-  }
-  body main .graphic .frame .graph .graphic-laptop {
-    display: inherit;
+    display: block;
+    height: 100% !important;
+    transition: none !important;
   }
   body main .graphic .frame .bottom_text {
     top: 260px;
@@ -1148,6 +1159,35 @@ footer .group ul li {
   body header, body footer {
     display: none;
   }
+}
+.dataSettingsModalWindow {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: auto;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid rgb(199, 199, 199);
+  background-color: white;
+  box-shadow: 0px 0px 10px 10px rgb(219, 219, 219);
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 8px;
+}
+.dataSettingsModalWindow .dataSettingSection {
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+.dataSettingsModalWindow .dataSettingSection input {
+  width: 50px;
+  outline: none;
+  border: 1px solid #007AFF;
+  border-radius: 8px;
+  padding: 8px;
 }
 
 /*# sourceMappingURL=main.css.map */
