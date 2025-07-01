@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="index.js" defer></script>
+    <script src="themeSwitcher.js" defer></script>
+    <script src="sidebar-open-close.js" defer></script>
     <title>Dashboard</title>
 </head>
 <body>
@@ -62,7 +64,7 @@
                     <i class="bi bi-command"></i>
                 </div>
                 <div class="icons">
-                    <i class="bi bi-brightness-high"></i>
+                    <i class="bi bi-brightness-high" id="themeSwitcher"></i>
                     <i class="bi bi-clock-history"></i>
                     <i class="bi bi-bell"></i>
                 </div>
@@ -113,7 +115,7 @@
         <section class="graphic">
             <div class="group">
                 <ul>
-                    <li>Users</li>
+                    <li  class="active">Users</li>
                     <li>Projects</li>
                     <li>Operating Status</li>
                 </ul>

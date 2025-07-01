@@ -1,3 +1,7 @@
+var _ = undefined;
+
+let chartContainer = document.querySelector('.graphic .frame .graph');
+
 const chartDataWeek = 
 {
     labels:['', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'San', ''],
@@ -74,7 +78,205 @@ function changeChartSpread(newType) {
     }
 }
 
+function updateModalWindowContent() {
+    dataSettingsModalWindow.innerHTML = '';
+    dataSettingsModalWindow.insertAdjacentHTML(`beforeend`, `
+        <div class='dataSettingSectionLabels'>
+            <div>Items</div>
+            <div style='margin-top:15px'>value</div>
+            <div style='margin-top:25px'>label</div>
+        </div>`)
+    dataSettingsModalWindow.insertAdjacentHTML('beforeend', `<ul class='settingsList'></ul>`)
+    for (let i = 1; i < currentGraphic.labels.length-1; i++) {
+        dataSettingsModalWindow.querySelector('ul').insertAdjacentHTML(`beforeend`, `
+            <li data-index='${i}' draggable="true">
+                <div class='dragMe' draggable="true"><img src='./images/drag.png'></div>
+                <div class='dataSettingSection' data-index='${i}'>
+                    <input type='text' value='${currentGraphic.datasets[0].data[i]}' id='dataSettingsValue'>
+                    <input type='text' value='${currentGraphic.labels[i]}' id='dataSettingsLabel'>
+                </div>
+            </li>
+        `)
+    }
 
+    dataSettingsModalWindow.insertAdjacentHTML(`beforeend`, `
+        <div class='dataSettingSectionControls'>
+            <button class='removeSectionButton'><img src='./images/bin.png'></button>
+            <button class='addSectionButton'>+</button>
+            </div>`
+        )
+        
+    const dragMeButtons = dataSettingsModalWindow.querySelectorAll('.dragMe');
+    const removeSectionButton = dataSettingsModalWindow.querySelector('.removeSectionButton');
+    /* ------------------------------ */
+    
+    let draggedElement = null;
+
+    const listItems = dataSettingsModalWindow.querySelectorAll('ul.settingsList > li');
+
+    removeSectionButton.addEventListener('dragover', (e)=>
+    {
+        e.preventDefault();
+        removeSectionButton.classList.add('active-drop')
+    })
+    removeSectionButton.addEventListener('dragleave', ()=>
+    {
+        removeSectionButton.classList.remove('active-drop');
+    })
+    removeSectionButton.addEventListener('drop', (e)=>
+    {
+        e.preventDefault();
+        if (!draggedElement) return;
+
+        const index = +draggedElement.dataset.index;
+
+        currentGraphic.labels.splice(index, 1);
+        currentGraphic.datasets[0].data.splice(index, 1);
+        currentGraphic.datasets[0].pointRadius.splice(index, 1);
+        
+        createChart(selectChartType.value, chartContainer);
+        updateModalWindowContent();
+    })
+
+    /* Переміщення за "ручкою" dragMe елементом */
+    dragMeButtons.forEach(btn =>
+    {
+        btn.addEventListener('dragstart', (e)=>
+        {
+            draggedElement = e.target.closest('li');
+            removeSectionButton.style.height = '40px'
+            e.dataTransfer.effectAllowed = 'move';
+            e.dataTransfer.setData('text/plain', e.target.closest('li').dataset.index);
+        })
+        btn.addEventListener('dragover', (e)=>
+        {
+            e.preventDefault();
+            e.dataTransfer.dropEffect = 'move';
+        })
+        btn.addEventListener('drop', (e) => {
+            e.preventDefault();
+            if (draggedElement === e.target.closest('li')) return;
+
+            const draggedIndex = +draggedElement.dataset.index;
+            const targetIndex = +e.target.closest('li').dataset.index;
+
+            // ⚡️ Переміщення DOM
+            const list = e.target.closest('li').parentElement;
+            if (draggedIndex < targetIndex) {
+                list.insertBefore(draggedElement, e.target.closest('li').nextSibling);
+            } else {
+                list.insertBefore(draggedElement, e.target.closest('li'));
+            }
+
+            // ⚡️ Переміщення у даних
+            const move = (arr, from, to) => {
+                const item = arr.splice(from, 1)[0];
+                arr.splice(to, 0, item);
+            };
+
+            move(currentGraphic.labels, draggedIndex, targetIndex);
+            move(currentGraphic.datasets[0].data, draggedIndex, targetIndex);
+            move(currentGraphic.datasets[0].pointRadius, draggedIndex, targetIndex);
+
+            // 🔁 Оновлення
+            createChart(selectChartType.value, chartContainer);
+            updateModalWindowContent();
+        });
+        btn.addEventListener('dragend', () => {
+            draggedElement.classList.remove('dragging');
+            removeSectionButton.style.height = '0px'
+            draggedElement = null;
+        });
+    }
+    )
+
+    /* Переміщення за li елементом */
+
+    // listItems.forEach(item => {
+    //     item.addEventListener('dragstart', (e) => {
+    //         draggedElement = item;
+    //         e.dataTransfer.effectAllowed = 'move';
+    //         e.dataTransfer.setData('text/plain', item.dataset.index);
+    //         setTimeout(() => item.classList.add('dragging'), 0); // для стилю
+    //     });
+
+    //     item.addEventListener('dragover', (e) => {
+    //         e.preventDefault();
+    //         e.dataTransfer.dropEffect = 'move';
+    //     });
+
+    //     item.addEventListener('drop', (e) => {
+    //         e.preventDefault();
+    //         if (draggedElement === item) return;
+
+    //         const draggedIndex = +draggedElement.dataset.index;
+    //         const targetIndex = +item.dataset.index;
+
+    //         // ⚡️ Переміщення DOM
+    //         const list = item.parentElement;
+    //         if (draggedIndex < targetIndex) {
+    //             list.insertBefore(draggedElement, item.nextSibling);
+    //         } else {
+    //             list.insertBefore(draggedElement, item);
+    //         }
+
+    //         // ⚡️ Переміщення у даних
+    //         const move = (arr, from, to) => {
+    //             const item = arr.splice(from, 1)[0];
+    //             arr.splice(to, 0, item);
+    //         };
+
+    //         move(currentGraphic.labels, draggedIndex, targetIndex);
+    //         move(currentGraphic.datasets[0].data, draggedIndex, targetIndex);
+    //         move(currentGraphic.datasets[0].pointRadius, draggedIndex, targetIndex);
+
+    //         // 🔁 Оновлення
+    //         createChart(selectChartType.value, chartContainer);
+    //         updateModalWindowContent();
+    //     });
+
+    //     item.addEventListener('dragend', () => {
+    //         draggedElement.classList.remove('dragging');
+    //         draggedElement = null;
+    //     });
+    // });
+    /* ------------------------------ */
+
+    document.addEventListener('mouseup', () => {
+        dragMeButtons.forEach(e => e.classList.remove('dragging'));
+    });
+
+    dataSettingsModalWindow.querySelector(`button.addSectionButton`).addEventListener('click', ()=>
+    {
+        const index = currentGraphic.labels.length-1;
+        
+        currentGraphic.labels.splice(index, 0, 'temp');
+        currentGraphic.datasets[0].data.splice(index, 0, 50);
+        currentGraphic.datasets[0].pointRadius.splice(index, 0, 4)
+        createChart(_, chartContainer);
+        updateModalWindowContent();
+    })
+
+    dataSettingsModalWindow.querySelectorAll('#dataSettingsValue').forEach(element =>
+    {
+        element.addEventListener('input', (event)=>
+        {
+            const index = +event.target.closest(`.dataSettingSection`).getAttribute('data-index');
+            changeChartData('value', index, event.target.value);
+            createChart(selectChartType.value, chartContainer);
+        });
+    });
+        
+    dataSettingsModalWindow.querySelectorAll('#dataSettingsLabel').forEach(element =>
+    {
+        element.addEventListener('input', (event)=>
+        {
+            const index = +event.target.closest(`.dataSettingSection`).getAttribute('data-index');
+            changeChartData('label', index, event.target.value);
+            createChart(selectChartType.value, chartContainer);
+        });
+    });
+}
 
 const linePlugin = {
     id:'l1',
@@ -125,7 +327,7 @@ function changeChartData(type, index, newValue) {
 
 let currentChart = null;
 
-function createChart(type, container) {
+function createChart(type = selectChartType.value, container = chartContainer) {
     if (currentChart) {
         currentChart.destroy();
     }
@@ -141,7 +343,7 @@ function createChart(type, container) {
         dataToUse.labels = dataToUse.labels.splice(1, dataToUse.labels.length-2);
         dataToUse.datasets[0].data = dataToUse.datasets[0].data.splice(1, dataToUse.datasets[0].data.length-2)
     }
-
+    
     const config =
     {
         type: type,
@@ -165,8 +367,11 @@ function createChart(type, container) {
             },
         }
     }
-    
+
+    const isDarkTheme = document.getElementById('themeSwitcher').className === 'bi bi-moon';
+
     if (type === 'bar') {
+        dataToUse.datasets[0].backgroundColor = isDarkTheme ? '#292929' : `white`
         config.options.scales.x = {grid:{display: false}};
     }
     else if(type === 'line')
@@ -174,7 +379,7 @@ function createChart(type, container) {
         config.options.scales.x = {
             grid: {
                 display: true,
-                color: `white`
+                color: isDarkTheme ? '#292929' : `white`
                 // color: function(context) {
                 //     const chart = context.chart;
                 //     const {ctx, chartArea} = chart;
@@ -243,54 +448,26 @@ const selectChartType = document.getElementById('selectChartType');
 selectChartSpread.addEventListener('change', ()=>
 {
     changeChartSpread(selectChartSpread.value);
-    createChart(selectChartType.value, document.querySelector('.graphic .frame .graph'))
+    createChart(selectChartType.value, chartContainer);
+    if (dataSettingsModalWindow.style.display === 'flex') {
+        updateModalWindowContent();
+    }
 })
 
 selectChartType.addEventListener('change', ()=>
 {
-    createChart(selectChartType.value, document.querySelector('.graphic .frame .graph'))
+    createChart(selectChartType.value, chartContainer)
 })
 
-createChart('line', document.querySelector('.graphic .frame .graph'))
+createChart('line', chartContainer)
 
 
-const dataSettingsModalWindow = document.getElementsByClassName(`dataSettingsModalWindow`)[0];
+let dataSettingsModalWindow = document.getElementsByClassName(`dataSettingsModalWindow`)[0];
 
 function setDataIntoModalWindow(isGraphic) {
     dataSettingsModalWindow.innerHTML = '';
     if (isGraphic) {
-        dataSettingsModalWindow.insertAdjacentHTML(`beforeend`, `
-            <div class='dataSettingSection'>
-                <div>value</div>
-                <div>label</div>
-            </div>`)
-        for (let i = 1; i < currentGraphic.labels.length-1; i++) {
-            dataSettingsModalWindow.insertAdjacentHTML(`beforeend`, `
-                <div class='dataSettingSection' data-index='${i}'>
-                    <input type='text' value='${currentGraphic.datasets[0].data[i]}' id='dataSettingsValue'>
-                    <input type='text' value='${currentGraphic.labels[i]}' id='dataSettingsLabel'>
-                </div>
-            `)
-        }
-        dataSettingsModalWindow.querySelectorAll('#dataSettingsValue').forEach(element =>
-            {
-                element.addEventListener('input', (event)=>
-                {
-                    const index = +event.target.closest(`.dataSettingSection`).getAttribute('data-index');
-                    changeChartData('value', index, event.target.value);
-                    createChart(selectChartType.value, document.querySelector('.graphic .frame .graph'));
-                });
-            });
-            
-            dataSettingsModalWindow.querySelectorAll('#dataSettingsLabel').forEach(element =>
-            {
-                element.addEventListener('input', (event)=>
-                {
-                    const index = +event.target.closest(`.dataSettingSection`).getAttribute('data-index');
-                    changeChartData('label', index, event.target.value);
-                    createChart(selectChartType.value, document.querySelector('.graphic .frame .graph'));
-                });
-            });
+        updateModalWindowContent()
     }
     else
     {
@@ -309,20 +486,4 @@ document.querySelectorAll('#dataSettingsOpener').forEach(element =>
 }
 )
 
-
-document.querySelector(`i.bi-layout-sidebar`).addEventListener('click', ()=>
-{
-    const aside = document.querySelector(`aside`);
-    const main = document.querySelector('main');
-
-    if (aside.style.display === 'none') {
-        aside.style.display = 'flex'
-        aside.style.width = '240px';
-        main.style.width = 'calc(100% - 240px)';
-        return;
-    }
-    
-    aside.style.width = '0px';
-    main.style.width = '100%';
-    setTimeout(()=>{aside.style.display = 'none'}, 310)
-})
+exports = {createChart};

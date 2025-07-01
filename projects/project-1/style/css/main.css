@@ -1,3 +1,67 @@
+:root {
+  --pr-blue: #007AFF;
+  --secondary-purple: #AF52DE;
+  --secondary-green: #34C759;
+  --secondary-red: #FF3B30;
+  --bin-red: #ff9994;
+  --secondary-blue: var(--pr-blue);
+  --secondary-yellow: #FFCC00;
+  --secondary-mint: #00C7BE;
+  --bg-purple: #efdcf8;
+  --bg-green: #d7f4de;
+  --bg-blue: #cce4ff;
+  --bg-yellow: #fef5cc;
+  --bg-grey: #eaeaea;
+  --bg-grey-list: #f7f7f7;
+  --bg-light-grey-list: #fcfcfc;
+  --graph-grey: #e6e6e6;
+  --grey-40: #00000080;
+  --bg-color: #f5f5f5;
+  --bg-grey-hover: #aaa;
+  --blue-gradient: linear-gradient(#288df6, #4ca4fb);
+  --black-gradient: linear-gradient(#090909, #3b3b3b);
+  --white: white;
+  --bi-icon-color: black;
+  --white-text: black;
+  --input-color: #555;
+  --blue-gradient-color: #3897ff;
+  --black-gradient-color: #1e1e1e;
+  --shadow-color: rgb(228, 228, 228);
+}
+
+.dark-theme {
+  --pr-blue: #007AFF;
+  --secondary-purple: #AF52DE;
+  --secondary-green: #34C759;
+  --secondary-red: rgba(255, 69, 58, 1);
+  --bin-red: #ff9994;
+  --secondary-blue: var(--pr-blue);
+  --secondary-yellow: #FFCC00;
+  --secondary-mint: #00C7BE;
+  --bg-purple: #492860;
+  --bg-green: #314136;
+  --bg-blue: #003a6a;
+  --bg-yellow: #614e00;
+  --bg-grey: #4f4f4f;
+  --bg-grey-list: #222222;
+  --bg-light-grey-list: #252525;
+  --graph-grey: rgba(255, 255, 255, 0.15);
+  --grey-40: rgba(255, 255, 255, 0.4);
+  --bg-color: #222222;
+  --bg-grey-hover: #aaa;
+  --temporary-1: antiquewhite;
+  --temporary-2: aquamarine;
+  --blue-gradient: linear-gradient(#1b82e3, #7ba9d4);
+  --black-gradient: linear-gradient(#2e302b, #4f4d49);
+  --white: #292929;
+  --bi-icon-color: white;
+  --white-text: white;
+  --input-color: rgba(255, 255, 255, 0.2);
+  --blue-gradient-color: #338ee8;
+  --black-gradient-color: #3d3d3d;
+  --shadow-color: rgb(100, 100, 100);
+}
+
 @font-face {
   font-family: "Inter";
   src: url(../../fonts/Inter-normal.ttf);
@@ -11,6 +75,10 @@
   transition: all 0.3s ease;
 }
 
+.bi::before {
+  color: var(--bi-icon-color);
+}
+
 header {
   height: 44px;
   display: flex;
@@ -20,7 +88,7 @@ header {
 header .control {
   height: 50%;
   align-content: center;
-  color: #007AFF;
+  color: var(--pr-blue);
 }
 
 .invisible {
@@ -39,7 +107,8 @@ aside {
   top: 0;
   left: 0;
   overflow: hidden;
-  background-color: #f5f5f5;
+  color: var(--white-text);
+  background-color: var(--bg-color);
 }
 aside .part-top {
   width: 100%;
@@ -70,7 +139,7 @@ aside .part-top ul li {
 }
 aside .part-top ul li i {
   padding: 8px;
-  background-color: white;
+  background-color: var(--white);
   border-radius: 12px;
 }
 aside .part-top ul li i::before {
@@ -81,8 +150,8 @@ aside .part-top ul li i::before {
   height: 24px;
 }
 aside .part-top ul li:hover {
-  background-color: #eaeaea;
-  white-space: nowrap;
+  background-color: var(--bg-grey);
+  --white-space: nowrap;
   width: 100%;
 }
 aside .part-bottom {
@@ -104,7 +173,7 @@ aside .part-bottom ul li {
 }
 aside .part-bottom ul li i {
   padding: 8px;
-  background-color: white;
+  background-color: var(--white);
   border-radius: 12px;
 }
 aside .part-bottom ul li i::before {
@@ -115,13 +184,13 @@ aside .part-bottom ul li i::before {
   height: 24px;
 }
 aside .part-bottom ul li:hover {
-  background-color: #eaeaea;
-  white-space: nowrap;
+  background-color: var(--bg-grey);
+  --white-space: nowrap;
   width: 100%;
 }
 
 main {
-  background-color: #f5f5f5;
+  background-color: var(--bg-color);
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -132,7 +201,7 @@ main {
 main nav {
   display: none;
   justify-content: space-between;
-  background-color: #f5f5f5;
+  background-color: var(--bg-color);
   width: 100%;
   height: auto;
 }
@@ -165,24 +234,27 @@ main nav .left-part .breadcrumb {
   font-size: 1.2rem;
 }
 main nav .left-part .breadcrumb li:nth-child(1) a {
-  color: rgba(0, 0, 0, 0.5019607843);
+  color: var(--grey-40);
   text-decoration: none;
 }
 main nav .left-part .breadcrumb li:nth-child(1) a:hover {
-  background-color: #eaeaea;
-  white-space: nowrap;
+  background-color: var(--bg-grey);
+  --white-space: nowrap;
   padding: 8px;
   border-radius: 12px;
 }
 main nav .left-part .breadcrumb li:nth-child(2) {
-  color: black;
+  color: var(--white-text);
 }
 main nav .left-part .breadcrumb li:nth-child(2):hover {
-  background-color: #eaeaea;
-  white-space: nowrap;
+  background-color: var(--bg-grey);
+  --white-space: nowrap;
   margin-left: 5px;
   padding: 8px;
   border-radius: 12px;
+}
+main nav .left-part .breadcrumb li:nth-child(2)::before {
+  color: var(--grey-40);
 }
 main nav .right-part {
   display: flex;
@@ -191,7 +263,7 @@ main nav .right-part {
 main nav .right-part .search-bar {
   display: flex;
   align-items: center;
-  background-color: #eaeaea;
+  background-color: var(--bg-grey);
   border-radius: 16px;
   padding: 8px 12px;
   width: 11vw;
@@ -201,7 +273,9 @@ main nav .right-part .search-bar {
 main nav .right-part .search-bar .bi-search {
   font-size: 16px;
   margin-right: 5%;
-  color: #aaa;
+}
+main nav .right-part .search-bar .bi-search::before {
+  color: var(--input-color);
 }
 main nav .right-part .search-bar .search-input {
   width: 70%;
@@ -209,15 +283,17 @@ main nav .right-part .search-bar .search-input {
   outline: none;
   background: transparent;
   font-size: 14px;
-  color: #555;
+  color: var(--input-color);
 }
 main nav .right-part .search-bar .search-input::placeholder {
-  color: #aaa;
+  color: var(--bg-grey-hover);
 }
 main nav .right-part .search-bar .bi-command {
   font-size: 12px;
-  color: #aaa;
   margin-left: 8px;
+}
+main nav .right-part .search-bar .bi-command::before {
+  color: var(--input-color);
 }
 main nav .right-part .search-bar:hover {
   background-color: rgba(128, 128, 128, 0.384);
@@ -288,16 +364,16 @@ main .cards .card .content:last-of-type .text:last-of-type {
   line-height: 20px;
 }
 main .blue-gradient {
-  background-image: linear-gradient(#288df6, #4ca4fb);
+  background-image: var(--blue-gradient);
 }
 main .blue-gradient .icon {
-  background: linear-gradient(#3897ff, #3897ff) padding-box, linear-gradient(330deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 60%, rgb(255, 255, 255) 100%) border-box;
+  background: linear-gradient(var(--blue-gradient-color), var(--blue-gradient-color)) padding-box, linear-gradient(330deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 60%, rgb(255, 255, 255) 100%) border-box;
 }
 main .black-gradient {
-  background-image: linear-gradient(#090909, #3b3b3b);
+  background-image: var(--black-gradient);
 }
 main .black-gradient .icon {
-  background: linear-gradient(#1e1e1e, #1e1e1e) padding-box, linear-gradient(330deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 60%, rgb(255, 255, 255) 100%) border-box;
+  background: linear-gradient(var(--black-gradient-color), var(--black-gradient-color)) padding-box, linear-gradient(330deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 60%, rgb(255, 255, 255) 100%) border-box;
 }
 main .black-gradient:nth-child(2) .icon {
   rotate: 180deg;
@@ -313,7 +389,7 @@ main .graphic {
   flex-direction: column;
   justify-content: space-between;
   gap: 16px;
-  background-color: white;
+  background-color: var(--white);
 }
 main .graphic .group {
   width: 329px;
@@ -327,10 +403,17 @@ main .graphic .group ul {
   gap: 16px;
   margin: 0;
   padding: 0;
+  color: var(--grey-40);
+}
+main .graphic .group ul li {
+  color: var(--grey-40);
 }
 main .graphic .group ul li:hover {
-  color: #AF52DE;
+  color: var(--secondary-purple);
   margin: 0 5px;
+}
+main .graphic .group ul li.active {
+  color: var(--secondary-purple);
 }
 main .graphic .group .dropdowns {
   display: none;
@@ -342,14 +425,19 @@ main .graphic .group .dropdowns select {
   line-height: 24px;
   border: none;
   padding: 8px 16px;
-  background-color: #eaeaea;
+  background-color: var(--bg-grey);
   border-radius: 12px;
   width: auto;
+  color: var(--white-text);
+}
+main .graphic .group .dropdowns select option {
+  background-color: var(--bg-color);
+  color: var(--white-text);
 }
 main .graphic .group .dropdowns i {
   display: inherit;
   padding: 8px;
-  background-color: #eaeaea;
+  background-color: var(--bg-grey);
   border-radius: 12px;
   color: black;
 }
@@ -361,7 +449,7 @@ main .graphic .group .dropdowns i::before {
   height: 20px;
 }
 main .graphic .group .dropdowns i:hover {
-  background-color: #aaa;
+  background-color: var(--bg-grey-hover);
 }
 main .graphic .frame {
   position: relative;
@@ -407,7 +495,7 @@ main .graphic .frame .bottom_text ul li {
 main .graphic-2 {
   width: 100%;
   height: 240px;
-  background-color: white;
+  background-color: var(--white);
   margin-top: 16px;
   padding: 16px;
   gap: 16px;
@@ -422,7 +510,7 @@ main .graphic-2 .text {
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
-  color: #007AFF;
+  color: var(--pr-blue);
 }
 main .graphic-2 .text i {
   display: none;
@@ -447,7 +535,7 @@ main .graphic-2 .graph .vertical_bars .vertical_bar {
 main .graphic-2 .graph .vertical_bars .vertical_bar .progress {
   display: flex;
   width: 75%;
-  background-color: #e6e6e6;
+  background-color: var(--graph-grey);
   border-radius: 12px;
   margin-top: 8px;
 }
@@ -463,6 +551,7 @@ main .graphic-2 .graph .bottom_text {
   position: absolute;
   top: 152px;
   width: 100%;
+  color: var(--white-text);
 }
 main .graphic-2 .graph .bottom_text ul {
   list-style-type: none;
@@ -478,7 +567,7 @@ main .graphic-2 .graph .bottom_text ul li {
 main .graphic-3 {
   width: 100%;
   height: 240px;
-  background-color: white;
+  background-color: var(--white);
   margin-top: 16px;
   padding: 16px;
   gap: 16px;
@@ -493,7 +582,7 @@ main .graphic-3 .text {
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
-  color: #34C759;
+  color: var(--secondary-green);
 }
 main .graphic-3 .text i {
   display: none;
@@ -518,13 +607,13 @@ main .graphic-3 .graph .vertical_bars .vertical_bar {
 main .graphic-3 .graph .vertical_bars .vertical_bar .progress {
   display: flex;
   width: 75%;
-  background-color: #e6e6e6;
+  background-color: var(--graph-grey);
   border-radius: 12px;
   margin-top: 8px;
 }
 main .graphic-3 .graph .vertical_bars .vertical_bar .title {
   width: 95%;
-  color: white;
+  color: var(--white);
   padding: 4px 8px;
   border-radius: 16px;
   font-size: 0.8rem;
@@ -534,6 +623,7 @@ main .graphic-3 .graph .bottom_text {
   position: absolute;
   top: 152px;
   width: 100%;
+  color: var(--white-text);
 }
 main .graphic-3 .graph .bottom_text ul {
   list-style-type: none;
@@ -551,7 +641,7 @@ main .graphic-4 {
   height: 240px;
   padding: 16px;
   gap: 16px;
-  background-color: white;
+  background-color: var(--white);
   margin-top: 16px;
   border-radius: 16px;
   display: flex;
@@ -563,7 +653,7 @@ main .graphic-4 .text {
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
-  color: #FF3B30;
+  color: var(--secondary-red);
 }
 main .graphic-4 .group {
   width: 100%;
@@ -576,6 +666,7 @@ main .graphic-4 .group ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  color: var(--white-text);
 }
 main .graphic-4 .group ul li {
   display: flex;
@@ -585,10 +676,10 @@ main .graphic-4 .group ul li:nth-child(1) .circle {
   background-color: black;
 }
 main .graphic-4 .group ul li:nth-child(2) .circle {
-  background-color: rgba(0, 0, 0, 0.5019607843);
+  background-color: var(--grey-40);
 }
 main .graphic-4 .group ul li:nth-child(3) .circle {
-  background-color: #FF3B30;
+  background-color: var(--secondary-red);
 }
 main .graphic-4 .group ul li .circle {
   width: 4px;
@@ -598,7 +689,7 @@ main .graphic-4 .group ul li .circle {
 }
 main .graphic-4 .group ul li i {
   padding: 8px;
-  background-color: #eaeaea;
+  background-color: var(--bg-grey);
   border-radius: 12px;
   color: black;
 }
@@ -610,7 +701,7 @@ main .graphic-4 .group ul li i::before {
   height: 20px;
 }
 main .graphic-4 .group ul li i:hover {
-  background-color: #aaa;
+  background-color: var(--bg-grey-hover);
 }
 main .graphic-4 .group ul .laptop-version {
   display: none;
@@ -645,13 +736,13 @@ main .graphic-4 .graph .vertical_bars .vertical_bar .progress {
   margin-top: 3px;
 }
 main .graphic-4 .graph .vertical_bars .vertical_bar .bg-red {
-  background-color: #FF3B30;
+  background-color: var(--secondary-red);
 }
 main .graphic-4 .graph .vertical_bars .vertical_bar .bg-grey {
-  background-color: rgba(0, 0, 0, 0.5019607843);
+  background-color: var(--grey-40);
 }
 main .graphic-4 .graph .vertical_bars .vertical_bar .bg-black {
-  background-color: black;
+  background-color: var(--white-text) !important;
 }
 main .graphic-4 .graph .vertical_bars .vertical_bar .long-version {
   display: none;
@@ -661,6 +752,7 @@ main .graphic-4 .graph .vertical_bars .long-version {
 }
 main .graphic-4 .graph .bottom_text {
   margin-top: 8px;
+  color: var(--white-text);
 }
 main .graphic-4 .graph .bottom_text ul {
   list-style-type: none;
@@ -710,7 +802,7 @@ main .h100 {
 main .list {
   width: 100%;
   height: auto;
-  background-color: white;
+  background-color: var(--white);
   margin-top: 16px;
   padding: 16px;
   gap: 16px;
@@ -723,7 +815,7 @@ main .list .text {
   width: 100%;
   font-size: 16px;
   line-height: 24px;
-  color: #00C7BE;
+  color: var(--secondary-mint);
   display: flex;
   justify-content: space-between;
 }
@@ -732,7 +824,7 @@ main .list .text .more {
 }
 main .list .text .more i {
   padding: 8px;
-  background-color: #eaeaea;
+  background-color: var(--bg-grey);
   border-radius: 12px;
   color: black;
 }
@@ -744,7 +836,7 @@ main .list .text .more i::before {
   height: 20px;
 }
 main .list .text .more i:hover {
-  background-color: #aaa;
+  background-color: var(--bg-grey-hover);
 }
 main .list .table {
   width: 100%;
@@ -766,11 +858,13 @@ main .list .table .top-text .info {
   padding: 0;
   justify-content: space-between;
   width: 95%;
-  color: rgba(0, 0, 0, 0.5019607843);
+  color: var(--grey-40);
   margin: 0;
 }
 main .list .table .top-text .info li {
+  color: var(--grey-40);
   padding: 12px 16px;
+  background: transparent;
 }
 main .list .table .data {
   list-style-type: none;
@@ -793,6 +887,8 @@ main .list .table .data li {
   font-size: 14px;
   line-height: 20px;
   border-radius: 16px;
+  background-color: var(--bg-grey-list);
+  color: var(--white-text);
 }
 main .list .table .data li::before {
   background-image: url(../../images/list_icon.png);
@@ -813,42 +909,45 @@ main .list .table .data li .laptop-version {
 main .list .table .data li .date {
   left: 31%;
   font-size: 1rem;
+  color: var(--white-text);
 }
 main .list .table .data li .amount {
   right: 31.5%;
   font-size: 1rem;
+  color: var(--white-text);
 }
 main .list .table .data li .status {
   padding: 4px 12px;
   font-size: 14px;
   line-height: 20px;
   border-radius: 12px;
+  color: var(--pr-blue);
 }
 main .list .table .data li .in-progress {
-  color: #AF52DE;
-  background-color: #efdcf8;
+  color: var(--secondary-purple);
+  background-color: var(--bg-purple);
 }
 main .list .table .data li .complete {
-  color: #34C759;
-  background-color: #d7f4de;
+  color: var(--secondary-green);
+  background-color: var(--bg-green);
 }
 main .list .table .data li .pending {
-  color: #007AFF;
-  background-color: #cce4ff;
+  color: var(--secondary-blue);
+  background-color: var(--bg-blue);
 }
 main .list .table .data li .approved {
-  color: #FFCC00;
-  background-color: #fef5cc;
+  color: var(--secondary-yellow);
+  background-color: var(--bg-yellow);
 }
 main .list .table .data li .rejected {
-  color: rgba(0, 0, 0, 0.5019607843);
-  background-color: #eaeaea;
+  color: var(--grey-40);
+  background-color: var(--bg-grey);
 }
 main .list .table .data .light-grey {
-  background-color: #fcfcfc;
+  background-color: var(--bg-light-grey-list);
 }
 main .list .table .data .dark-grey {
-  background-color: #f7f7f7;
+  background-color: var(--bg-grey-list);
 }
 main .footer-laptop {
   display: none;
@@ -857,7 +956,7 @@ main .footer-laptop {
   justify-content: space-between;
   align-items: center;
   font-size: 12px;
-  color: rgba(0, 0, 0, 0.5019607843);
+  color: var(--grey-40);
   padding: 16px 8px;
 }
 main .footer-laptop .copyright {
@@ -875,7 +974,7 @@ footer {
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: #f5f5f5;
+  background-color: var(--bg-color);
   border-radius: 0 0 32px 32px;
 }
 footer .group {
@@ -941,16 +1040,16 @@ footer .group ul li {
     line-height: 28px;
   }
   body main .laptop-blue-gradient {
-    background-image: linear-gradient(#288df6, #4ca4fb) !important;
+    background-image: var(--blue-gradient) !important;
   }
   body main .laptop-blue-gradient .icon {
-    background: linear-gradient(#3897ff, #3897ff) padding-box, linear-gradient(330deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 60%, rgb(255, 255, 255) 100%) border-box;
+    background: linear-gradient(var(--blue-gradient-color), var(--blue-gradient-color)) padding-box, linear-gradient(330deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 60%, rgb(255, 255, 255) 100%) border-box;
   }
   body main .laptop-black-gradient {
-    background-image: linear-gradient(#090909, #3b3b3b) !important;
+    background-image: var(--black-gradient) !important;
   }
   body main .laptop-black-gradient .icon {
-    background: linear-gradient(#1e1e1e, #1e1e1e) padding-box, linear-gradient(330deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 60%, rgb(255, 255, 255) 100%) border-box;
+    background: linear-gradient(var(--black-gradient-color), var(--black-gradient-color)) padding-box, linear-gradient(330deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 60%, rgb(255, 255, 255) 100%) border-box;
   }
   body main .laptop-black-gradient:nth-child(2) .icon {
     rotate: 180deg;
@@ -1018,7 +1117,7 @@ footer .group ul li {
   body main .graphic-2 .text i {
     display: inherit;
     padding: 8px;
-    background-color: #eaeaea;
+    background-color: var(--bg-grey);
     border-radius: 12px;
     color: black;
   }
@@ -1030,7 +1129,7 @@ footer .group ul li {
     height: 20px;
   }
   body main .graphic-2 .text i:hover {
-    background-color: #aaa;
+    background-color: var(--bg-grey-hover);
   }
   body main .graphic-2 .graph {
     height: 168px;
@@ -1054,7 +1153,7 @@ footer .group ul li {
   body main .graphic-3 .text i {
     display: inherit;
     padding: 8px;
-    background-color: #eaeaea;
+    background-color: var(--bg-grey);
     border-radius: 12px;
     color: black;
   }
@@ -1066,7 +1165,7 @@ footer .group ul li {
     height: 20px;
   }
   body main .graphic-3 .text i:hover {
-    background-color: #aaa;
+    background-color: var(--bg-grey-hover);
   }
   body main .graphic-3 .graph {
     height: 168px;
@@ -1168,27 +1267,100 @@ footer .group ul li {
   width: auto;
   padding: 20px;
   border-radius: 16px;
-  border: 1px solid rgb(199, 199, 199);
-  background-color: white;
-  box-shadow: 0px 0px 10px 10px rgb(219, 219, 219);
+  border: 1px solid var(--shadow-color);
+  background-color: var(--bg-color);
+  color: var(--white-text);
+  box-shadow: 0px 0px 10px 10px var(--shadow-color);
   flex-direction: row;
   flex-wrap: nowrap;
   gap: 8px;
+}
+.dataSettingsModalWindow .dataSettingSectionLabels {
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dataSettingsModalWindow ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+.dataSettingsModalWindow ul li {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.dataSettingsModalWindow ul li .dragMe {
+  width: 20px;
+  align-self: center;
+  cursor: grab;
+}
+.dataSettingsModalWindow ul li .dragMe img {
+  width: 20px;
+  rotate: 90deg;
+}
+.dataSettingsModalWindow ul li .dragMe:active {
+  user-select: none;
+  cursor: grabbing;
+}
+.dataSettingsModalWindow ul li.dragging {
+  background-color: red;
+  opacity: 0.5;
 }
 .dataSettingsModalWindow .dataSettingSection {
   width: 50px;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 .dataSettingsModalWindow .dataSettingSection input {
   width: 50px;
   outline: none;
-  border: 1px solid #007AFF;
+  border: 1px solid var(--pr-blue);
   border-radius: 8px;
   padding: 8px;
+}
+.dataSettingsModalWindow .dataSettingSectionControls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.dataSettingsModalWindow .dataSettingSectionControls button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 0;
+  color: var(--white-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dataSettingsModalWindow .dataSettingSectionControls button:hover {
+  scale: 1.1;
+}
+.dataSettingsModalWindow .dataSettingSectionControls button img {
+  width: 50%;
+  height: 50%;
+}
+.dataSettingsModalWindow .dataSettingSectionControls .addSectionButton {
+  background: var(--blue-gradient);
+}
+.dataSettingsModalWindow .dataSettingSectionControls .addSectionButton:hover {
+  background: linear-gradient(var(--pr-blue), var(--pr-blue));
+}
+.dataSettingsModalWindow .dataSettingSectionControls .removeSectionButton {
+  height: 0;
+  background: var(--bin-red);
+}
+.dataSettingsModalWindow .dataSettingSectionControls .removeSectionButton.active-drop {
+  background: var(--secondary-red);
 }
 
 /*# sourceMappingURL=main.css.map */
