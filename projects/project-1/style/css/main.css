@@ -76,6 +76,7 @@
 }
 
 .bi::before {
+  cursor: pointer;
   color: var(--bi-icon-color);
 }
 
@@ -136,6 +137,7 @@ aside .part-top ul li {
   width: 100% !important;
   padding: 12px;
   border-radius: 20px;
+  cursor: pointer;
 }
 aside .part-top ul li i {
   padding: 8px;
@@ -170,6 +172,7 @@ aside .part-bottom ul li {
   gap: 8px;
   padding: 12px;
   border-radius: 20px;
+  cursor: pointer;
 }
 aside .part-bottom ul li i {
   padding: 8px;
@@ -245,6 +248,7 @@ main nav .left-part .breadcrumb li:nth-child(1) a:hover {
 }
 main nav .left-part .breadcrumb li:nth-child(2) {
   color: var(--white-text);
+  cursor: pointer;
 }
 main nav .left-part .breadcrumb li:nth-child(2):hover {
   background-color: var(--bg-grey);
@@ -407,6 +411,7 @@ main .graphic .group ul {
 }
 main .graphic .group ul li {
   color: var(--grey-40);
+  cursor: pointer;
 }
 main .graphic .group ul li:hover {
   color: var(--secondary-purple);
@@ -429,10 +434,12 @@ main .graphic .group .dropdowns select {
   border-radius: 12px;
   width: auto;
   color: var(--white-text);
+  cursor: pointer;
 }
 main .graphic .group .dropdowns select option {
   background-color: var(--bg-color);
   color: var(--white-text);
+  cursor: pointer;
 }
 main .graphic .group .dropdowns i {
   display: inherit;
@@ -673,7 +680,7 @@ main .graphic-4 .group ul li {
   align-items: center;
 }
 main .graphic-4 .group ul li:nth-child(1) .circle {
-  background-color: black;
+  background-color: var(--white-text);
 }
 main .graphic-4 .group ul li:nth-child(2) .circle {
   background-color: var(--grey-40);
@@ -916,39 +923,6 @@ main .list .table .data li .amount {
   font-size: 1rem;
   color: var(--white-text);
 }
-main .list .table .data li .status {
-  padding: 4px 12px;
-  font-size: 14px;
-  line-height: 20px;
-  border-radius: 12px;
-  color: var(--pr-blue);
-}
-main .list .table .data li .in-progress {
-  color: var(--secondary-purple);
-  background-color: var(--bg-purple);
-}
-main .list .table .data li .complete {
-  color: var(--secondary-green);
-  background-color: var(--bg-green);
-}
-main .list .table .data li .pending {
-  color: var(--secondary-blue);
-  background-color: var(--bg-blue);
-}
-main .list .table .data li .approved {
-  color: var(--secondary-yellow);
-  background-color: var(--bg-yellow);
-}
-main .list .table .data li .rejected {
-  color: var(--grey-40);
-  background-color: var(--bg-grey);
-}
-main .list .table .data .light-grey {
-  background-color: var(--bg-light-grey-list);
-}
-main .list .table .data .dark-grey {
-  background-color: var(--bg-grey-list);
-}
 main .footer-laptop {
   display: none;
   width: 95%;
@@ -967,6 +941,47 @@ main .footer-laptop ul {
   display: flex;
   gap: 16px;
   margin: 0 8px;
+}
+
+.status {
+  padding: 4px 12px !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  border-radius: 12px !important;
+  color: var(--pr-blue) !important;
+}
+
+.in-progress {
+  color: var(--secondary-purple) !important;
+  background-color: var(--bg-purple) !important;
+}
+
+.complete {
+  color: var(--secondary-green) !important;
+  background-color: var(--bg-green) !important;
+}
+
+.pending {
+  color: var(--secondary-blue) !important;
+  background-color: var(--bg-blue) !important;
+}
+
+.approved {
+  color: var(--secondary-yellow) !important;
+  background-color: var(--bg-yellow) !important;
+}
+
+.rejected {
+  color: var(--grey-40) !important;
+  background-color: var(--bg-grey) !important;
+}
+
+.light-grey {
+  background-color: var(--bg-light-grey-list) !important;
+}
+
+.dark-grey {
+  background-color: var(--bg-grey-list) !important;
 }
 
 footer {
@@ -1265,6 +1280,8 @@ footer .group ul li {
   top: 10px;
   left: 10px;
   width: auto;
+  max-width: 90vw;
+  overflow: hidden;
   padding: 20px;
   border-radius: 16px;
   border: 1px solid var(--shadow-color);
@@ -1288,10 +1305,12 @@ footer .group ul li {
   gap: 8px;
   margin: 0;
   padding: 0;
+  overflow-x: auto;
 }
 .dataSettingsModalWindow ul li {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 8px;
 }
 .dataSettingsModalWindow ul li .dragMe {

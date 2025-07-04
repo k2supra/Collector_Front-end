@@ -10,6 +10,7 @@
     <script src="index.js" defer></script>
     <script src="themeSwitcher.js" defer></script>
     <script src="sidebar-open-close.js" defer></script>
+    <script src="buttonSwitcher.js" defer></script>
     <title>Dashboard</title>
 </head>
 <body>
@@ -115,9 +116,9 @@
         <section class="graphic">
             <div class="group">
                 <ul>
-                    <li  class="active">Users</li>
-                    <li>Projects</li>
-                    <li>Operating Status</li>
+                    <li class="active" data-chart-color="violet">Users</li>
+                    <li data-chart-color="lime">Projects</li>
+                    <li data-chart-color="yellow">Operating Status</li>
                 </ul>
                 <div class="dropdowns">
                     <select name="select" id="selectChartSpread">
@@ -240,267 +241,267 @@
                     <li class="laptop-version"><i class="bi bi-three-dots" id="dataSettingsOpener"></i></li>
                 </ul>
             </div>
-            <div class="graph">
+            <div class="graph" id="specialGraph">
                 <div class="vertical_bars">
                     <div class="vertical_bar">
-                        <div class="progress h100">
+                        <div class="progress h100 special-container">
                             <div class="progress h50 bg-red"></div>
                             <div class="progress h30 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
-                        <div class="progress h100">
+                        <div class="progress h100 special-container">
                             <div class="progress h10 bg-red"></div>
                             <div class="progress h20 bg-grey"></div>
                             <div class="progress h20 bg-black"></div>
                         </div>
-                        <div class="progress long-version h100">
+                        <div class="progress long-version h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h50 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
-                        <div class="progress long-version h100">
+                        <div class="progress long-version h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h50 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
                     </div>
                     <div class="vertical_bar">
-                        <div class="progress h100">
+                        <div class="progress h100 special-container">
                             <div class="progress h60 bg-red"></div>
                             <div class="progress h30 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
-                        <div class="progress h100">
+                        <div class="progress h100 special-container">
                             <div class="progress h10 bg-red"></div>
                             <div class="progress h10 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
-                        <div class="progress long-version h100">
+                        <div class="progress long-version h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h20 bg-grey"></div>
                             <div class="progress h20 bg-black"></div>
                         </div>
-                        <div class="progress long-version h100">
+                        <div class="progress long-version h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h50 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
                     </div>
                     <div class="vertical_bar">
-                        <div class="progress h100">
+                        <div class="progress h100 special-container">
                             <div class="progress h50 bg-red"></div>
                             <div class="progress h20 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
-                        <div class="progress h100">
+                        <div class="progress h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h10 bg-grey"></div>
                             <div class="progress h30 bg-black"></div>
                         </div>
-                        <div class="progress long-version h100">
+                        <div class="progress long-version h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h50 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
-                        <div class="progress long-version h100">
+                        <div class="progress long-version h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h20 bg-grey"></div>
                             <div class="progress h20 bg-black"></div>
                         </div>
                     </div>
                     <div class="vertical_bar">
-                        <div class="progress h100">
+                        <div class="progress h100 special-container">
                             <div class="progress h30 bg-red"></div>
                             <div class="progress h30 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
-                        <div class="progress h100">
+                        <div class="progress h100 special-container">
                             <div class="progress h70 bg-red"></div>
                             <div class="progress h20 bg-grey"></div>
                             <div class="progress h20 bg-black"></div>
                         </div>
-                        <div class="progress long-version h100">
+                        <div class="progress long-version h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h10 bg-grey"></div>
                             <div class="progress h20 bg-black"></div>
                         </div>
-                        <div class="progress long-version h100">
+                        <div class="progress long-version h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h50 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
                     </div>
                     <div class="vertical_bar">
-                        <div class="progress h100">
+                        <div class="progress h100 special-container">
                             <div class="progress h40 bg-red"></div>
                             <div class="progress h30 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
-                        <div class="progress h100">
+                        <div class="progress h100 special-container">
                             <div class="progress h30 bg-red"></div>
                             <div class="progress h30 bg-grey"></div>
                             <div class="progress h30 bg-black"></div>
                         </div>
-                        <div class="progress long-version h100">
+                        <div class="progress long-version h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h50 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
-                        <div class="progress long-version h100">
+                        <div class="progress long-version h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h10 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
                     </div>
                     <div class="vertical_bar">
-                        <div class="progress h100">
+                        <div class="progress h100 special-container">
                             <div class="progress h10 bg-red"></div>
                             <div class="progress h60 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
-                        <div class="progress h100">
+                        <div class="progress h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h10 bg-grey"></div>
                             <div class="progress h30 bg-black"></div>
                         </div>
-                        <div class="progress long-version h100">
+                        <div class="progress long-version h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h10 bg-grey"></div>
                             <div class="progress h30 bg-black"></div>
                         </div>
-                        <div class="progress long-version h100">
+                        <div class="progress long-version h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h50 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
                     </div>
                     <div class="vertical_bar long-version">
-                        <div class="progress h100">
+                        <div class="progress h100 special-container">
                             <div class="progress h10 bg-red"></div>
                             <div class="progress h60 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
-                        <div class="progress h100">
+                        <div class="progress h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h50 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
-                        <div class="progress long-version h100">
+                        <div class="progress long-version h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h30 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
-                        <div class="progress long-version h100">
+                        <div class="progress long-version h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h50 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
                     </div>
                     <div class="vertical_bar long-version">
-                        <div class="progress h100">
+                        <div class="progress h100 special-container">
                             <div class="progress h10 bg-red"></div>
                             <div class="progress h60 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
-                        <div class="progress h100">
+                        <div class="progress h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h50 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
-                        <div class="progress long-version h100">
+                        <div class="progress long-version h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h50 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
-                        <div class="progress long-version h100">
+                        <div class="progress long-version h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h50 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
                     </div>
                     <div class="vertical_bar long-version">
-                        <div class="progress h100">
+                        <div class="progress h100 special-container">
                             <div class="progress h10 bg-red"></div>
                             <div class="progress h60 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
-                        <div class="progress h100">
+                        <div class="progress h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h50 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
-                        <div class="progress long-version h100">
+                        <div class="progress long-version h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h50 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
-                        <div class="progress long-version h100">
+                        <div class="progress long-version h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h50 bg-grey"></div>
                             <div class="progress h30 bg-black"></div>
                         </div>
                     </div>
                     <div class="vertical_bar long-version">
-                        <div class="progress h100">
+                        <div class="progress h100 special-container">
                             <div class="progress h10 bg-red"></div>
                             <div class="progress h30 bg-grey"></div>
                             <div class="progress h30 bg-black"></div>
                         </div>
-                        <div class="progress h100">
+                        <div class="progress h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h50 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
-                        <div class="progress long-version h100">
+                        <div class="progress long-version h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h50 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
-                        <div class="progress long-version h100">
+                        <div class="progress long-version h100 special-container">
                             <div class="progress h30 bg-red"></div>
                             <div class="progress h50 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
                     </div>
                     <div class="vertical_bar long-version">
-                        <div class="progress h100">
+                        <div class="progress h100 special-container">
                             <div class="progress h10 bg-red"></div>
                             <div class="progress h60 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
-                        <div class="progress h100">
+                        <div class="progress h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h50 bg-grey"></div>
                             <div class="progress h30 bg-black"></div>
                         </div>
-                        <div class="progress long-version h100">
+                        <div class="progress long-version h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h50 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
-                        <div class="progress long-version h100">
+                        <div class="progress long-version h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h50 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
                     </div>
                     <div class="vertical_bar long-version">
-                        <div class="progress h100">
+                        <div class="progress h100 special-container">
                             <div class="progress h10 bg-red"></div>
                             <div class="progress h60 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
-                        <div class="progress h100">
+                        <div class="progress h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h50 bg-grey"></div>
                             <div class="progress h30 bg-black"></div>
                         </div>
-                        <div class="progress long-version h100">
+                        <div class="progress long-version h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h30 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>
                         </div>
-                        <div class="progress long-version h100">
+                        <div class="progress long-version h100 special-container">
                             <div class="progress h20 bg-red"></div>
                             <div class="progress h30 bg-grey"></div>
                             <div class="progress h10 bg-black"></div>

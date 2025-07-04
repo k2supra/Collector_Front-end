@@ -16,6 +16,7 @@
 }
 .bi::before
 {
+    cursor: pointer;
     color: var(--bi-icon-color);
 }
 header
@@ -83,6 +84,7 @@ aside
 
                 padding: 12px;
                 border-radius: 20px;
+                cursor: pointer;
                 i
                 {
                     padding: 8px;
@@ -126,6 +128,7 @@ aside
 
                 padding: 12px;
                 border-radius: 20px;
+                cursor: pointer;
                 i
                 {
                     padding: 8px;
@@ -216,6 +219,7 @@ main
                 li:nth-child(2)
                 {
                     color: var(--white-text);
+                    cursor: pointer;
                     &:hover
                     {
                         background-color: var(--bg-grey);
@@ -466,6 +470,7 @@ main
                 li
                 {
                     color: var(--grey-40);
+                    cursor: pointer;
                     &:hover
                     {
                         color: var(--secondary-purple);
@@ -493,11 +498,13 @@ main
                     border-radius: 12px;
                     width: auto;
                     color: var(--white-text);
+                    cursor: pointer;
                     
                     option
                     {
                         background-color: var(--bg-color);
                         color: var(--white-text);
+                        cursor: pointer;
                     }
                 }
                 i
@@ -782,7 +789,7 @@ main
                     align-items: center;
                     &:nth-child(1) .circle
                     {
-                        background-color: black;
+                        background-color: var(--white-text);
                     }
                     &:nth-child(2) .circle
                     {
@@ -1076,48 +1083,49 @@ main
                         font-size: 1rem;
                         color: var(--white-text);
                     }
-                    .status
-                    {
-                        padding: 4px 12px;
-                        font-size: 14px;
-                        line-height: 20px;
-                        border-radius: 12px;
-                        color: var(--pr-blue);
-                    }
-                    .in-progress
-                    {
-                        color: var(--secondary-purple);
-                        background-color: var(--bg-purple);
-                    }
-                    .complete
-                    {
-                        color: var(--secondary-green);
-                        background-color: var(--bg-green);
-                    }
-                    .pending
-                    {
-                        color: var(--secondary-blue);
-                        background-color: var(--bg-blue);
-                    }
-                    .approved
-                    {
-                        color: var(--secondary-yellow);
-                        background-color: var(--bg-yellow);
-                    }
-                    .rejected
-                    {
-                        color: var(--grey-40);
-                        background-color: var(--bg-grey);
-                    }
+                //     .status
+                //     {
+                //         padding: 4px 12px;
+                //         font-size: 14px;
+                //         line-height: 20px;
+                //         border-radius: 12px;
+                //         color: var(--pr-blue);
+                //     }
+                //     .in-progress
+                //     {
+                //         color: var(--secondary-purple);
+                //         background-color: var(--bg-purple);
+                //     }
+                //     .complete
+                //     {
+                //         color: var(--secondary-green);
+                //         background-color: var(--bg-green);
+                //     }
+                //     .pending
+                //     {
+                //         color: var(--secondary-blue);
+                //         background-color: var(--bg-blue);
+                //     }
+                //     .approved
+                //     {
+                //         color: var(--secondary-yellow);
+                //         background-color: var(--bg-yellow);
+                //     }
+                //     .rejected
+                //     {
+                //         color: var(--grey-40);
+                //         background-color: var(--bg-grey);
+                //     }
+                // }
                 }
-                .light-grey
-                {
-                    background-color: var(--bg-light-grey-list);
-                }
-                .dark-grey
-                {
-                    background-color: var(--bg-grey-list);
-                }
+                // .light-grey
+                // {
+                //     background-color: var(--bg-light-grey-list);
+                // }
+                // .dark-grey
+                // {
+                //     background-color: var(--bg-grey-list);
+                // }
             }
         }
     }
@@ -1144,6 +1152,47 @@ main
         }
     }
     
+}
+.status
+{
+    padding: 4px 12px !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+    border-radius: 12px !important;
+    color: var(--pr-blue) !important;
+}
+.in-progress
+{
+    color: var(--secondary-purple) !important;
+    background-color: var(--bg-purple) !important;
+}
+.complete
+{
+    color: var(--secondary-green) !important;
+    background-color: var(--bg-green) !important;
+}
+.pending
+{
+    color: var(--secondary-blue) !important;
+    background-color: var(--bg-blue) !important;
+}
+.approved
+{
+    color: var(--secondary-yellow) !important;
+    background-color: var(--bg-yellow) !important;
+}
+.rejected
+{
+    color: var(--grey-40) !important;
+    background-color: var(--bg-grey) !important;
+}
+.light-grey
+{
+background-color: var(--bg-light-grey-list) !important;
+}
+.dark-grey
+{
+background-color: var(--bg-grey-list) !important;
 }
 footer
 {
@@ -1540,6 +1589,8 @@ footer
     top: 10px;
     left: 10px;
     width: auto;
+    max-width: 90vw;
+    overflow: hidden;
     padding: 20px;
     border-radius: 16px;
     border: 1px solid var(--shadow-color);
@@ -1569,10 +1620,12 @@ footer
         gap: 8px;
         margin: 0;
         padding: 0;
+        overflow-x: auto;
         li
         {
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 8px;
             .dragMe
             {
