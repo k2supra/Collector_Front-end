@@ -356,6 +356,7 @@ function setMWCGraph(graphLink) {
             const newVal = +event.target.value || 0;
             currentGraphData[index].heightValue = newVal;
             updateGraphFromData(graphLink, currentGraphData);
+            // manager.addSnapshot(document.body)
         });
     });
 

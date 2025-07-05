@@ -1714,3 +1714,30 @@ footer
     }
     
 }
+#manager
+{
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    background-color: var(--white);
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+    button
+    {
+        border: 0;
+        border-radius: 16px;
+        width: 30%;
+        height: 30%;
+        background: var(--bg-grey);
+        &:hover
+        {
+            background: var(--bg-grey-hover);
+        }
+    }
+}
