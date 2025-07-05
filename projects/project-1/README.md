@@ -1,11 +1,12 @@
 # About
 The website is templated with Figma. 
+Features:\
 + Edit chart`s values\
 + Edit chart`s labels\
 + Edit chart`s colors\
 + Swap positions of data in charts\
-+ open/close sidebar\
-+ switch themes(light/dark)\
++ Open/close sidebar\
++ Switch themes(light/dark)\
 + Media queries and adaptive layout\
 
 Created with mobile-first method\
