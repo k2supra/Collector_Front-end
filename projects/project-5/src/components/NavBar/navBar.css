@@ -1,0 +1,23 @@
+@import url(../mainStyles/colors.css);
+
+nav
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    /* background-color: var(--background); */
+}
+
+nav .logo
+{
+    background-image: url(../../assets/images/logo.png);
+    width: 182.56px;
+    height: 24px;
+}
+
+nav .burger
+{
+    background-image: url(../../assets/images/burgerMenu.png);
+    width: 24px;
+    height: 24px;
+}
