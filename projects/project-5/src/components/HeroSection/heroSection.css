@@ -1,0 +1,163 @@
+@import url(../mainStyles/fonts.css);
+
+.heroSection
+{
+    width: 100%;
+    height: fit-content;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+
+    font-family: 'WorkSans';
+    color: white;
+}
+
+.heroSection .heroSectionFrame
+{
+    width: 315px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.heroSection .heroSectionFrame .headline
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.heroSection .heroSectionFrame .headline h4
+{
+    margin: 0;
+    padding: 0;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 140%;
+    text-align: start;
+}
+
+.heroSection .heroSectionFrame .headline span
+{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    text-align: start;
+}
+
+.heroSection .heroSectionFrame .highlightedNFT
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 315px;
+    overflow: hidden;
+}
+
+.heroSection .heroSectionFrame .highlightedNFT img.highlightedNFT
+{
+    object-fit: cover;
+    object-position: center;
+    flex: 1;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+
+.heroSection .heroSectionFrame .highlightedNFT .highlightedNFTInfo
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    height: 109px;
+    width: -webkit-fill-available;
+    padding: 20px;
+    background-color: var(--secondary-background);
+    border-radius: 0 0 20px 20px;
+}
+
+.heroSection .heroSectionFrame .highlightedNFT .highlightedNFTInfo h5
+{
+    font-size: 22px;
+    line-height: 140%;
+    font-weight: 600;
+}
+
+.heroSection .heroSectionFrame .highlightedNFT .highlightedNFTInfo .artist
+{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.heroSection .heroSectionFrame .highlightedNFT .highlightedNFTInfo .artist .avatar
+{
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+}
+
+.heroSection .heroSectionFrame .highlightedNFT .highlightedNFTInfo .artist span
+{
+    font-size: 16px;
+    line-height: 140%;
+    font-weight: 400;
+}
+
+.heroSection .heroSectionFrame button
+{
+    background-color: var(--callToAction);
+    border: 0;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 60px;
+    width: 100%;
+    color: white;
+    line-height: 140%;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.heroSection .heroSectionFrame button img.rocketLaunch
+{
+    width: 20px;
+    height: 20px;
+}
+
+.heroSection .heroSectionFrame .additionalInfo
+{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.heroSection .heroSectionFrame .additionalInfo .additionalInfoItem
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.heroSection .heroSectionFrame .additionalInfo .additionalInfoItem h5
+{
+    line-height: 160%;
+    font-size: 22px;
+    font-weight: 700;
+    font-family: 'SpaceMono';
+}
+.heroSection .heroSectionFrame .additionalInfo .additionalInfoItem span:nth-of-type(1)
+{
+    font-size: 16px;
+    line-height: 140%;
+}
