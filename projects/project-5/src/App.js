@@ -5,15 +5,22 @@ import HeroSection from './components/HeroSection/HeroSection';
 import TrendingCollection from './components/TrendingCollection/TrendingCollection';
 import TopRatedArtists from './components/TopRatedArtists/TopRatedArtists';
 import BrowseCategories from './components/BrowseCategories/BrowseCategories';
+import DiscoverMoreNFTS from './components/DiscoverMoreNFTS/DiscoverMoreNFTS';
+import NFTHighlight from './components/NFTHighlight/NFTHighlight';
+import HowItWorks from './components/HowItWorks/HowItWorks';
+
 
 function App() {
   return (
     <div className="App">
-      <NavBar/>
+      {/* <NavBar/>
       <HeroSection/>
       <TrendingCollection/> 
       <TopRatedArtists/>
-      <BrowseCategories/>
+      <BrowseCategories/> 
+      <DiscoverMoreNFTS/>
+      <NFTHighlight/>*/}
+      <HowItWorks/>
     </div>
   );
 }

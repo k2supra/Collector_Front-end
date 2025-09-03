@@ -1,0 +1,134 @@
+@import url(../mainStyles/colors.css);
+@import url(../mainStyles/fonts.css);
+
+.NFTHighlight
+{
+    position: relative;
+    padding: 40px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../assets/images/primaryPhoto2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    font-family: 'WorkSans';
+}
+.NFTHighlight::before
+{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#a159ff00, #A259FF);
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.NFTHighlight .frame
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    z-index: 2;
+}
+
+.NFTHighlight .frame .artistCard
+{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: var(--secondary-background);
+    align-self: flex-start;
+}
+
+.NFTHighlight .frame .artistCard img.avatar
+{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.NFTHighlight .frame .artistCard span.name
+{
+    font-size: 16px;
+    line-height: 140%;
+}
+
+.NFTHighlight .frame h3
+{
+    font-size: 38px;
+    line-height: 120%;
+    font-weight: 600;
+    text-align: left;
+}
+
+.NFTHighlight .frame .auctionTimer
+{
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: color-mix(in srgb, var(--secondary-background) 50%, transparent);
+    backdrop-filter: blur(5px);
+}
+
+.NFTHighlight .frame .auctionTimer span:nth-of-type(1)
+{
+    font-family: 'SpaceMono';
+    font-size: 12px;
+    line-height: 110%;
+}
+
+.NFTHighlight .frame .auctionTimer .timer
+{
+    display: flex;
+    gap: 10px;
+    font-size: 28px;
+    line-height: 140%;
+    font-weight: 700;
+}
+
+.NFTHighlight .frame .auctionTimer .timer div
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    font-family: 'SpaceMono';
+    font-size: 12px;
+    line-height: 110%;
+}
+
+.NFTHighlight .frame .auctionTimer .timer div span.value
+{
+    font-size: 38px;
+    line-height: 120%;
+    font-weight: 700;
+}
+
+.NFTHighlight .frame button
+{
+    padding: 22px 50px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background-color: white;
+    border: 0;
+    border-radius: 20px;
+    font-size: 16px;
+    line-height: 140%;
+    font-weight: 600;
+    font-family: 'WorkSans';
+}
