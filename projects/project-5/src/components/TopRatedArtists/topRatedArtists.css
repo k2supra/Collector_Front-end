@@ -1,0 +1,149 @@
+@import url(../mainStyles/colors.css);
+@import url(../mainStyles/fonts.css);
+
+.topRatedArtists
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 0;
+    color: white;
+    font-family: 'WorkSans';
+}
+
+.topRatedArtists .headline
+{
+    width: 315px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.topRatedArtists .headline h4
+{
+    font-size: 28px;
+    line-height: 140%;
+    font-weight: 600;
+}
+.topRatedArtists .headline span
+{
+    font-size: 16px;
+    line-height: 140%;
+    font-weight: 400;
+    text-align: start;
+}
+
+.topRatedArtists .artistCardsRow
+{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 315px;
+    gap: 20px;
+    counter-reset: pos;
+}
+
+.topRatedArtists .artistCardsRow .artistCard
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: var(--secondary-background);
+    counter-increment: pos;
+}
+
+.topRatedArtists .artistCardsRow .artistCard .avatar
+{
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+
+.topRatedArtists .artistCardsRow .artistCard .avatar img
+{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.topRatedArtists .artistCardsRow .artistCard .avatar .ratingPosition::before
+{
+    background-color: var(--background);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    content: counter(pos);
+    position: absolute;
+    top: -7px;
+    left: -7px;
+}
+
+.topRatedArtists .artistCardsRow .artistCard .artistInfo
+{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+}
+
+.topRatedArtists .artistCardsRow .artistCard .artistInfo h5.name
+{
+    font-size: 22px;
+    line-height: 140%;
+    font-weight: 600;
+}
+
+.topRatedArtists .artistCardsRow .artistCard .artistInfo .additionalInfo
+{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.topRatedArtists .artistCardsRow .artistCard .artistInfo .additionalInfo .totalSales
+{
+    color: var(--captionAndLabelText);
+    font-size: 16px;
+    line-height: 140%;
+}
+
+.topRatedArtists .artistCardsRow .artistCard .artistInfo .additionalInfo .spent
+{
+    font-family: "SpaceMono";
+    font-size: 16px;
+    line-height: 140%;
+}
+
+.topRatedArtists button
+{
+    width: 315px;
+    height: 60px;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border-radius: 20px;
+    border: 2px solid var(--callToAction);
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 140%;
+}
+
+.topRatedArtists button img
+{
+    width: 20px;
+    height: 20px;
+}

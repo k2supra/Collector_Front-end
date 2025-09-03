@@ -15,16 +15,16 @@ function TrendingCollection() {
             <div className="photos">
                 <img src={primaryPhoto} alt="primaryPhoto" className="primaryPhoto" />
                 <div className="collection">
-                    <img src={secondaryPhoto} alt="photo" />
-                    <img src={secondaryPhoto2} alt="photo" />
+                    <img src={secondaryPhoto} alt="secondaryPhoto" />
+                    <img src={secondaryPhoto2} alt="secondaryPhoto2" />
                     <div className="photoReplacer">1025+</div>
                 </div>
             </div>
             <div className="collectionInfo">
                 <h5 className="collectionName">DSGN Animals</h5>
                 <div className="artistCard">
-                <img src={avatar} alt="avatar" className='avatar'/>
-                <span>MrFox</span>
+                    <img src={avatar} alt="avatar" className='avatar'/>
+                    <span>MrFox</span>
                 </div>
             </div>
         </div>

@@ -1,0 +1,119 @@
+@import url(../mainStyles/colors.css);
+@import url(../mainStyles/fonts.css);
+
+.trendingCollection
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 0;
+    width: 100%;
+    color: white;
+    font-family: 'WorkSans';
+}
+
+.trendingCollection .sectionHeadline
+{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 315px;
+    gap: 10px;
+}
+
+.trendingCollection .sectionHeadline h4
+{
+    font-size: 28px;
+    line-height: 140%;
+    font-weight: 600;
+}
+
+.trendingCollection .sectionHeadline span
+{
+    font-size: 16px;
+    line-height: 140%;
+    font-weight: 400;
+    text-align: start;
+}
+
+.trendingCollection .collectionSlider
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 20px;
+    width: 315px;
+}
+
+.trendingCollection .collectionSlider .photos
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.trendingCollection .collectionSlider .photos .primaryPhoto
+{
+    height: 315px;
+    border-radius: 20px;
+}
+
+.trendingCollection .collectionSlider .photos .collection
+{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+.trendingCollection .collectionSlider .photos .collection img, .photoReplacer
+{
+    height: 95px;
+    width: 95px;
+    border-radius: 20px;
+}
+
+.trendingCollection .collectionSlider .photos .collection .photoReplacer
+{
+    background-color: var(--callToAction);
+    font-family: 'SpaceMono';
+    text-align: center;
+    align-content: center;
+}
+
+.trendingCollection .collectionSlider .collectionInfo
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+}
+
+.trendingCollection .collectionSlider .collectionInfo .collectionName
+{
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 140%;
+}
+
+.trendingCollection .collectionSlider .collectionInfo .artistCard
+{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.trendingCollection .collectionSlider .collectionInfo .artistCard .avatar
+{
+    border-radius: 50%;
+}
+
+.trendingCollection .collectionSlider .collectionInfo .artistCard span
+{
+    font-size: 16px;
+    line-height: 140%;
+    font-weight: 400;
+}

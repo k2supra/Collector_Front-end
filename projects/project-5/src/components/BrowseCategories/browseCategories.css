@@ -1,0 +1,57 @@
+@import url(../mainStyles/colors.css);
+@import url(../mainStyles/fonts.css);
+
+.browseCategories
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    padding: 40px 30px;
+    font-family: 'WorkSans';
+    color: white;
+}
+
+.browseCategories h4.headline
+{
+    font-size: 28px;
+    line-height: 140%;
+    font-weight: 600;
+    align-self: flex-start;
+}
+
+.browseCategories .categoryCardsGrid
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;   /* відстань між елементами по горизонталі */
+    row-gap: 20px;      /* відстань між рядами */
+    align-items: stretch;
+}
+
+.browseCategories .categoryCardsGrid .categoryCard
+{
+    background-color: var(--secondary-background);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* height: fit-content; */
+}
+
+.browseCategories .categoryCardsGrid .categoryCard img
+{
+    border-radius: 20px 20px 0 0;
+}
+
+.browseCategories .categoryCardsGrid .categoryCard span
+{
+    font-size: 16px;
+    line-height: 140%;
+    font-weight: 600;
+    padding: 20px 20px 25px 20px;
+    height: fit-content;
+    align-self: flex-start;
+    text-align: start;
+}
