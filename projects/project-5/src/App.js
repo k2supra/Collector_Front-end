@@ -8,6 +8,8 @@ import BrowseCategories from './components/BrowseCategories/BrowseCategories';
 import DiscoverMoreNFTS from './components/DiscoverMoreNFTS/DiscoverMoreNFTS';
 import NFTHighlight from './components/NFTHighlight/NFTHighlight';
 import HowItWorks from './components/HowItWorks/HowItWorks';
+import SubscribeWidget from './components/SubscribeWidget/SubscribeWidget';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
@@ -19,8 +21,10 @@ function App() {
       <TopRatedArtists/>
       <BrowseCategories/> 
       <DiscoverMoreNFTS/>
-      <NFTHighlight/>*/}
+      <NFTHighlight/>
       <HowItWorks/>
+      <SubscribeWidget/>*/}
+      <Footer/>
     </div>
   );
 }

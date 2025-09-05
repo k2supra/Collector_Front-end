@@ -1,0 +1,98 @@
+@import url(../mainStyles/colors.css);
+@import url(../mainStyles/fonts.css);
+
+.subscribeWidget
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 30px;
+    color: white;
+    font-family: 'WorkSans';
+}
+
+.subscribeWidget img.astronaut
+{
+    border-radius: 20px;
+    height: 255px;
+}
+
+.subscribeWidget .data
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.subscribeWidget .data .headline
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.subscribeWidget .data .headline h4
+{
+    font-size: 28px;
+    line-height: 140%;
+    font-weight: 600;
+    text-align: start;
+}
+
+.subscribeWidget .data .headline span
+{
+    font-size: 16px;
+    line-height: 140%;
+    text-align: start;
+}
+
+.subscribeWidget .data .inputAndButton
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+}
+
+.subscribeWidget .data .inputAndButton input
+{
+    width: 100%;
+    background-color: white;
+    border: 1px solid var(--secondary-background);
+    border-radius: 20px;
+    padding: 16px 20px;
+    height: 46px;
+}
+.subscribeWidget .data .inputAndButton input::placeholder
+{
+    color: var(--background);
+    line-height: 140%;
+    font-size: 16px;
+}
+.subscribeWidget .data .inputAndButton button
+{
+    background-color: var(--callToAction);
+    border: 0;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 46px;
+    width: 100%;
+    color: white;
+    line-height: 140%;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 50px;
+}
+
+.subscribeWidget .data .inputAndButton button img
+{
+    width: 20px;
+    height: 20px;
+}

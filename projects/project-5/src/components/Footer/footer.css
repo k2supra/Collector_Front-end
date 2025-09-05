@@ -1,0 +1,194 @@
+@import url(../mainStyles/colors.css);
+@import url(../mainStyles/fonts.css);
+
+footer
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 30px;
+    width: 100%;
+    color: white;
+    font-family: 'WorkSans';
+    background-color: var(--secondary-background);
+}
+
+footer .info
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+footer .info .marketplaceInfo
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+}
+
+footer .info .marketplaceInfo .logo
+{
+    background-image: url(../../assets/images/logo.png);
+    width: 243.31px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+footer .info .marketplaceInfo .additionalInfo
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    color: var(--footer-text);
+    font-size: 16px;
+    line-height: 140%;
+    text-align: start;
+}
+
+footer .info .marketplaceInfo .additionalInfo .communityInfo
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+footer .info .marketplaceInfo .additionalInfo .communityInfo .icons
+{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+footer .info .marketplaceInfo .additionalInfo .communityInfo .icons img
+{
+    width: 32px;
+    height: 32px;
+}
+
+footer .info .explore
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+}
+
+footer .info .explore h5
+{
+    font-size: 22px;
+    line-height: 160%;
+    font-weight: 700;
+    font-family: 'SpaceMono';
+}
+
+footer .info .explore .pages
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    color: var(--footer-text);
+    font-size: 16px;
+    line-height: 140%;
+}
+
+footer .info .subscribe
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+footer .info .subscribe h5
+{
+    font-family: 'SpaceMono';
+    font-size: 22px;
+    line-height: 160%;
+    font-weight: 700;
+    align-self: flex-start;
+}
+
+footer .info .subscribe .formAndInfo
+{
+    font-size: 16px;
+    line-height: 140%;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+footer .info .subscribe .formAndInfo .inputAndButton
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+footer .info .subscribe .formAndInfo .inputAndButton input
+{
+    width: 100%;
+    background-color: white;
+    border: 1px solid var(--secondary-background);
+    border-radius: 20px;
+    padding: 16px 20px;
+    height: 46px;
+}
+footer .info .subscribe .formAndInfo .inputAndButton input::placeholder
+{
+    color: var(--background);
+    line-height: 140%;
+    font-size: 16px;
+}
+footer .info .subscribe .formAndInfo .inputAndButton button
+{
+    background-color: var(--callToAction);
+    border: 0;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 46px;
+    width: 100%;
+    color: white;
+    line-height: 140%;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 50px;
+}
+
+footer .info .subscribe .formAndInfo .inputAndButton button img
+{
+    width: 20px;
+    height: 20px;
+}
+
+footer .bottom
+{
+    width: 100%;
+    padding: 20px 0 0;
+    border: 1px solid var(--captionAndLabelText);
+    border-width: 1px 0 0 0;
+
+    font-size: 12px;
+    line-height: 110%;
+    color: var(--footer-text);
+    text-align: start;
+}
