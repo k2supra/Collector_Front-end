@@ -1,5 +1,5 @@
-@import url(../mainStyles/colors.css);
-@import url(../mainStyles/fonts.css);
+@import url(../../../mainStyles/colors.css);
+@import url(../../../mainStyles/fonts.css);
 
 .NFTHighlight
 {
@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(../../assets/images/primaryPhoto2.png);
+    background-image: url(../../../../assets/images/primaryPhoto2.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -68,6 +68,7 @@
     line-height: 120%;
     font-weight: 600;
     text-align: left;
+    width: 100%;
 }
 
 .NFTHighlight .frame .auctionTimer
@@ -131,4 +132,20 @@
     line-height: 140%;
     font-weight: 600;
     font-family: 'WorkSans';
+}
+
+@media (min-width:750px)
+{
+    .NFTHighlight
+    {
+        padding: 360px 72px 60px;
+    }
+}
+
+@media (min-width:1280px)
+{
+    .NFTHighlight
+    {
+        padding: 360px 115px 60px;
+    }
 }

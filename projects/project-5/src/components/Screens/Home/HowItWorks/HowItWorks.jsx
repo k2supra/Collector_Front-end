@@ -1,8 +1,8 @@
 import './howItWorks.css'
 
-import howItWorksIcon1 from '../../assets/images/howItWorksIcon1.png'
-import howItWorksIcon2 from '../../assets/images/howItWorksIcon2.png'
-import howItWorksIcon3 from '../../assets/images/howItWorksIcon3.png'
+import howItWorksIcon1 from '../../../../assets/images/howItWorksIcon1.png'
+import howItWorksIcon2 from '../../../../assets/images/howItWorksIcon2.png'
+import howItWorksIcon3 from '../../../../assets/images/howItWorksIcon3.png'
 
 function HowItWorks() {
     return <div className="howItWorks">

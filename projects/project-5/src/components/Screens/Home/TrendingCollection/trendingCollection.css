@@ -1,5 +1,5 @@
-@import url(../mainStyles/colors.css);
-@import url(../mainStyles/fonts.css);
+@import url(../../../mainStyles/colors.css);
+@import url(../../../mainStyles/fonts.css);
 
 .trendingCollection
 {
@@ -7,7 +7,7 @@
     align-items: center;
     flex-direction: column;
     gap: 40px;
-    padding: 40px 0;
+    padding: 40px 30px;
     width: 100%;
     color: white;
     font-family: 'WorkSans';
@@ -18,8 +18,8 @@
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    width: 315px;
     gap: 10px;
+    width: 100%;
 }
 
 .trendingCollection .sectionHeadline h4
@@ -116,4 +116,77 @@
     font-size: 16px;
     line-height: 140%;
     font-weight: 400;
+}
+
+.trendingCollection .forTablet, .forDesktop
+{
+    display: none !important;
+}
+
+@media (min-width: 750px)
+{
+    .trendingCollection
+    {
+        padding: 40px 72px;
+    }
+    .trendingCollection .collectionSlider
+    {
+        flex-wrap: wrap;
+        width: 100%;
+        flex-direction: row;
+    }
+    .trendingCollection .collectionSlider .photos
+    {
+        width: 48%;
+    }
+    .trendingCollection .collectionSlider .photos .primaryPhoto
+    {
+        width: 100%;
+        height: auto;
+    }
+    .trendingCollection .collectionSlider .photos .collection
+    {
+        width: 100%;
+        justify-content: space-around;
+    }
+    .trendingCollection .collectionSlider .photos .collection img, .photoReplacer
+    {
+        height: -webkit-fill-available;
+        width: 30%;
+    }
+    .trendingCollection .forTablet
+    {
+        display: flex !important;
+    }
+}
+
+@media (min-width: 1280px)
+{
+    .trendingCollection
+    {
+        padding: 80px 115px;
+    }
+    .trendingCollection .sectionHeadline h4
+    {
+        font-size: 38px;
+        line-height: 120%;
+    }
+    .trendingCollection .sectionHeadline span
+    {
+        font-size: 22px;
+        line-height: 160%;
+    }
+    .trendingCollection .collectionSlider
+    {
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+    .trendingCollection .collectionSlider .photos
+    {
+        width: -webkit-fill-available;
+    }
+    .trendingCollection .forDesktop, .trendingCollection .forTablet
+    {
+        display: flex !important;
+    }
 }

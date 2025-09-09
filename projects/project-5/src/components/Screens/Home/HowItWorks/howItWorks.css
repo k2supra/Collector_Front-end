@@ -1,5 +1,5 @@
-@import url(../mainStyles/colors.css);
-@import url(../mainStyles/fonts.css);
+@import url(../../../mainStyles/colors.css);
+@import url(../../../mainStyles/fonts.css);
 
 
 .howItWorks
@@ -82,4 +82,67 @@
     font-size: 12px;
     line-height: 140%;
     text-align: start;
+}
+
+@media (min-width:750px)
+{
+    .howItWorks
+    {
+        padding: 40px 72px;
+    }
+    .howItWorks .cards
+    {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .howItWorks .cards .infoCard
+    {
+        flex-direction: column;
+        height: -webkit-fill-available;
+    }
+    .howItWorks .cards .infoCard img
+    {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (min-width:1280px)
+{
+    .howItWorks
+    {
+        padding: 80px 115px;
+    }
+    .howItWorks .headline h4
+    {
+        font-size: 38px;
+        line-height: 120%;
+    }
+    .howItWorks .headline span
+    {
+        font-size: 22px;
+        line-height: 160%;
+    }
+    .howItWorks .cards .infoCard
+    {
+        width: -webkit-fill-available;
+    }
+    .howItWorks .cards .infoCard .cardDetails
+    {
+        width: 100%;
+        align-items: center;
+    }
+    .howItWorks .cards .infoCard .cardDetails span
+    {
+        max-width: 100%;
+    }
+    .howItWorks .cards .infoCard .cardDetails span:nth-of-type(1)
+    {
+        font-size: 22px;
+    }
+    .howItWorks .cards .infoCard .cardDetails span:nth-of-type(2)
+    {
+        font-size: 16px;
+        text-align: center;
+    }
 }

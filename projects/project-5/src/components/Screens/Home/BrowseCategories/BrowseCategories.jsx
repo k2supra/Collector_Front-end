@@ -1,13 +1,13 @@
 import './browseCategories.css'
 
-import categoryImage1 from '../../assets/images/category1.png'
-import categoryImage2 from '../../assets/images/category2.png'
-import categoryImage3 from '../../assets/images/category3.png'
-import categoryImage4 from '../../assets/images/category4.png'
-import categoryImage5 from '../../assets/images/category5.png'
-import categoryImage6 from '../../assets/images/category6.png'
-import categoryImage7 from '../../assets/images/category7.png'
-import categoryImage8 from '../../assets/images/category8.png'
+import categoryImage1 from '../../../../assets/images/category1.png'
+import categoryImage2 from '../../../../assets/images/category2.png'
+import categoryImage3 from '../../../../assets/images/category3.png'
+import categoryImage4 from '../../../../assets/images/category4.png'
+import categoryImage5 from '../../../../assets/images/category5.png'
+import categoryImage6 from '../../../../assets/images/category6.png'
+import categoryImage7 from '../../../../assets/images/category7.png'
+import categoryImage8 from '../../../../assets/images/category8.png'
 
 function BrowseCategories() {
     return <div className="browseCategories">

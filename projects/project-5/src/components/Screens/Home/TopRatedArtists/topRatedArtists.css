@@ -1,5 +1,5 @@
-@import url(../mainStyles/colors.css);
-@import url(../mainStyles/fonts.css);
+@import url(../../../mainStyles/colors.css);
+@import url(../../../mainStyles/fonts.css);
 
 .topRatedArtists
 {
@@ -8,14 +8,13 @@
     flex-direction: column;
     align-items: center;
     gap: 40px;
-    padding: 40px 0;
+    padding: 40px 30px;
     color: white;
     font-family: 'WorkSans';
 }
 
 .topRatedArtists .headline
 {
-    width: 315px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -146,4 +145,95 @@
 {
     width: 20px;
     height: 20px;
+}
+
+.topRatedArtists .forDesktop
+{
+    display: none !important;
+}
+
+@media (min-width: 750px)
+{
+    .topRatedArtists
+    {
+        padding: 40px 72px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .topRatedArtists .headline
+    {
+        width: 45%;
+        order: -2;
+    }
+    .topRatedArtists button
+    {
+        order: -1;
+        width: 45%;
+    }
+    .topRatedArtists .artistCardsRow
+    {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .topRatedArtists .artistCardsRow .artistCard
+    {
+        width: 48%;
+    }
+}
+
+@media (min-width: 1250px)
+{
+    .topRatedArtists
+    {
+        padding: 80px 115px;
+    }
+    .topRatedArtists .headline h4
+    {
+        font-size: 38px;
+        line-height: 120%;
+    }
+    .topRatedArtists .headline span
+    {
+        font-size: 22px;
+        line-height: 160%;
+    }
+    .topRatedArtists button
+    {
+        width: fit-content;
+    }
+    .topRatedArtists .artistCardsRow .artistCard
+    {
+        width: 22%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .topRatedArtists .artistCardsRow .artistCard .artistInfo h5.name
+    {
+        width: 100%;
+    }
+    .topRatedArtists .artistCardsRow .artistCard .avatar
+    {
+        position: relative;
+        width: 120px;
+        height: 120px;
+    }
+
+    .topRatedArtists .artistCardsRow .artistCard .avatar img
+    {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+    }
+    .topRatedArtists .artistCardsRow .artistCard .avatar .ratingPosition::before
+    {
+        left: -40px;
+        top: -6px;
+    }
+    .topRatedArtists .forDesktop
+    {
+        display: flex !important;
+    }
 }

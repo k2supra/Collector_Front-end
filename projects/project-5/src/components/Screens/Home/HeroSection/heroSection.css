@@ -1,22 +1,20 @@
-@import url(../mainStyles/fonts.css);
+@import url(../../../mainStyles/fonts.css);
 
 .heroSection
 {
     width: 100%;
     height: fit-content;
-    padding: 40px 0;
+    padding: 40px 30px;
     display: flex;
     flex-direction: column;
     gap: 30px;
     align-items: center;
-
     font-family: 'WorkSans';
     color: white;
 }
 
 .heroSection .heroSectionFrame
 {
-    width: 315px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -111,7 +109,7 @@
     font-weight: 400;
 }
 
-.heroSection .heroSectionFrame button
+.heroSection .heroSectionFrame button, .heroSection .heroSectionFrame .headline button.forTablet
 {
     background-color: var(--callToAction);
     border: 0;
@@ -126,7 +124,9 @@
     line-height: 140%;
     font-size: 16px;
     font-weight: 600;
+    padding: 0 30px;
 }
+
 
 .heroSection .heroSectionFrame button img.rocketLaunch
 {
@@ -140,6 +140,7 @@
     align-items: center;
     gap: 30px;
     width: 100%;
+    justify-content: center;
 }
 
 .heroSection .heroSectionFrame .additionalInfo .additionalInfoItem
@@ -160,4 +161,91 @@
 {
     font-size: 16px;
     line-height: 140%;
+}
+
+.heroSection .forTablet
+{
+    display: none !important;
+}
+
+@media (min-width: 750px)
+{
+    .heroSection
+    {
+        padding: 80px 72px;
+    }
+    .heroSection .heroSectionFrame
+    {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+    .heroSection .heroSectionFrame .headline
+    {
+        order: 1;
+        width: 40%;
+        gap: 20px;
+    }
+    .heroSection .heroSectionFrame .highlightedNFT {
+        order: 2;
+        width: 50%;
+        flex-direction: column-reverse;
+        height: 330px;
+      }
+    .heroSection .heroSectionFrame button
+    {
+        display: none;
+    }
+    .heroSection .heroSectionFrame .additionalInfo
+    {
+        display: none;
+    }
+    .heroSection .heroSectionFrame .additionalInfo.forTablet
+    {
+        display: flex;
+        gap: 20px;
+    }
+}
+
+@media (min-width: 1280px)
+{
+    .heroSection 
+    {
+        padding: 80px 115px;
+    }
+    .heroSection .heroSectionFrame .headline
+    {
+        width: 510px;
+        align-items: flex-start;
+    }
+    .heroSection .heroSectionFrame .headline h4
+    {
+        font-size: 67px;
+        line-height: 110%;
+    }
+    .heroSection .heroSectionFrame .headline span
+    {
+        font-size: 22px;
+        line-height: 160%;
+    }
+    .heroSection .heroSectionFrame .highlightedNFT
+    {
+        height: 510px;
+        width: 45%;
+    }
+    .heroSection .heroSectionFrame button.forTablet
+    {
+        padding: 0 50px !important;
+        width: fit-content !important;
+    }
+    .heroSection .heroSectionFrame .additionalInfo .additionalInfoItem h5
+    {
+        line-height: 140%;
+        font-size: 28px;
+    }
+    .heroSection .heroSectionFrame .additionalInfo .additionalInfoItem span:nth-of-type(1)
+    {
+        font-size: 24px;
+        line-height: 160%;
+    }
 }

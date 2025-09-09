@@ -130,6 +130,8 @@ footer .info .subscribe .formAndInfo
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    color: var(--footer-text);
+    text-align: start;
 }
 
 footer .info .subscribe .formAndInfo .inputAndButton
@@ -191,4 +193,64 @@ footer .bottom
     line-height: 110%;
     color: var(--footer-text);
     text-align: start;
+}
+
+
+@media (min-width:750px)
+{
+    footer
+    {
+        padding: 40px 72px;
+    }
+    footer .info .subscribe
+    {
+        align-items: flex-start;
+    }
+    footer .info .subscribe .formAndInfo
+    {
+        align-items: flex-start;
+    }
+    footer .info .subscribe .formAndInfo .inputAndButton
+    {
+        flex-direction: row;
+        background-color: white;
+        width: fit-content;
+        gap: 0px;
+        border-radius: 20px;
+    }
+    footer .info .subscribe .formAndInfo .inputAndButton input
+    {
+        width: 300px;
+        border: 0;
+        height: 60px;
+    }
+    footer .info .subscribe .formAndInfo .inputAndButton button
+    {
+        width: 300px;
+        height: 60px;
+    }
+}
+
+@media (min-width:1280px)
+{
+    footer
+    {
+        padding: 40px 115px;
+    }
+    footer .info
+    {
+        flex-direction: row;
+    }
+    footer .info .marketplaceInfo
+    {
+        width: 330px;
+    }
+    footer .info .explore
+    {
+        width: 240px;
+    }
+    footer .info .subscribe
+    {
+        width: -webkit-fill-available;
+    }
 }

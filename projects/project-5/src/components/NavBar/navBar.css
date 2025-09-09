@@ -1,11 +1,19 @@
 @import url(../mainStyles/colors.css);
+@import url(../mainStyles/fonts.css);
 
 nav
 {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: sticky;
+    top: 0;
     padding: 15px 30px;
-    /* background-color: var(--background); */
+    background: color-mix(in srgb, var(--background) 90%, transparent);
+    backdrop-filter: blur(3px);
+    font-family: 'WorkSans';
+    z-index: 999;
 }
 
 nav .logo
@@ -20,4 +28,72 @@ nav .burger
     background-image: url(../../assets/images/burgerMenu.png);
     width: 24px;
     height: 24px;
+}
+
+nav .extendedMenu
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+nav .extendedMenu span
+{
+    padding: 0 20px;
+    font-size: 16px;
+    line-height: 140%;
+}
+
+nav .extendedMenu button
+{
+    background-color: var(--callToAction);
+    border: 0;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 60px;
+    color: white;
+    line-height: 140%;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 30px;
+}
+
+nav .extendedMenu button img
+{
+    width: 20px;
+    height: 20px;
+}
+
+nav .forDesktop
+{
+    display: none !important;
+}
+
+@media (min-width: 750px)
+{
+    nav
+    {
+        padding: 15px 50px;
+    }
+}
+
+@media (min-width: 1280px)
+{
+    nav
+    {
+        padding: 20px 50px;
+    }
+    nav .forDesktop
+    {
+        display: flex !important;
+    }
+    nav .notForDesktop
+    {
+        display: none;
+    }
 }

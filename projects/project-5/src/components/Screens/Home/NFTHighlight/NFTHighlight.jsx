@@ -1,7 +1,7 @@
 import './NFTHighlight.css'
 
-import avatar from '../../assets/images/avatar.png'
-import eye from '../../assets/images/eye.png'
+import avatar from '../../../../assets/images/avatar.png'
+import eye from '../../../../assets/images/eye.png'
 
 
 function NFTHighlight() {

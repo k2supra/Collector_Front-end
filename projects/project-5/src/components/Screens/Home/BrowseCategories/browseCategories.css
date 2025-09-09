@@ -1,5 +1,5 @@
-@import url(../mainStyles/colors.css);
-@import url(../mainStyles/fonts.css);
+@import url(../../../mainStyles/colors.css);
+@import url(../../../mainStyles/fonts.css);
 
 .browseCategories
 {
@@ -54,4 +54,51 @@
     height: fit-content;
     align-self: flex-start;
     text-align: start;
+}
+
+@media (min-width:750px)
+{
+    .browseCategories
+    {
+        padding: 40px 72px;
+    }
+    .browseCategories h4.headline
+    {
+        width: 100%;
+        text-align: start;
+    }
+    .browseCategories .categoryCardsGrid
+    {
+        grid-template-columns: repeat(4, 1fr);
+        width: 100%;
+    }
+    .browseCategories .categoryCardsGrid .categoryCard img
+    {
+        width: 100%;
+    }
+}
+
+@media (min-width:1280px)
+{
+    .browseCategories
+    {
+        padding: 80px 115px;
+    }
+    .browseCategories h4.headline
+    {
+        font-size: 38px;
+        line-height: 120%;
+    }
+    .browseCategories .categoryCardsGrid .categoryCard
+    {
+        border-radius: 40px 40px 20px 20px;
+    }
+    .browseCategories .categoryCardsGrid .categoryCard img
+    {
+        width: 100%;
+    }
+    .browseCategories .categoryCardsGrid .categoryCard span
+    {
+        font-size: 22px;
+    }
 }

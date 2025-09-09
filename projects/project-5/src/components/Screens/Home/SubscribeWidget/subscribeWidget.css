@@ -1,5 +1,5 @@
-@import url(../mainStyles/colors.css);
-@import url(../mainStyles/fonts.css);
+@import url(../../../mainStyles/colors.css);
+@import url(../../../mainStyles/fonts.css);
 
 .subscribeWidget
 {
@@ -12,6 +12,13 @@
     font-family: 'WorkSans';
 }
 
+.subscribeWidget .frame
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
 .subscribeWidget img.astronaut
 {
     border-radius: 20px;
@@ -95,4 +102,74 @@
 {
     width: 20px;
     height: 20px;
+}
+
+
+@media (min-width:750px)
+{
+    .subscribeWidget
+    {
+        padding: 40px 72px;
+        
+    }
+    .subscribeWidget .frame
+    {
+        flex-direction: row;
+        background-color: var(--secondary-background);
+        padding: 30px;
+        border-radius: 20px;
+        width: 100%;
+    }
+}
+
+@media (min-width:1280px)
+{
+    .subscribeWidget
+    {
+        padding: 40px 115px 80px;
+        
+    }
+    .subscribeWidget .frame
+    {
+        padding: 60px;
+        width: 100%;
+        gap: 80px;
+    }
+    .subscribeWidget img.astronaut
+    {
+        height: 310px;
+        width: -webkit-fill-available;
+        object-fit: cover;
+    }
+    .subscribeWidget .data .headline
+    {
+        width: 425px;
+    }
+    .subscribeWidget .data .headline h4
+    {
+        font-size: 38px;
+        line-height: 120%;
+    }
+    .subscribeWidget .data .headline span
+    {
+        font-size: 22px;
+        line-height: 160%;
+    }
+    .subscribeWidget .data .inputAndButton
+    {
+        flex-direction: row;
+        gap: 0;
+        background-color: white;
+        border-radius: 20px;
+    }
+    .subscribeWidget .data .inputAndButton input
+    {
+        border: 0;
+        height: 60px;
+    }
+    .subscribeWidget .data .inputAndButton button
+    {
+        height: 60px;
+        width: fit-content;
+    }
 }

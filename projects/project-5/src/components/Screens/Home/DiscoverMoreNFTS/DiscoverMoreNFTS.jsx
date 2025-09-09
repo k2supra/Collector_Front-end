@@ -1,14 +1,14 @@
 import './discoverMoreNFTS.css'
 
-import nft1 from '../../assets/images/nft1.png'
-import nft2 from '../../assets/images/nft2.png'
-import nft3 from '../../assets/images/nft3.png'
+import nft1 from '../../../../assets/images/nft1.png'
+import nft2 from '../../../../assets/images/nft2.png'
+import nft3 from '../../../../assets/images/nft3.png'
 
-import avatar from '../../assets/images/avatar.png'
-import avatar2 from '../../assets/images/avatar2.png'
-import avatar3 from '../../assets/images/avatar3.png'
+import avatar from '../../../../assets/images/avatar.png'
+import avatar2 from '../../../../assets/images/avatar2.png'
+import avatar3 from '../../../../assets/images/avatar3.png'
 
-import eye from '../../assets/images/eye.png'
+import eye from '../../../../assets/images/eye.png'
 
 function DiscoverMoreNFTS() {
     return <div className="discoverMoreNFTS">
@@ -61,7 +61,7 @@ function DiscoverMoreNFTS() {
                     </div>
                 </div>
             </div>
-            <div className="NFTCard">
+            <div className="NFTCard forMobile">
                 <img src={nft3} alt="NFT" className='NFTImage'/>
                 <div className="NFTInfo">
                     <div className="artistInfo">
