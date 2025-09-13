@@ -1,0 +1,163 @@
+@import url(../../../mainStyles/colors.css);
+@import url(../../../mainStyles/fonts.css);
+
+.NFTCardSection
+{
+    padding: 80px 30px;
+    color: white;
+    background-color: var(--secondary-background);
+    border-bottom: 2px solid var(--background);
+}
+
+.NFTCardSection .frames
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.NFTCardSection .frames .NFTCard
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    background-color: var(--background);
+    overflow: hidden;
+}
+
+.NFTCardSection .frames .NFTCard img.NFTImage
+{
+    height: 238px;
+}
+
+.NFTCardSection .frames .NFTCard .NFTInfo
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 20px 20px 25px;
+}
+
+.NFTCardSection .frames .NFTCard .NFTInfo .artistInfo
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.NFTCardSection .frames .NFTCard .NFTInfo .artistInfo h5.NFTName
+{
+    font-size: 22px;
+    line-height: 140%;
+    font-weight: 600;
+}
+
+.NFTCardSection .frames .NFTCard .NFTInfo .artistInfo .artist
+{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.NFTCardSection .frames .NFTCard .NFTInfo .artistInfo .artist img
+{
+    width: 24px;
+    height: 24px;
+}
+
+.NFTCardSection .frames .NFTCard .NFTInfo .artistInfo .artist span.name
+{
+    font-size: 16px;
+    line-height: 140%;
+}
+
+.NFTCardSection .frames .NFTCard .NFTInfo .additionalInfo
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.NFTCardSection .frames .NFTCard .NFTInfo .additionalInfo .price, .highestBid
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+.NFTCardSection .frames .NFTCard .NFTInfo .additionalInfo .highestBid
+{
+    align-items: flex-end;
+}
+
+.NFTCardSection .frames .NFTCard .NFTInfo .additionalInfo .price span, .highestBid span
+{
+    color: white;
+    font-family: 'SpaceMono';
+    font-size: 12px;
+    line-height: 110%;
+}
+
+.NFTCardSection .frames .NFTCard .NFTInfo .additionalInfo .price span:nth-of-type(1), .highestBid span:nth-of-type(1)
+{
+    color: var(--captionAndLabelText);
+    font-size: 12px;
+    line-height: 110%;
+}
+
+.NFTCardSection .frames .NFTCard.forTabletAndDesktop
+{
+    display: none;
+}
+
+@media (min-width: 750px)
+{
+    .NFTCardSection
+    {
+        padding: 80px 72px;
+    }
+    .NFTCardSection .frames
+    {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .NFTCardSection .frames .NFTCard
+    {
+        width: calc(50% - 20px);
+    }
+    .NFTCardSection .frames .NFTCard.forTabletAndDesktop
+    {
+        display: flex;
+    }
+    .NFTCardSection .frames .NFTCard img.NFTImage
+    {
+        width: 100%;
+        height: 295px;
+        object-fit: cover;
+    }
+}
+@media (min-width: 1280px)
+{
+    .NFTCardSection
+    {
+        padding: 80px 115px;
+    }
+    .NFTCardSection .frames
+    {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .NFTCardSection .frames .NFTCard
+    {
+        width: calc(33% - 20px);
+    }
+}

@@ -235,8 +235,14 @@
     }
     .heroSection .heroSectionFrame button.forTablet
     {
+        display: flex !important;
         padding: 0 50px !important;
         width: fit-content !important;
+    }
+    .heroSection .heroSectionFrame .headline .additionalInfo.forTablet
+    {
+        display: flex !important;
+        justify-content: flex-start;
     }
     .heroSection .heroSectionFrame .additionalInfo .additionalInfoItem h5
     {

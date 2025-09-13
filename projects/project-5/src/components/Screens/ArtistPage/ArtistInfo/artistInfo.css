@@ -1,0 +1,241 @@
+@import url(../../../mainStyles/colors.css);
+@import url(../../../mainStyles/fonts.css);
+
+.artistInfoSection
+{   
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    color: white;
+    font-family: 'WorkSans';
+    border-bottom: 1px solid var(--secondary-background);
+}
+
+.artistInfoSection h4.artistName
+{
+    line-height: 140%;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.artistInfoSection .buttons
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.artistInfoSection .buttons button
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 60px;
+    width: 100%;
+    color: white;
+    
+    line-height: 140%;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 30px;
+
+    border-radius: 20px;
+
+    &:nth-of-type(1)
+    {
+        background-color: var(--callToAction);
+        border: 0;
+    }
+    &:nth-of-type(2)
+    {
+        background-color: transparent;
+        border: 2px solid var(--callToAction);
+    }
+}
+
+.artistInfoSection .stats
+{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+.artistInfoSection .stats .statsItem
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: -webkit-fill-available;
+}
+
+.artistInfoSection .stats .statsItem h5
+{
+    line-height: 160%;
+    font-size: 22px;
+    font-weight: 700;
+    font-family: 'SpaceMono';
+}
+
+.artistInfoSection .stats .statsItem span
+{
+    font-size: 16px;
+    line-height: 140%;
+}
+
+.artistInfoSection .bio
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--captionAndLabelText);
+    font-size: 16px;
+    line-height: 140%;
+    font-family: 'SpaceMono';
+    text-align: start;
+}
+.artistInfoSection .bio span
+{
+    color: white;
+    font-family: 'WorkSans';
+}
+
+.artistInfoSection .webLinks
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--captionAndLabelText);
+    font-family: 'SpaceMono';
+}
+
+.artistInfoSection .webLinks .list
+{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.artistInfoSection .webLinks .list img
+{
+    width: 24px;
+    height: 24px;
+}
+
+@media (min-width: 750px)
+{
+    .artistInfoSection
+    {
+        padding: 30px 72px;
+    }
+    .artistInfoSection h4.artistName
+    {
+        line-height: 120%;
+        font-size: 38px;
+    }
+    .artistInfoSection .buttons
+    {
+        flex-direction: row;
+    }
+    .artistInfoSection .buttons button
+    {
+        &:nth-of-type(1)
+        {
+            width: 190px;
+        }
+        &:nth-of-type(2)
+        {
+            width: fit-content;
+        }
+    }
+    .artistInfoSection .stats
+    {
+        width: fit-content;
+        justify-content: flex-start;
+    }
+    .artistInfoSection .stats .statsItem
+    {
+        width: fit-content;
+        padding-right: 20%;
+        white-space: nowrap;
+    }
+}
+@media (min-width: 1280px)
+{
+    .artistInfoSection
+    {
+        padding: 30px 115px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .artistInfoSection h4.artistName
+    {
+        line-height: 110%;
+        font-size: 51px;
+        width: 48%;
+        text-align: start;
+    }
+    .artistInfoSection .buttons
+    {
+        flex-direction: row;
+        width: fit-content;
+    }
+    .artistInfoSection .buttons button
+    {
+        &:nth-of-type(1)
+        {
+            width: 190px;
+        }
+        &:nth-of-type(2)
+        {
+            width: fit-content;
+        }
+    }
+    .artistInfoSection .stats
+    {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .artistInfoSection .stats .statsItem
+    {
+        width: fit-content;
+        padding-right: 5%;
+        white-space: nowrap;
+    }
+    .artistInfoSection .stats .statsItem h5
+    {
+        line-height: 140%;
+        font-size: 28px;
+    }
+    .artistInfoSection .stats .statsItem span
+    {
+        line-height: 160%;
+        font-size: 22px;
+    }
+    .artistInfoSection .bio
+    {
+        font-size: 22px;
+        line-height: 160%;
+        width: 100%;
+    }
+    .artistInfoSection .webLinks
+    {
+        font-size: 22px;
+        line-height: 160%;
+        width: 100%;
+    }
+    .artistInfoSection .webLinks .list img
+    {
+        width: 32px;
+        height: 32px;
+    }
+}

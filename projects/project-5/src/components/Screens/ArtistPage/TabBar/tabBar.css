@@ -1,0 +1,54 @@
+@import url(../../../mainStyles/colors.css);
+@import url(../../../mainStyles/fonts.css);
+
+.tabBar
+{
+    padding: 10px 30px 0;
+}
+
+.tabBar .tabs
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.tabBar .tabs .tab
+{
+    height: 60px;
+    padding: 0 22px;
+    align-content: center;
+    color: var(--captionAndLabelText);
+    font-family: 'WorkSans';
+    font-size: 16px;
+    line-height: 140%;
+    font-weight: 600;
+    &.active
+    {
+        color: white;
+        border-bottom: 2px solid var(--captionAndLabelText);
+    }
+}
+
+@media (min-width: 750px)
+{
+
+    .tabBar .tabs .tab
+    {
+        padding: 0 60px;
+    }
+}
+@media (min-width: 1280px)
+{
+    .tabBar .tabs
+    {
+        justify-content: space-evenly;
+        width: 1050px;
+        margin: 0 auto;
+    }
+    .tabBar .tabs .tab
+    {
+        font-size: 22px;
+    }
+}

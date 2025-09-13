@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
 }
 
 .App {
@@ -45,4 +46,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+a
+{
+  text-decoration: none;
+  color: currentColor;
+}
+button
+{
+  cursor: pointer;
 }

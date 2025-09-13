@@ -1,0 +1,182 @@
+@import url(../../../mainStyles/colors.css);
+@import url(../../../mainStyles/fonts.css);
+
+.createAccountSection
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    color: white;
+    font-family: 'WorkSans';
+    position: relative;
+}
+
+.createAccountSection img
+{
+    width: 100%;
+    height: 232px;
+    object-fit: cover;
+    object-position: 50% 65%;
+}
+
+.createAccountSection .createAccount
+{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+}
+
+.createAccountSection .createAccount .headline
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.createAccountSection .createAccount .headline h3
+{
+    font-size: 38px;
+    line-height: 120%;
+    font-weight: 600;
+    text-align: start;
+    width: 100%;
+}
+.createAccountSection .createAccount .headline span
+{
+    font-size: 16px;
+    line-height: 140%;
+    text-align: start;
+    width: 100%;
+}
+
+.createAccountSection .createAccount form
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.createAccountSection .createAccount form .inputs
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.createAccountSection .createAccount form .inputs .wrapper
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid var(--captionAndLabelText);
+    border-radius: 20px;
+    &::before
+    {
+        content: url(../../../../assets/images/userLogo2.png);
+        color: var(--captionAndLabelText);
+        padding-left: 16px;
+    }
+}
+.createAccountSection .createAccount form .inputs .wrapper:nth-of-type(2)::before
+{
+    content: url(../../../../assets/images/emailLogo2.png);
+}
+.createAccountSection .createAccount form .inputs .wrapper:nth-of-type(3)::before,.createAccountSection .createAccount form .inputs .wrapper:nth-of-type(4)::before
+{
+    content: url(../../../../assets/images/lockLogo.png);
+}
+
+.createAccountSection .createAccount form .inputs input
+{
+    width: 100%;
+    height: 46px;
+    padding: 16px 20px;
+    border-radius: 20px;
+    outline: none;
+    border: 0;
+    position: relative;
+    &::before
+    {
+        content: '555';
+        position: relative;
+    }
+}
+
+.createAccountSection .createAccount form a
+{
+    width: -webkit-fill-available;
+}
+.createAccountSection .createAccount form button
+{
+    background-color: var(--callToAction);
+    border: 0;
+    border-radius: 20px;
+    height: 46px;
+    width: 100%;
+    color: white;
+    line-height: 140%;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 50px;
+}
+
+@media (min-width:750px)
+{
+    .createAccountSection
+    {
+        flex-direction: row;
+        gap: 40px;
+        justify-content: space-between;
+    }
+    .createAccountSection img
+    {
+        height: -webkit-fill-available;
+        width: auto;
+        max-width: calc(50% - 72px);
+        object-fit: cover;
+    }
+    .createAccountSection .createAccount
+    {
+        width: fit-content;
+        padding: 80px 0;
+        gap: 40px;
+        padding-right: 72px;
+    }
+    .createAccountSection .createAccount .headline
+    {
+        width: 325px;
+    }
+    .createAccountSection .createAccount form
+    {
+        width: 325px;
+    }
+}
+
+@media (min-width:1280px)
+{
+    .createAccountSection
+    {
+        gap: 60px;
+        justify-content: normal;
+    }
+    .createAccountSection img
+    {
+        max-width: fit-content;
+    }
+    .createAccountSection .createAccount
+    {
+        padding: 100px 0;
+        position: relative;
+        width: 100%;
+    }
+}

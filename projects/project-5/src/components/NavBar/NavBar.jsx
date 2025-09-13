@@ -2,16 +2,19 @@ import './navBar.css'
 
 import userLogo from '../../assets/images/userLogo.png'
 
+import { Link } from 'react-router-dom'
+
 function NavBar() {
     return (
     <nav>
-        <div className="logo"></div>
+        <Link to='/'><div className="logo"></div></Link>
+        
         <div className="burger notForDesktop"></div>
         <div className="extendedMenu forDesktop">
-            <span>Marketplace</span>
-            <span>Rankings</span>
-            <span>Connect a wallet</span>
-            <button><img src={userLogo} alt="Sign up" />Sign Up</button>
+            <Link to='/marketplace'><span>Marketplace</span></Link>
+            <Link><span>Rankings</span></Link>
+            <Link><span>Connect a wallet</span></Link>
+            <Link to='/sign-up'><button><img src={userLogo} alt="Sign up" />Sign Up</button></Link>
         </div>
     </nav>
     )
