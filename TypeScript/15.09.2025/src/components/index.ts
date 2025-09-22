@@ -1,8 +1,8 @@
-let username: string
-let age: number
-let isAdmin: boolean
-let	skills: string[]
-let	role: "admin" | "user" | "guest"
+type Username = string
+type Age = number
+type IsAdmin = boolean
+type Skills = string[]
+type Role = "admin" | "user" | "guest"
 
 function sum(a:number, b:number):number {
     return a + b
