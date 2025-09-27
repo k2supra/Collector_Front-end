@@ -1,7 +1,7 @@
 @import url(../../../mainStyles/colors.css);
 @import url(../../../mainStyles/fonts.css);
 
-.trendingCollection
+.home .trendingCollection
 {
     display: flex;
     align-items: center;
@@ -13,7 +13,7 @@
     font-family: 'WorkSans';
 }
 
-.trendingCollection .sectionHeadline
+.home .trendingCollection .sectionHeadline
 {
     display: flex;
     align-items: flex-start;
@@ -22,14 +22,14 @@
     width: 100%;
 }
 
-.trendingCollection .sectionHeadline h4
+.home .trendingCollection .sectionHeadline h4
 {
     font-size: 28px;
     line-height: 140%;
     font-weight: 600;
 }
 
-.trendingCollection .sectionHeadline span
+.home .trendingCollection .sectionHeadline span
 {
     font-size: 16px;
     line-height: 140%;
@@ -37,7 +37,7 @@
     text-align: start;
 }
 
-.trendingCollection .collectionSlider
+.home .trendingCollection .collectionSlider
 {
     display: flex;
     align-items: center;
@@ -47,7 +47,7 @@
     width: 315px;
 }
 
-.trendingCollection .collectionSlider .photos
+.home .trendingCollection .collectionSlider .photos
 {
     width: 100%;
     display: flex;
@@ -56,27 +56,27 @@
     gap: 15px;
 }
 
-.trendingCollection .collectionSlider .photos .primaryPhoto
+.home .trendingCollection .collectionSlider .photos .primaryPhoto
 {
     height: 315px;
     border-radius: 20px;
 }
 
-.trendingCollection .collectionSlider .photos .collection
+.home .trendingCollection .collectionSlider .photos .collection
 {
     display: flex;
     align-items: center;
     gap: 15px;
     width: 100%;
 }
-.trendingCollection .collectionSlider .photos .collection img, .photoReplacer
+.home .trendingCollection .collectionSlider .photos .collection img, .photoReplacer
 {
     height: 95px;
     width: 95px;
     border-radius: 20px;
 }
 
-.trendingCollection .collectionSlider .photos .collection .photoReplacer
+.home .trendingCollection .collectionSlider .photos .collection .photoReplacer
 {
     background-color: var(--callToAction);
     font-family: 'SpaceMono';
@@ -84,7 +84,7 @@
     align-content: center;
 }
 
-.trendingCollection .collectionSlider .collectionInfo
+.home .trendingCollection .collectionSlider .collectionInfo
 {
     display: flex;
     flex-direction: column;
@@ -93,68 +93,68 @@
     width: 100%;
 }
 
-.trendingCollection .collectionSlider .collectionInfo .collectionName
+.home .trendingCollection .collectionSlider .collectionInfo .collectionName
 {
     font-weight: 600;
     font-size: 22px;
     line-height: 140%;
 }
 
-.trendingCollection .collectionSlider .collectionInfo .artistCard
+.home .trendingCollection .collectionSlider .collectionInfo .artistCard
 {
     display: flex;
     align-items: center;
     gap: 12px;
 }
-.trendingCollection .collectionSlider .collectionInfo .artistCard .avatar
+.home .trendingCollection .collectionSlider .collectionInfo .artistCard .avatar
 {
     border-radius: 50%;
 }
 
-.trendingCollection .collectionSlider .collectionInfo .artistCard span
+.home .trendingCollection .collectionSlider .collectionInfo .artistCard span
 {
     font-size: 16px;
     line-height: 140%;
     font-weight: 400;
 }
 
-.trendingCollection .forTablet, .forDesktop
+.home .trendingCollection .forTablet, .home .forDesktop
 {
     display: none !important;
 }
 
 @media (min-width: 750px)
 {
-    .trendingCollection
+    .home .trendingCollection
     {
         padding: 40px 72px;
     }
-    .trendingCollection .collectionSlider
+    .home .trendingCollection .collectionSlider
     {
         flex-wrap: wrap;
         width: 100%;
         flex-direction: row;
     }
-    .trendingCollection .collectionSlider .photos
+    .home .trendingCollection .collectionSlider .photos
     {
         width: 48%;
     }
-    .trendingCollection .collectionSlider .photos .primaryPhoto
+    .home .trendingCollection .collectionSlider .photos .primaryPhoto
     {
         width: 100%;
         height: auto;
     }
-    .trendingCollection .collectionSlider .photos .collection
+    .home .trendingCollection .collectionSlider .photos .collection
     {
         width: 100%;
         justify-content: space-around;
     }
-    .trendingCollection .collectionSlider .photos .collection img, .photoReplacer
+    .home .trendingCollection .collectionSlider .photos .collection img, .photoReplacer
     {
         height: -webkit-fill-available;
         width: 30%;
     }
-    .trendingCollection .forTablet
+    .home .trendingCollection .forTablet
     {
         display: flex !important;
     }
@@ -162,30 +162,30 @@
 
 @media (min-width: 1280px)
 {
-    .trendingCollection
+    .home .trendingCollection
     {
         padding: 80px 115px;
     }
-    .trendingCollection .sectionHeadline h4
+    .home .trendingCollection .sectionHeadline h4
     {
         font-size: 38px;
         line-height: 120%;
     }
-    .trendingCollection .sectionHeadline span
+    .home .trendingCollection .sectionHeadline span
     {
         font-size: 22px;
         line-height: 160%;
     }
-    .trendingCollection .collectionSlider
+    .home .trendingCollection .collectionSlider
     {
         justify-content: space-between;
         flex-wrap: nowrap;
     }
-    .trendingCollection .collectionSlider .photos
+    .home .trendingCollection .collectionSlider .photos
     {
         width: -webkit-fill-available;
     }
-    .trendingCollection .forDesktop, .trendingCollection .forTablet
+    .home .trendingCollection .forDesktop, .home .trendingCollection .forTablet
     {
         display: flex !important;
     }

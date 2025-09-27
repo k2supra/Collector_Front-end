@@ -8,7 +8,7 @@ import HowItWorks from "./Home/HowItWorks/HowItWorks";
 import SubscribeWidget from "./Home/SubscribeWidget/SubscribeWidget";
 
 function Home() {
-    return<>
+    return<div className="home">
         <HeroSection/>
         <TrendingCollection/>
         <TopRatedArtists/>
@@ -17,7 +17,7 @@ function Home() {
         <NFTHighlight/>
         <HowItWorks/>
         <SubscribeWidget/>
-    </>
+    </div>
 }
 
 export default Home

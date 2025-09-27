@@ -1,0 +1,179 @@
+@import url(../../../mainStyles/colors.css);
+@import url(../../../mainStyles/fonts.css);
+
+
+.marketplace .marketplaceSection
+{
+    background-color: var(--secondary-background);
+    color: white;
+    padding: 0px 0px 40px;
+    font-family: 'WorkSans';
+    border-bottom: 2px solid var(--background);
+}
+
+.marketplace .marketplaceSection .tabs
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background);
+    width: 100%;
+    padding: 0 30px;
+}
+
+.marketplace .marketplaceSection .tabs .tab
+{
+    width: -webkit-fill-available;
+    height: 60px;
+    align-content: center;
+    text-align: center;
+    border-bottom: 2px solid transparent;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 140%;
+    color: var(--captionAndLabelText);
+}
+
+.marketplace .marketplaceSection .tabs input[type="radio"]:checked + .tab
+{
+    border-bottom: 2px solid var(--captionAndLabelText);
+    color: white;
+}
+
+
+.marketplace .marketplaceSection .cardsSection
+{
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.marketplace .marketplaceSection .cardsSection .NFTCard
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    background-color: var(--background);
+    overflow: hidden;
+}
+
+.marketplace .marketplaceSection .cardsSection .NFTCard img.NFTImage
+{
+    height: 238px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.marketplace .marketplaceSection .cardsSection .NFTCard .NFTInfo
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 20px 20px 25px;
+}
+
+.marketplace .marketplaceSection .cardsSection .NFTCard .NFTInfo .artistInfo
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.marketplace .marketplaceSection .cardsSection .NFTCard .NFTInfo .artistInfo h5.NFTName
+{
+    font-size: 22px;
+    line-height: 140%;
+    font-weight: 600;
+}
+
+.marketplace .marketplaceSection .cardsSection .NFTCard .NFTInfo .artistInfo .artist
+{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.marketplace .marketplaceSection .cardsSection .NFTCard .NFTInfo .artistInfo .artist img
+{
+    width: 24px;
+    height: 24px;
+}
+
+.marketplace .marketplaceSection .cardsSection .NFTCard .NFTInfo .artistInfo .artist span.name
+{
+    font-size: 16px;
+    line-height: 140%;
+}
+
+.marketplace .marketplaceSection .cardsSection .NFTCard .NFTInfo .additionalInfo
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.marketplace .marketplaceSection .cardsSection .NFTCard .NFTInfo .additionalInfo .price, .highestBid
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+.marketplace .marketplaceSection .cardsSection .NFTCard .NFTInfo .additionalInfo .highestBid
+{
+    align-items: flex-end;
+}
+
+.marketplace .marketplaceSection .cardsSection .NFTCard .NFTInfo .additionalInfo .price span, .highestBid span
+{
+    color: white;
+    font-family: 'SpaceMono';
+    font-size: 12px;
+    line-height: 110%;
+}
+
+.marketplace .marketplaceSection .cardsSection .NFTCard .NFTInfo .additionalInfo .price span:nth-of-type(1), .highestBid span:nth-of-type(1)
+{
+    color: var(--captionAndLabelText);
+    font-size: 12px;
+    line-height: 110%;
+}
+
+@media (min-width: 750px)
+{
+    .marketplace .marketplaceSection .cardsSection
+    {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 60px 77px;
+    }
+    .marketplace .marketplaceSection .cardsSection .NFTCard
+    {
+        width: calc(50% - 30px);
+    }
+}
+@media (min-width: 1280px)
+{
+    .marketplace .marketplaceSection .cardsSection
+    {
+        padding: 60px 115px;
+    }
+    .marketplace .marketplaceSection .tabs .tab
+    {
+        font-size: 22px;
+    }
+    .marketplace .marketplaceSection .cardsSection .NFTCard
+    {
+        width: calc(33% - 30px);
+    }
+}

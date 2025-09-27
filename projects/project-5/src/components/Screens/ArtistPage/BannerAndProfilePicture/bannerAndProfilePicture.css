@@ -1,12 +1,12 @@
 @import url(../../../mainStyles/colors.css);
 
-.bannerAndProfilePicture
+.artistPage .bannerAndProfilePicture
 {
     width: 100%;
     position: relative;
     padding-bottom: 50px;
 }
-.bannerAndProfilePicture::before
+.artistPage .bannerAndProfilePicture::before
 {
     content: '';
     width: 100%;
@@ -18,7 +18,7 @@
     left: 0;
 }
 
-.bannerAndProfilePicture img.banner
+.artistPage .bannerAndProfilePicture img.banner
 {
     width: 100%;
     height: 250px;
@@ -26,7 +26,7 @@
     object-position: center;
 }
 
-.bannerAndProfilePicture .profileImage
+.artistPage .bannerAndProfilePicture .profileImage
 {
     position: absolute;
     width: 100%;
@@ -34,7 +34,7 @@
     z-index: 2;
 }
 
-.bannerAndProfilePicture .profileImage img.avatar
+.artistPage .bannerAndProfilePicture .profileImage img.avatar
 {
     width: 120px;
     height: 120px;
@@ -43,22 +43,22 @@
 }
 
 @media (min-width:750px) {
-    .bannerAndProfilePicture img.banner
+    .artistPage .bannerAndProfilePicture img.banner
     {
         height: 280px;
     }
-    .bannerAndProfilePicture .profileImage img.avatar
+    .artistPage .bannerAndProfilePicture .profileImage img.avatar
     {
         position: relative;
         left: calc(-50% + 60px + 72px);
     }
 }
 @media (min-width:1280px) {
-    .bannerAndProfilePicture img.banner
+    .artistPage .bannerAndProfilePicture img.banner
     {
         height: 320px;
     }
-    .bannerAndProfilePicture .profileImage img.avatar
+    .artistPage .bannerAndProfilePicture .profileImage img.avatar
     {
         position: relative;
         left: calc(-50% + 60px + 115px);

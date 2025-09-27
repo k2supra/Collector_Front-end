@@ -1,0 +1,52 @@
+@import url(../../mainStyles/colors.css);
+@import url(../../mainStyles/fonts.css);
+
+
+.sideBar
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.718);
+}
+
+.sideBar .sideBarComponent
+{
+    position: absolute;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    background-color: var(--background);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.sideBar .sideBarComponent button
+{
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
+    text-align: center;
+    align-content: center;
+    border: 0;
+    border-radius: 20px;
+    background-color: var(--callToAction);
+    color: white;
+    margin-bottom: 15px;
+    margin-left: auto;
+}
+
+.sideBar .sideBarComponent a
+{
+    height: 40px;
+    width: 100%;
+    text-align: start;
+    font-size: 18px;
+    line-height: 140%;
+    border-bottom: 2px solid var(--captionAndLabelText);
+    align-content: end;
+}

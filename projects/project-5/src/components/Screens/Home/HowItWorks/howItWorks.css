@@ -2,7 +2,7 @@
 @import url(../../../mainStyles/fonts.css);
 
 
-.howItWorks
+.home .howItWorks
 {
     padding: 40px 30px;
     display: flex;
@@ -13,7 +13,7 @@
     color: white;
 }
 
-.howItWorks .headline
+.home .howItWorks .headline
 {
     width: 100%;
     display: flex;
@@ -22,20 +22,20 @@
     gap: 10px;
 }
 
-.howItWorks .headline h4
+.home .howItWorks .headline h4
 {
     font-size: 28px;
     line-height: 140%;
     font-weight: 600;
 }
 
-.howItWorks .headline span
+.home .howItWorks .headline span
 {
     font-size: 16px;
     line-height: 140%;
 }
 
-.howItWorks .cards
+.home .howItWorks .cards
 {
     display: flex;
     flex-direction: column;
@@ -44,7 +44,7 @@
     width: 100%;
 }
 
-.howItWorks .cards .infoCard
+.home .howItWorks .cards .infoCard
 {
     display: flex;
     align-items: center;
@@ -53,13 +53,13 @@
     background-color: var(--secondary-background);
 }
 
-.howItWorks .cards .infoCard img
+.home .howItWorks .cards .infoCard img
 {
     width: 100px;
     height: 100px;
 }
 
-.howItWorks .cards .infoCard .cardDetails
+.home .howItWorks .cards .infoCard .cardDetails
 {
     display: flex;
     flex-direction: column;
@@ -67,17 +67,17 @@
     gap: 10px;
 }
 
-.howItWorks .cards .infoCard .cardDetails span
+.home .howItWorks .cards .infoCard .cardDetails span
 {
     max-width: 155px;
 }
-.howItWorks .cards .infoCard .cardDetails span:nth-of-type(1)
+.home .howItWorks .cards .infoCard .cardDetails span:nth-of-type(1)
 {
     font-size: 16px;
     line-height: 140%;
     font-weight: 600;
 }
-.howItWorks .cards .infoCard .cardDetails span:nth-of-type(2)
+.home .howItWorks .cards .infoCard .cardDetails span:nth-of-type(2)
 {
     font-size: 12px;
     line-height: 140%;
@@ -86,21 +86,21 @@
 
 @media (min-width:750px)
 {
-    .howItWorks
+    .home .howItWorks
     {
         padding: 40px 72px;
     }
-    .howItWorks .cards
+    .home .howItWorks .cards
     {
         flex-direction: row;
         justify-content: space-evenly;
     }
-    .howItWorks .cards .infoCard
+    .home .howItWorks .cards .infoCard
     {
         flex-direction: column;
         height: -webkit-fill-available;
     }
-    .howItWorks .cards .infoCard img
+    .home .howItWorks .cards .infoCard img
     {
         width: 100%;
         height: auto;
@@ -109,38 +109,38 @@
 
 @media (min-width:1280px)
 {
-    .howItWorks
+    .home .howItWorks
     {
         padding: 80px 115px;
     }
-    .howItWorks .headline h4
+    .home .howItWorks .headline h4
     {
         font-size: 38px;
         line-height: 120%;
     }
-    .howItWorks .headline span
+    .home .howItWorks .headline span
     {
         font-size: 22px;
         line-height: 160%;
     }
-    .howItWorks .cards .infoCard
+    .home .howItWorks .cards .infoCard
     {
         width: -webkit-fill-available;
     }
-    .howItWorks .cards .infoCard .cardDetails
+    .home .howItWorks .cards .infoCard .cardDetails
     {
         width: 100%;
         align-items: center;
     }
-    .howItWorks .cards .infoCard .cardDetails span
+    .home .howItWorks .cards .infoCard .cardDetails span
     {
         max-width: 100%;
     }
-    .howItWorks .cards .infoCard .cardDetails span:nth-of-type(1)
+    .home .howItWorks .cards .infoCard .cardDetails span:nth-of-type(1)
     {
         font-size: 22px;
     }
-    .howItWorks .cards .infoCard .cardDetails span:nth-of-type(2)
+    .home .howItWorks .cards .infoCard .cardDetails span:nth-of-type(2)
     {
         font-size: 16px;
         text-align: center;

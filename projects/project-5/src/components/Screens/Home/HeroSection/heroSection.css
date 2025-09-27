@@ -13,7 +13,7 @@
     color: white;
 }
 
-.heroSection .heroSectionFrame
+.home .heroSection .heroSectionFrame
 {
     display: flex;
     flex-direction: column;
@@ -21,7 +21,7 @@
     gap: 40px;
 }
 
-.heroSection .heroSectionFrame .headline
+.home .heroSection .heroSectionFrame .headline
 {
     display: flex;
     flex-direction: column;
@@ -30,7 +30,7 @@
     width: 100%;
 }
 
-.heroSection .heroSectionFrame .headline h4
+.home .heroSection .heroSectionFrame .headline h4
 {
     margin: 0;
     padding: 0;
@@ -40,7 +40,7 @@
     text-align: start;
 }
 
-.heroSection .heroSectionFrame .headline span
+.home .heroSection .heroSectionFrame .headline span
 {
     margin: 0;
     padding: 0;
@@ -50,7 +50,7 @@
     text-align: start;
 }
 
-.heroSection .heroSectionFrame .highlightedNFT
+.home .heroSection .heroSectionFrame .highlightedNFT
 {
     display: flex;
     flex-direction: column;
@@ -59,7 +59,7 @@
     overflow: hidden;
 }
 
-.heroSection .heroSectionFrame .highlightedNFT img.highlightedNFT
+.home .heroSection .heroSectionFrame .highlightedNFT img.highlightedNFT
 {
     object-fit: cover;
     object-position: center;
@@ -68,7 +68,7 @@
     border-radius: 20px 20px 0 0;
 }
 
-.heroSection .heroSectionFrame .highlightedNFT .highlightedNFTInfo
+.home .heroSection .heroSectionFrame .highlightedNFT .highlightedNFTInfo
 {
     display: flex;
     flex-direction: column;
@@ -81,35 +81,36 @@
     border-radius: 0 0 20px 20px;
 }
 
-.heroSection .heroSectionFrame .highlightedNFT .highlightedNFTInfo h5
+.home .heroSection .heroSectionFrame .highlightedNFT .highlightedNFTInfo h5
 {
     font-size: 22px;
     line-height: 140%;
     font-weight: 600;
 }
 
-.heroSection .heroSectionFrame .highlightedNFT .highlightedNFTInfo .artist
+.home .heroSection .heroSectionFrame .highlightedNFT .highlightedNFTInfo .artist
 {
     display: flex;
     align-items: center;
     gap: 12px;
+    cursor: pointer;
 }
 
-.heroSection .heroSectionFrame .highlightedNFT .highlightedNFTInfo .artist .avatar
+.home .heroSection .heroSectionFrame .highlightedNFT .highlightedNFTInfo .artist .avatar
 {
     border-radius: 50%;
     width: 24px;
     height: 24px;
 }
 
-.heroSection .heroSectionFrame .highlightedNFT .highlightedNFTInfo .artist span
+.home .heroSection .heroSectionFrame .highlightedNFT .highlightedNFTInfo .artist span
 {
     font-size: 16px;
     line-height: 140%;
     font-weight: 400;
 }
 
-.heroSection .heroSectionFrame button, .heroSection .heroSectionFrame .headline button.forTablet
+.home .heroSection .heroSectionFrame button, .home .heroSection .heroSectionFrame .headline button.forTablet
 {
     background-color: var(--callToAction);
     border: 0;
@@ -128,13 +129,13 @@
 }
 
 
-.heroSection .heroSectionFrame button img.rocketLaunch
+.home .heroSection .heroSectionFrame button img.rocketLaunch
 {
     width: 20px;
     height: 20px;
 }
 
-.heroSection .heroSectionFrame .additionalInfo
+.home .heroSection .heroSectionFrame .additionalInfo
 {
     display: flex;
     align-items: center;
@@ -143,27 +144,27 @@
     justify-content: center;
 }
 
-.heroSection .heroSectionFrame .additionalInfo .additionalInfoItem
+.home .heroSection .heroSectionFrame .additionalInfo .additionalInfoItem
 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.heroSection .heroSectionFrame .additionalInfo .additionalInfoItem h5
+.home .heroSection .heroSectionFrame .additionalInfo .additionalInfoItem h5
 {
     line-height: 160%;
     font-size: 22px;
     font-weight: 700;
     font-family: 'SpaceMono';
 }
-.heroSection .heroSectionFrame .additionalInfo .additionalInfoItem span:nth-of-type(1)
+.home .heroSection .heroSectionFrame .additionalInfo .additionalInfoItem span:nth-of-type(1)
 {
     font-size: 16px;
     line-height: 140%;
 }
 
-.heroSection .forTablet
+.home .heroSection .forTablet
 {
     display: none !important;
 }
@@ -174,82 +175,85 @@
     {
         padding: 80px 72px;
     }
-    .heroSection .heroSectionFrame
+    .home .heroSection .heroSectionFrame
     {
         flex-direction: row;
         flex-wrap: wrap;
         align-items: flex-start;
     }
-    .heroSection .heroSectionFrame .headline
+    .home .heroSection .heroSectionFrame .headline
     {
         order: 1;
         width: 40%;
         gap: 20px;
     }
-    .heroSection .heroSectionFrame .highlightedNFT {
+    .home .heroSection .heroSectionFrame .highlightedNFT {
         order: 2;
         width: 50%;
         flex-direction: column-reverse;
         height: 330px;
-      }
-    .heroSection .heroSectionFrame button
+    }
+    .home .heroSection .heroSectionFrame button
     {
         display: none;
     }
-    .heroSection .heroSectionFrame .additionalInfo
+    .home .heroSection button.forTablet {
+        display: flex !important;
+    }
+    .home .heroSection .heroSectionFrame .additionalInfo
     {
         display: none;
     }
-    .heroSection .heroSectionFrame .additionalInfo.forTablet
+    .home .heroSection .heroSectionFrame .additionalInfo.forTablet
     {
-        display: flex;
+        display: flex !important;
         gap: 20px;
     }
 }
 
 @media (min-width: 1280px)
 {
-    .heroSection 
+    .home .heroSection 
     {
         padding: 80px 115px;
     }
-    .heroSection .heroSectionFrame .headline
+    .home .heroSection .heroSectionFrame .headline
     {
         width: 510px;
         align-items: flex-start;
     }
-    .heroSection .heroSectionFrame .headline h4
+    .home .heroSection .heroSectionFrame .headline h4
     {
         font-size: 67px;
         line-height: 110%;
     }
-    .heroSection .heroSectionFrame .headline span
+    .home .heroSection .heroSectionFrame .headline span
     {
         font-size: 22px;
         line-height: 160%;
     }
-    .heroSection .heroSectionFrame .highlightedNFT
+    .home .heroSection .heroSectionFrame .highlightedNFT
     {
         height: 510px;
         width: 45%;
     }
-    .heroSection .heroSectionFrame button.forTablet
+    .home .heroSection .heroSectionFrame button.forTablet
     {
         display: flex !important;
         padding: 0 50px !important;
         width: fit-content !important;
     }
-    .heroSection .heroSectionFrame .headline .additionalInfo.forTablet
+    .home .heroSection .heroSectionFrame .headline .additionalInfo.forTablet
     {
         display: flex !important;
         justify-content: flex-start;
     }
-    .heroSection .heroSectionFrame .additionalInfo .additionalInfoItem h5
+    .home .heroSection .heroSectionFrame .additionalInfo .additionalInfoItem h5
     {
         line-height: 140%;
         font-size: 28px;
     }
-    .heroSection .heroSectionFrame .additionalInfo .additionalInfoItem span:nth-of-type(1)
+    .home .heroSection .heroSectionFrame .additionalInfo .additionalInfoItem span:nth-of-type(1)
     {
         font-size: 24px;
         line-height: 160%;

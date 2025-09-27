@@ -1,7 +1,7 @@
 @import url(../../../mainStyles/colors.css);
 @import url(../../../mainStyles/fonts.css);
 
-.discoverMoreNFTS
+.home .discoverMoreNFTS
 {
     padding: 40px 30px 60px;
     display: flex;
@@ -13,7 +13,7 @@
     font-family: 'WorkSans';
 }
 
-.discoverMoreNFTS .headline
+.home .discoverMoreNFTS .headline
 {
     display: flex;
     flex-direction: column;
@@ -21,20 +21,20 @@
     gap: 10px;
 }
 
-.discoverMoreNFTS .headline h4
+.home .discoverMoreNFTS .headline h4
 {
     font-size: 28px;
     line-height: 140%;
     font-weight: 600;
 }
 
-.discoverMoreNFTS .headline span
+.home .discoverMoreNFTS .headline span
 {
     font-size: 16px;
     line-height: 140%;
 }
 
-.discoverMoreNFTS .frames
+.home .discoverMoreNFTS .frames
 {
     display: flex;
     flex-direction: column;
@@ -42,7 +42,7 @@
     gap: 20px;
 }
 
-.discoverMoreNFTS .frames .NFTCard
+.home .discoverMoreNFTS .frames .NFTCard
 {
     display: flex;
     flex-direction: column;
@@ -52,12 +52,12 @@
     overflow: hidden;
 }
 
-.discoverMoreNFTS .frames .NFTCard img.NFTImage
+.home .discoverMoreNFTS .frames .NFTCard img.NFTImage
 {
     height: 238px;
 }
 
-.discoverMoreNFTS .frames .NFTCard .NFTInfo
+.home .discoverMoreNFTS .frames .NFTCard .NFTInfo
 {
     width: 100%;
     display: flex;
@@ -67,7 +67,7 @@
     padding: 20px 20px 25px;
 }
 
-.discoverMoreNFTS .frames .NFTCard .NFTInfo .artistInfo
+.home .discoverMoreNFTS .frames .NFTCard .NFTInfo .artistInfo
 {
     width: 100%;
     display: flex;
@@ -76,33 +76,33 @@
     gap: 5px;
 }
 
-.discoverMoreNFTS .frames .NFTCard .NFTInfo .artistInfo h5.NFTName
+.home .discoverMoreNFTS .frames .NFTCard .NFTInfo .artistInfo h5.NFTName
 {
     font-size: 22px;
     line-height: 140%;
     font-weight: 600;
 }
 
-.discoverMoreNFTS .frames .NFTCard .NFTInfo .artistInfo .artist
+.home .discoverMoreNFTS .frames .NFTCard .NFTInfo .artistInfo .artist
 {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-.discoverMoreNFTS .frames .NFTCard .NFTInfo .artistInfo .artist img
+.home .discoverMoreNFTS .frames .NFTCard .NFTInfo .artistInfo .artist img
 {
     width: 24px;
     height: 24px;
 }
 
-.discoverMoreNFTS .frames .NFTCard .NFTInfo .artistInfo .artist span.name
+.home .discoverMoreNFTS .frames .NFTCard .NFTInfo .artistInfo .artist span.name
 {
     font-size: 16px;
     line-height: 140%;
 }
 
-.discoverMoreNFTS .frames .NFTCard .NFTInfo .additionalInfo
+.home .discoverMoreNFTS .frames .NFTCard .NFTInfo .additionalInfo
 {
     width: 100%;
     display: flex;
@@ -110,19 +110,19 @@
     align-items: center;
 }
 
-.discoverMoreNFTS .frames .NFTCard .NFTInfo .additionalInfo .price, .highestBid
+.home .discoverMoreNFTS .frames .NFTCard .NFTInfo .additionalInfo .price, .highestBid
 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
 }
-.discoverMoreNFTS .frames .NFTCard .NFTInfo .additionalInfo .highestBid
+.home .discoverMoreNFTS .frames .NFTCard .NFTInfo .additionalInfo .highestBid
 {
     align-items: flex-end;
 }
 
-.discoverMoreNFTS .frames .NFTCard .NFTInfo .additionalInfo .price span, .highestBid span
+.home .discoverMoreNFTS .frames .NFTCard .NFTInfo .additionalInfo .price span, .highestBid span
 {
     color: white;
     font-family: 'SpaceMono';
@@ -130,14 +130,14 @@
     line-height: 110%;
 }
 
-.discoverMoreNFTS .frames .NFTCard .NFTInfo .additionalInfo .price span:nth-of-type(1), .highestBid span:nth-of-type(1)
+.home .discoverMoreNFTS .frames .NFTCard .NFTInfo .additionalInfo .price span:nth-of-type(1), .highestBid span:nth-of-type(1)
 {
     color: var(--captionAndLabelText);
     font-size: 12px;
     line-height: 110%;
 }
 
-.discoverMoreNFTS button
+.home .discoverMoreNFTS button
 {
     border: 2px solid var(--callToAction);
     background-color: transparent;
@@ -152,42 +152,42 @@
     border-radius: 20px;
 }
 
-.discoverMoreNFTS .forMobile
+.home .discoverMoreNFTS .forMobile
 {
     display: flex !important;
 }
 
 @media (min-width: 750px)
 {
-    .discoverMoreNFTS
+    .home .discoverMoreNFTS
     {
         padding: 40px 72px 60px;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
     }
-    .discoverMoreNFTS .headline
+    .home .discoverMoreNFTS .headline
     {
         width: 50%;
         text-align: start;
         order: -2;
     }
-    .discoverMoreNFTS .frames
+    .home .discoverMoreNFTS .frames
     {
         flex-direction: row;
         width: 100%;
         justify-content: space-between;
     }
-    .discoverMoreNFTS .frames .NFTCard
+    .home .discoverMoreNFTS .frames .NFTCard
     {
         width: auto;
     }
-    .discoverMoreNFTS button
+    .home .discoverMoreNFTS button
     {
         width: max-content;
         order: -1;
     }
-    .discoverMoreNFTS .forMobile
+    .home .discoverMoreNFTS .forMobile
     {
         display: none !important;
     }
@@ -195,21 +195,21 @@
 
 @media (min-width: 1280px)
 {
-    .discoverMoreNFTS
+    .home .discoverMoreNFTS
     {
         padding: 80px 115px;
     }
-    .discoverMoreNFTS .headline h4
+    .home .discoverMoreNFTS .headline h4
     {
         font-size: 38px;
         line-height: 120%;
     }
-    .discoverMoreNFTS .headline span
+    .home .discoverMoreNFTS .headline span
     {
         font-size: 22px;
         line-height: 160%;
     }
-    .discoverMoreNFTS .forMobile
+    .home .discoverMoreNFTS .forMobile
     {
         display: flex !important;
     }

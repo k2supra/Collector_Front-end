@@ -1,7 +1,7 @@
 @import url(../../../mainStyles/colors.css);
 @import url(../../../mainStyles/fonts.css);
 
-.NFTHighlight
+.home .NFTHighlight
 {
     position: relative;
     padding: 40px 30px;
@@ -15,7 +15,7 @@
     color: white;
     font-family: 'WorkSans';
 }
-.NFTHighlight::before
+.home .NFTHighlight::before
 {
     content: '';
     width: 100%;
@@ -28,7 +28,7 @@
 }
 
 
-.NFTHighlight .frame
+.home .NFTHighlight .frame
 {
     display: flex;
     flex-direction: column;
@@ -38,7 +38,7 @@
     z-index: 2;
 }
 
-.NFTHighlight .frame .artistCard
+.home .NFTHighlight .frame .artistCard
 {
     display: flex;
     align-items: center;
@@ -49,20 +49,20 @@
     align-self: flex-start;
 }
 
-.NFTHighlight .frame .artistCard img.avatar
+.home .NFTHighlight .frame .artistCard img.avatar
 {
     width: 24px;
     height: 24px;
     border-radius: 50%;
 }
 
-.NFTHighlight .frame .artistCard span.name
+.home .NFTHighlight .frame .artistCard span.name
 {
     font-size: 16px;
     line-height: 140%;
 }
 
-.NFTHighlight .frame h3
+.home .NFTHighlight .frame h3
 {
     font-size: 38px;
     line-height: 120%;
@@ -71,7 +71,7 @@
     width: 100%;
 }
 
-.NFTHighlight .frame .auctionTimer
+.home .NFTHighlight .frame .auctionTimer
 {
     border-radius: 20px;
     padding: 30px;
@@ -82,14 +82,14 @@
     backdrop-filter: blur(5px);
 }
 
-.NFTHighlight .frame .auctionTimer span:nth-of-type(1)
+.home .NFTHighlight .frame .auctionTimer span:nth-of-type(1)
 {
     font-family: 'SpaceMono';
     font-size: 12px;
     line-height: 110%;
 }
 
-.NFTHighlight .frame .auctionTimer .timer
+.home .NFTHighlight .frame .auctionTimer .timer
 {
     display: flex;
     gap: 10px;
@@ -98,7 +98,7 @@
     font-weight: 700;
 }
 
-.NFTHighlight .frame .auctionTimer .timer div
+.home .NFTHighlight .frame .auctionTimer .timer div
 {
     display: flex;
     flex-direction: column;
@@ -109,14 +109,14 @@
     line-height: 110%;
 }
 
-.NFTHighlight .frame .auctionTimer .timer div span.value
+.home .NFTHighlight .frame .auctionTimer .timer div span.value
 {
     font-size: 38px;
     line-height: 120%;
     font-weight: 700;
 }
 
-.NFTHighlight .frame button
+.home .NFTHighlight .frame button
 {
     padding: 22px 50px;
     width: 100%;
@@ -136,7 +136,7 @@
 
 @media (min-width:750px)
 {
-    .NFTHighlight
+    .home .NFTHighlight
     {
         padding: 360px 72px 60px;
     }
@@ -144,7 +144,7 @@
 
 @media (min-width:1280px)
 {
-    .NFTHighlight
+    .home .NFTHighlight
     {
         padding: 360px 115px 60px;
     }

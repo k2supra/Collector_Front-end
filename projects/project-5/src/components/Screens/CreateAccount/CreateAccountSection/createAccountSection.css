@@ -80,6 +80,7 @@
     background-color: white;
     border: 1px solid var(--captionAndLabelText);
     border-radius: 20px;
+    position: relative;
     &::before
     {
         content: url(../../../../assets/images/userLogo2.png);
@@ -96,6 +97,15 @@
     content: url(../../../../assets/images/lockLogo.png);
 }
 
+.createAccountSection .createAccount form .inputs .wrapper .error
+{
+    position: absolute;
+    color: red;
+    top: 65%;
+    left: 5%;
+    font-size: 12px;
+}
+
 .createAccountSection .createAccount form .inputs input
 {
     width: 100%;
@@ -105,11 +115,7 @@
     outline: none;
     border: 0;
     position: relative;
-    &::before
-    {
-        content: '555';
-        position: relative;
-    }
+    background-color: white !important;
 }
 
 .createAccountSection .createAccount form a
@@ -128,6 +134,16 @@
     font-size: 16px;
     font-weight: 600;
     padding: 0 50px;
+}
+
+.createAccountSection .createAccount span.haveAccount
+{
+    color: var(--captionAndLabelText);
+    font-size: 12px;
+    a
+    {
+        color: var(--callToAction);
+    }
 }
 
 @media (min-width:750px)

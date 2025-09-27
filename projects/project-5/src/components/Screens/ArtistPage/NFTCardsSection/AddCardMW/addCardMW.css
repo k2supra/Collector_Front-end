@@ -1,0 +1,93 @@
+@import url(../../../../mainStyles/colors.css);
+@import url(../../../../mainStyles/fonts.css);
+
+.artistPage .addCardMW
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 80px 30px 40px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'WorkSans';
+}
+.artistPage .addCardMW .addCardMWContent
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--secondary-background);
+    padding: 15px;
+    border-radius: 20px;
+}
+.artistPage .addCardMW .addCardMWContent button.close
+{
+    background-color: var(--secondary-background);
+    border: 2px solid var(--callToAction);
+    padding: 8px 15px;
+    position: relative;
+    color: white;
+    border-radius: 20px;
+    width: fit-content;
+    margin-left: auto;
+}
+.artistPage .addCardMW .addCardMWContent .images
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.artistPage .addCardMW .addCardMWContent .images img
+{
+    width: calc(30% - 15px);
+    aspect-ratio: 1;
+    border-radius: 12px;
+    object-fit: cover;
+    object-position: center;
+    &.selected
+    {
+        border: 2px solid var(--callToAction);
+    }
+}
+
+.artistPage .addCardMW .addCardMWContent form
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.artistPage .addCardMW .addCardMWContent form input
+{
+    width: 100%;
+    height: 46px;
+    padding: 16px 20px;
+    border-radius: 20px;
+    outline: none;
+    border: 2px solid var(--callToAction);
+    color: white;
+    position: relative;
+    background-color: var(--secondary-background);
+}
+.artistPage .addCardMW .addCardMWContent form button
+{
+    background-color: var(--callToAction);
+    border: 0;
+    border-radius: 20px;
+    height: 46px;
+    width: 100%;
+    color: white;
+    line-height: 140%;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 50px;
+}

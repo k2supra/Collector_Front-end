@@ -1,10 +1,16 @@
 import './heroSection.css';
 
+import { useNavigate } from 'react-router-dom';
+
 import highlightedNFT from '../../../../assets/images/highlightedNFT.png'
 import avatar from '../../../../assets/images/avatar.png'
 import rocketLaunch from '../../../../assets/images/rocketLaunch.png'
 
+import { usersMock } from '../../../mocks/users';
+
 function HeroSection() {
+    const navigate = useNavigate()
+
     return(
         <div className='heroSection'>
             <div className="heroSectionFrame">
@@ -31,10 +37,12 @@ function HeroSection() {
                     <img src={highlightedNFT} alt="highlightedNFT" className='highlightedNFT' />
                     <div className="highlightedNFTInfo">
                         <h5>Space Walking</h5>
-                        <div className="artist">
-                            <img src={avatar} alt="avatar" className='avatar'/>
-                            <span>Animakid</span>
-                        </div>
+                        {/* <Link to='/artist-page'> */}
+                            <div className="artist" onClick={()=>{navigate(`/artist-page/${usersMock[0]._id}`, {state: {user:usersMock[0]}})}}>
+                                <img src={avatar} alt="avatar" className='avatar'/>
+                                <span>Animakid</span>
+                            </div>
+                        {/* </Link> */}
                     </div>
                 </div>
                 <button><img src={rocketLaunch} alt="get started" className='rocketLaunch'/>Get Started</button>

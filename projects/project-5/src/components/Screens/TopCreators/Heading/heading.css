@@ -1,0 +1,59 @@
+@import url(../../../mainStyles/colors.css);
+@import url(../../../mainStyles/fonts.css);
+
+.topCreators .heading
+{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: start;
+    align-items: start;
+    gap: 10px;
+    font-family: 'WorkSans';
+    color: white;
+}
+
+.topCreators .heading h4
+{
+    font-size: 28px;
+    line-height: 140%;
+    font-weight: 600;
+}
+
+.topCreators .heading span
+{
+    font-size: 16px;
+    line-height: 140%;
+}
+
+@media (min-width: 750px)
+{
+    .topCreators .heading
+    {
+        padding: 40px 72px;
+    }
+    .topCreators .heading h4
+    {
+        font-size: 38px;
+        line-height: 120%;
+    }
+}
+
+@media (min-width: 1280px)
+{
+    .topCreators .heading
+    {
+        padding: 80px 115px;
+    }
+    .topCreators .heading h4
+    {
+        font-size: 51px;
+        line-height: 110%;
+    }
+    .topCreators .heading span
+    {
+        font-size: 22px;
+        line-height: 160%;
+    }
+}

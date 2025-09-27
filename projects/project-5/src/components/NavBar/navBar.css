@@ -74,6 +74,13 @@ nav .forDesktop
     display: none !important;
 }
 
+nav .forDesktop button.toProfile
+{
+    background-color: var(--secondary-background);
+    border: 2px solid var(--callToAction);
+    width: 150px;
+}
+
 @media (min-width: 750px)
 {
     nav

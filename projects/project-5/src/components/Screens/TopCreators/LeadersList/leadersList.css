@@ -1,0 +1,310 @@
+@import url(../../../mainStyles/colors.css);
+@import url(../../../mainStyles/fonts.css);
+
+.topCreators .leadersList
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: 'WorkSans';
+}
+.topCreators .leadersList .tabs
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background);
+    width: 100%;
+    padding: 0 30px;
+}
+
+.topCreators .leadersList .tabs .tab
+{
+    width: -webkit-fill-available;
+    height: 60px;
+    align-content: center;
+    text-align: center;
+    border-bottom: 2px solid transparent;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 140%;
+    color: var(--captionAndLabelText);
+}
+
+.topCreators .leadersList .tabs input[type="radio"]:checked + .tab
+{
+    border-bottom: 2px solid var(--captionAndLabelText);
+    color: white;
+}
+
+.topCreators .leadersList ul.list
+{
+    list-style-type: none;
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 400px;
+    counter-reset: pos;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.topCreators .leadersList ul.list li:not(:last-child)
+{
+    margin-bottom: 20px;
+}
+
+.topCreators .leadersList ul.list li
+{
+    width: 100%;
+}
+
+.topCreators .leadersList ul.list li.header
+{
+    padding: 12px 12px;
+    border: 1px solid var(--secondary-background);
+    border-radius: 20px;
+    font-family: 'SpaceMono';
+    color: var(--captionAndLabelText);
+    display: flex;
+    align-items: center;
+}
+
+.topCreators .leadersList ul.list li.header span
+{
+    font-size: 12px;
+    line-height: 110%;
+}
+.topCreators .leadersList ul.list li.header span:nth-of-type(1)
+{
+    display: flex;
+    align-items: center;
+    &::before
+    {
+        content: "#";
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 24px;
+        height: 24px;
+        font-size: 16px;
+        line-height: 140%;
+        margin-right: 10px;
+    }
+}
+.topCreators .leadersList ul.list li.header span.volume
+{
+    width: 70px;
+    text-align: start;
+    margin-left: auto;
+}
+
+.topCreators .leadersList ul.list li.leaderItem
+{
+    background-color: var(--secondary-background);
+    border-radius: 20px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    counter-increment: pos;
+}
+
+.topCreators .leadersList ul.list li.leaderItem .artist
+{
+    display: flex;
+    align-items: center;
+    &::before
+    {
+        content: counter(pos);
+        width: 24px;
+        height: 24px;
+        align-content: center;
+        text-align: center;
+        color: var(--captionAndLabelText);
+        font-family: 'SpaceMono';
+        font-size: 12px;
+        line-height: 110%;
+    }
+}
+
+.topCreators .leadersList ul.list li.leaderItem .artist img.avatar
+{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-right: 12px;
+}
+
+.topCreators .leadersList ul.list li.leaderItem .artist span.name
+{
+    font-size: 16px;
+    line-height: 140%;
+    overflow: hidden;
+}
+
+.topCreators .leadersList ul.list li.leaderItem span.forTabletAndDesktop.change, .topCreators .leadersList ul.list li.leaderItem span.forDesktop.sold
+{
+    display: none;
+}
+
+.topCreators .leadersList ul.list li.leaderItem span.volume
+{
+    font-family: 'SpaceMono';
+    font-size: 12px;
+    line-height: 110%;
+    margin-left: auto;
+    width: 70px;
+    text-align: start;
+}
+
+.topCreators .leadersList ul.list li.header span.forTabletAndDesktop, .topCreators .leadersList ul.list li.header span.forDesktop
+{
+    display: none;
+}
+
+@media (min-width: 750px)
+{
+    .topCreators .leadersList .tabs
+    {
+        padding: 0 77px;
+    }
+    .topCreators .leadersList ul.list
+    {
+        padding: 40px 72px;
+        max-width: 900px;
+    }
+    .topCreators .leadersList ul.list li.header span
+    {
+        font-size: 16px;
+        line-height: 140%;
+    }
+    .topCreators .leadersList ul.list li.header span:nth-of-type(1)::before
+    {
+        margin-right: 20px;
+    }
+    .topCreators .leadersList ul.list li.header span.volume
+    {
+        margin-left: 0;
+        width: 100px;
+    }
+    .topCreators .leadersList ul.list li.header span.forTabletAndDesktop
+    {
+        display: initial;
+    }
+    .topCreators .leadersList ul.list li.header span.forTabletAndDesktop.change
+    {
+        margin-left: auto;
+        width: 100px;
+        text-align: start;
+    }
+    .topCreators .leadersList ul.list li.leaderItem
+    {
+        height: 60px;
+    }
+    .topCreators .leadersList ul.list li.leaderItem .artist::before
+    {
+        font-size: 16px;
+        line-height: 140%;
+    }
+    .topCreators .leadersList ul.list li.leaderItem .artist span.name
+    {
+        font-size: 22px;
+        line-height: 140%;
+        font-weight: 600;
+    }
+    .topCreators .leadersList ul.list li.leaderItem span.forTabletAndDesktop.change
+    {
+        display: initial;
+        font-family: 'SpaceMono';
+        font-size: 16px;
+        line-height: 140%;
+        width: 100px;
+        margin-left: auto;
+        text-align: start;
+        &.green
+        {
+            color: var(--green);
+        }
+        &.red
+        {
+            color: var(--red);
+        }
+    }
+    .topCreators .leadersList ul.list li.leaderItem span.volume
+    {
+        width: 100px;
+        font-size: 16px;
+        line-height: 140%;
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 1280px)
+{
+    .topCreators .leadersList .tabs
+    {
+        padding: 0 115px;
+    }
+    .topCreators .leadersList .tabs .tab
+    {
+        font-size: 22px;
+    }
+    .topCreators .leadersList ul.list
+    {
+        padding: 40px 115px;
+        max-width: 1350px;
+    }
+    .topCreators .leadersList ul.list li.leaderItem
+    {
+        height: fit-content;
+    }
+    .topCreators .leadersList ul.list li.leaderItem .artist::before
+    {
+        background-color: var(--background);
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+    }
+    .topCreators .leadersList ul.list li.leaderItem .artist img.avatar
+    {
+        margin-left: 15px;
+        margin-right: 20px;
+        width: 60px;
+        height: 60px;
+    }
+    .topCreators .leadersList ul.list li.header span.forTabletAndDesktop.change
+    {
+        width: 160px;
+    }
+    .topCreators .leadersList ul.list li.header span.forDesktop
+    {
+        display: initial;
+        width: 160px;
+        text-align: start;
+    }
+    .topCreators .leadersList ul.list li.leaderItem span.forTabletAndDesktop.change
+    {
+        width: 160px;
+    }
+    .topCreators .leadersList ul.list li.leaderItem span.forDesktop.sold
+    {
+        display: initial;
+        width: 160px;
+        text-align: start;
+        font-size: 16px;
+        line-height: 140%;
+        font-family: 'SpaceMono';
+    }
+    .topCreators .leadersList ul.list li.header span.volume
+    {
+        width: 160px;
+    }
+    .topCreators .leadersList ul.list li.leaderItem span.volume
+    {
+        width: 160px;
+    }
+}

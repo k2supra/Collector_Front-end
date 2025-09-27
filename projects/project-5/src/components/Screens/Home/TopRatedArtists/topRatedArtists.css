@@ -1,7 +1,7 @@
 @import url(../../../mainStyles/colors.css);
 @import url(../../../mainStyles/fonts.css);
 
-.topRatedArtists
+.home .topRatedArtists
 {
     width: 100%;
     display: flex;
@@ -13,7 +13,7 @@
     font-family: 'WorkSans';
 }
 
-.topRatedArtists .headline
+.home .topRatedArtists .headline
 {
     display: flex;
     flex-direction: column;
@@ -21,13 +21,13 @@
     gap: 10px;
 }
 
-.topRatedArtists .headline h4
+.home .topRatedArtists .headline h4
 {
     font-size: 28px;
     line-height: 140%;
     font-weight: 600;
 }
-.topRatedArtists .headline span
+.home .topRatedArtists .headline span
 {
     font-size: 16px;
     line-height: 140%;
@@ -35,7 +35,7 @@
     text-align: start;
 }
 
-.topRatedArtists .artistCardsRow
+.home .topRatedArtists .artistCardsRow
 {
     list-style-type: none;
     display: flex;
@@ -46,7 +46,7 @@
     counter-reset: pos;
 }
 
-.topRatedArtists .artistCardsRow .artistCard
+.home .topRatedArtists .artistCardsRow .artistCard
 {
     width: 100%;
     display: flex;
@@ -58,21 +58,21 @@
     counter-increment: pos;
 }
 
-.topRatedArtists .artistCardsRow .artistCard .avatar
+.home .topRatedArtists .artistCardsRow .artistCard .avatar
 {
     position: relative;
     width: 60px;
     height: 60px;
 }
 
-.topRatedArtists .artistCardsRow .artistCard .avatar img
+.home .topRatedArtists .artistCardsRow .artistCard .avatar img
 {
     width: 60px;
     height: 60px;
     border-radius: 50%;
 }
 
-.topRatedArtists .artistCardsRow .artistCard .avatar .ratingPosition::before
+.home .topRatedArtists .artistCardsRow .artistCard .avatar .ratingPosition::before
 {
     background-color: var(--background);
     width: 30px;
@@ -87,7 +87,7 @@
     left: -7px;
 }
 
-.topRatedArtists .artistCardsRow .artistCard .artistInfo
+.home .topRatedArtists .artistCardsRow .artistCard .artistInfo
 {
     display: flex;
     flex-direction: column;
@@ -95,35 +95,35 @@
     align-items: flex-start;
 }
 
-.topRatedArtists .artistCardsRow .artistCard .artistInfo h5.name
+.home .topRatedArtists .artistCardsRow .artistCard .artistInfo h5.name
 {
     font-size: 22px;
     line-height: 140%;
     font-weight: 600;
 }
 
-.topRatedArtists .artistCardsRow .artistCard .artistInfo .additionalInfo
+.home .topRatedArtists .artistCardsRow .artistCard .artistInfo .additionalInfo
 {
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-.topRatedArtists .artistCardsRow .artistCard .artistInfo .additionalInfo .totalSales
+.home .topRatedArtists .artistCardsRow .artistCard .artistInfo .additionalInfo .totalSales
 {
     color: var(--captionAndLabelText);
     font-size: 16px;
     line-height: 140%;
 }
 
-.topRatedArtists .artistCardsRow .artistCard .artistInfo .additionalInfo .spent
+.home .topRatedArtists .artistCardsRow .artistCard .artistInfo .additionalInfo .spent
 {
     font-family: "SpaceMono";
     font-size: 16px;
     line-height: 140%;
 }
 
-.topRatedArtists button
+.home .topRatedArtists button
 {
     width: 315px;
     height: 60px;
@@ -141,44 +141,44 @@
     line-height: 140%;
 }
 
-.topRatedArtists button img
+.home .topRatedArtists button img
 {
     width: 20px;
     height: 20px;
 }
 
-.topRatedArtists .forDesktop
+.home .topRatedArtists .forDesktop
 {
     display: none !important;
 }
 
 @media (min-width: 750px)
 {
-    .topRatedArtists
+    .home .topRatedArtists
     {
         padding: 40px 72px;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
     }
-    .topRatedArtists .headline
+    .home .topRatedArtists .headline
     {
         width: 45%;
         order: -2;
     }
-    .topRatedArtists button
+    .home .topRatedArtists button
     {
         order: -1;
         width: 45%;
     }
-    .topRatedArtists .artistCardsRow
+    .home .topRatedArtists .artistCardsRow
     {
         flex-direction: row;
         flex-wrap: wrap;
         width: 100%;
         justify-content: space-between;
     }
-    .topRatedArtists .artistCardsRow .artistCard
+    .home .topRatedArtists .artistCardsRow .artistCard
     {
         width: 48%;
     }
@@ -186,53 +186,53 @@
 
 @media (min-width: 1250px)
 {
-    .topRatedArtists
+    .home .topRatedArtists
     {
         padding: 80px 115px;
     }
-    .topRatedArtists .headline h4
+    .home .topRatedArtists .headline h4
     {
         font-size: 38px;
         line-height: 120%;
     }
-    .topRatedArtists .headline span
+    .home .topRatedArtists .headline span
     {
         font-size: 22px;
         line-height: 160%;
     }
-    .topRatedArtists button
+    .home .topRatedArtists button
     {
         width: fit-content;
     }
-    .topRatedArtists .artistCardsRow .artistCard
+    .home .topRatedArtists .artistCardsRow .artistCard
     {
         width: 22%;
         flex-direction: column;
         align-items: center;
     }
-    .topRatedArtists .artistCardsRow .artistCard .artistInfo h5.name
+    .home .topRatedArtists .artistCardsRow .artistCard .artistInfo h5.name
     {
         width: 100%;
     }
-    .topRatedArtists .artistCardsRow .artistCard .avatar
+    .home .topRatedArtists .artistCardsRow .artistCard .avatar
     {
         position: relative;
         width: 120px;
         height: 120px;
     }
 
-    .topRatedArtists .artistCardsRow .artistCard .avatar img
+    .home .topRatedArtists .artistCardsRow .artistCard .avatar img
     {
         width: 120px;
         height: 120px;
         border-radius: 50%;
     }
-    .topRatedArtists .artistCardsRow .artistCard .avatar .ratingPosition::before
+    .home .topRatedArtists .artistCardsRow .artistCard .avatar .ratingPosition::before
     {
         left: -40px;
         top: -6px;
     }
-    .topRatedArtists .forDesktop
+    .home .topRatedArtists .forDesktop
     {
         display: flex !important;
     }
