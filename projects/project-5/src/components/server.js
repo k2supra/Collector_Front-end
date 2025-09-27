@@ -1,8 +1,12 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors';
-import multer from 'multer'
 
+import dotenv from 'dotenv'
+
+dotenv.config()
+
+const password = encodeURIComponent(process.env.MONGODB_PASSWORD)
 // const cloudinary = require('./cloudinary.js')
 // const upload = multer({dest: 'uploads/'})
 
@@ -51,7 +55,7 @@ async function fixUsers() {
     }
   }
 
-mongoose.connect('mongodb+srv://andrijkorolevic:jnYZ86UggByb0cDC@testcluster.8jrno.mongodb.net/NFTApp?retryWrites=true&w=majority&appName=TestCluster')
+mongoose.connect(`mongodb+srv://andrijkorolevic:${password}@testcluster.8jrno.mongodb.net/NFTApp?retryWrites=true&w=majority&appName=TestCluster`)
 .then(() => {console.log("MongoDB connected"); fixUsers()})
 .catch(err => console.error(err))
 
