@@ -27,6 +27,12 @@ export const userSlice = createSlice(
             updateNFTS: (state, action)=>
             {
                 state.fullUser.nfts.push(action.payload)
+            },
+            updateUser:(state, action)=>
+            {
+                state.fullUser.username = action.payload.username
+                state.fullUser.bio = action.payload.bio
+                state.fullUser.avatarUrl = action.payload.avatarUrl
             }
         },
         extraReducers:(builder)=>
@@ -51,5 +57,5 @@ export const userSlice = createSlice(
     }
 )
 
-export const {setUser, logout, updateNFTS} = userSlice.actions;
+export const {setUser, logout, updateNFTS, updateUser} = userSlice.actions;
 export default userSlice.reducer

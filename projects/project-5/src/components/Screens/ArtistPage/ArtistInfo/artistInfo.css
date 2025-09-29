@@ -131,14 +131,37 @@
     cursor: pointer;
 }
 
-.artistPage .artistInfoSection button.logout
+.artistPage .artistInfoSection .controls
+{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.artistPage .artistInfoSection .controls button.logout
 {
     height: 60px;
     width: 100%;
     color: var(--red);
     border: 2px solid var(--red);
     background-color: transparent;
-    width: 150px;
+    width: 130px;
+    
+    line-height: 140%;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 30px;
+
+    border-radius: 20px;
+}
+.artistPage .artistInfoSection .controls button.edit
+{
+    height: 60px;
+    width: 100%;
+    color: var(--captionAndLabelText);
+    border: 2px solid var(--captionAndLabelText);
+    background-color: transparent;
+    width: 130px;
     
     line-height: 140%;
     font-size: 16px;

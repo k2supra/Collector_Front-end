@@ -7,12 +7,14 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 const password = encodeURIComponent(process.env.MONGODB_PASSWORD)
+const gmail = encodeURIComponent(process.env.MONGODB_GMAIL)
 // const cloudinary = require('./cloudinary.js')
 // const upload = multer({dest: 'uploads/'})
 
 const app = express()
 app.use(cors())
 app.use(express.json())
+app.use('/images', express.static('public/images'))
 
 const userSchema = new mongoose.Schema(
     {
@@ -20,7 +22,8 @@ const userSchema = new mongoose.Schema(
         email: String,
         password: String,
         bio: String,
-        followers: Number,
+        followers: Array,
+        avatarUrl: {type: String, default: '/images/avatar.png'},
         stats:
         {
             volume: Number,
@@ -46,8 +49,11 @@ const User = mongoose.model('User', userSchema)
 async function fixUsers() {
     try {
         const result = await User.updateMany(
-            { $or: [{ nfts: { $exists: false } }, { nfts: null }, { nfts: { $not: { $type: "array" } } }] },
-            { $set: { nfts: [] } }
+            {},
+            { $set: 
+                { 
+                    avatarUrl: '/images/avatar.png'
+                } }
         );
         console.log("Updated users:", result.modifiedCount);
     } catch (err) {
@@ -55,9 +61,9 @@ async function fixUsers() {
     }
   }
 
-mongoose.connect(`mongodb+srv://andrijkorolevic:${password}@testcluster.8jrno.mongodb.net/NFTApp?retryWrites=true&w=majority&appName=TestCluster`)
-.then(() => {console.log("MongoDB connected"); fixUsers()})
-.catch(err => console.error(err))
+mongoose.connect(`mongodb+srv://${gmail}:${password}@testcluster.8jrno.mongodb.net/NFTApp?retryWrites=true&w=majority&appName=TestCluster`)
+.then(() => {console.log('\x1b[32m%s\x1b[0m', "\n\n\nMongoDB connected\n\n\n"); fixUsers()})
+.catch(err => console.error('\x1b[31m%s\x1b[0m', '\n\n\n❌ MongoDB connection error:', err, '\n\n\n'))
 
 app.post('/register', async (req, res) =>
 {
@@ -114,32 +120,24 @@ app.post('/artist-page/:id/nfts', async (req, res) => {
     }
 })
 
-// app.post('/nft/add', upload.single('image'), async (req, res)=>
-// {
-//     try {
-//         const {userId, title, price} = req.body;
+app.post('/artist-page/:id/update', async (req, res) => {
+    try {
+      const user = await User.findById(req.params.id)
+      if (!user) return res.status(404).json({ error: 'User not found' })
+  
+      const { username, bio, avatarUrl } = req.body
+      const updatedUser = { username, bio, avatarUrl }
 
-//         const result = await cloudinary.uploader.upload(req.file.path, {
-//             folder: 'nft_images'
-//         })
-        
-//         const user = await User.findById(userId);
-//         if(!user) return res.status(404).json({error: 'User not found'});
-        
-//         user.nfts.push(
-//             {
-//                 title,
-//                 price,
-//                 imageUrl: result.secure_url
-//             }
-//         );
-
-//         await user.save()
-
-//         res.json({message: 'NFT added', nfts: user.nfts})
-//     } catch (err) {
-//         res.status(500).json({error: err.message})
-//     }
-// })
+      user.username = username;
+      user.bio = bio;
+      user.avatarUrl = avatarUrl;
+      
+      await user.save()
+  
+      res.json(updatedUser)
+    } catch (err) {
+      res.status(500).json({ error: err.message })
+    }
+})
 
 app.listen(5000, '0.0.0.0', () => console.log("Server running on http://192.168.1.16:5000"))

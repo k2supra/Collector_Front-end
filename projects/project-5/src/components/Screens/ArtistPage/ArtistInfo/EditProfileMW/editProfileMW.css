@@ -1,7 +1,7 @@
 @import url(../../../../mainStyles/colors.css);
 @import url(../../../../mainStyles/fonts.css);
 
-.artistPage .addCardMW
+.artistPage .artistInfoSection .editProfileMW
 {
     position: fixed;
     top: 0;
@@ -15,7 +15,8 @@
     font-family: 'WorkSans';
     z-index: 1000;
 }
-.artistPage .addCardMW .addCardMWContent
+
+.artistPage .artistInfoSection .editProfileMW .editProfileMWContent
 {
     width: 100%;
     display: flex;
@@ -26,8 +27,10 @@
     padding: 15px;
     border-radius: 20px;
     overflow-y: auto;
+    z-index: 1001;
 }
-.artistPage .addCardMW .addCardMWContent button.close
+
+.artistPage .artistInfoSection .editProfileMW .editProfileMWContent button.close
 {
     background-color: var(--secondary-background);
     border: 2px solid var(--callToAction);
@@ -38,37 +41,38 @@
     width: fit-content;
     margin-left: auto;
 }
-.artistPage .addCardMW .addCardMWContent .images
-{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    width: 100%;
-}
 
-.artistPage .addCardMW .addCardMWContent .images img
-{
-    width: calc(30% - 15px);
-    aspect-ratio: 1;
-    border-radius: 12px;
-    object-fit: cover;
-    object-position: center;
-    &.selected
-    {
-        border: 2px solid var(--callToAction);
-    }
-}
-
-.artistPage .addCardMW .addCardMWContent form
+.artistPage .artistInfoSection .editProfileMW .editProfileMWContent form
 {
     width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
-.artistPage .addCardMW .addCardMWContent form input
+.artistPage .artistInfoSection .editProfileMW .editProfileMWContent .avatarCollection
+{
+    grid-template-columns: repeat(auto-fit, 70px);
+    display: grid;
+    justify-content: space-evenly;
+    gap: 20px;
+    width: 100%;
+}
+
+.artistPage .artistInfoSection .editProfileMW .editProfileMWContent .avatarCollection img.avatar
+{
+    width: 70px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
+    &.selected
+    {
+        border: 2px solid var(--callToAction);
+    }
+}
+.artistPage .artistInfoSection .editProfileMW .editProfileMWContent form input
 {
     width: 100%;
     height: 46px;
@@ -80,7 +84,19 @@
     position: relative;
     background-color: var(--secondary-background);
 }
-.artistPage .addCardMW .addCardMWContent form button
+.artistPage .artistInfoSection .editProfileMW .editProfileMWContent form textarea
+{
+    width: 100% !important;
+    height: 100px;
+    padding: 16px 20px;
+    border-radius: 20px;
+    outline: none;
+    border: 2px solid var(--callToAction);
+    color: white;
+    position: relative;
+    background-color: var(--secondary-background);
+}
+.artistPage .artistInfoSection .editProfileMW .editProfileMWContent form button
 {
     background-color: var(--callToAction);
     border: 0;

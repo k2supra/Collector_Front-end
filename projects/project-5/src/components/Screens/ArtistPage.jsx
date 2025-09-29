@@ -32,7 +32,7 @@ function ArtistPage(params) {
 
 
     return <div className="artistPage">
-        <BannerAndProfilePicture/>
+        <BannerAndProfilePicture userData={userData}/>
         <ArtistInfo userData={userData} loading={loading} error={error}/>
         <TabBar/>
         <NFTCardsSection userData={userData}/>

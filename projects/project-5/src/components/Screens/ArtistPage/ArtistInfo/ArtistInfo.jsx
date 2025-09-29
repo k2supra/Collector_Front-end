@@ -12,7 +12,8 @@ import { fetchFullUser } from '../../../RTK/fetchFullUser'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
-import { logout } from '../../../RTK/userSlice'
+import { logout, updateUser } from '../../../RTK/userSlice'
+import EditProfileMW from './EditProfileMW/EditProfileMW'
 
 
 function ArtistInfo({userData, loading, error}) {
@@ -23,6 +24,7 @@ function ArtistInfo({userData, loading, error}) {
     // const { id } = useParams()
     const [showLogout, setShowLogout] = useState(false);
     const navigate = useNavigate()
+    const [showEditProfileMW, setShowEditProfileMW] = useState(false);
 
     useEffect(()=>
     {
@@ -87,7 +89,7 @@ function ArtistInfo({userData, loading, error}) {
                 <span>NFTs Sold</span>
             </div>
             <div className="statsItem">
-                <h5>{userData?.followers || 0}</h5>
+                <h5>{userData?.followers.length || 0}</h5>
                 <span>Followers</span>
             </div>
         </div>
@@ -105,7 +107,21 @@ function ArtistInfo({userData, loading, error}) {
                 <img src={instagramLogo} alt="instagram" />
             </div>
         </div>
-        {showLogout && <button className='logout' onClick={()=>{dispatch(logout()); navigate('/'); setShowLogout(false)}}>Log out</button>}
+        {showLogout && <div className='controls'>
+            <button className='logout' onClick={()=>{dispatch(logout()); navigate('/'); setShowLogout(false)}}>Log out</button>
+            <button className='edit' onClick={()=>{setShowEditProfileMW(true)}}>Edit</button>
+            </div>}
+        {showEditProfileMW && <EditProfileMW 
+        close={()=>setShowEditProfileMW(false)} 
+        userData={userData} 
+        onUpdatedUser={(updatedUser)=>
+        {
+            dispatch(updateUser(updatedUser))
+            setShowEditProfileMW(false);
+        }
+        }/>}
+        {/* {showLogout && <button className='logout' onClick={()=>{dispatch(logout()); navigate('/'); setShowLogout(false)}}>Log out</button>}
+        {showLogout && <button className='edit' onClick={()=>{}}>Edit</button>} */}
     </div>
 }
 
