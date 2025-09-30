@@ -6,3 +6,4 @@ Functions:
 + edit user profile(username, bio, avatar)
 + add NFT cards
 + view other users by id
++ user following(subscribe) feature
