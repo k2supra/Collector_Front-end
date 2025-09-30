@@ -1,13 +1,17 @@
 import './editProfileMW.css'
 import { useEffect, useState } from 'react';
 
-const avatar1 = process.env.PUBLIC_URL + '/images/avatar.png'
+const avatar1 = process.env.PUBLIC_URL + '/images/avatar1.png'
 const avatar2 = process.env.PUBLIC_URL + '/images/avatar2.png'
 const avatar3 = process.env.PUBLIC_URL + '/images/avatar3.png'
 const avatar4 = process.env.PUBLIC_URL + '/images/avatar4.png'
 const avatar5 = process.env.PUBLIC_URL + '/images/avatar5.png'
 const avatar6 = process.env.PUBLIC_URL + '/images/avatar6.png'
 const avatar7 = process.env.PUBLIC_URL + '/images/avatar7.png'
+const avatar8 = process.env.PUBLIC_URL + '/images/avatar8.png'
+const avatar9 = process.env.PUBLIC_URL + '/images/avatar9.png'
+const avatar10 = process.env.PUBLIC_URL + '/images/avatar10.png'
+const avatar11 = process.env.PUBLIC_URL + '/images/avatar11.png'
 // import avatar2 from '../../../../../assets/images/avatar2.png'
 // import avatar3 from '../../../../../assets/images/avatar3.png'
 // import avatar4 from '../../../../../assets/images/avatar4.png'
@@ -15,7 +19,7 @@ const avatar7 = process.env.PUBLIC_URL + '/images/avatar7.png'
 // import avatar6 from '../../../../../assets/images/avatar6.png'
 // import avatar7 from '../../../../../assets/images/avatar7.png'
 
-const avatars = [avatar1, avatar2, avatar3, avatar4, avatar5, avatar6, avatar7];
+const avatars = [avatar1, avatar2, avatar3, avatar4, avatar5, avatar6, avatar7, avatar8, avatar9, avatar10, avatar11];
 
 function EditProfileMW({close, userData, onUpdatedUser}) {
     const [selectedImage, setSelectedImage] = useState(avatars.find(i=>i===userData?.avatarUrl))
@@ -66,7 +70,7 @@ function EditProfileMW({close, userData, onUpdatedUser}) {
             <button className="close" onClick={close}>⨉</button>
             <form onSubmit={handleSubmit}>
                 <div className="avatarCollection">
-                    {[avatar1, avatar2, avatar3, avatar4, avatar5, avatar6, avatar7].map((item, index)=>
+                    {avatars.map((item, index)=>
                     { return <img 
                     src={item} 
                     alt='avatar' 

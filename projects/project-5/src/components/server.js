@@ -22,8 +22,9 @@ const userSchema = new mongoose.Schema(
         email: String,
         password: String,
         bio: String,
-        followers: Array,
-        avatarUrl: {type: String, default: '/images/avatar.png'},
+        followers: [{_id: String, username: String, avatarUrl: String}],
+        followings: [{_id: String, username: String, avatarUrl: String}],
+        avatarUrl: {type: String, default: '/images/avatar1.png'},
         stats:
         {
             volume: Number,
@@ -52,7 +53,7 @@ async function fixUsers() {
             {},
             { $set: 
                 { 
-                    avatarUrl: '/images/avatar.png'
+                    followings: []
                 } }
         );
         console.log("Updated users:", result.modifiedCount);
@@ -131,7 +132,7 @@ app.post('/artist-page/:id/update', async (req, res) => {
       user.username = username;
       user.bio = bio;
       user.avatarUrl = avatarUrl;
-      
+
       await user.save()
   
       res.json(updatedUser)
@@ -139,5 +140,64 @@ app.post('/artist-page/:id/update', async (req, res) => {
       res.status(500).json({ error: err.message })
     }
 })
+
+app.post('/artist-page/:id/followedBy/:id2', async (req, res) => {
+    try {
+        const userToFollow = await User.findById(req.params.id)   // на кого підписуються
+        if (!userToFollow) return res.status(404).json({ error: 'User not found' })
+    
+        const followerUser = await User.findById(req.params.id2) // хто підписується
+        if (!followerUser) return res.status(404).json({ error: 'User not found' })
+    
+        if (userToFollow.followers.some(f => f._id.toString() === followerUser._id.toString())) {
+          return res.status(400).json({ error: 'Already following' })
+        }
+    
+        userToFollow.followers.push({
+          _id: followerUser._id,
+          username: followerUser.username,
+          avatarUrl: followerUser.avatarUrl,
+        })
+    
+        followerUser.followings.push({
+          _id: userToFollow._id,
+          username: userToFollow.username,
+          avatarUrl: userToFollow.avatarUrl,
+        })
+    
+        await userToFollow.save()
+        await followerUser.save()
+    
+        res.json({ message: 'Followed successfully' })
+    } catch (err) {
+      res.status(500).json({ error: err.message })
+    }
+})
+
+app.post('/artist-page/:id/unfollow/:id2', async (req, res) => {
+    try {
+      const userToUnfollow = await User.findById(req.params.id)
+      const followerUser = await User.findById(req.params.id2)
+  
+      if (!userToUnfollow || !followerUser) {
+        return res.status(404).json({ error: 'User not found' })
+      }
+  
+      userToUnfollow.followers = userToUnfollow.followers.filter(
+        f => f._id.toString() !== followerUser._id.toString()
+      )
+  
+      followerUser.followings = followerUser.followings.filter(
+        f => f._id.toString() !== userToUnfollow._id.toString()
+      )
+  
+      await userToUnfollow.save()
+      await followerUser.save()
+  
+      res.json({ message: 'Unfollowed successfully' })
+    } catch (err) {
+      res.status(500).json({ error: err.message })
+    }
+  })
 
 app.listen(5000, '0.0.0.0', () => console.log("Server running on http://192.168.1.16:5000"))

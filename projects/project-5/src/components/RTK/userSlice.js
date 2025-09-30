@@ -33,7 +33,7 @@ export const userSlice = createSlice(
                 state.fullUser.username = action.payload.username
                 state.fullUser.bio = action.payload.bio
                 state.fullUser.avatarUrl = action.payload.avatarUrl
-            }
+            },
         },
         extraReducers:(builder)=>
         {

@@ -25,11 +25,56 @@ function ArtistInfo({userData, loading, error}) {
     const [showLogout, setShowLogout] = useState(false);
     const navigate = useNavigate()
     const [showEditProfileMW, setShowEditProfileMW] = useState(false);
+    const [isFollowed, setIsFollowed] = useState(false);
+    const [followButtonText, setFollowButtonText] = useState('Follow')
 
     useEffect(()=>
     {
         setShowLogout(userData?._id===currentUser?._id)
+
+        if (userData?.followers.find(f=>f._id === currentUser?._id)) {
+            setIsFollowed(true);
+            setFollowButtonText('Followed')
+        }
+        else 
+        {
+            setIsFollowed(false);
+            setFollowButtonText('Follow')
+        }
     }, [userData])
+    
+    const handleFollow = async () =>
+    {
+        try {
+            const res = await fetch(`http://192.168.1.16:5000/artist-page/${userData?._id}/followedBy/${currentUser?._id}`,
+                {
+                    method: 'POST',
+                    headers:{'Content-Type':'application/json'},
+                }
+            )
+            if(!res.ok) throw new Error('Error while following')
+                setIsFollowed(true)
+            setFollowButtonText('Followed')
+        } catch (err) {
+            console.error(err);            
+        }
+    }
+    const handleUnfollow = async () =>
+    {
+        try {
+            const res = await fetch(`http://192.168.1.16:5000/artist-page/${userData?._id}/unfollow/${currentUser?._id}`,
+                {
+                    method: 'POST',
+                    headers:{'Content-Type':'application/json'},
+                }
+            )
+            if(!res.ok) throw new Error('Error while following')
+            setIsFollowed(false)
+            setFollowButtonText('Follow')
+        } catch (err) {
+            console.error(err);
+        }
+    }
     
     // const mockUser = location.state?.user;
 
@@ -53,31 +98,31 @@ function ArtistInfo({userData, loading, error}) {
         <h4 className="artistName">{userData.username}</h4>
         <div className="buttons">
             <button onClick={async () => {
-    const text = userData?._id || "";
+            const text = userData?._id || "";
 
-    try {
-      if (navigator.clipboard && window.isSecureContext) {
-        // Сучасний метод (працює в більшості браузерів, Android Chrome, нові Safari)
-        await navigator.clipboard.writeText(text);
-      } else {
-        // Fallback для старих/мобільних браузерів
-        const textarea = document.createElement("textarea");
-        textarea.value = text;
-        textarea.style.position = "fixed"; // щоб не прокручувало
-        textarea.style.opacity = 0;
-        document.body.appendChild(textarea);
-        textarea.focus();
-        textarea.select();
+            try {
+            if (navigator.clipboard && window.isSecureContext) {
+                // Сучасний метод (працює в більшості браузерів, Android Chrome, нові Safari)
+                await navigator.clipboard.writeText(text);
+            } else {
+                // Fallback для старих/мобільних браузерів
+                const textarea = document.createElement("textarea");
+                textarea.value = text;
+                textarea.style.position = "fixed"; // щоб не прокручувало
+                textarea.style.opacity = 0;
+                document.body.appendChild(textarea);
+                textarea.focus();
+                textarea.select();
 
-        document.execCommand("copy");
-        document.body.removeChild(textarea);
-      }
-    } catch (err) {
-      console.error("Помилка копіювання:", err);
-      alert("Не вдалося скопіювати ❌");
-    }
-  }}><img src={copyLogo} alt="id" />{userData._id.length>10 ? `${userData._id.slice(0, 4)}...${userData._id.slice(-3)}` : userData._id}</button>
-            <button><img src={plusLogo} alt="Follow" />Follow</button>
+                document.execCommand("copy");
+                document.body.removeChild(textarea);
+            }
+            } catch (err) {
+            console.error("Помилка копіювання:", err);
+            alert("Не вдалося скопіювати ❌");
+            }
+        }}><img src={copyLogo} alt="id" />{userData._id.length>10 ? `${userData._id.slice(0, 4)}...${userData._id.slice(-3)}` : userData._id}</button>
+            {!showLogout && <button onClick={isFollowed?handleUnfollow:handleFollow}>{isFollowed ? <span>✓</span> : <img src={plusLogo} alt="Follow" />}{/* Follow */}{followButtonText}</button>}
         </div>
         <div className="stats">
             <div className="statsItem">
