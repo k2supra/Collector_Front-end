@@ -1,0 +1,55 @@
+@import url(../../../../mainStyles/colors.css);
+@import url(../../../../mainStyles/fonts.css);
+
+.followingsPage .followings
+{
+    padding: 30px;
+    color: white;
+    font-family: 'WorkSans';
+}
+
+.followingsPage .followings ul
+{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+}
+
+.followingsPage .followings ul li.following
+{
+    background-color: var(--secondary-background);
+    width: 100%;
+    padding: 12px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.followingsPage .followings ul li.following img.avatar
+{
+    height: 100%;
+    aspect-ratio: 1;
+}
+
+.followingsPage .followings ul li.following .artistUsernameAndID
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: start;
+    height: 100%;
+}
+
+.followingsPage .followings ul li.following .artistUsernameAndID .username
+{
+    font-size: 20px;
+}
+.followingsPage .followings ul li.following .artistUsernameAndID .id
+{
+    font-size: 12px;
+    color: var(--captionAndLabelText);
+}

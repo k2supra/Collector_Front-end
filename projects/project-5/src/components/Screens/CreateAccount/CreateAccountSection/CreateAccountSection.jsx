@@ -7,7 +7,10 @@ import spaceship from '../../../../assets/images/spaceship.png'
 
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../../RTK/userSlice';
+import { useState } from 'react';
 
+const API_URL = process.env.REACT_APP_API_URL;
+const PORT = process.env.REACT_APP_PORT;
 
 const validate = values =>
 {
@@ -33,6 +36,7 @@ function CreateAccountSection() {
     const navigate = useNavigate()
 
     const dispatch = useDispatch()
+    const [showPassword, setShowPassword] = useState(false)
 
     const formik = useFormik({
         initialValues: 
@@ -46,7 +50,7 @@ function CreateAccountSection() {
         onSubmit: async (values, {setSubmitting, setErrors}) => 
         {
             try {
-                const res = await fetch('http://192.168.1.16:5000/register', {
+                const res = await fetch(`${API_URL}:${PORT}/register`, {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({username: values.username, email: values.email, password: values.password})
@@ -79,11 +83,11 @@ function CreateAccountSection() {
             <form onSubmit={formik.handleSubmit}>
                 <div className="inputs">
                     <div className="wrapper"><input type="text" name='username' placeholder='Username' onChange={formik.handleChange} value={formik.values.username}/>{formik.errors.username ? <div className='error'>{formik.errors.username}</div> : null}</div>
-                    
-                    <div className="wrapper"><input type="text" name='email' placeholder='Email Address' onChange={formik.handleChange} value={formik.values.email}/>{formik.errors.email ? <div className='error'>{formik.errors.email}</div> : null}</div>
-                    <div className="wrapper"><input type="text" name='password' placeholder='Password' onChange={formik.handleChange} value={formik.values.password}/>{formik.errors.password ? <div className='error'>{formik.errors.password}</div> : null}</div>
-                    <div className="wrapper"><input type="text" name='confirmPassword' placeholder='Confirm Password' onChange={formik.handleChange} value={formik.values.confirmPassword}/>{formik.errors.confirmPassword ? <div className='error'>{formik.errors.confirmPassword}</div> : null}</div>
+                    <div className="wrapper"><input type='text' name='email' placeholder='Email Address' onChange={formik.handleChange} value={formik.values.email}/>{formik.errors.email ? <div className='error'>{formik.errors.email}</div> : null}</div>
+                    <div className="wrapper"><input type={showPassword?'text':'password'} name='password' placeholder='Password' onChange={formik.handleChange} value={formik.values.password}/>{formik.errors.password ? <div className='error'>{formik.errors.password}</div> : null}</div>
+                    <div className="wrapper"><input type={showPassword?'text':'password'} name='confirmPassword' placeholder='Confirm Password' onChange={formik.handleChange} value={formik.values.confirmPassword}/>{formik.errors.confirmPassword ? <div className='error'>{formik.errors.confirmPassword}</div> : null}</div>
                 </div>
+                <label htmlFor="showPassword"><input type="checkbox" id="showPassword" onChange={()=>setShowPassword(state => !state)}/>Show Password</label>
                 <button type='submit' disabled={formik.isSubmitting}>{formik.isSubmitting ? 'Creating...' : 'Create account'}</button>
             </form>
             <span className='haveAccount'>Already have an account? <Link to='/login'>Log in</Link></span>

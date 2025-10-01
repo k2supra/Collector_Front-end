@@ -19,6 +19,9 @@ const avatar11 = process.env.PUBLIC_URL + '/images/avatar11.png'
 // import avatar6 from '../../../../../assets/images/avatar6.png'
 // import avatar7 from '../../../../../assets/images/avatar7.png'
 
+const API_URL = process.env.REACT_APP_API_URL;
+const PORT = process.env.REACT_APP_PORT;
+
 const avatars = [avatar1, avatar2, avatar3, avatar4, avatar5, avatar6, avatar7, avatar8, avatar9, avatar10, avatar11];
 
 function EditProfileMW({close, userData, onUpdatedUser}) {
@@ -44,7 +47,7 @@ function EditProfileMW({close, userData, onUpdatedUser}) {
             }
     
             try {                
-                const res = await fetch(`http://192.168.1.16:5000/artist-page/${userData?._id}/update`,
+                const res = await fetch(`${API_URL}:${PORT}/artist-page/${userData?._id}/update`,
                     {
                         method: 'POST',
                         headers:{'Content-Type':'application/json'},

@@ -122,6 +122,7 @@
     width: 315px;
     height: 402px;
     justify-content: center;
+    order: -1;
 }
 
 .artistPage .NFTCardSection .frames .NFTCard.addNewCard .symbol

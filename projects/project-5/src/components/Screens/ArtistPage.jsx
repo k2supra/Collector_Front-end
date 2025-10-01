@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { fetchFullUser } from '../RTK/fetchFullUser'
 
-function ArtistPage(params) {
+function ArtistPage() {
     const dispatch = useDispatch()
     const {currentUser, fullUser, loading, error} = useSelector(state => state.user)
     const location = useLocation();

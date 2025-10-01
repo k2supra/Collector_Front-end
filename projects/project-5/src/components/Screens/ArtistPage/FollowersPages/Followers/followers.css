@@ -1,0 +1,55 @@
+@import url(../../../../mainStyles/colors.css);
+@import url(../../../../mainStyles/fonts.css);
+
+.followersPage .followers
+{
+    padding: 30px;
+    color: white;
+    font-family: 'WorkSans';
+}
+
+.followersPage .followers ul
+{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+}
+
+.followersPage .followers ul li.follower
+{
+    background-color: var(--secondary-background);
+    width: 100%;
+    padding: 12px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.followersPage .followers ul li.follower img.avatar
+{
+    height: 100%;
+    aspect-ratio: 1;
+}
+
+.followersPage .followers ul li.follower .artistUsernameAndID
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: start;
+    height: 100%;
+}
+
+.followersPage .followers ul li.follower .artistUsernameAndID .username
+{
+    font-size: 20px;
+}
+.followersPage .followers ul li.follower .artistUsernameAndID .id
+{
+    font-size: 12px;
+    color: var(--captionAndLabelText);
+}

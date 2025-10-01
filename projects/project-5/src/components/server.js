@@ -6,8 +6,10 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-const password = encodeURIComponent(process.env.MONGODB_PASSWORD)
-const gmail = encodeURIComponent(process.env.MONGODB_GMAIL)
+const password = encodeURIComponent(process.env.MONGODB_PASSWORD);
+const gmail = encodeURIComponent(process.env.MONGODB_GMAIL);
+const API_URL = process.env.REACT_APP_API_URL;
+const PORT = process.env.REACT_APP_PORT;
 // const cloudinary = require('./cloudinary.js')
 // const upload = multer({dest: 'uploads/'})
 
@@ -200,4 +202,4 @@ app.post('/artist-page/:id/unfollow/:id2', async (req, res) => {
     }
   })
 
-app.listen(5000, '0.0.0.0', () => console.log("Server running on http://192.168.1.16:5000"))
+app.listen(PORT, '0.0.0.0', () => console.log(`Server running on ${API_URL}:${PORT}`))

@@ -15,6 +15,8 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { logout, updateUser } from '../../../RTK/userSlice'
 import EditProfileMW from './EditProfileMW/EditProfileMW'
 
+const API_URL = process.env.REACT_APP_API_URL;
+const PORT = process.env.REACT_APP_PORT;
 
 function ArtistInfo({userData, loading, error}) {
     const dispatch = useDispatch()
@@ -46,7 +48,7 @@ function ArtistInfo({userData, loading, error}) {
     const handleFollow = async () =>
     {
         try {
-            const res = await fetch(`http://192.168.1.16:5000/artist-page/${userData?._id}/followedBy/${currentUser?._id}`,
+            const res = await fetch(`${API_URL}:${PORT}/artist-page/${userData?._id}/followedBy/${currentUser?._id}`,
                 {
                     method: 'POST',
                     headers:{'Content-Type':'application/json'},
@@ -62,7 +64,7 @@ function ArtistInfo({userData, loading, error}) {
     const handleUnfollow = async () =>
     {
         try {
-            const res = await fetch(`http://192.168.1.16:5000/artist-page/${userData?._id}/unfollow/${currentUser?._id}`,
+            const res = await fetch(`${API_URL}:${PORT}/artist-page/${userData?._id}/unfollow/${currentUser?._id}`,
                 {
                     method: 'POST',
                     headers:{'Content-Type':'application/json'},
@@ -122,7 +124,10 @@ function ArtistInfo({userData, loading, error}) {
             alert("Не вдалося скопіювати ❌");
             }
         }}><img src={copyLogo} alt="id" />{userData._id.length>10 ? `${userData._id.slice(0, 4)}...${userData._id.slice(-3)}` : userData._id}</button>
-            {!showLogout && <button onClick={isFollowed?handleUnfollow:handleFollow}>{isFollowed ? <span>✓</span> : <img src={plusLogo} alt="Follow" />}{/* Follow */}{followButtonText}</button>}
+            {!showLogout && <button onClick={()=>{
+                if (!currentUser) navigate('/sign-up')
+                isFollowed ? handleUnfollow() : handleFollow();
+            }}>{isFollowed ? <span>✓</span> : <img src={plusLogo} alt="Follow" />}{/* Follow */}{followButtonText}</button>}
         </div>
         <div className="stats">
             <div className="statsItem">
@@ -133,7 +138,7 @@ function ArtistInfo({userData, loading, error}) {
                 <h5>{userData?.stats?.sold || 0}</h5>
                 <span>NFTs Sold</span>
             </div>
-            <div className="statsItem">
+            <div className="statsItem" onClick={()=>navigate(`/artist-page/${userData?._id}/followers`)}>
                 <h5>{userData?.followers.length || 0}</h5>
                 <span>Followers</span>
             </div>

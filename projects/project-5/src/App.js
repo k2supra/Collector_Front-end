@@ -11,7 +11,8 @@ import Marketplace from './components/Screens/Marketplace/Marketplace';
 import TopCreators from './components/Screens/TopCreators';
 import ConnectWallet from './components/Screens/ConnectWallet';
 import LoginAccount from './components/Screens/LoginAccount';
-
+import FollowersPage from './components/Screens/ArtistPage/FollowersPages/FollowersPage';
+import FollowingsPage from './components/Screens/ArtistPage/FollowersPages/FollowingsPage';
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
             <Route path='/connect-wallet' element={<ConnectWallet/>}/>
             <Route path='/sign-up' element={<CreateAccount/>}/>
             <Route path='/login' element={<LoginAccount/>}/>
+            <Route path='/artist-page/:id/followers' element={<FollowersPage/>}/>
+            <Route path='/artist-page/:id/followings' element={<FollowingsPage/>}/>
           </Route>
         </Routes>
       </div>
