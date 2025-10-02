@@ -13,6 +13,7 @@
     display: flex;
     flex-direction: column;
     font-family: 'WorkSans';
+    align-items: center;
     z-index: 1000;
 }
 
@@ -108,4 +109,16 @@
     font-size: 16px;
     font-weight: 600;
     padding: 0 50px;
+}
+
+@media (min-width:1280px)
+{
+    .artistPage .artistInfoSection .editProfileMW .editProfileMWContent
+    {
+        width: 70%;
+    }
+    .artistPage .artistInfoSection .editProfileMW .editProfileMWContent form button
+    {
+        width: 300px;
+    }
 }

@@ -10,6 +10,7 @@ const password = encodeURIComponent(process.env.MONGODB_PASSWORD);
 const gmail = encodeURIComponent(process.env.MONGODB_GMAIL);
 const API_URL = process.env.REACT_APP_API_URL;
 const PORT = process.env.REACT_APP_PORT;
+const MARKETPLACE_ID = process.env.REACT_APP_MARKETPLACE_ID;
 // const cloudinary = require('./cloudinary.js')
 // const upload = multer({dest: 'uploads/'})
 
@@ -24,6 +25,7 @@ const userSchema = new mongoose.Schema(
         email: String,
         password: String,
         bio: String,
+        balance: Number,
         followers: [{_id: String, username: String, avatarUrl: String}],
         followings: [{_id: String, username: String, avatarUrl: String}],
         avatarUrl: {type: String, default: '/images/avatar1.png'},
@@ -34,15 +36,39 @@ const userSchema = new mongoose.Schema(
         },
         nfts:
         {
+          created:{
             type:[
-                {
-                    title: String,
-                    price: String,
-                    highestBid: String,
-                    imageUrl: String,
-                }
+              {
+                  title: String,
+                  price: String,
+                  highestBid: String,
+                  imageUrl: String,
+              }
             ],
             default: []
+          },
+          owned:{
+            type:[
+              {
+                  title: String,
+                  price: String,
+                  highestBid: String,
+                  imageUrl: String,
+              }
+            ],
+            default: []
+          },
+          collections:{
+            type:[
+              {
+                  title: String,
+                  price: String,
+                  highestBid: String,
+                  imageUrl: String,
+              }
+            ],
+            default: []
+          },
         }
     }
 )
@@ -53,10 +79,16 @@ async function fixUsers() {
     try {
         const result = await User.updateMany(
             {},
-            { $set: 
-                { 
-                    followings: []
-                } }
+            {
+              $set: {
+                nfts:
+                {
+                  created:[],
+                  owned: [],
+                  collections: []
+                }
+              },
+            }
         );
         console.log("Updated users:", result.modifiedCount);
     } catch (err) {
@@ -114,7 +146,7 @@ app.post('/artist-page/:id/nfts', async (req, res) => {
       const { title, price, highestBid, imageUrl } = req.body
       const newNFT = { title, price, highestBid, imageUrl }
   
-      user.nfts.push(newNFT)
+      user.nfts.created.push(newNFT)
       await user.save()
   
       res.json(newNFT)
@@ -177,29 +209,60 @@ app.post('/artist-page/:id/followedBy/:id2', async (req, res) => {
 })
 
 app.post('/artist-page/:id/unfollow/:id2', async (req, res) => {
-    try {
-      const userToUnfollow = await User.findById(req.params.id)
-      const followerUser = await User.findById(req.params.id2)
-  
-      if (!userToUnfollow || !followerUser) {
-        return res.status(404).json({ error: 'User not found' })
-      }
-  
-      userToUnfollow.followers = userToUnfollow.followers.filter(
-        f => f._id.toString() !== followerUser._id.toString()
-      )
-  
-      followerUser.followings = followerUser.followings.filter(
-        f => f._id.toString() !== userToUnfollow._id.toString()
-      )
-  
-      await userToUnfollow.save()
-      await followerUser.save()
-  
-      res.json({ message: 'Unfollowed successfully' })
-    } catch (err) {
-      res.status(500).json({ error: err.message })
+  try {
+    const userToUnfollow = await User.findById(req.params.id)
+    const followerUser = await User.findById(req.params.id2)
+
+    if (!userToUnfollow || !followerUser) {
+      return res.status(404).json({ error: 'User not found' })
     }
-  })
+
+    userToUnfollow.followers = userToUnfollow.followers.filter(
+      f => f._id.toString() !== followerUser._id.toString()
+    )
+
+    followerUser.followings = followerUser.followings.filter(
+      f => f._id.toString() !== userToUnfollow._id.toString()
+    )
+
+    await userToUnfollow.save()
+    await followerUser.save()
+
+    res.json({ message: 'Unfollowed successfully' })
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+app.get('/find-user-by-id/:id', async (req, res)=>
+{
+    try {
+        const user = await User.findById(req.params.id).select('username _id avatarUrl');
+        if(!user) return res.status(404).json({error: 'User not found'});
+        res.json(user);
+    } catch (err) {
+        res.status(500).json({error: err.message})
+    }
+})
+app.get('/fetch-balance/:id', async (req, res)=>
+{
+    try {
+        const user = await User.findById(req.params.id).select('balance');
+        if(!user) return res.status(404).json({error: 'User not found'});
+        res.json(user);
+    } catch (err) {
+        res.status(500).json({error: err.message})
+    }
+})
+app.get('/fetch-marketplace-for-sale', async (req, res)=>
+{
+    try {
+        const user = await User.findById(MARKETPLACE_ID).select('nfts.created avatarUrl username');
+        if(!user) return res.status(404).json({error: 'User not found'});
+        res.json(user);
+    } catch (err) {
+        res.status(500).json({error: err.message})
+    }
+})
 
 app.listen(PORT, '0.0.0.0', () => console.log(`Server running on ${API_URL}:${PORT}`))

@@ -11,9 +11,11 @@
 
 .artistPage .NFTCardSection .frames
 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 315px);
+    justify-content: space-evenly;
+    /* flex-direction: column;
+    align-items: center; */
     gap: 20px;
 }
 
@@ -25,11 +27,14 @@
     border-radius: 20px;
     background-color: var(--background);
     overflow: hidden;
+    width: 100%;
 }
 
 .artistPage .NFTCardSection .frames .NFTCard img.NFTImage
 {
     height: 238px;
+    width: 100%;
+    object-fit: cover;
 }
 
 .artistPage .NFTCardSection .frames .NFTCard .NFTInfo
@@ -40,6 +45,8 @@
     align-items: center;
     gap: 25px;
     padding: 20px 20px 25px;
+    height: -webkit-fill-available;
+    justify-content: space-between;
 }
 
 .artistPage .NFTCardSection .frames .NFTCard .NFTInfo .artistInfo
@@ -144,16 +151,21 @@
     {
         padding: 80px 72px;
     }
+    
     .artistPage .NFTCardSection .frames
+    {
+        grid-template-columns: repeat(auto-fit, 355px);
+    }
+    /* .artistPage .NFTCardSection .frames
     {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-    }
-    .artistPage .NFTCardSection .frames .NFTCard
+    } */
+    /* .artistPage .NFTCardSection .frames .NFTCard
     {
         width: calc(50% - 20px);
-    }
+    } */
     .artistPage .NFTCardSection .frames .NFTCard.forTabletAndDesktop
     {
         display: flex;
@@ -173,6 +185,10 @@
     }
     .artistPage .NFTCardSection .frames
     {
+        grid-template-columns: repeat(auto-fit, 385px);
+    }
+    /* .artistPage .NFTCardSection .frames
+    {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
@@ -180,5 +196,5 @@
     .artistPage .NFTCardSection .frames .NFTCard
     {
         width: calc(33% - 20px);
-    }
+    } */
 }

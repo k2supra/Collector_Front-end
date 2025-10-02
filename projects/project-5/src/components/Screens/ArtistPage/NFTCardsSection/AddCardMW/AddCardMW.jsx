@@ -4,6 +4,13 @@ import './addCardMW.css'
 import nft1 from '../../../../../assets/images/nft1.png'
 import nft2 from '../../../../../assets/images/nft2.png'
 import nft3 from '../../../../../assets/images/nft3.png'
+import nft4 from '../../../../../assets/images/nft4.png'
+import nft5 from '../../../../../assets/images/nft5.png'
+
+const nfts = [nft1, nft2, nft3, nft4, nft5]
+
+const API_URL = process.env.REACT_APP_API_URL;
+const PORT = process.env.REACT_APP_PORT;
 
 function AddCardMW({close, userId, onNFTAdded}) {
     const [title, setTitle] = useState('');
@@ -18,6 +25,8 @@ function AddCardMW({close, userId, onNFTAdded}) {
         {
             e.preventDefault();
             if(!selectedImage) {alert('Select an image'); return}
+            if(!title) {alert('Enter a title'); return}
+            if(!price) {alert('Enter a price'); return}
     
             const newNFT = 
             {
@@ -28,7 +37,7 @@ function AddCardMW({close, userId, onNFTAdded}) {
             }
     
             try {                
-                const res = await fetch(`http://192.168.1.16:5000/artist-page/${userId}/nfts`,
+                const res = await fetch(`${API_URL}:${PORT}/artist-page/${userId}/nfts`,
                     {
                         method: 'POST',
                         headers:{'Content-Type':'application/json'},
@@ -53,7 +62,7 @@ function AddCardMW({close, userId, onNFTAdded}) {
         <div className="addCardMWContent">
             <button onClick={close} className='close'>⨉</button>
             <div className="images">
-                {[nft1, nft2, nft3].map((img, i)=>
+                {nfts.map((img, i)=>
                 <img
                 key={i} 
                 src={img} 

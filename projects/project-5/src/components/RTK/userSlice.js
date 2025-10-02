@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { fetchFullUser } from './fetchFullUser';
+import { fetchBalance } from './fetchBalance'
+import { fetchMarketplaceForSale } from './fetchMarketplaceForSale';
 
 export const userSlice = createSlice(
     {
@@ -8,6 +10,8 @@ export const userSlice = createSlice(
         {
             currentUser: JSON.parse(localStorage.getItem('NFTuser')) || null,
             fullUser: null,
+            balance: 0,
+            marketplace: null,
             loading: false,
             error: null,
         },
@@ -26,13 +30,17 @@ export const userSlice = createSlice(
             },
             updateNFTS: (state, action)=>
             {
-                state.fullUser.nfts.push(action.payload)
+                state.fullUser.nfts.created.push(action.payload)
             },
             updateUser:(state, action)=>
             {
                 state.fullUser.username = action.payload.username
                 state.fullUser.bio = action.payload.bio
                 state.fullUser.avatarUrl = action.payload.avatarUrl
+            },
+            setBalance:(state, action)=>
+            {
+                state.balance = action.payload.balance
             },
         },
         extraReducers:(builder)=>
@@ -53,9 +61,37 @@ export const userSlice = createSlice(
                 state.fullUser = action.payload;
                 state.loading = false;
             })
+            .addCase(fetchBalance.pending, (state)=>
+            {
+                state.error = null;
+                state.loading = true;
+            })
+            .addCase(fetchBalance.rejected, (state, action)=>
+            {
+                state.error = action.payload?.error || action.error.message;
+                state.loading = false;
+            })
+            .addCase(fetchBalance.fulfilled, (state, action)=>
+            {
+                state.balance = action.payload;
+            })
+            .addCase(fetchMarketplaceForSale.pending, (state)=>
+            {
+                state.error = null;
+                state.loading = true;
+            })
+            .addCase(fetchMarketplaceForSale.rejected, (state, action)=>
+            {
+                state.error = action.payload?.error || action.error.message;
+                state.loading = false;
+            })
+            .addCase(fetchMarketplaceForSale.fulfilled, (state, action)=>
+            {
+                state.marketplace = action.payload;
+            })
         }
     }
 )
 
-export const {setUser, logout, updateNFTS, updateUser} = userSlice.actions;
+export const {setUser, logout, updateNFTS, updateUser, setBalance} = userSlice.actions;
 export default userSlice.reducer

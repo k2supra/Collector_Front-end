@@ -7,9 +7,30 @@ import nft3 from '../../../../assets/images/nft3.png'
 import avatar from '../../../../assets/images/avatar.png'
 import avatar2 from '../../../../assets/images/avatar2.png'
 import avatar3 from '../../../../assets/images/avatar3.png'
+import { useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { fetchMarketplaceForSale } from '../../../RTK/fetchMarketplaceForSale'
 
 
 function MarketplaceSection() {
+    const { marketplace } = useSelector(state => state.user)
+
+    const dispatch = useDispatch()
+
+    useEffect(()=>
+    {
+        dispatch(fetchMarketplaceForSale())
+    }, [dispatch])
+    
+    useEffect(()=>
+    {
+        console.log(marketplace);
+        
+    }, [marketplace])
+
+    if(!marketplace) return <p>Loading...</p>
+
     return <div className="marketplaceSection">
         <div className="tabs">
             <input type="radio" id="nft" name="tabs" defaultChecked hidden />
@@ -18,7 +39,31 @@ function MarketplaceSection() {
             <label htmlFor="collections" className="tab">Collections</label>
         </div>
         <div className="cardsSection">
-            <div className="NFTCard">
+            {marketplace.nfts.created.map((nft,index)=>
+            <div className="NFTCard" key={index}>
+                <img src={nft?.imageUrl} alt="NFT" className='NFTImage'/>
+                <div className="NFTInfo">
+                    <div className="artistInfo">
+                        <h5 className='NFTName'>{nft?.title}</h5>
+                        <div className="artist">
+                            <img src={marketplace?.avatarUrl} alt="avatar" />
+                            <span className="name">{marketplace.username}</span>
+                        </div>
+                    </div>
+                    <div className="additionalInfo">
+                        <div className="price">
+                            <span>Price</span>
+                            <span className='priceValue'>{nft?.price} ETH</span>
+                        </div>
+                        <div className="highestBid">
+                            <span>Highest Bid</span>
+                            <span className='highestBidValue'>{nft?.highestBid} wETH</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            )}
+            {/* <div className="NFTCard">
                 <img src={nft1} alt="NFT" className='NFTImage'/>
                 <div className="NFTInfo">
                     <div className="artistInfo">
@@ -83,7 +128,7 @@ function MarketplaceSection() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     </div>
 }

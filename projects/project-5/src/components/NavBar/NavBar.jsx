@@ -21,7 +21,7 @@ function NavBar() {
             <Link to='/marketplace'><span>Marketplace</span></Link>
             <Link to='/rankings'><span>Rankings</span></Link>
             <Link to='/connect-wallet'><span>Connect a wallet</span></Link>
-            {!currentUser ? <Link to='/sign-up'><button><img src={userLogo} alt="Sign up" />Sign Up</button></Link>:<Link to={`/artist-page/${currentUser._id}`}><button className='toProfile'>{currentUser.username.slice(0, 10)}</button></Link>}
+            {!currentUser ? <Link to='/sign-up'><button><img src={userLogo} alt="Sign up" />Sign Up</button></Link>:<Link to={`/artist-page/${currentUser._id}`}><button className='toProfile'>{currentUser.username.length > 7 ? currentUser.username.slice(0, 7)+'...' : currentUser.username}</button></Link>}
             
         </div>
 

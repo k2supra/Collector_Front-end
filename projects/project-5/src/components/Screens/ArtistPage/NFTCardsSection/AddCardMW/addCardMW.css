@@ -40,15 +40,16 @@
 }
 .artistPage .addCardMW .addCardMWContent .images
 {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 70px);
     justify-content: space-evenly;
+    gap: 20px;
     width: 100%;
 }
 
 .artistPage .addCardMW .addCardMWContent .images img
 {
-    width: calc(30% - 15px);
+    width: 100%;
     aspect-ratio: 1;
     border-radius: 12px;
     object-fit: cover;
@@ -92,4 +93,23 @@
     font-size: 16px;
     font-weight: 600;
     padding: 0 50px;
+}
+
+@media (min-width:750px)
+{
+    .artistPage .addCardMW .addCardMWContent .images
+    {
+        grid-template-columns: repeat(auto-fit, 100px);
+    }
+}
+@media (min-width:1280px)
+{
+    .artistPage .addCardMW .addCardMWContent .images
+    {
+        grid-template-columns: repeat(auto-fit, 150px);
+    }
+    .artistPage .addCardMW .addCardMWContent form button
+    {
+        width: 300px;
+    }
 }

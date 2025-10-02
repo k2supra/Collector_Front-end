@@ -17,8 +17,8 @@ function NFTCardsSection({userData}) {
     const currentUser = useSelector(state=>state.user.currentUser)
     
     let nftsData;
-    if (userData?.nfts && userData?.nfts.length > 0) {
-        nftsData = userData?.nfts;
+    if (userData?.nfts.created && userData?.nfts.created.length > 0) {
+        nftsData = userData?.nfts.created;
     }
 
     return <div className="NFTCardSection">
@@ -30,7 +30,7 @@ function NFTCardsSection({userData}) {
                     <div className="artistInfo">
                         <h5 className='NFTName'>{nft.title}</h5>
                         <div className="artist">
-                            <img src={avatar} alt="avatar" />
+                            <img src={userData?.avatarUrl} alt="avatar" />
                             <span className="name">{userData?.username}</span>
                         </div>
                     </div>

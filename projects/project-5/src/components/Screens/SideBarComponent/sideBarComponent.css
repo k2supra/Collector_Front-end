@@ -50,3 +50,12 @@
     border-bottom: 2px solid var(--captionAndLabelText);
     align-content: end;
 }
+
+.sideBar .sideBarComponent span.balance
+{
+    height: 40px;
+    text-align: end;
+    font-size: 18px;
+    line-height: 140%;
+    align-content: end;
+}
