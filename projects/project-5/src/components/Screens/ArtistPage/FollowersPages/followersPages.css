@@ -1,0 +1,17 @@
+@import url(../../../mainStyles/colors.css);
+@import url(../../../mainStyles/fonts.css);
+
+.followingsPage button.shopFollowersOrFollowings, .followersPage button.shopFollowersOrFollowings
+{
+    font-family: 'WorkSans';
+    background-color: transparent;
+    border: 2px solid var(--callToAction);
+    color: white;
+    height: 46px;
+    width: fit-content;
+    line-height: 140%;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 30px;
+    border-radius: 20px;
+}

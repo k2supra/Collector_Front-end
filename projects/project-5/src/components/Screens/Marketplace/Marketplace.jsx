@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Heading from "./Heading/Heading";
 import MarketplaceSection from "./MarketplaceSection/MarketplaceSection";
 

@@ -52,7 +52,6 @@ function NFTMW({nftData, close, marketplace}) {
                                 method: 'POST',
                                 headers: {'Content-Type': 'application/json'},
                             })
-                            // const data = await res.json().catch(() => ({}));
                             console.log("got response:", res.status);
 
                             if (res.ok) {
@@ -60,7 +59,7 @@ function NFTMW({nftData, close, marketplace}) {
                             }
                             else
                             {
-                                alert('Something went wrong: '/*  + (data?.message || res.status) */);
+                                alert('Something went wrong: ');
                             }
                         } catch (err) {
                             console.error(err);                            

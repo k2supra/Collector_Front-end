@@ -44,14 +44,10 @@
 .marketplace .marketplaceSection .cardsSection
 {
     padding: 40px 30px;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
     display: grid;
     grid-template-columns: repeat(auto-fit, 315px);
     justify-content: space-evenly;
     gap: 30px;
-    /* justify-content: space-between; */
 }
 
 .marketplace .marketplaceSection .cardsSection .NFTCard
@@ -157,14 +153,8 @@
 {
     .marketplace .marketplaceSection .cardsSection
     {
-        /* flex-direction: row;
-        flex-wrap: wrap; */
         grid-template-columns: repeat(auto-fit, 355px);
         padding: 60px 77px;
-    }
-    .marketplace .marketplaceSection .cardsSection .NFTCard
-    {
-        /* width: calc(50% - 30px); */
     }
 }
 @media (min-width: 1280px)
@@ -177,9 +167,5 @@
     .marketplace .marketplaceSection .tabs .tab
     {
         font-size: 22px;
-    }
-    .marketplace .marketplaceSection .cardsSection .NFTCard
-    {
-        /* width: calc(33% - 30px); */
     }
 }

@@ -9,7 +9,7 @@
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.3);
-    padding: 80px 30px 40px;
+    padding: 80px 30px 80px;
     display: flex;
     flex-direction: column;
     font-family: 'WorkSans';
@@ -43,13 +43,44 @@
     margin-left: auto;
 }
 
+.artistPage .artistInfoSection .editProfileMW .editProfileMWContent label
+{
+    text-align: start;
+    color: var(--captionAndLabelText);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
 .artistPage .artistInfoSection .editProfileMW .editProfileMWContent form
 {
     width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
+    gap: 40px;
+}
+
+.artistPage .artistInfoSection .editProfileMW .editProfileMWContent .bannerCollection
+{
+    grid-template-columns: repeat(auto-fit, 250px);
+    display: grid;
+    justify-content: space-evenly;
     gap: 20px;
+    width: 100%;
+}
+.artistPage .artistInfoSection .editProfileMW .editProfileMWContent .bannerCollection img.banner
+{
+    width: 100%;
+    height: 60px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
+    &.selected
+    {
+        border: 2px solid var(--callToAction);
+    }
 }
 
 .artistPage .artistInfoSection .editProfileMW .editProfileMWContent .avatarCollection
@@ -60,6 +91,7 @@
     gap: 20px;
     width: 100%;
 }
+
 
 .artistPage .artistInfoSection .editProfileMW .editProfileMWContent .avatarCollection img.avatar
 {
@@ -111,14 +143,41 @@
     padding: 0 50px;
 }
 
+@media (min-width:750px)
+{
+    .artistPage .artistInfoSection .editProfileMW .editProfileMWContent
+    {
+        width: 80%;
+        padding: 30px;
+    }
+    .artistPage .artistInfoSection .editProfileMW .editProfileMWContent .bannerCollection
+    {
+        grid-template-columns: repeat(auto-fit, 300px);
+    }
+    .artistPage .artistInfoSection .editProfileMW .editProfileMWContent .bannerCollection img.banner
+    {
+        width: 100%;
+        height: 80px;
+    }
+}
 @media (min-width:1280px)
 {
     .artistPage .artistInfoSection .editProfileMW .editProfileMWContent
     {
         width: 70%;
+        padding: 45px;
     }
     .artistPage .artistInfoSection .editProfileMW .editProfileMWContent form button
     {
         width: 300px;
+    }
+    .artistPage .artistInfoSection .editProfileMW .editProfileMWContent .bannerCollection
+    {
+        grid-template-columns: repeat(auto-fit, 350px);
+    }
+    .artistPage .artistInfoSection .editProfileMW .editProfileMWContent .bannerCollection img.banner
+    {
+        width: 100%;
+        height: 100px;
     }
 }

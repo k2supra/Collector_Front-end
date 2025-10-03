@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors';
@@ -11,8 +12,6 @@ const gmail = encodeURIComponent(process.env.MONGODB_GMAIL);
 const API_URL = process.env.REACT_APP_API_URL;
 const PORT = process.env.REACT_APP_PORT;
 const MARKETPLACE_ID = process.env.REACT_APP_MARKETPLACE_ID;
-// const cloudinary = require('./cloudinary.js')
-// const upload = multer({dest: 'uploads/'})
 
 const app = express()
 app.use(cors())
@@ -29,6 +28,7 @@ const userSchema = new mongoose.Schema(
         followers: [{_id: String, username: String, avatarUrl: String}],
         followings: [{_id: String, username: String, avatarUrl: String}],
         avatarUrl: {type: String, default: '/images/avatar1.png'},
+        bannerUrl: {type: String, default: '/images/banner1.png'},
         stats:
         {
             volume: Number,
@@ -81,12 +81,7 @@ async function fixUsers() {
             {},
             {
               $set: {
-                nfts:
-                {
-                  created:[],
-                  owned: [],
-                  collections: []
-                }
+                bannerUrl: '/images/banner1.png',
               },
             }
         );
@@ -157,15 +152,16 @@ app.post('/artist-page/:id/nfts', async (req, res) => {
 
 app.post('/artist-page/:id/update', async (req, res) => {
     try {
-      const user = await User.findById(req.params.id)
+      const user = await User.findById(req.params.id).select('-password')
       if (!user) return res.status(404).json({ error: 'User not found' })
   
-      const { username, bio, avatarUrl } = req.body
-      const updatedUser = { username, bio, avatarUrl }
+      const { username, bio, avatarUrl, bannerUrl } = req.body
+      const updatedUser = { username, bio, avatarUrl, bannerUrl }
 
       user.username = username;
       user.bio = bio;
       user.avatarUrl = avatarUrl;
+      user.bannerUrl = bannerUrl;
 
       await user.save()
   

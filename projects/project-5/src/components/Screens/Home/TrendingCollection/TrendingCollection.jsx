@@ -57,13 +57,6 @@ function TrendingCollection() {
                     </div>
                 </div>
             </div>
-            {/* <div className="collectionInfo forTablet">
-                <h5 className="collectionName">DSGN Animals</h5>
-                <div className="artistCard">
-                    <img src={avatar} alt="avatar" className='avatar'/>
-                    <span>MrFox</span>
-                </div>
-            </div> */}
         </div>
     </div>
 }

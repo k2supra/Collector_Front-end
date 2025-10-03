@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import './heading.css'
 
 import searchIcon from '../../../../assets/images/searchIcon.png'

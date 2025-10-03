@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import './artistInfo.css'
 
 import copyLogo from '../../../../assets/images/copyLogo.png'
@@ -8,10 +9,9 @@ import youtubeLogo from '../../../../assets/images/youtubeLogo.png'
 import twitterLogo from '../../../../assets/images/twitterLogo.png'
 import instagramLogo from '../../../../assets/images/instagramLogo.png'
 
-import { fetchFullUser } from '../../../RTK/fetchFullUser'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
-import { useLocation, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { logout, updateUser } from '../../../RTK/userSlice'
 import EditProfileMW from './EditProfileMW/EditProfileMW'
 
@@ -20,10 +20,7 @@ const PORT = process.env.REACT_APP_PORT;
 
 function ArtistInfo({userData, loading, error}) {
     const dispatch = useDispatch()
-    // const {_id} = useSelector(state => state.user.currentUser)
     const {currentUser} = useSelector(state => state.user)
-    // const location = useLocation();
-    // const { id } = useParams()
     const [showLogout, setShowLogout] = useState(false);
     const navigate = useNavigate()
     const [showEditProfileMW, setShowEditProfileMW] = useState(false);
@@ -77,20 +74,6 @@ function ArtistInfo({userData, loading, error}) {
             console.error(err);
         }
     }
-    
-    // const mockUser = location.state?.user;
-
-    // console.log('CurrentUser',currentUser, '\nFullUser',fullUser, '\nMockUser', mockUser);
-
-    // useEffect(()=>
-    // {
-    //     if (!mockUser && id) {
-    //         setShowLogout(true)
-    //         dispatch(fetchFullUser(id));
-    //     }
-    // },[dispatch, id, mockUser])
-
-    // const userData = mockUser || fullUser
 
     if (loading) return <div>Loading...</div>
     if (error) return <div style={{color: 'red'}}>{error}</div>
@@ -127,7 +110,7 @@ function ArtistInfo({userData, loading, error}) {
             {!showLogout && <button onClick={()=>{
                 if (!currentUser) navigate('/sign-up')
                 isFollowed ? handleUnfollow() : handleFollow();
-            }}>{isFollowed ? <span>✓</span> : <img src={plusLogo} alt="Follow" />}{/* Follow */}{followButtonText}</button>}
+            }}>{isFollowed ? <span>✓</span> : <img src={plusLogo} alt="Follow" />}{followButtonText}</button>}
         </div>
         <div className="stats">
             <div className="statsItem">
@@ -170,8 +153,6 @@ function ArtistInfo({userData, loading, error}) {
             setShowEditProfileMW(false);
         }
         }/>}
-        {/* {showLogout && <button className='logout' onClick={()=>{dispatch(logout()); navigate('/'); setShowLogout(false)}}>Log out</button>}
-        {showLogout && <button className='edit' onClick={()=>{}}>Edit</button>} */}
     </div>
 }
 

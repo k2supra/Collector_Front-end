@@ -12,20 +12,19 @@ const avatar8 = process.env.PUBLIC_URL + '/images/avatar8.png'
 const avatar9 = process.env.PUBLIC_URL + '/images/avatar9.png'
 const avatar10 = process.env.PUBLIC_URL + '/images/avatar10.png'
 const avatar11 = process.env.PUBLIC_URL + '/images/avatar11.png'
-// import avatar2 from '../../../../../assets/images/avatar2.png'
-// import avatar3 from '../../../../../assets/images/avatar3.png'
-// import avatar4 from '../../../../../assets/images/avatar4.png'
-// import avatar5 from '../../../../../assets/images/avatar5.png'
-// import avatar6 from '../../../../../assets/images/avatar6.png'
-// import avatar7 from '../../../../../assets/images/avatar7.png'
+
+const banner1 = process.env.PUBLIC_URL + '/images/banner1.png'
+const banner2 = process.env.PUBLIC_URL + '/images/banner2.png'
 
 const API_URL = process.env.REACT_APP_API_URL;
 const PORT = process.env.REACT_APP_PORT;
 
 const avatars = [avatar1, avatar2, avatar3, avatar4, avatar5, avatar6, avatar7, avatar8, avatar9, avatar10, avatar11];
+const banners = [banner1, banner2]
 
 function EditProfileMW({close, userData, onUpdatedUser}) {
     const [selectedImage, setSelectedImage] = useState(avatars.find(i=>i===userData?.avatarUrl))
+    const [selectedBanner, setSelectedBanner] = useState(avatars.find(i=>i===userData?.bannerUrl))
     const [username, setUsername]=useState(userData?.username)
     const [bio, setBio]=useState(userData?.bio);
     useEffect(()=>
@@ -43,7 +42,8 @@ function EditProfileMW({close, userData, onUpdatedUser}) {
             {
                 username,
                 bio,
-                avatarUrl: selectedImage
+                avatarUrl: selectedImage,
+                bannerUrl: selectedBanner,
             }
     
             try {                
@@ -72,28 +72,42 @@ function EditProfileMW({close, userData, onUpdatedUser}) {
         <div className="editProfileMWContent">
             <button className="close" onClick={close}>⨉</button>
             <form onSubmit={handleSubmit}>
-                <div className="avatarCollection">
-                    {avatars.map((item, index)=>
-                    { return <img 
-                    src={item} 
-                    alt='avatar' 
-                    key={index} 
-                    className={`avatar ${item === selectedImage ? 'selected' : ''}`}
-                    onClick={()=>setSelectedImage(item)}/>})}
-                </div>
-                {console.log('************', avatar1 === userData?.avatarUrl)
-                }
-                {/* process.env.PUBLIC_URL + '/images/avatar.png' === userData?.avatarUrl */}
-                {/* <img src={process.env.PUBLIC_URL + '/images/avatar2.png'}/> */}
-                <input 
-                type="text" 
-                value={username} 
-                onChange={(e)=>setUsername(e.target.value)}
-                placeholder='Username'/>
-                <textarea
-                value={bio}
-                onChange={(e)=>setBio(e.target.value)}
-                placeholder='Bio'></textarea>
+                <label>
+                    Banner
+                    <div className="bannerCollection">
+                        {banners.map((b, index)=>
+                        <img src={b} 
+                        alt="banner" 
+                        className={`banner ${b === selectedBanner ? 'selected' : ''}`} 
+                        onClick={()=>setSelectedBanner(b)}
+                        key={index}/>
+                        )}
+                    </div>
+                </label>
+                <label>Avatar
+                    <div className="avatarCollection">
+                        {avatars.map((item, index)=>
+                        { return <img 
+                        src={item} 
+                        alt='avatar' 
+                        key={index} 
+                        className={`avatar ${item === selectedImage ? 'selected' : ''}`}
+                        onClick={()=>setSelectedImage(item)}/>})}
+                    </div>
+                </label>
+                <label>Username
+                    <input 
+                    type="text" 
+                    value={username} 
+                    onChange={(e)=>setUsername(e.target.value)}
+                    placeholder='Username'/>
+                </label>
+                <label>Bio
+                    <textarea
+                    value={bio}
+                    onChange={(e)=>setBio(e.target.value)}
+                    placeholder='Bio'></textarea>
+                </label>
                 <button>Update</button>
             </form>
         </div>
