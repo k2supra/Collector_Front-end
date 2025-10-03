@@ -73,6 +73,10 @@
     flex-direction: column;
     align-items: flex-start;
     width: -webkit-fill-available;
+    &:nth-of-type(3)
+    {
+        cursor: pointer;
+    }
 }
 
 .artistPage .artistInfoSection .stats .statsItem h5

@@ -24,7 +24,7 @@ const banners = [banner1, banner2]
 
 function EditProfileMW({close, userData, onUpdatedUser}) {
     const [selectedImage, setSelectedImage] = useState(avatars.find(i=>i===userData?.avatarUrl))
-    const [selectedBanner, setSelectedBanner] = useState(avatars.find(i=>i===userData?.bannerUrl))
+    const [selectedBanner, setSelectedBanner] = useState(banners.find(i=>i===userData?.bannerUrl))
     const [username, setUsername]=useState(userData?.username)
     const [bio, setBio]=useState(userData?.bio);
     useEffect(()=>

@@ -83,34 +83,35 @@ function ArtistInfo({userData, loading, error}) {
         <h4 className="artistName">{userData.username}</h4>
         <div className="buttons">
             <button onClick={async () => {
-            const text = userData?._id || "";
+                const text = userData?._id || "";
 
-            try {
-            if (navigator.clipboard && window.isSecureContext) {
-                // Сучасний метод (працює в більшості браузерів, Android Chrome, нові Safari)
-                await navigator.clipboard.writeText(text);
-            } else {
-                // Fallback для старих/мобільних браузерів
-                const textarea = document.createElement("textarea");
-                textarea.value = text;
-                textarea.style.position = "fixed"; // щоб не прокручувало
-                textarea.style.opacity = 0;
-                document.body.appendChild(textarea);
-                textarea.focus();
-                textarea.select();
+                try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    // Сучасний метод (працює в більшості браузерів, Android Chrome, нові Safari)
+                    await navigator.clipboard.writeText(text);
+                } else {
+                    // Fallback для старих/мобільних браузерів
+                    const textarea = document.createElement("textarea");
+                    textarea.value = text;
+                    textarea.style.position = "fixed"; // щоб не прокручувало
+                    textarea.style.opacity = 0;
+                    document.body.appendChild(textarea);
+                    textarea.focus();
+                    textarea.select();
 
-                document.execCommand("copy");
-                document.body.removeChild(textarea);
-            }
-            } catch (err) {
-            console.error("Помилка копіювання:", err);
-            alert("Не вдалося скопіювати ❌");
-            }
+                    document.execCommand("copy");
+                    document.body.removeChild(textarea);
+                }
+                } catch (err) {
+                console.error("Помилка копіювання:", err);
+                alert("Не вдалося скопіювати ❌");
+                }
         }}><img src={copyLogo} alt="id" />{userData._id.length>10 ? `${userData._id.slice(0, 4)}...${userData._id.slice(-3)}` : userData._id}</button>
             {!showLogout && <button onClick={()=>{
                 if (!currentUser) navigate('/sign-up')
                 isFollowed ? handleUnfollow() : handleFollow();
-            }}>{isFollowed ? <span>✓</span> : <img src={plusLogo} alt="Follow" />}{followButtonText}</button>}
+            }}>{isFollowed ? <span>✓</span> : <img src={plusLogo} alt="Follow" />}{followButtonText}
+            </button>}
         </div>
         <div className="stats">
             <div className="statsItem">
@@ -121,7 +122,7 @@ function ArtistInfo({userData, loading, error}) {
                 <h5>{userData?.stats?.sold || 0}</h5>
                 <span>NFTs Sold</span>
             </div>
-            <div className="statsItem" onClick={()=>navigate(`/artist-page/${userData?._id}/followers`)}>
+            <div className="statsItem" onClick={()=>{navigate(`/artist-page/${userData?._id}/followers`);}}>
                 <h5>{userData?.followers.length || 0}</h5>
                 <span>Followers</span>
             </div>

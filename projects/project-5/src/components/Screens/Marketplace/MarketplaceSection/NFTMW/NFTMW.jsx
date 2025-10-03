@@ -4,6 +4,7 @@ import './nftmw.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchBalance } from '../../../../RTK/fetchBalance';
 import { fetchMarketplaceForSale } from '../../../../RTK/fetchMarketplaceForSale';
+import { useNavigate } from 'react-router-dom';
 
 const API_URL = process.env.REACT_APP_API_URL;
 const PORT = process.env.REACT_APP_PORT;
@@ -11,6 +12,7 @@ const PORT = process.env.REACT_APP_PORT;
 function NFTMW({nftData, close, marketplace}) {
     const dispatch = useDispatch();
     const currentUser = useSelector(state=>state.user.currentUser)
+    const navigate = useNavigate()
     useEffect(()=>
     {
         document.body.style.overflow='hidden';
@@ -20,7 +22,7 @@ function NFTMW({nftData, close, marketplace}) {
         <div className="NFTCard">
                 <img src={nftData?.imageUrl} alt="NFT" className='NFTImage'/>
                 <div className="NFTInfo">
-                    <div className="artistInfo">
+                    <div className="artistInfo" onClick={()=>navigate(`/artist-page/${marketplace?._id}`)}>
                         <h5 className='NFTName'>{nftData?.title}</h5>
                         <div className="artist">
                             <img src={marketplace?.avatarUrl} alt="avatar" />
@@ -43,6 +45,10 @@ function NFTMW({nftData, close, marketplace}) {
             <button onClick={close}>⨉</button>
             <button onClick={async ()=>
                 {
+                    if(!currentUser) 
+                        {
+                            return navigate(`/sign-up`);
+                        }
                     const freshBalance = await dispatch(fetchBalance(currentUser._id)).unwrap();
                     if(+freshBalance >= +nftData.price)
                     {

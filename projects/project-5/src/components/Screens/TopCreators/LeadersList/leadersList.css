@@ -58,6 +58,7 @@
 .topCreators .leadersList ul.list li
 {
     width: 100%;
+    cursor: pointer;
 }
 
 .topCreators .leadersList ul.list li.header

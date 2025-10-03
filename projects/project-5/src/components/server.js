@@ -23,16 +23,16 @@ const userSchema = new mongoose.Schema(
         username: String,
         email: String,
         password: String,
-        bio: String,
-        balance: Number,
+        bio: { type: String, default: '' },
+        balance: { type: Number, default: 999 },
         followers: [{_id: String, username: String, avatarUrl: String}],
         followings: [{_id: String, username: String, avatarUrl: String}],
         avatarUrl: {type: String, default: '/images/avatar1.png'},
         bannerUrl: {type: String, default: '/images/banner1.png'},
         stats:
         {
-            volume: Number,
-            sold: Number,
+            volume: { type: Number, default: 0 },
+            sold: { type: Number, default: 0 },
         },
         nfts:
         {
@@ -81,7 +81,11 @@ async function fixUsers() {
             {},
             {
               $set: {
-                bannerUrl: '/images/banner1.png',
+                stats:
+                {
+                    volume: 0,
+                    sold: 0,
+                },
               },
             }
         );
@@ -92,7 +96,7 @@ async function fixUsers() {
   }
 
 mongoose.connect(`mongodb+srv://${gmail}:${password}@testcluster.8jrno.mongodb.net/NFTApp?retryWrites=true&w=majority&appName=TestCluster`)
-.then(() => {console.log('\x1b[32m%s\x1b[0m', "\n\n\nMongoDB connected\n\n\n"); /* fixUsers() */})
+.then(() => {console.log('\x1b[32m%s\x1b[0m', "\n\n\nMongoDB connected\n\n\n"); /* fixUsers(); */})
 .catch(err => console.error('\x1b[31m%s\x1b[0m', '\n\n\n❌ MongoDB connection error:', err, '\n\n\n'))
 
 app.post('/register', async (req, res) =>
@@ -275,6 +279,7 @@ app.post('/buy/:selledId/:buyerId/:nftId', async (req, res)=>
       seller.balance += +boughtNft.price;
       buyer.balance -= +boughtNft.price;
 
+      seller.stats.volume += +boughtNft.price;
       seller.stats.sold += 1;
 
       await seller.save();

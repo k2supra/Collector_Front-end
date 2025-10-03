@@ -59,6 +59,7 @@
     background-color: var(--background);
     overflow: hidden;
     width: 100%;
+    cursor: pointer;
 }
 
 .marketplace .marketplaceSection .cardsSection .NFTCard img.NFTImage

@@ -6,8 +6,6 @@ import highlightedNFT from '../../../../assets/images/highlightedNFT.png'
 import avatar from '../../../../assets/images/avatar.png'
 import rocketLaunch from '../../../../assets/images/rocketLaunch.png'
 
-import { usersMock } from '../../../mocks/users';
-
 function HeroSection() {
     const navigate = useNavigate()
 
@@ -37,12 +35,10 @@ function HeroSection() {
                     <img src={highlightedNFT} alt="highlightedNFT" className='highlightedNFT' />
                     <div className="highlightedNFTInfo">
                         <h5>Space Walking</h5>
-                        {/* <Link to='/artist-page'> */}
-                            <div className="artist" onClick={()=>{navigate(`/artist-page/${usersMock[0]._id}`, {state: {user:usersMock[0]}})}}>
-                                <img src={avatar} alt="avatar" className='avatar'/>
-                                <span>Animakid</span>
-                            </div>
-                        {/* </Link> */}
+                        <div className="artist" onClick={()=>{navigate(`/artist-page/68dfd2966dff33e74b88403d`)}}>
+                            <img src={avatar} alt="avatar" className='avatar'/>
+                            <span>Animakid</span>
+                        </div>
                     </div>
                 </div>
                 <button><img src={rocketLaunch} alt="get started" className='rocketLaunch'/>Get Started</button>

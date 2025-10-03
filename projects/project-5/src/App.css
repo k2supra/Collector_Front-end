@@ -8,6 +8,11 @@
   outline: none;
 }
 
+body
+{
+  background-color: var(--background);
+}
+
 .App {
   text-align: center;
   background-color: var(--background);

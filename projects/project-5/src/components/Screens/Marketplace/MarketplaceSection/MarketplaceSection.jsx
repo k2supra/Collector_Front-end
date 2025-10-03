@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { fetchMarketplaceForSale } from '../../../RTK/fetchMarketplaceForSale'
 import NFTMW from './NFTMW/NFTMW'
+import { useNavigate } from 'react-router-dom'
 
 
 function MarketplaceSection() {
@@ -15,16 +16,12 @@ function MarketplaceSection() {
 
     const dispatch = useDispatch()
 
+    const navigate = useNavigate()
+
     useEffect(()=>
     {
         dispatch(fetchMarketplaceForSale())
     }, [dispatch])
-    
-    useEffect(()=>
-    {
-        console.log(marketplace);
-        
-    }, [marketplace])
 
     if(!marketplace) return <p>Loading...</p>
 
@@ -46,7 +43,7 @@ function MarketplaceSection() {
                 <div className="NFTInfo">
                     <div className="artistInfo">
                         <h5 className='NFTName'>{nft?.title}</h5>
-                        <div className="artist">
+                        <div className="artist" onClick={()=>navigate(`/artist-page/${marketplace?._id}`)}>
                             <img src={marketplace?.avatarUrl} alt="avatar" />
                             <span className="name">{marketplace.username}</span>
                         </div>

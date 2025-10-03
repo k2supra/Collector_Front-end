@@ -8,6 +8,13 @@ import { useNavigate } from 'react-router-dom'
 const API_URL = process.env.REACT_APP_API_URL;
 const PORT = process.env.REACT_APP_PORT;
 
+const usersIDArray = 
+[
+    '68dfd2966dff33e74b88403d',
+    '68dfd2d56dff33e74b884047',
+    '68dfd3a06dff33e74b884051',
+]
+
 function Heading() {
     const [inputIdValue, setInputIdValue] = useState('')
     const [selectOption, setSelectOption] = useState('user');
@@ -67,6 +74,35 @@ function Heading() {
                 <option value="nft">nft</option>
             </select>
             <img src={searchIcon} alt="search" />
+        </div>
+        <div className="mockIDs">
+            {usersIDArray.map((u, index)=>
+            <button className='mockUserID' key={index} onClick={async () => {
+                const text = u || "";
+
+                try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    // Сучасний метод (працює в більшості браузерів, Android Chrome, нові Safari)
+                    await navigator.clipboard.writeText(text);
+                } else {
+                    // Fallback для старих/мобільних браузерів
+                    const textarea = document.createElement("textarea");
+                    textarea.value = text;
+                    textarea.style.position = "fixed"; // щоб не прокручувало
+                    textarea.style.opacity = 0;
+                    document.body.appendChild(textarea);
+                    textarea.focus();
+                    textarea.select();
+
+                    document.execCommand("copy");
+                    document.body.removeChild(textarea);
+                }
+                } catch (err) {
+                console.error("Помилка копіювання:", err);
+                alert("Не вдалося скопіювати ❌");
+                }
+            }}>{u.slice(0, 4)}...{u.slice(-3)}</button>
+            )}
         </div>
         {inputIdValue && (
             !loading && foundUser ? (
