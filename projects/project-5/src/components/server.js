@@ -97,7 +97,7 @@ async function fixUsers() {
   }
 
 mongoose.connect(`mongodb+srv://${gmail}:${password}@testcluster.8jrno.mongodb.net/NFTApp?retryWrites=true&w=majority&appName=TestCluster`)
-.then(() => {console.log('\x1b[32m%s\x1b[0m', "\n\n\nMongoDB connected\n\n\n"); fixUsers()})
+.then(() => {console.log('\x1b[32m%s\x1b[0m', "\n\n\nMongoDB connected\n\n\n"); /* fixUsers() */})
 .catch(err => console.error('\x1b[31m%s\x1b[0m', '\n\n\n❌ MongoDB connection error:', err, '\n\n\n'))
 
 app.post('/register', async (req, res) =>
@@ -260,6 +260,30 @@ app.get('/fetch-marketplace-for-sale', async (req, res)=>
         const user = await User.findById(MARKETPLACE_ID).select('nfts.created avatarUrl username');
         if(!user) return res.status(404).json({error: 'User not found'});
         res.json(user);
+    } catch (err) {
+        res.status(500).json({error: err.message})
+    }
+})
+app.post('/buy/:selledId/:buyerId/:nftId', async (req, res)=>
+{
+    try {
+      const seller = await User.findById(req.params.selledId).select('balance nfts stats');
+      const buyer = await User.findById(req.params.buyerId).select('balance nfts');
+
+      const boughtNft = seller.nfts.created.find(nft=>nft._id.toString()===req.params.nftId);
+      if (!boughtNft) return res.status(404).json({error: 'NFT not found'});
+
+      seller.nfts.created = seller.nfts.created.filter(nft=>nft._id.toString()!==req.params.nftId);
+      buyer.nfts.owned.push(boughtNft);
+
+      seller.balance += +boughtNft.price;
+      buyer.balance -= +boughtNft.price;
+
+      seller.stats.sold += 1;
+
+      await seller.save();
+      await buyer.save();
+      res.json({message: 'Purchase successful', nft: boughtNft});
     } catch (err) {
         res.status(500).json({error: err.message})
     }

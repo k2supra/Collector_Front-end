@@ -8,13 +8,18 @@ import avatar from '../../../../assets/images/avatar.png'
 import avatar2 from '../../../../assets/images/avatar2.png'
 import avatar3 from '../../../../assets/images/avatar3.png'
 import { useSelector } from 'react-redux'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { fetchMarketplaceForSale } from '../../../RTK/fetchMarketplaceForSale'
+import NFTMW from './NFTMW/NFTMW'
+import { fetchBalance } from '../../../RTK/fetchBalance'
 
 
 function MarketplaceSection() {
     const { marketplace } = useSelector(state => state.user)
+
+    const [showNFTMW, setShowNFTMW] = useState(false);
+    const [nftData, setNftData] = useState(null);
 
     const dispatch = useDispatch()
 
@@ -39,8 +44,12 @@ function MarketplaceSection() {
             <label htmlFor="collections" className="tab">Collections</label>
         </div>
         <div className="cardsSection">
-            {marketplace.nfts.created.map((nft,index)=>
-            <div className="NFTCard" key={index}>
+            {marketplace.nfts.created.length>0 ? marketplace.nfts.created.map((nft,index)=>
+            <div className="NFTCard" key={index} onClick={()=>
+            {
+                setShowNFTMW(true);
+                setNftData({imageUrl: nft?.imageUrl, title: nft?.title, price: nft?.price, highestBid: nft?.highestBid, _id: nft?._id});                
+            }}>
                 <img src={nft?.imageUrl} alt="NFT" className='NFTImage'/>
                 <div className="NFTInfo">
                     <div className="artistInfo">
@@ -62,7 +71,16 @@ function MarketplaceSection() {
                     </div>
                 </div>
             </div>
-            )}
+            )
+        :
+        <h3>No Items For Sale</h3>}
+        {showNFTMW && <NFTMW nftData={nftData} 
+        close={()=>
+        {
+            setShowNFTMW(false);
+            setNftData(null);
+        }} 
+        marketplace={marketplace}/>}
             {/* <div className="NFTCard">
                 <img src={nft1} alt="NFT" className='NFTImage'/>
                 <div className="NFTInfo">

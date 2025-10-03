@@ -1,0 +1,180 @@
+@import url(../../../../mainStyles/colors.css);
+@import url(../../../../mainStyles/fonts.css);
+
+.marketplace .marketplaceSection .nftmw
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100vw;
+    height: 100vh;
+    padding: 100px 30px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.marketplace .marketplaceSection .nftmw .NFTCard
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    background-color: var(--background);
+    overflow: hidden;
+    width: 315px;
+    scale: 0.9;
+}
+
+.marketplace .marketplaceSection .nftmw .NFTCard img.NFTImage
+{
+    height: 238px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.marketplace .marketplaceSection .nftmw .NFTCard .NFTInfo
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 20px 20px 25px;
+}
+
+.marketplace .marketplaceSection .nftmw .NFTCard .NFTInfo .artistInfo
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.marketplace .marketplaceSection .nftmw .NFTCard .NFTInfo .artistInfo h5.NFTName
+{
+    font-size: 22px;
+    line-height: 140%;
+    font-weight: 600;
+}
+
+.marketplace .marketplaceSection .nftmw .NFTCard .NFTInfo .artistInfo .artist
+{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.marketplace .marketplaceSection .nftmw .NFTCard .NFTInfo .artistInfo .artist img
+{
+    width: 24px;
+    height: 24px;
+}
+
+.marketplace .marketplaceSection .nftmw .NFTCard .NFTInfo .artistInfo .artist span.name
+{
+    font-size: 16px;
+    line-height: 140%;
+}
+
+.marketplace .marketplaceSection .nftmw .NFTCard .NFTInfo .additionalInfo
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.marketplace .marketplaceSection .nftmw .NFTCard .NFTInfo .additionalInfo .price, .highestBid
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+.marketplace .marketplaceSection .nftmw .NFTCard .NFTInfo .additionalInfo .highestBid
+{
+    align-items: flex-end;
+}
+
+.marketplace .marketplaceSection .nftmw .NFTCard .NFTInfo .additionalInfo .price span, .highestBid span
+{
+    color: white;
+    font-family: 'SpaceMono';
+    font-size: 12px;
+    line-height: 110%;
+}
+
+.marketplace .marketplaceSection .nftmw .NFTCard .NFTInfo .additionalInfo .price span:nth-of-type(1), .highestBid span:nth-of-type(1)
+{
+    color: var(--captionAndLabelText);
+    font-size: 12px;
+    line-height: 110%;
+}
+
+.marketplace .marketplaceSection .nftmw .controls
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.marketplace .marketplaceSection .nftmw .controls button
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 46px;
+    width: 120px;
+    color: white;
+    
+    line-height: 140%;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 30px;
+
+    border-radius: 20px;
+
+    
+    &:nth-of-type(1)
+    {
+        background-color: transparent;
+        border: 2px solid var(--callToAction);
+    }
+    &:nth-of-type(2)
+    {
+        background-color: var(--callToAction);
+        border: 0;
+    }
+}
+
+@media (min-width: 750px)
+{
+    .marketplace .marketplaceSection .nftmw .NFTCard
+    {
+        width: 355px;
+    }
+    .marketplace .marketplaceSection .nftmw .controls button
+    {
+        width: 150px;
+    }
+}
+@media (min-width: 1280px)
+{
+    .marketplace .marketplaceSection .nftmw .NFTCard
+    {
+        width: 385px;
+    }
+    .marketplace .marketplaceSection .nftmw .controls button
+    {
+        width: 170px;
+        height: 60px;
+    }
+}

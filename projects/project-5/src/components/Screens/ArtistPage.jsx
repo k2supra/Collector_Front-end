@@ -15,8 +15,7 @@ function ArtistPage() {
     const {currentUser, fullUser, loading, error, balance} = useSelector(state => state.user)
     const location = useLocation();
     const { id } = useParams()
-    // const [showLogout, setShowLogout] = useState(false);
-    // const navigate = useNavigate()
+    const [activeTab, setActiveTab] = useState('created');
 
     const mockUser = location.state?.user;
 
@@ -41,8 +40,8 @@ function ArtistPage() {
     return <div className="artistPage">
         <BannerAndProfilePicture userData={userData}/>
         <ArtistInfo userData={userData} loading={loading} error={error}/>
-        <TabBar/>
-        <NFTCardsSection userData={userData}/>
+        <TabBar activeTab={activeTab} setActiveTab={setActiveTab}/>
+        <NFTCardsSection userData={userData} activeTab={activeTab}/>
     </div>
 }
 

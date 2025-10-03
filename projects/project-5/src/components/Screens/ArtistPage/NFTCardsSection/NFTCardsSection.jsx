@@ -11,19 +11,20 @@ import { updateNFTS } from '../../../RTK/userSlice'
 import AddCardMW from './AddCardMW/AddCardMW'
 import { useDispatch, useSelector } from 'react-redux'
 
-function NFTCardsSection({userData}) {
+function NFTCardsSection({userData, activeTab}) {
     const [showAddCardMW, setShowAddCardMW] = useState(false)
     const dispatch = useDispatch()
     const currentUser = useSelector(state=>state.user.currentUser)
     
-    let nftsData;
-    if (userData?.nfts.created && userData?.nfts.created.length > 0) {
-        nftsData = userData?.nfts.created;
-    }
+    let nftsData = [];
+
+    if (activeTab === 'created') nftsData = userData?.nfts?.created || [];
+    if (activeTab === 'owned') nftsData = userData?.nfts?.owned || [];
+    if (activeTab === 'collections') nftsData = userData?.nfts?.collections || [];
 
     return <div className="NFTCardSection">
         <div className="frames">
-            {!nftsData ? <h1>No NFTs</h1> : nftsData.map((nft, index)=>
+            {nftsData.length === 0 ? <h1>No NFTs {activeTab}</h1> : nftsData.map((nft, index)=>
             <div className="NFTCard" key={index}>
                 <img src={nft.imageUrl} alt="NFT" className='NFTImage'/>
                 <div className="NFTInfo">
@@ -47,7 +48,7 @@ function NFTCardsSection({userData}) {
                 </div>
             </div>
             )}
-            {currentUser?._id === userData?._id && <div className='NFTCard addNewCard' onClick={()=>setShowAddCardMW(true)}>
+            {currentUser?._id === userData?._id && activeTab === 'created' && <div className='NFTCard addNewCard' onClick={()=>setShowAddCardMW(true)}>
                 <div className='symbol'>+</div>
             </div>}
             {showAddCardMW && <AddCardMW 
