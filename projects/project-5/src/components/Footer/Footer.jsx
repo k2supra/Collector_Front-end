@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import './footer.css'
 
 import discordLogo from '../../assets/images/discordLogo.png'
@@ -5,6 +6,9 @@ import youtubeLogo from '../../assets/images/youtubeLogo.png'
 import twitterLogo from '../../assets/images/twitterLogo.png'
 import instagramLogo from '../../assets/images/instagramLogo.png'
 import mailLogo from '../../assets/images/mailLogo.png'
+import { ReactComponent as TelegramLogo } from '../../assets/images/telegramLogoSVG.svg'
+import { ReactComponent as GmailLogo } from '../../assets/images/gmailLogoSVG.svg'
+import { Link } from 'react-router-dom'
 
 function Footer() {
     return <footer>
@@ -12,14 +16,15 @@ function Footer() {
             <div className="marketplaceInfo">
                 <div className="logo"></div>
                 <div className="additionalInfo">
-                    <span>NFT marketplace UI created with Anima for Figma.</span>
+                    <span>NFT marketplace created by Deviatyi Andrii</span>
                     <div className="communityInfo">
-                        Join our community
+                        My contact information
                         <div className="icons">
-                            <img src={discordLogo} alt="discord" />
-                            <img src={youtubeLogo} alt="youtube" />
-                            <img src={twitterLogo} alt="twitter" />
-                            <img src={instagramLogo} alt="instagram" />
+                            <a href="mailto:andrijkorolevic@gmail.com"><GmailLogo className='icon'/></a>
+                            <a href=""><img src={youtubeLogo} alt="youtube" className='icon'/></a>
+                            <a href=""><img src={twitterLogo} alt="twitter" className='icon'/></a>
+                            <a href="https://www.instagram.com/andy_like0_0?igsh=MXh0MTQ2bWFoaGRsaw=="><img src={instagramLogo} alt="instagram" className='icon'/></a>
+                            <a href="https://t.me/Andruha_usd"><TelegramLogo className='icon'/></a>
                         </div>
                     </div>
                 </div>
@@ -27,9 +32,9 @@ function Footer() {
             <div className="explore">
                 <h5>Explore</h5>
                 <div className="pages">
-                    <span>Marketplace</span>
-                    <span>Rankings</span>
-                    <span>Connect a wallet</span>
+                    <Link to={'/marketplace'}><span>Marketplace</span></Link>
+                    <Link to={'/rankings'}><span>Rankings</span></Link>
+                    <Link to={'/connect-wallet'}><span>Connect a wallet</span></Link>
                 </div>
             </div>
             <div className="subscribe">
@@ -44,7 +49,7 @@ function Footer() {
             </div>
         </div>
         <div className="bottom">
-            Ⓒ NFT Market. Use this template freely.
+            Creator: Deviatyi Andrii
         </div>
     </footer>
 }

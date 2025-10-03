@@ -69,10 +69,12 @@ footer .info .marketplaceInfo .additionalInfo .communityInfo .icons
     gap: 10px;
 }
 
-footer .info .marketplaceInfo .additionalInfo .communityInfo .icons img
+footer .info .marketplaceInfo .additionalInfo .communityInfo .icons .icon
 {
     width: 32px;
     height: 32px;
+    color: var(--captionAndLabelText);
+    cursor: pointer;
 }
 
 footer .info .explore
